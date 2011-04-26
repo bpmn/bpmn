@@ -1,0 +1,14 @@
+Elgg Developer Tools
+
+Plugin directory = elgg_dev_tools
+
+Description
+====================================================================
+This plugin has a lot of features for developers. Features include:
+ * easy access to settings for debugging and development
+ * Firebug integration
+ * wrapping a view in a div for view discovery
+ * event and plugin hook discovery
+ * language string discovery
+ * simple plugin scaffolding
+ * inspection of views, actions, events and more

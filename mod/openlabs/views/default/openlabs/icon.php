@@ -1,0 +1,44 @@
+<?php
+
+	/**
+	 * Elgg openlab icon
+	 * 
+	 * @package Elggopenlabs from ElggGroups
+	 * 
+	 * @uses $vars['entity'] The user entity. If none specified, the current user is assumed.
+	 * @uses $vars['size'] The size - small, medium or large. If none specified, medium is assumed. 
+	 */
+
+	$openlab = $vars['entity'];
+	
+	if ($openlab instanceof ElggGroup) {
+	
+	// Get size
+	if (!in_array($vars['size'],array('small','medium','large','tiny','master','topbar')))
+		$vars['size'] = "medium";
+			
+	// Get any align and js
+	if (!empty($vars['align'])) {
+		$align = " align=\"{$vars['align']}\" ";
+	} else {
+		$align = "";
+	}
+	
+	if ($icontime = $vars['entity']->icontime) {
+		$icontime = "{$icontime}";
+	} else {
+		$icontime = "default";
+	}
+	
+	
+?>
+
+<div class="openlabicon">
+<a href="<?php echo $vars['entity']->getURL(); ?>" class="icon" ><img src="<?php echo $vars['entity']->getIcon($vars['size']); ?>" border="0" <?php echo $align; ?> title="<?php echo $name; ?>" <?php echo $vars['js']; ?> /></a>
+</div>
+
+<?php
+
+	}
+
+?>
