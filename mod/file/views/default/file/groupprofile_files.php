@@ -8,7 +8,15 @@ if ($vars['entity']->file_enable != 'no') {
 ?>
 
 <div class="group_widget">
-<h2><?php echo elgg_echo('file:group'); ?></h2>
+   <?php
+        if ($context=get_context()== "teams"){
+            $name_box="team";
+        } else {
+            $name_box="group";
+        }
+
+   ?>
+<h2><?php echo elgg_echo("file:$name_box"); ?></h2>
 <?php
 	$context = get_context();
 	set_context('search');

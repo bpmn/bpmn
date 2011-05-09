@@ -16,11 +16,11 @@
 		// Set up the menu for logged in users
 		if (isloggedin()) 
 		{
-			add_menu(elgg_echo('pages'), $CONFIG->wwwroot . "pg/pages/owned/" . $_SESSION['user']->username,'pages');
+			//add_menu(elgg_echo('pages'), $CONFIG->wwwroot . "pg/pages/owned/" . $_SESSION['user']->username,'pages');
 		}
 		else
 		{
-			add_menu(elgg_echo('pages'), $CONFIG->wwwroot . "pg/pages/all/");
+			//add_menu(elgg_echo('pages'), $CONFIG->wwwroot . "pg/pages/all/");
 		}
 		
 		// Extend hover-over menu	

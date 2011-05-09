@@ -86,11 +86,6 @@
 	// display the users name
 	echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
 
-        $annotationRating = $vars['entity']->getAnnotations('rating', 1, 0, desc);
-
-        $rating = $annotationRating[0]->value;
-
-        echo "<p class = 'profile_aboutme_title'><b>". $vars['entity']->name . " has been rated ".$rating." times</b></p>";
 	//insert a view that can be extended
 	echo elgg_view("profile/status", array("entity" => $vars['entity']));
 

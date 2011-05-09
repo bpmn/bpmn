@@ -16,7 +16,7 @@ function riverdashboard_init() {
 	} else {
 		// Activity main menu
 		if (isloggedin()) {
-			add_menu(elgg_echo('activity'), $CONFIG->wwwroot . "pg/activity/");
+			//add_menu(elgg_echo('activity'), $CONFIG->wwwroot . "pg/activity/");
 		}
 	}
 

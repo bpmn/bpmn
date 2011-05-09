@@ -29,6 +29,7 @@
 			'file:replace' => 'Replace file content (leave blank to not change file)',
 	
 			'file:group' => "Group files",
+                        'file:team' => "Team Library",
 			'groups:enablefiles' => 'Enable group files',
 			'file:newupload' => 'New file upload',
 			'file:more' => "More files",

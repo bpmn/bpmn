@@ -33,9 +33,9 @@
 				
 		// Set up menu (tools dropdown or other uses as defined by theme)
 		if (isloggedin()) {
-			add_menu(elgg_echo('file'), $CONFIG->wwwroot . "pg/file/owner/" . get_loggedin_user()->username);
+			//add_menu(elgg_echo('file'), $CONFIG->wwwroot . "pg/file/owner/" . get_loggedin_user()->username);
 		} else {
-			add_menu(elgg_echo('file'), $CONFIG->wwwroot . "pg/file/all/" );
+			//add_menu(elgg_echo('file'), $CONFIG->wwwroot . "pg/file/all/" );
 		}
 				
 		// Extend CSS
@@ -63,8 +63,10 @@
 		
 		// add the group files tool option     
 		add_group_tool_option('file',elgg_echo('groups:enablefiles'),true);
-	    // extend group main page
+
+                // extend group main page
 		elgg_extend_view('groups/left_column','file/groupprofile_files');
+                elgg_extend_view('teams/left_column','file/groupprofile_files');
 		
 		// Register entity type
 		register_entity_type('object','file');
@@ -84,6 +86,12 @@
 			if ($page_owner instanceof ElggGroup && get_context() == "groups") {
     			if($page_owner->file_enable != "no"){ 
 				    add_submenu_item(sprintf(elgg_echo("file:group"),$page_owner->name), $CONFIG->wwwroot . "pg/file/owner/" . $page_owner->username);
+			    }
+			}
+
+                        if ($page_owner instanceof ElggGroup &&  get_context() == "teams" ) {
+    			if($page_owner->file_enable != "no"){
+				    add_submenu_item(sprintf(elgg_echo("file:team"),$page_owner->name), $CONFIG->wwwroot . "pg/file/owner/" . $page_owner->username);
 			    }
 			}
 			
