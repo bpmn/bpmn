@@ -3,6 +3,7 @@
 	 * Elgg openlabs plugin
 	 * 
 	 * @package Elggopenlabs from ElggGroups
+	 test STD
 	 */
 
 	require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
