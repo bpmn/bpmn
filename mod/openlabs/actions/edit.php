@@ -40,7 +40,11 @@ $openlab_guid = (int)get_input('openlab_guid');
 $new_openlab_flag = $openlab_guid == 0;
 
 $openlab = new ElggGroup($openlab_guid); // load if present, if not create a new openlab
-$openlab->subtype = 'openlab' ;
+if ($new_openlab_flag)
+{
+    $openlab->subtype = 'openlab' ;
+    $group->membership = ACCESS_PRIVATE;
+}
 
 if (($openlab_guid) && (!$openlab->canEdit())) {
 	register_error(elgg_echo("openlabs:cantedit"));

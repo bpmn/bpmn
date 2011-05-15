@@ -20,7 +20,7 @@
 		$openlab = get_entity($topic->container_guid);
 		set_page_owner($openlab->guid);
 		
-		openlab_gatekeeper();
+		group_gatekeeper() ; 
 		
          
     // Display them

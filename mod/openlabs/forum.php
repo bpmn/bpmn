@@ -13,7 +13,7 @@
 		forward();
 	}
 	
-	openlab_gatekeeper();
+	group_gatekeeper() ; 
 	
 	//get any forum topics
 	$topics = list_entities_from_annotations("object", "openlabforumtopic", "openlab_topic_post", "", 20, 0, $openlab_guid, false, false, false);

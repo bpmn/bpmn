@@ -31,7 +31,7 @@
 		$wording = elgg_echo("openlabs:makefeatured");
 	}
 
-	$info .= "<div class=\"openlabdetails\"><p>" . $mem . " / <b>" . get_openlab_members($vars['entity']->guid, 10, 0, 0, true) ."</b> " . elgg_echo("openlabs:member") . "</p>";
+	$info .= "<div class=\"openlabdetails\"><p>" . $mem . " / <b>" . get_group_members($vars['entity']->guid, 10, 0, 0, true) ."</b> " . elgg_echo("openlabs:member") . "</p>";
 	//if admin, show make featured option
 	if(isadminloggedin())
 		$info .= "<p><a href=\"{$url}\">{$wording}</a></p>";

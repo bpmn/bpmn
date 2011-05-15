@@ -12,7 +12,7 @@
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
 
 	// access check for closed openlabs
-	openlab_gatekeeper();
+	group_gatekeeper();
 		
 	// Display them
 	    $area2 = elgg_view_title(elgg_echo("openlabs:latestdiscussion"));

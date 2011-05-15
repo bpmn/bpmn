@@ -20,7 +20,7 @@
 		// Hide some items from closed openlabs when the user is not logged in.
 		$view_all = true;
 		
-		$openlabaccess = openlab_gatekeeper(false);
+		$openlabaccess = group_gatekeeper(false);
 		if (!$openlabaccess)
 			$view_all = false;
 		

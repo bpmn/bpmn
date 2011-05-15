@@ -17,8 +17,9 @@
 	<?php
 	echo elgg_view('input/securitytoken');
 
-	if ($friends = get_loggedin_user()->getFriends('', 0)) {
-		echo elgg_view('friends/picker',array('entities' => $friends, 'internalname' => 'user_guid', 'highlight' => 'all'));	
+        $all_users = get_entities('user') ; 
+	if ($all_users) {
+		echo elgg_view('friends/picker',array('entities' => $all_users, 'internalname' => 'user_guid', 'highlight' => 'all'));
 	}
 	
 	?>

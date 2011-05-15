@@ -27,7 +27,8 @@
 		$params = array(
 			'metadata_name' => 'interests',
 			'metadata_value' => $tag,
-			'types' => 'openlab',
+			'types' => 'group',
+                        'subtypes' => 'openlab' ,
 			'limit' => $limit,
 			'full_view' => FALSE,
 		);
@@ -35,7 +36,7 @@
 	} else {
 		switch($filter){
 			case "newest":
-			$objects = elgg_list_entities(array('types' => 'openlab', 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
+			$objects = elgg_list_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
 			break;
 			case "pop":
 			$objects = list_entities_by_relationship_count('member', true, "", "", 0, $limit, false);
@@ -48,7 +49,7 @@
 	}
 	
 	//get a openlab count
-	$openlab_count = elgg_get_entities(array('types' => 'openlab', 'limit' => 10, 'count' => TRUE));
+	$openlab_count = elgg_get_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'limit' => 10, 'count' => TRUE));
 		
 	//find openlabs
 	$area1 = elgg_view("openlabs/find");
@@ -57,7 +58,7 @@
 	$area1 .= elgg_view("openlabs/side_menu");
 	
 	//featured openlabs
-	$featured_openlabs = elgg_get_entities_from_metadata(array('metadata_name' => 'featured_openlab', 'metadata_value' => 'yes', 'types' => 'openlab', 'limit' => 10));
+	$featured_openlabs = elgg_get_entities_from_metadata(array('metadata_name' => 'featured_openlab', 'metadata_value' => 'yes', 'types' => 'group',  'subtypes' => 'openlab' , 'limit' => 10));
 	$area1 .= elgg_view("openlabs/featured", array("featured" => $featured_openlabs));
 		
 		

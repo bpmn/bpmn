@@ -47,7 +47,7 @@
 			'openlabs:joinrequest' => 'Request membership',
 			'openlabs:join' => 'Join openlab',
 			'openlabs:leave' => 'Leave openlab',
-			'openlabs:invite' => 'Invite friends',
+			'openlabs:invite' => 'Invite people',
 			'openlabs:inviteto' => "Invite friends to '%s'",
 			'openlabs:nofriends' => "You have no friends left who have not been invited to this openlab.",
 			'openlabs:viaopenlabs' => "via openlabs",
@@ -226,7 +226,10 @@ or click below to view the openlab's join requests:
 
 			'openlabs:invitekilled' => 'The invite has been deleted.',
 			'openlabs:joinrequestkilled' => 'The join request has been deleted.',
-	);
+
+                        // rate
+                        'openlab:rateannotation' => 'The author of the comment has been sucessfully rated '
+                );
 
 	add_translation("en",$english);
 ?>

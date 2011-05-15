@@ -12,7 +12,7 @@ $topic = get_entity((int) get_input('topic'));
 $openlab = get_entity($topic->container_guid);
 set_page_owner($openlab->guid);
 
-openlab_gatekeeper();
+group_gatekeeper() ; 
 
 $content = elgg_view("forms/forums/edittopic", array('entity' => $topic));
 $body = elgg_view_layout('two_column_left_sidebar', '', $content);

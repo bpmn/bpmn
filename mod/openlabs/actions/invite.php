@@ -31,9 +31,6 @@ if (sizeof($user_guid))
 			{
 				if (!check_entity_relationship($openlab->guid, 'invited', $user->guid))
 				{
-					if ($user->isFriend())
-					{
-
 						// Create relationship
 						add_entity_relationship($openlab->guid, 'invited', $user->guid);
 
@@ -46,10 +43,6 @@ if (sizeof($user_guid))
 							system_message(elgg_echo("openlabs:userinvited"));
 						else
 							register_error(elgg_echo("openlabs:usernotinvited"));
-
-					}
-					else
-						register_error(elgg_echo("openlabs:usernotinvited"));
 				}
 				else
 					register_error(elgg_echo("openlabs:useralreadyinvited"));

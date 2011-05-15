@@ -35,6 +35,8 @@
 		// Register a URL handler for openlabs and forum topics
 		register_entity_url_handler('openlabs_url','openlab','all');
 		register_entity_url_handler('openlabs_openlabforumtopic_url','object','openlabforumtopic');
+                // register an url handler for openlabs
+                register_entity_url_handler("openlab_group_url", 'group' , 'openlab' ) ; 
 
 		// Register an icon handler for openlabs
 		register_page_handler('openlabicon','openlabs_icon_handler');
@@ -399,6 +401,21 @@
 		$title = elgg_get_friendly_title($entity->title);
 		return "{$CONFIG->url}pg/forum/topic/{$entity->guid}/{$title}/";
 	}
+
+        /**
+         *
+         * @global <type> $CONFIG
+         * @param <type> $entity
+         * @return an url for openlabs 
+         */
+        function openlab_group_url($entity)
+        {
+            global $CONFIG ;
+            $title = elgg_get_friendly_title($entity->title);
+            return "{$CONFIG->url}pg/openlabs/{$entity->guid}/{$title}/";
+
+
+        }
 
 	/**
 	 * openlabs created so create an access list for it

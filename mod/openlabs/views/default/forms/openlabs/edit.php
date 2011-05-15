@@ -48,16 +48,13 @@
 <?php
 			
 		}
-
 ?>
-
 	<p>
 		<label>
 			<?php echo elgg_echo('openlabs:membership'); ?><br />
-			<?php echo elgg_view('input/access', array('internalname' => 'membership','value' => $membership, 'options' => array( ACCESS_PRIVATE => elgg_echo('openlabs:access:private'), ACCESS_PUBLIC => elgg_echo('openlabs:access:public')))); ?>
+			<?php echo elgg_view('input/access', array('internalname' => 'membership','value' => $membership, 'options' => array( ACCESS_PRIVATE => elgg_echo('openlabs:access:private')))); ?>
 		</label>
 	</p>
-	
 	<?php
 
 	if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes')
@@ -97,8 +94,8 @@
 	?>
 	
     <?php
-		if (isset($vars['config']->openlab_tool_options)) {
-			foreach($vars['config']->openlab_tool_options as $openlab_option) {
+		if (isset($vars['config']->group_tool_options)) {
+			foreach($vars['config']->group_tool_options as $openlab_option) {
 				$openlab_option_toggle_name = $openlab_option->name."_enable";
 				if ($openlab_option->default_on) {
 					$openlab_option_default_value = 'yes';
@@ -152,6 +149,7 @@ if ($vars['entity']) {
 			echo elgg_view('input/securitytoken');
 				$warning = elgg_echo("openlabs:deletewarning");
 			?>
+
 			<input type="hidden" name="openlab_guid" value="<?php echo $vars['entity']->getGUID(); ?>" />
 			<input type="submit" name="delete" value="<?php echo elgg_echo('openlabs:delete'); ?>" onclick="javascript:return confirm('<?php echo $warning; ?>')"/>
 	</form>

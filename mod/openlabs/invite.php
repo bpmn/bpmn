@@ -12,6 +12,7 @@
 	$openlab = get_entity($openlab_guid);
 	set_page_owner($openlab_guid);
 
+
 	$title = elgg_echo("openlabs:invite");
 
 	$area2 = elgg_view_title($title);
