@@ -11,12 +11,14 @@
 		
 		gatekeeper();
 		
+                $openlabguid = get_input('openlab_guid') ; 
+                 
 		$page_owner = set_page_owner((int) get_input('openlab_guid'));
 		
 		if (!(page_owner_entity() instanceof ElggGroup)) forward();
 		
 	// sort the display
-	    $area2 = elgg_view("forms/forums/addtopic");
+	    $area2 = elgg_view("openlab_forms/forums/addtopic");
 	    $body = elgg_view_layout('two_column_left_sidebar',$area1, $area2);
 		
 	// Display page

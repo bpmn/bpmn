@@ -19,7 +19,7 @@
 				));
 				echo "</a></div>{$request->name}<br />";
 
-				echo str_replace('<a', '<a class="delete_report_button" ', elgg_view('output/confirmlink',array(
+				echo str_replace('<a', '<a class="delete_report_button" ', elgg_view('openlab_output/confirmlink',array(
 					'href' => $vars['url'] . 'action/openlabs/killrequest?user_guid='.$request->guid.'&openlab_guid=' . $vars['entity']->guid,
 					'confirm' => elgg_echo('openlabs:joinrequest:remove:check'),
 					'text' => elgg_echo('delete'),

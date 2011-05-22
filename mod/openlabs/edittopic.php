@@ -14,7 +14,7 @@ set_page_owner($openlab->guid);
 
 group_gatekeeper() ; 
 
-$content = elgg_view("forms/forums/edittopic", array('entity' => $topic));
+$content = elgg_view("openlab_forms/forums/edittopic", array('entity' => $topic));
 $body = elgg_view_layout('two_column_left_sidebar', '', $content);
 
 page_draw(elgg_echo('openlabs:edittopic'), $body);
