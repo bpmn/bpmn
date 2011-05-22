@@ -20,6 +20,7 @@ $input = array();
 foreach ($CONFIG->group as $shortname => $valuetype) {
 	// another work around for Elgg's encoding problems: #561, #1963
 	$input[$shortname] = get_input($shortname);
+        
 	if (is_array($input[$shortname])) {
 		array_walk_recursive($input[$shortname], 'profile_array_decoder');
 	} else {
@@ -159,7 +160,6 @@ if ((isset($_FILES['icon'])) && (substr_count($_FILES['icon']['type'],'image/'))
 }
 
 system_message(elgg_echo("teams:saved"));
-
 
 forward($group->getUrl());
 
