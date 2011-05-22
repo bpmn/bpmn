@@ -67,6 +67,8 @@
                 // extend group main page
 		elgg_extend_view('groups/left_column','file/groupprofile_files');
                 elgg_extend_view('teams/left_column','file/groupprofile_files');
+                // STd file for openlab plugin 
+                elgg_extend_view('openlabs/left_column','file/groupprofile_files');
 		
 		// Register entity type
 		register_entity_type('object','file');

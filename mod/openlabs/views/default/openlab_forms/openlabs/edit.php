@@ -49,6 +49,8 @@
 			
 		}
 ?>
+        // STD Desactivation des choix groups
+       
 	<p>
 		<label>
 			<?php echo elgg_echo('openlabs:membership'); ?><br />
@@ -108,7 +110,8 @@
 				<?php echo $openlab_option->label; ?><br />
 				<?php
 
-					echo elgg_view("input/radio",array(
+/* STD Desactiovation des choix 	
+ * 				echo elgg_view("input/radio",array(
 									"internalname" => $openlab_option_toggle_name,
 									"value" => $vars['entity']->$openlab_option_toggle_name ? $vars['entity']->$openlab_option_toggle_name : $openlab_option_default_value,
 									'options' => array(
@@ -116,6 +119,8 @@
 														elgg_echo('openlabs:no') => 'no',
 													   ),
 													));
+ * */
+ 
 				?>
 			</label>
 	</p>

@@ -87,12 +87,12 @@ if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes') {
 }
 
 // Set openlab tool options
-//$openlab->files_enable = get_input('files_enable', 'yes');
-//$openlab->pages_enable = get_input('pages_enable', 'yes');
-//$openlab->forum_enable = get_input('forum_enable', 'yes');
+$openlab->files_enable = get_input('files_enable', 'yes');
+$openlab->pages_enable = get_input('pages_enable', 'no');
+$openlab->forum_enable = get_input('forum_enable', 'no');
 
 // Set openlab tool options
-if (isset($CONFIG->openlab_tool_options)) {
+/* if (isset($CONFIG->openlab_tool_options)) {
 	foreach($CONFIG->openlab_tool_options as $openlab_option) {
 		$openlab_option_toggle_name = $openlab_option->name."_enable";
 		if ($openlab_option->default_on) {
@@ -103,7 +103,7 @@ if (isset($CONFIG->openlab_tool_options)) {
 		$openlab->$openlab_option_toggle_name = get_input($openlab_option_toggle_name, $openlab_option_default_value);
 	}
 }	
-
+*/ 
 $openlab->save();
 
 // openlab creator needs to be member of new openlab
