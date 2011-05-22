@@ -231,6 +231,8 @@ function openlabs_submenus() {
         if ($page_owner->forum_enable != "no") {
             add_submenu_item(elgg_echo('openlabs:forum'), $CONFIG->wwwroot . "pg/openlabs/forum/{$page_owner->getGUID()}/", '1openlabslinks');
         }
+
+        
     }
 
     // Add submenu options
