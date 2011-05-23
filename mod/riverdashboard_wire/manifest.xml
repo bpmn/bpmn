@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+        <field key="author" value="Untamed" />
+        <field key="version" value="1.1" />
+        <field key="description" value="Adds the wire and an auto-refresh to your river dashboard without modifying the original mod." />
+        <field key="licence" value="GNU Public License version 2" />
+</plugin_manifest>
