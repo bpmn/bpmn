@@ -13,7 +13,8 @@ if (!$number) {
 $options = array(
 	'relationship' => 'member',
 	'relationship_guid' => $vars['entity']->owner_guid,
-	'types' => 'openlab',
+	'types' => 'group',
+        'subtype' =>'openlab', 
 	'limit' => $number,
 );
 

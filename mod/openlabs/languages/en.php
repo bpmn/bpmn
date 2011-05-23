@@ -11,7 +11,7 @@
 		 * Menu items and titles
 		 */
 
-			'openlabs' => "openlabs",
+			'openlabs' => "Open Labs",
 			'openlabs:owned' => "openlabs you own",
 			'openlabs:yours' => "Your openlabs",
 			'openlabs:user' => "%s's openlabs",

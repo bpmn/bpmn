@@ -17,11 +17,17 @@
 
 <div id="elgg_topbar_container_left">
 	<div class="toolbarimages">
-	
-            <a href="<?php echo get_loggedin_user()->getURL(); ?>"><img class="user_mini_avatar" src="<?php echo get_loggedin_user()->getIcon('topbar'); ?>" alt="User avatar" /></a>
+            <?php
+                $username = get_loggedin_user()->name ; 
+            ?>
+            <a href="<?php echo get_loggedin_user()->getURL(); ?>"><img class="user_mini_avatar" src="<?php echo get_loggedin_user()->getIcon('topbar'); ?>" 
+                                                                        alt="<?php echo get_loggedin_user()->name; ?>" /></a>
+            
 
 	</div>
 <div class="toolbarlinks">
+    
+                
 		<a href="<?php echo $vars['url']; ?>pg/dashboard/" class="pagelinks"><?php echo elgg_echo('dashboard'); ?></a>
   
 </div>
@@ -58,6 +64,8 @@
 
 <div id="elgg_topbar_container_right">
 		<small>
+                        <a  href="<?php echo get_loggedin_user()->getURL(); ?>"><?php echo get_loggedin_user()->name; ?></a>
+  
 			<?php echo elgg_view('output/url', array('href' => "{$vars['url']}action/logout", 'text' => elgg_echo('logout'), 'is_action' => TRUE)); ?>
 		</small>
 </div>
