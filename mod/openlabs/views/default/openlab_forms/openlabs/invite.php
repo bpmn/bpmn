@@ -13,11 +13,12 @@
 ?>
 <div class="contentWrapper">
 <form action="<?php echo $vars['url']; ?>action/openlabs/invite" method="post">
-
+    <h1>Hello from invite.php in openlabs_forms/openlabs</h1>
 	<?php
+        
 	echo elgg_view('input/securitytoken');
 
-        $all_users = get_entities('user') ; 
+        $all_users = elgg_get_entities(array( type => 'user' ,  'limit' => 1000));
 	if ($all_users) {
 		echo elgg_view('friends/picker',array('entities' => $all_users, 'internalname' => 'user_guid', 'highlight' => 'all'));
 	}
