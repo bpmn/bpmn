@@ -113,7 +113,7 @@ function file_submenus() {
             if ($page_owner instanceof ElggUser) // This one's for users, not groups
                 add_submenu_item(sprintf(elgg_echo('file:friends'), $page_owner->name), $CONFIG->wwwroot . "pg/file/friends/" . $page_owner->username);
         }
-        add_submenu_item(elgg_echo('file:all'), $CONFIG->wwwroot . "pg/file/all/");
+       /* add_submenu_item(elgg_echo('file:all'), $CONFIG->wwwroot . "pg/file/all/"); */ 
         if (can_write_to_container($_SESSION['guid'], page_owner()) && isloggedin())
             add_submenu_item(elgg_echo('file:upload'), $CONFIG->wwwroot . "pg/file/new/" . $page_owner->username);
     }
