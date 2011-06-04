@@ -727,31 +727,49 @@ SYSTEM MESSSAGES
 *************************************** */
 .messages {
 	background:#ccffcc;
+
+	border:2px solid #00ff00;
+
 	color:#000000;
 	padding:4px 10px 4px 10px;
 	z-index: 8000;
 	margin:0;
 	position:fixed;
-	top:30px;
-	width:969px;
+	top:40px;
+	width:400px;
+        right:25px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	border:4px solid #00CC00;
+-moz-box-shadow: 5px 12px 58px #081f00;
+-webkit-box-shadow: 5px 12px 58px #000000;
+box-shadow: 5px 12px 58px #081f00;
+
 	cursor: pointer;
 }
 .messages_error {
-	border:4px solid #D3322A;
+	border:2px solid #D3322A;
 	background:#F7DAD8;
+
+background:-webkit-gradient(linear, 28% 83%, 27% 0%, from(#000000), to(#FFFFFF));
+
+
 	color:#000000;
 	padding:4px 10px 4px 10px;
 	z-index: 8000;
 	margin:0;
 	position:fixed;
-	top:30px;
-	width:969px;
+	top:40px;
+	right:25px;
+	width:400px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	cursor: pointer;
+-moz-box-shadow: 5px 12px 58px #081f00;
+-webkit-box-shadow: 5px 12px 58px #000000;
+box-shadow: 5px 12px 58px #081f00;
+
+
+
 }
 .closeMessages {
 	float:right;
