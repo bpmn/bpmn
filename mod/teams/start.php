@@ -51,13 +51,13 @@
 		register_action("teams/invite",false, $CONFIG->pluginspath . "teams/actions/invite.php");
 
 		// Use group widgets
-		/*use_widgets('teams');*/
+		use_widgets('teams');
 
 		// Add a page owner handler
 		add_page_owner_handler('teams_page_owner_handler');
 
 		// Add some widgets
-		/*add_widget_type('a_users_teams',elgg_echo('teams:widget:membership'), elgg_echo('teams:widgets:description'));*/
+		add_widget_type('a_users_teams',elgg_echo('teams:widget:membership'), elgg_echo('teams:widgets:description'));
 
 
 		//extend some views
@@ -591,7 +591,7 @@
 	 */
 	function teams_get_invited_teams($user_guid, $return_guids = FALSE) {
 		$ia = elgg_set_ignore_access(TRUE);
-		$invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE, 'limit' => 9999));
+		$invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'teams', 'limit' => 9999));
 		elgg_set_ignore_access($ia);
 
 		if ($return_guids) {

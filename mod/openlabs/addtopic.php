@@ -12,7 +12,9 @@
 		gatekeeper();
 		
 		$page_owner = set_page_owner((int) get_input('openlab_guid'));
-		
+
+              
+
 		if (!(page_owner_entity() instanceof ElggGroup)) forward();
 		
 	// sort the display

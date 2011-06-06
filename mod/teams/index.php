@@ -24,14 +24,14 @@
 			case "owned":
 			//set_context('search');
                         $objects = elgg_list_entities(array('types' => 'group','subtypes' => 'teams','owner_guids' => page_owner(), 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
-                        //set_context('team');
+                        set_context('team');
                         break;
 
 			case "member":
                         //set_context('search');
                         // offset is grabbed in the list_entities_from_relationship() function
                         $objects = list_entities_from_relationship('member',page_owner(),false,'group','teams',0, $limit,false, false);
-			//set_context($context);
+			set_context($context);
                         break;
 		
 		}

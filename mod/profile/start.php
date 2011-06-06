@@ -153,7 +153,14 @@
 
 				switch ($page[1])
 				{
-					case 'edit' : include($CONFIG->pluginspath . "profile/edit.php"); break;
+
+                                        case "invite":
+                                            include($CONFIG->pluginspath . "profile/invite.php");
+                                            break;
+                                        case "suggest":
+                                            include($CONFIG->pluginspath . "profile/suggest.php");
+                                            break;
+                                        case 'edit' : include($CONFIG->pluginspath . "profile/edit.php"); break;
 					case 'editicon' : include($CONFIG->pluginspath . "profile/editicon.php"); break;
 
 				}
@@ -307,9 +314,12 @@
 		register_action("profile/edit",false,$CONFIG->pluginspath . "profile/actions/edit.php");
 		register_action("profile/iconupload",false,$CONFIG->pluginspath . "profile/actions/iconupload.php");
 		register_action("profile/cropicon",false,$CONFIG->pluginspath . "profile/actions/cropicon.php");
+                register_action("profile/invite",false,$CONFIG->pluginspath . "profile/actions/invite.php");
+                register_action("profile/suggest",false,$CONFIG->pluginspath . "profile/actions/suggest.php");
 		register_action("profile/editdefault",false,$CONFIG->pluginspath . "profile/actions/editdefault.php", true);
 		register_action("profile/editdefault/delete",false,$CONFIG->pluginspath . "profile/actions/deletedefaultprofileitem.php", true);
 		register_action("profile/editdefault/reset",false,$CONFIG->pluginspath . "profile/actions/resetdefaultprofile.php", true);
+              
 
 
 	// Define widgets for use in this context

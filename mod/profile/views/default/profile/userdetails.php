@@ -9,7 +9,7 @@
 	 */
 
 	if ($vars['full'] == true) {
-		$iconsize = "large";
+		$iconsize = "medium";
 	} else {
 		$iconsize = "medium";
 	}
@@ -173,3 +173,4 @@
 
 
 </div><!-- /#profile_info -->
+
