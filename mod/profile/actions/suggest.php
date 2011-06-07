@@ -30,7 +30,7 @@ if (sizeof($group_guid))
 
 			if (($group instanceof ElggGroup) && $group->isMember())
 			{
-				if (!($suggested=check_entity_relationship($group->guid, 'suggested', $user->guid))&& !($invited=check_entity_relationship($group->guid, 'invited', $user->guid)) && !($member=check_entity_relationship($user->guid, 'member', $group->guid)) )
+				if (!($relation=check_entity_relationship($user->guid, 'member', $group->guid)) && !($relation=check_entity_relationship($group->guid, 'invited', $user->guid)) && !($relation=check_entity_relationship($group->guid, 'suggested', $user->guid)) )
 				{
 
 
@@ -51,22 +51,27 @@ if (sizeof($group_guid))
 					//else
 					//	register_error(elgg_echo("teams:usernotinvited"));
 				}
-				elseif ($member)
-                                    register_error(printf(elgg_echo("openlabs:useralreadymember"),$user->name,$group->name));
-                                    elseif ($invited)
-                                        register_error(printf(elgg_echo("openlabs:useralreadyinvited"),$user->name,$group->name));
-                                        elseif($suggested)
-                                            register_error(printf(elgg_echo("openlabs:useralreadysuggested"),$group->name,$user->name));
+				else {
+                                    switch($relation->relationship){
+                                        case 'member':
+                                            system_message(sprintf(elgg_echo("openlabs:useralreadymember"),$user->name,$group->name));
+                                            break;
+                                        case 'invited':
+                                            system_message(sprintf(elgg_echo("openlabs:useralreadyinvited"),$user->name,$group->name));
+                                            break;
+                                        case 'suggested':
+                                            system_message(sprintf(elgg_echo("openlabs:useralreadysuggested"),$group->name,$user->name));
+                                            break;
 
+                                    }
+                                }
 
-
-
+                        }
 			else
 				register_error(elgg_echo("openlabs:notowner"));
 		}
 	}
-    }
-
+    
 }
 forward($forward_url);
 
