@@ -33,7 +33,14 @@
 
         
 	$groups_viewer = elgg_get_entities_from_relationship($options);
-
+        foreach ($groups_viewer as $openlab)
+        {
+            if (!($openlab->canEdit())){
+                $list_openlab[]=$openlab;
+            }
+            
+        }
+        $groups_viewer=$list_openlab;
         if ($groups_viewer) {
             echo "<h2> OpenLabs </h2>";
             $list=array();

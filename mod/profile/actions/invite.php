@@ -47,7 +47,7 @@ if (sizeof($group_guid))
 
 			if (($group instanceof ElggGroup) && ($group->canEdit()))
 			{
-				if (!($invited=check_entity_relationship($group->guid, 'invited', $user->guid))&& !($member=check_entity_relationship($user->guid, 'member', $group->guid)))
+				if (!($relation=check_entity_relationship($user->guid, 'member', $group->guid)) && !($relation=check_entity_relationship($group->guid, 'invited', $user->guid)) )
 				{
 					//if ($user->isFriend())
 					//{
@@ -68,13 +68,20 @@ if (sizeof($group_guid))
 					//}
 					//else
 					//	register_error(elgg_echo("teams:usernotinvited"));
-				}
-				elseif ($member)
-                                    register_error(printf(elgg_echo("$subtype_entity:useralreadymember"),$user->name,$group->name));
-                                    elseif ($invited)
-                                        register_error(printf(elgg_echo("$subtype_entity:useralreadyinvited"),$user->name,$group->name));
+				} 
+                                else{
+                                    switch($relation->relationship) {
+                                        case 'member':
+                                            //register_error(sprintf(elgg_echo("$subtype_entity:useralreadymember"),$user->name,$group->name));
+                                            system_message(sprintf(elgg_echo("$subtype_entity:useralreadymember"),$user->name,$group->name));
+                                            break;
+                                        case 'invited':
+                                            system_message(sprintf(elgg_echo("$subtype_entity:useralreadyinvited"),$user->name,$group->name));
+                                            //register_error(sprintf(elgg_echo("$subtype_entity:useralreadyinvited"),$user->name,$group->name));
+                                            break;
+                                    }      
+                                }
 
-					
 			}
 			else
 				register_error(elgg_echo("$subtype_entity:notowner"));
