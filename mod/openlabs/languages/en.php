@@ -11,56 +11,60 @@
 		 * Menu items and titles
 		 */
 
-			'openlabs' => "Openlabs",
-			'openlabs:owned' => "Openlabs you own",
+
+			'openlabs' => "Open Labs",
+			'openlabs:owned' => "openlabs you own",
+
 			'openlabs:yours' => "Your openlabs",
 			'openlabs:user' => "%s's openlabs",
 			'openlabs:all' => "All site openlabs",
 			'openlabs:new' => "Create a new openlab",
-			'openlabs:edit' => "Edit openlab",
-			'openlabs:delete' => 'Delete openlab',
+			'openlabs:edit' => "Edit open lab",
+			'openlabs:delete' => 'Delete open lab',
 			'openlabs:membershiprequests' => 'Manage join requests',
-			'openlabs:invitations' => 'Openlab invitations',
-                        'openlabs:suggestions' => 'Openlab suggestions',
 
-			'openlabs:icon' => 'Openlab icon (leave blank to leave unchanged)',
-			'openlabs:name' => 'Openlab name',
-			'openlabs:username' => 'Openlab short name (displayed in URLs, alphanumeric characters only)',
+			'openlabs:invitations' => 'open lab invitations',
+
+			'openlabs:icon' => 'open lab icon (leave blank to leave unchanged)',
+			'openlabs:name' => 'open lab name',
+			'openlabs:username' => 'open lab short name (displayed in URLs, alphanumeric characters only)',
+
 			'openlabs:description' => 'Description',
 			'openlabs:briefdescription' => 'Brief description',
 			'openlabs:interests' => 'Tags',
 			'openlabs:website' => 'Website',
-			'openlabs:members' => 'Openlab members',
-			'openlabs:membership' => "openlab membership permissions",
+
+			'openlabs:members' => 'open lab members',
+			'openlabs:membership' => "open lab membership permissions",
 			'openlabs:access' => "Access permissions",
 			'openlabs:owner' => "Owner",
-			'openlabs:widget:num_display' => 'Number of openlabs to display',
-			'openlabs:widget:membership' => 'openlab membership',
-			'openlabs:widgets:description' => 'Display the openlabs you are a member of on your profile',
-			'openlabs:noaccess' => 'No access to openlab',
-			'openlabs:cantedit' => 'You can not edit this openlab',
+			'openlabs:widget:num_display' => 'Number of open labs to display',
+			'openlabs:widget:membership' => 'open lab membership',
+			'openlabs:widgets:description' => 'Display the open labs you are a member of on your profile',
+			'openlabs:noaccess' => 'No access to open lab',
+			'openlabs:cantedit' => 'You can not edit this open lab',
 			'openlabs:saved' => 'openlab saved',
-			'openlabs:featured' => 'Featured openlabs',
+			'openlabs:featured' => 'Featured open labs',
 			'openlabs:makeunfeatured' => 'Unfeature',
 			'openlabs:makefeatured' => 'Make featured',
-			'openlabs:featuredon' => 'You have made this openlab a featured one.',
-			'openlabs:unfeature' => 'You have removed this openlab from the featured list',
+			'openlabs:featuredon' => 'You have made this open lab a featured one.',
+			'openlabs:unfeature' => 'You have removed this open lab from the featured list',
 			'openlabs:joinrequest' => 'Request membership',
-			'openlabs:join' => 'Join openlab',
-			'openlabs:leave' => 'Leave openlab',
+			'openlabs:join' => 'Join open lab',
+			'openlabs:leave' => 'Leave open lab',
 			'openlabs:invite' => 'Invite people',
 			'openlabs:inviteto' => "Invite friends to '%s'",
 			'openlabs:nofriends' => "You have no friends left who have not been invited to this openlab.",
-			'openlabs:viaopenlabs' => "via openlabs",
-			'openlabs:openlab' => "openlab",
+			'openlabs:viaopenlabs' => "via open labs",
+			'openlabs:openlab' => "open lab",
 			'openlabs:search:tags' => "tag",
 
-			'openlabs:memberlist' => "openlab members",
+			'openlabs:memberlist' => "open lab members",
 			'openlabs:membersof' => "Members of %s",
 			'openlabs:members:more' => "View more members",
 
 			'openlabs:notfound' => "openlab not found",
-			'openlabs:notfound:details' => "The requested openlab either does not exist or you do not have access to it",
+			'openlabs:notfound:details' => "The requested open lab either does not exist or you do not have access to it",
 
 			'openlabs:requests:none' => 'There are no outstanding membership requests at this time.',
 
@@ -82,26 +86,24 @@
 			 */
 			'openlabs:access:private' => 'Closed - Users must be invited',
 			'openlabs:access:public' => 'Open - Any user may join',
-			'openlabs:closedopenlab' => 'This openlab has a closed membership.',
+			'openlabs:closedopenlab' => 'This open lab has a closed membership.',
 			'openlabs:closedopenlab:request' => 'To ask to be added, click the "request membership" menu link.',
 			'openlabs:visibility' => 'Who can see this openlab?',
 
 			/*
 			openlab tools
 			*/
-			'openlabs:enablepages' => 'Enable openlab pages',
-			'openlabs:enableforum' => 'Enable openlab discussion',
-			'openlabs:enablefiles' => 'Enable openlab files',
+			'openlabs:enablepages' => 'Enable open lab pages',
+			'openlabs:enableforum' => 'Enable open lab discussion',
+			'openlabs:enablefiles' => 'Enable open lab files',
 			'openlabs:yes' => 'yes',
 			'openlabs:no' => 'no',
 
 			'openlab:created' => 'Created %s with %d posts',
 			'openlabs:lastupdated' => 'Last updated %s by %s',
 			'openlabs:lastcomment' => 'Last comment %s by %s',
-			'openlabs:pages' => 'openlab pages',
-			'openlabs:files' => 'openlab files',
-
-			/*
+			'openlabs:pages' => 'Open Lab pages',
+			'openlabs:files' => 'Open Lab files',/*
 			openlab forum strings
 			*/
 
@@ -131,10 +133,10 @@
 			'openlabs:topicsticky' => 'Sticky',
 			'openlabs:topicisclosed' => 'This topic is closed.',
 			'openlabs:topiccloseddesc' => 'This topic has now been closed and is not accepting new comments.',
-			'openlabtopic:error' => 'Your openlab topic could not be created. Please try again or contact a system administrator.',
+			'openlabtopic:error' => 'Your open lab topic could not be created. Please try again or contact a system administrator.',
 			'openlabs:forumpost:edited' => "You have successfully edited the forum post.",
 			'openlabs:forumpost:error' => "There was a problem editing the forum post.",
-			'openlabs:privateopenlab' => 'This openlab is closed. Requesting membership.',
+			'openlabs:privateopenlab' => 'This open lab is closed. Requesting membership.',
 			'openlabs:notitle' => 'openlabs must have a title',
 			'openlabs:cantjoin' => 'Can not join openlab',
 			'openlabs:cantleave' => 'Could not leave openlab',
@@ -222,7 +224,7 @@ or click below to view the openlab's join requests:
 			/**
 			 * Action messages
 			 */
-			'openlab:deleted' => 'openlab and openlab contents deleted',
+			'openlab:deleted' => 'openlab and open lab contents deleted',
 			'openlab:notdeleted' => 'openlab could not be deleted',
 
 			'openlabpost:deleted' => 'openlab posting successfully deleted',

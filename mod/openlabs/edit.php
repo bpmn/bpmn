@@ -18,7 +18,7 @@
 	
 	if (($openlab) && ($openlab->canEdit()))
 	{
-		$body .= elgg_view("forms/openlabs/edit", array('entity' => $openlab));
+		$body .= elgg_view("openlab_forms/openlabs/edit", array('entity' => $openlab));
 			 
 	} else {
 		$body .= elgg_view('openlabs/contentwrapper',array('body' => elgg_echo('openlabs:noaccess')));

@@ -24,7 +24,7 @@
 		
          
     // Display them
-	    $area2 = elgg_view("forum/viewposts", array('entity' => $topic));
+	    $area2 = elgg_view("openlab_forum/viewposts", array('entity' => $topic));
 	    $body = elgg_view_layout("two_column_left_sidebar", '' , $area2);
 		
 	// Display page

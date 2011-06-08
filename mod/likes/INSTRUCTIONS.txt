@@ -1,0 +1,18 @@
+** INSTALLATION **
+	To know how to install it, please take a look to the README.txt file. 
+	
+** Using this plugin with another plugins **
+	If you would like to use this plugin with anohter plugins then it is very simple.
+	-To print it in an object view, add the following code line to the view of your object.
+		
+		echo elgg_view('input/like', array('entity' => $vars['entity']));
+		
+	-To add it in your object's river, then add the following code line.
+		
+		extend_view('river/object/yourobject/create', 'likes/river/item');
+		
+		Example:
+		extend_view('river/forum/topic/create', 'likes/river/item');
+		
+	Enjoy it!	
+		

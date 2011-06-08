@@ -11,6 +11,10 @@ if ($vars['entity']->file_enable != 'no') {
    <?php
         if ($context=get_context()== "teams"){
             $name_box="team";
+        }
+        // STD le titre de la "File box" dans le profile de l'entity group varie suivant le contexte.
+        else  if ($context=get_context()== "openlabs"){
+            $name_box="openlabs";
         } else {
             $name_box="group";
         }

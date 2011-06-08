@@ -19,7 +19,7 @@
 	
 	if (($openlab) && ($openlab->canEdit()))
 	{	
-		$area2 .= elgg_view("forms/openlabs/invite", array('entity' => $openlab));
+		$area2 .= elgg_view("openlab_forms/openlabs/invite", array('entity' => $openlab));
 			 
 	} else {
 		$area2 .= elgg_echo("openlabs:noaccess");

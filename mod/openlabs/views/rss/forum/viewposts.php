@@ -15,7 +15,7 @@
     	$post->title = '';
     	$post->description = $post->value;
     	echo elgg_view('object/default', array('entity' => $post));
-	    // echo elgg_view("forum/topicposts",array('entity' => $post));
+	    // echo elgg_view("openlab_forum/topicposts",array('entity' => $post));
 		
 	}
 

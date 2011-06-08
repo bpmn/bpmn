@@ -12,7 +12,7 @@
 	// Render the file upload page
 	$title = elgg_echo("openlabs:new");
 	$area2 = elgg_view_title($title);
-	$area2 .= elgg_view("forms/openlabs/edit");
+	$area2 .= elgg_view("openlab_forms/openlabs/edit");
 	
 	$body = elgg_view_layout('two_column_left_sidebar', $area1, $area2);
 	

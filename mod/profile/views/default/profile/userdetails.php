@@ -1,172 +1,164 @@
 <?php
 
-	/**
-	 * Elgg user display (details)
-	 *
-	 * @package ElggProfile
-	 *
-	 * @uses $vars['entity'] The user entity
-	 */
+/**
+* Elgg user display (details)
+*
+* @package ElggProfile
+*
+* @uses $vars['entity'] The user entity
+*/
 
-	if ($vars['full'] == true) {
-		$iconsize = "medium";
-	} else {
-		$iconsize = "medium";
+if ($vars['full'] == true) {
+	$iconsize = "medium";
+} else {
+	$iconsize = "medium";
 	}
 
-	// wrap all profile info
-	echo "<div id=\"profile_info\">";
+// wrap all profile info
+echo "<div id=\"profile_info\">";
+
 
 ?>
 
 <table cellspacing="0">
-<tr>
-<td>
+    <tr>
+        <td>
 
 <?php
+// wrap the icon and links in a div
+echo "<div id=\"profile_info_column_left\">";
 
-	// wrap the icon and links in a div
-	echo "<div id=\"profile_info_column_left\">";
-
-	echo "<div id=\"profile_icon_wrapper\">";
-	// get the user's main profile picture
-	echo elgg_view(
-						"profile/icon", array(
-												'entity' => $vars['entity'],
-												//'align' => "left",
-												'size' => $iconsize,
-												'override' => true,
-											)
-					);
+echo "<div id=\"profile_icon_wrapper\">";
+// get the user's main profile picture
+echo elgg_view(
+        "profile/icon", array(
+    'entity' => $vars['entity'],
+    //'align' => "left",
+    'size' => $iconsize,
+    'override' => true,
+        )
+);
 
 
-	echo "</div>";
-	echo "<div class=\"clearfloat\"></div>";
-	// display relevant links
-	echo elgg_view("profile/profilelinks", array("entity" => $vars['entity']));
+echo "</div>";
+echo "<div class=\"clearfloat\"></div>";
+// display relevant links
+echo elgg_view("profile/profilelinks", array("entity" => $vars['entity']));
 
-	// close profile_info_column_left
-	echo "</div>";
-
+// close profile_info_column_left
+echo "</div>";
 ?>
-</td>
-<td>
+        </td>
+        <td>
 
-	<div id="profile_info_column_middle" >
-			<?php
-
-		if ($vars['entity']->canEdit()) {
-
-	?>
-		<p class="profile_info_edit_buttons">
-			<a href="<?php echo $vars['url']; ?>pg/profile/<?php echo $vars['entity']->username; ?>/edit/"><?php echo elgg_echo("profile:edit"); ?></a>
-		</p>
-	<?php
-
-		}
-
-	?>
+            <div id="profile_info_column_middle" >
+            <?php
+            if ($vars['entity']->canEdit()) {
+                ?>
+                    <p class="profile_info_edit_buttons">
+                        <a href="<?php echo $vars['url']; ?>pg/profile/<?php echo $vars['entity']->username; ?>/edit/"><?php echo elgg_echo("profile:edit"); ?></a>
+                    </p>
+                    <?php
+                }
+                ?>
 
 
 
-	<?php
+                <?php
+                // Simple XFN
+                $rel_type = "";
+                if (get_loggedin_userid() == $vars['entity']->guid) {
+                    $rel_type = 'me';
+                } elseif (check_entity_relationship(get_loggedin_userid(), 'friend', $vars['entity']->guid)) {
+                    $rel_type = 'friend';
+                }
 
-	// Simple XFN
-	$rel_type = "";
-	if (get_loggedin_userid() == $vars['entity']->guid) {
-		$rel_type = 'me';
-	} elseif (check_entity_relationship(get_loggedin_userid(), 'friend', $vars['entity']->guid)) {
-		$rel_type = 'friend';
-	}
+                if ($rel_type) {
+                    $rel = "rel=\"$rel_type\"";
+                }
 
-	if ($rel_type) {
-		$rel = "rel=\"$rel_type\"";
-	}
+                // display the users name
+                echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
+                $annotations = $vars['entity']->getAnnotations('rating', 100000000, 0, desc);
+                // $annotationsCount = count($annotations) ; 
+                $annotationsCount = $annotations[0]->value ; 
+                echo "<p> That user has been rated ".$annotationsCount." time(s)</p>" ; 
 
-	// display the users name
-	echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
+                //insert a view that can be extended
+                echo elgg_view("profile/status", array("entity" => $vars['entity']));
 
-	//insert a view that can be extended
-	echo elgg_view("profile/status", array("entity" => $vars['entity']));
+                if ($vars['full'] == true) {
+                    ?>
+                    <?php
+                    $even_odd = null;
 
-		if ($vars['full'] == true) {
+                    if (is_array($vars['config']->profile) && sizeof($vars['config']->profile) > 0)
+                        foreach ($vars['config']->profile as $shortname => $valtype) {
+                            if ($shortname != "description") {
+                                $value = $vars['entity']->$shortname;
+                                if (!empty($value)) {
 
-	?>
-	<?php
-		$even_odd = null;
+                                    //This function controls the alternating class
+                                    $even_odd = ( 'odd' != $even_odd ) ? 'odd' : 'even';
+                                    ?>
+                                    <p class="<?php echo $even_odd; ?>">
+                                        <b><?php
+                    echo elgg_echo("profile:{$shortname}");
+                                    ?>: </b>
+                                    <?php
+                                    $options = array(
+                                        'value' => $vars['entity']->$shortname
+                                    );
 
-		if (is_array($vars['config']->profile) && sizeof($vars['config']->profile) > 0)
-			foreach($vars['config']->profile as $shortname => $valtype) {
-				if ($shortname != "description") {
-					$value = $vars['entity']->$shortname;
-					if (!empty($value)) {
+                                    if ($valtype == 'tags') {
+                                        $options['tag_names'] = $shortname;
+                                    }
 
-						//This function controls the alternating class
-						$even_odd = ( 'odd' != $even_odd ) ? 'odd' : 'even';
+                                    echo elgg_view("output/{$valtype}", $options);
+                                    ?>
 
-						?>
-						<p class="<?php echo $even_odd; ?>">
-							<b><?php
+                                    </p>
 
-							echo elgg_echo("profile:{$shortname}");
+                                        <?php
+                                    }
+                                }
+                            }
+                    }
+                    ?>
+            </div><!-- /#profile_info_column_middle -->
 
-							?>: </b>
-							<?php
-							$options = array(
-								'value' => $vars['entity']->$shortname
-							);
+        </td>
+    </tr>
+                    <?php if (!get_plugin_setting('user_defined_fields', 'profile')) { ?>
+        <tr>
+            <td colspan="2">
+                <div id="profile_info_column_right">
+                    <p class="profile_aboutme_title"><b><?php echo elgg_echo("profile:aboutme"); ?></b></p>
 
-							if ($valtype == 'tags') {
-								$options['tag_names'] = $shortname;
-							}
+                    <?php if ($vars['entity']->isBanned()) { ?>
+                        <div id="profile_banned">
+                        <?php
+                        echo elgg_echo('profile:banned');
+                        ?>
+                        </div><!-- /#profile_info_column_right -->
 
-							echo elgg_view("output/{$valtype}", $options);
+    <?php } else { ?>
 
-							?>
+            <?php
+            echo elgg_view('output/longtext', array('value' => $vars['entity']->description));
+            //echo autop(filter_tags($vars['entity']->description));
+            ?>
 
-						</p>
+    <?php } ?>
 
-						<?php
-					}
-				}
-			}
-		}
+                </div><!-- /#profile_info_column_right -->
 
-	?>
-	</div><!-- /#profile_info_column_middle -->
-
-</td>
-</tr>
-<?php if (!get_plugin_setting('user_defined_fields', 'profile')) {?>
-<tr>
-<td colspan="2">
-	<div id="profile_info_column_right">
-	<p class="profile_aboutme_title"><b><?php echo elgg_echo("profile:aboutme"); ?></b></p>
-
-	<?php if ($vars['entity']->isBanned()) { ?>
-		<div id="profile_banned">
-		<?php
-			echo elgg_echo('profile:banned');
-		?>
-		</div><!-- /#profile_info_column_right -->
-
-	<?php } else { ?>
-
-		<?php
-		echo elgg_view('output/longtext', array('value' => $vars['entity']->description));
-		//echo autop(filter_tags($vars['entity']->description));
-		?>
-
-	<?php } ?>
-
-	</div><!-- /#profile_info_column_right -->
-
-</td>
+            </td>
 
 
 
-</tr>
-<?php } ?>
+        </tr>
+                <?php } ?>
 
 </table>
 

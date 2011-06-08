@@ -18,7 +18,7 @@
 	//get any forum topics
 	$topics = list_entities_from_annotations("object", "openlabforumtopic", "openlab_topic_post", "", 20, 0, $openlab_guid, false, false, false);
 	set_context('search');	
-	$area2 = elgg_view("forum/topics", array('topics' => $topics, 'openlab_guid' => $openlab_guid));
+	$area2 = elgg_view("openlab_forum/topics", array('topics' => $topics, 'openlab_guid' => $openlab_guid));
 	set_context('openlabs');
 	
 	$body = elgg_view_layout('two_column_left_sidebar',$area1, $area2);
