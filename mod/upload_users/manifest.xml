@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+        <field key="author" value="Jaakko Naakka / Mediamaisteri Group" />
+        <field key="version" value="0.2" />
+        <field key="description" value="Create user accounts from a CSV file." />
+        <field key="website" value="http://www.mediamaisteri.com/" />
+        <field key="copyright" value="(C) Mediamaisteri Group 2009" />
+		<field key="licence" value="GNU Public License version 2" />
+</plugin_manifest>

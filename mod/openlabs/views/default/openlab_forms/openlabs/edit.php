@@ -49,7 +49,6 @@
 			
 		}
 ?>
-        // STD Desactivation des choix groups
        
 	<p>
 		<label>

@@ -63,6 +63,13 @@ $release = get_version(true);
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery.form.js"></script>
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>_css/js.php?lastcache=<?php echo $vars['config']->lastcache; ?>&amp;js=initialise_elgg&amp;viewtype=<?php echo $vars['view']; ?>"></script>
 <?php
+        $context = get_context()  ; 
+        
+        if (isset($context) && $context == "cis")
+        {
+            echo elgg_view('mycis/rgraph',$vars);
+        }
+        
 	global $pickerinuse;
 	if (isset($pickerinuse) && $pickerinuse == true) {
 ?>
@@ -80,8 +87,18 @@ $release = get_version(true);
 		echo elgg_view('metatags',$vars);
 	?>
 	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-		});
+<?php 
+                            if (isset($context) && $context != "cis") 
+                            {
+                                $initJs = "jQuery(document).ready(function($) {});" ; 
+                            }
+                            else
+                            {
+                                $initJs = "jQuery(document).ready(function($) { init() ; });" ; 
+                            }
+
+                            echo $initJs  ; 
+?>
 	</script>
 </head>
 

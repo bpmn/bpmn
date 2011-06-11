@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+    <field key="author" value="Stephane Tallard" />
+    <field key="version" value="0.1" />
+    <field key="description" value="the boopinn CIS plugin" />
+    <field key="website" value="http://blog.boopinn.com/" />
+    <field key="copyright" value="(C) boopinn 2011" />
+    <field key="licence" value="License here" />
+    <field key="elgg_version" value="2009030702" />    
+</plugin_manifest>

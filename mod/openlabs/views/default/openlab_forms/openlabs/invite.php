@@ -13,7 +13,6 @@
 ?>
 <div class="contentWrapper">
 <form action="<?php echo $vars['url']; ?>action/openlabs/invite" method="post">
-    <h1>Hello from invite.php in openlabs_forms/openlabs</h1>
 	<?php
         
 	echo elgg_view('input/securitytoken');
