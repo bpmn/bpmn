@@ -22,7 +22,9 @@
 
 <center>
 <b>
-<span style="color:white">Boopinn Copyrights 2011</span></b>
+<small>
+<span style="color:black">Boopinn Copyrights 2011</span></b>
+</small>
 </center>
 
 <!--

@@ -16,10 +16,50 @@
 <div id="elgg_topbar">
 
 <div id="elgg_topbar_container_left">
-	<div class="toolbarimages">
-		<a href="<?php echo get_loggedin_user()->getURL(); ?>"><img class="user_mini_avatar" src="<?php echo get_loggedin_user()->getIcon('topbar'); ?>" alt="User avatar" /></a>
+<div class="toolbarlinks3">
+<?php
+$contents = "";
 
-	</div>
+// is there a page owner?
+$owner = page_owner_entity();
+if ($owner instanceof elggentity) {
+	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
+		$info = $owner->name;
+	}
+	$display = " user:" . $info;
+
+
+
+	$contents = $display;
+}
+
+echo $contents;
+?>
+
+</div>
+
+<div class="toolbarlinks4">
+<?php
+$contents = "";
+
+// is there a page owner?
+$owner = page_owner_entity();
+if ($owner instanceof elggentity) {
+	$icon = elgg_view("profile/icon",array('entity' => $owner, 'size' => 'tiny'));
+	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
+		$info = '<a href="' . $owner->geturl() . '">' . $owner->name . '</a>';
+	}
+	$display = "<div id=\"owner_block_icon\">" . $icon . "</div>";
+
+	$contents .= $display;
+}
+
+echo $contents;
+?>
+
+</div>
+
+
 	<div class="toolbarlinks">
 		<a href="<?php echo $vars['url']; ?>pg/dashboard/" class="pagelinks"><?php echo elgg_echo('dashboard'); ?></a>
 	</div>
@@ -38,17 +78,19 @@
 		<a href="<?php echo $vars['url']; ?>pg/settings/" class="usersettings"><?php echo elgg_echo('settings'); ?></a>
 
 			</div>
-		
 
 
-		<div class="toolbarlinks2">
-		<?php	
+
+
+
+<div class="toolbarlinks2">
+<?php	
 			// The administration link is for admin or site admin users only
 			if ($vars['user']->isAdmin()) {
 
 		?>
 
-			<a href="<?php echo $vars['url']; ?>pg/admin/" class="usersettings"><?php echo elgg_echo("admin"); ?></a>
+<a href="<?php echo $vars['url']; ?>pg/admin/" class="usersettings"><?php echo elgg_echo("admin"); ?></a>
 
 		<?php
 
@@ -58,15 +100,18 @@
 	</div>
 
 
+
+
+
 </div>
 
 
 <div id="elgg_topbar_container_right">
-		<small>
-			<?php echo elgg_view('output/url', array('href' => "{$vars['url']}action/logout", 'text' => elgg_echo('logout'), 'is_action' => TRUE)); ?>
-		</small>
-</div>
+<small>
+<?php echo elgg_view('output/url', array('href' => "{$vars['url']}action/logout", 'text' => elgg_echo('logout'), 'is_action' => TRUE)); ?>
+</small>
 
+</div>
 
 </div><!-- /#elgg_topbar -->
 

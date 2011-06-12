@@ -11,11 +11,11 @@
 
 
 
-function boopinn_theme_init()	{
+function BoopinnTheme_white_init()	{
 
 }
 
-register_elgg_event_handler('init','system','boopinn_theme_init');
+register_elgg_event_handler('init','system','BoopinnTheme_white_init');
 
 ?>
 
