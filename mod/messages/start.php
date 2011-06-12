@@ -42,7 +42,7 @@
 				register_entity_url_handler('messages_url','object','messages');
 				
 	        // Extend hover-over and profile menu	
-				elgg_extend_view('profile/menu/links','messages/menu');
+//				elgg_extend_view('profile/menu/links','messages/menu');
 				
 			// Register a notification handler for site messages
 				register_notification_handler("site", "messages_site_notify_handler");

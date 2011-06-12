@@ -11,8 +11,10 @@
 		 * Menu items and titles
 		 */
 
+
 			'openlabs' => "Open Labs",
 			'openlabs:owned' => "openlabs you own",
+
 			'openlabs:yours' => "Your openlabs",
 			'openlabs:user' => "%s's openlabs",
 			'openlabs:all' => "All site openlabs",
@@ -20,15 +22,18 @@
 			'openlabs:edit' => "Edit open lab",
 			'openlabs:delete' => 'Delete open lab',
 			'openlabs:membershiprequests' => 'Manage join requests',
+
 			'openlabs:invitations' => 'open lab invitations',
 
 			'openlabs:icon' => 'open lab icon (leave blank to leave unchanged)',
 			'openlabs:name' => 'open lab name',
 			'openlabs:username' => 'open lab short name (displayed in URLs, alphanumeric characters only)',
+
 			'openlabs:description' => 'Description',
 			'openlabs:briefdescription' => 'Brief description',
 			'openlabs:interests' => 'Tags',
 			'openlabs:website' => 'Website',
+
 			'openlabs:members' => 'open lab members',
 			'openlabs:membership' => "open lab membership permissions",
 			'openlabs:access' => "Access permissions",
@@ -145,7 +150,11 @@
 			'openlabs:alreadymember' => 'You are already a member of this openlab!',
 			'openlabs:userinvited' => 'User has been invited.',
 			'openlabs:usernotinvited' => 'User could not be invited.',
-			'openlabs:useralreadyinvited' => 'User has already been invited',
+            		'openlabs:usersuggested' => 'User has been suggested.',
+			'openlabs:usernotsuggested' => 'User could not be suggested.',
+			'openlabs:useralreadysuggested' => 'the openlab %s has already been suggested to the %s',
+            		'openlabs:useralreadyinvited' => '%s has already been invited to the openlab %s',
+			'openlabs:useralreadymember' => '%s is already a member of the openlab %s',
 			'openlabs:updated' => "Last comment",
 			'openlabs:invite:subject' => "%s you have been invited to join %s!",
 			'openlabs:started' => "Started by",
@@ -156,7 +165,12 @@
 %s invited you to join the '%s' openlab. Click below to view your invitations:
 
 %s",
+                        'openlabs:suggest:subject' => "%s you have been suggested the openlab %s!",
+			'openlabs:suggest:body' => "Hi %s,
 
+%s suggested you to join the '%s' openlab. Click below to view the suggestion:
+
+%s",
 			'openlabs:welcome:subject' => "Welcome to the %s openlab!",
 			'openlabs:welcome:body' => "Hi %s!
 
@@ -223,6 +237,7 @@ or click below to view the openlab's join requests:
 			'openlabs:deletewarning' => "Are you sure you want to delete this openlab? There is no undo!",
 
 			'openlabs:invitekilled' => 'The invite has been deleted.',
+                        'openlabs:suggestkilled' => 'The suggestion has been deleted.',
 			'openlabs:joinrequestkilled' => 'The join request has been deleted.',
 
                         // rate

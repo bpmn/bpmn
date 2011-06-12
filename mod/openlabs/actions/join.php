@@ -34,6 +34,7 @@
 
 				// Remove any invite or join request flags
 				remove_entity_relationship($openlab->guid, 'invited', $user->guid);
+                                remove_entity_relationship($openlab->guid, 'suggested', $user->guid);
 				remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
 
 				// add to river

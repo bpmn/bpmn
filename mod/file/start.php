@@ -40,7 +40,7 @@ function file_init() {
     elgg_extend_view('css', 'file/css');
 
     // Extend hover-over and profile menu	
-    elgg_extend_view('profile/menu/links', 'file/menu');
+    //elgg_extend_view('profile/menu/links', 'file/menu');
 
     // Register a page handler, so we can have nice URLs
     register_page_handler('file', 'file_page_handler');
@@ -326,4 +326,5 @@ register_action("file/delete", false, $CONFIG->pluginspath . "file/actions/delet
 
 // temporary - see #2010
 register_action("file/download", false, $CONFIG->pluginspath . "file/actions/download.php");
+
 ?>

@@ -21,7 +21,8 @@
 
 		'profile:yours' => "Your profile",
 		'profile:user' => "%s's profile",
-
+                'profile:invite' =>"Invite %s to...",
+                'profile:suggest'=>"Suggest to %s...",
 		'profile:edit' => "Edit profile",
 		'profile:profilepictureinstructions' => "The profile picture is the image that's displayed on your profile page. <br /> You can change it as often as you'd like. (File formats accepted: GIF, JPG or PNG)",
 		'profile:icon' => "Profile picture",
@@ -84,6 +85,10 @@
 		'profile:icon:noaccess' => 'You cannot change this profile icon',
 		'profile:field_too_long' => 'Cannot save your profile information because the "%s" section is too long.',
 
+         /**
+	 * Submit suggestion
+	 */
+                'suggest'=>"Suggest",
 	);
 
 	add_translation("en",$english);

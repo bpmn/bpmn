@@ -16,6 +16,8 @@ $english = array(
 	'search:comment_on' => 'Comment on "%s"',
 	'search:comment_by' => 'by',
 	'search:unavailable_entity' => 'Unavailable Entity',
+
+        'item:group:teams'=> 'Teams',
 );
 
 add_translation('en', $english);

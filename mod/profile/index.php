@@ -9,6 +9,12 @@
 	// Get the Elgg engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
 
+/*test*/
+                $view1=page_owner_entity()->username;
+                $view2=page_owner_entity()->getGUID();
+                $view3=page_owner();
+                $view4=get_loggedin_user()->guid;
+
 	// Get the username
 		$username = get_input('username');
 		

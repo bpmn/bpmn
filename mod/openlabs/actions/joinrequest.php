@@ -39,6 +39,7 @@ if (($openlab) && ($user) && (!$openlab->isMember($user)))
 		if ($openlab->join($user))
 		{
 			// Remove relationships
+                        remove_entity_relationship($openlab->guid, 'suggested', $user->guid);
 			remove_entity_relationship($openlab->guid, 'invited', $user->guid);
 			remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
 
@@ -59,7 +60,9 @@ if (($openlab) && ($user) && (!$openlab->isMember($user)))
 		// If join request not already made
 		if (!check_entity_relationship($user->guid, 'membership_request', $openlab->guid))
 		{
-			// Add membership requested
+			// Remove relationships
+                        remove_entity_relationship($openlab->guid, 'suggested', $user->guid);
+                        // Add membership requested
 			add_entity_relationship($user->guid, 'membership_request', $openlab->guid);
 
 			// Send email

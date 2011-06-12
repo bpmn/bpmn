@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Elgg openlabs plugin
  *
@@ -23,7 +22,7 @@ function openlabs_init() {
     }
 
     // register for search
-    register_entity_type('openlab', '');
+    register_entity_type('group','openlab');
 
     // Register a page handler, so we can have nice URLs
     register_page_handler('openlabs', 'openlabs_page_handler');
@@ -45,6 +44,7 @@ function openlabs_init() {
     register_action("openlabs/leave", false, $CONFIG->pluginspath . "openlabs/actions/leave.php");
     register_action("openlabs/joinrequest", false, $CONFIG->pluginspath . "openlabs/actions/joinrequest.php");
     register_action("openlabs/killrequest", false, $CONFIG->pluginspath . "openlabs/actions/openlabskillrequest.php");
+    register_action("openlabs/killsuggestion",false,$CONFIG->pluginspath . "openlabs/actions/openlabskillsuggestion.php");
     register_action("openlabs/killinvitation", false, $CONFIG->pluginspath . "openlabs/actions/openlabskillinvitation.php");
     register_action("openlabs/addtoopenlab", false, $CONFIG->pluginspath . "openlabs/actions/addtoopenlab.php");
     register_action("openlabs/invite", false, $CONFIG->pluginspath . "openlabs/actions/invite.php");
@@ -242,7 +242,8 @@ function openlabs_submenus() {
             add_submenu_item(elgg_echo('openlabs:owned'), $CONFIG->wwwroot . "pg/openlabs/owned/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:yours'), $CONFIG->wwwroot . "pg/openlabs/member/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:invitations'), $CONFIG->wwwroot . "pg/openlabs/invitations/" . $_SESSION['user']->username, '1openlabslinks');
-        }
+            add_submenu_item(elgg_echo('openlabs:suggestions'), $CONFIG->wwwroot . "pg/openlabs/suggestions/" . $_SESSION['user']->username, '1openlabslinks');
+           }
         add_submenu_item(elgg_echo('openlabs:all'), $CONFIG->wwwroot . "pg/openlabs/all/", '1openlabslinks');
     }
 }
@@ -277,6 +278,9 @@ function openlabs_page_handler($page) {
     switch ($page[0]) {
         case 'invitations':
             include($CONFIG->pluginspath . "openlabs/invitations.php");
+            break;
+        case 'suggestions':
+            include($CONFIG->pluginspath . "openlabs/suggestions.php");
             break;
         case "world":
         case "all":
@@ -469,6 +473,7 @@ function openlabs_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $para
 //				$returnvalue[$page_owner->openlab_acl] = elgg_echo('openlabs:openlab') . ": " . $page_owner->name;
 //			}
 //		}
+
     return $returnvalue;
 }
 
@@ -730,12 +735,36 @@ function openlabs_get_invited_openlabs($user_guid, $return_guids = FALSE) {
             $guids[] = $invitation->getGUID();
         }
 
+
         return $guids;
     }
 
     return $invitations;
 }
 
+/**
+ * Grabs openlabs by suggestions
+ * Have to override all access until there's a way override access to getter functions.
+ *
+ * @param $user_guid
+ * @return unknown_type
+*/
+function openlabs_get_suggested_openlabs($user_guid, $return_guids = FALSE) {
+    $ia = elgg_set_ignore_access(TRUE);
+    $suggestions = elgg_get_entities_from_relationship(array('relationship' => 'suggested', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999));
+    elgg_set_ignore_access($ia);
+
+    if ($return_guids) {
+	$guids = array();
+        foreach ($suggestions as $suggestion) {
+            $guids[] = $suggestion->getGUID();
+	}
+
+	return $guids;
+    }
+
+    return $suggestions;
+}
 register_extender_url_handler('openlab_topicpost_url', 'annotation', 'openlab_topic_post');
 
 // Register a handler for create openlabs

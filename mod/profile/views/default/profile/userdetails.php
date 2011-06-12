@@ -1,19 +1,23 @@
 <?php
+
 /**
- * Elgg user display (details)
- *
- * @package ElggProfile
- *
- * @uses $vars['entity'] The user entity
- */
+* Elgg user display (details)
+*
+* @package ElggProfile
+*
+* @uses $vars['entity'] The user entity
+*/
+
 if ($vars['full'] == true) {
-    $iconsize = "large";
+	$iconsize = "medium";
 } else {
-    $iconsize = "medium";
-}
+	$iconsize = "medium";
+	}
 
 // wrap all profile info
 echo "<div id=\"profile_info\">";
+
+
 ?>
 
 <table cellspacing="0">
@@ -161,3 +165,4 @@ echo "</div>";
 
 
 </div><!-- /#profile_info -->
+

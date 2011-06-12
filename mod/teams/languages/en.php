@@ -71,7 +71,7 @@
 			'teams:count' => "teams created",
 			'teams:open' => "open team",
 			'teams:closed' => "closed team",
-			'teams:member' => "members",
+			'teams:member' => "member of",
 			'teams:searchtag' => "Search for teams by tag",
 
 
@@ -145,13 +145,15 @@
 			'teams:alreadymember' => 'You are already a member of this team!',
 			'teams:userinvited' => 'User has been invited.',
 			'teams:usernotinvited' => 'User could not be invited.',
-			'teams:useralreadyinvited' => 'User has already been invited',
+                        'teams:useralreadyinvited' => '%s has already been invited to the team %s',
+			'teams:useralreadymember' => '%s is already a member of the team %s',
 			'teams:updated' => "Last comment",
-			'teams:invite:subject' => "%s you have been invited to join %s!",
+
 			'teams:started' => "Started by",
 			'teams:joinrequest:remove:check' => 'Are you sure you want to remove this join request?',
 			'teams:invite:remove:check' => 'Are you sure you want to remove this invite?',
-			'teams:invite:body' => "Hi %s,
+			'teams:invite:subject' => "%s you have been invited to join %s!",
+                        'teams:invite:body' => "Hi %s,
 
 %s invited you to join the '%s' team. Click below to view your invitations:
 
