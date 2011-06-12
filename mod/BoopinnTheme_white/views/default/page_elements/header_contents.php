@@ -21,9 +21,12 @@
 
 <div id="header_topbar_container_search">
 <?php echo elgg_view('page_elements/searchbox'); ?>
-</div>
+</div><!-- search-->
+
 
 </div>
+
+
 </div><!-- /#wrapper_header -->
 </div><!-- /#layout_header -->
 
