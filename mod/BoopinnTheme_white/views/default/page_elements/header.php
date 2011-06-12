@@ -56,7 +56,7 @@ $release = get_version(true);
 	<meta name="ElggRelease" content="<?php echo $release; ?>" />
 	<meta name="ElggVersion" content="<?php echo $version; ?>" />
 	<title><?php echo $title; ?></title>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $vars['url']."mod/boopinn_theme/_graphics/favicon.ico"; ?>" />
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $vars['url']."mod/BoopinnTheme_white/_graphics/favicon.ico"; ?>" />
 
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-ui-1.7.2.custom.min.js"></script>
