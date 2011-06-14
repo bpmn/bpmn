@@ -87,9 +87,9 @@ if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes') {
 }
 
 // Set openlab tool options
-$openlab->files_enable = get_input('files_enable', 'yes');
-$openlab->pages_enable = get_input('pages_enable', 'no');
-$openlab->forum_enable = get_input('forum_enable', 'no');
+$openlab->files_enable = 'yes';
+$openlab->pages_enable = 'yes';
+$openlab->forum_enable = 'yes';
 
 // Set openlab tool options
 /* if (isset($CONFIG->openlab_tool_options)) {

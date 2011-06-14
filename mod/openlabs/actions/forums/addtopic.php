@@ -42,7 +42,7 @@
 	// Set the openlab it belongs to
 			$openlabtopic->container_guid = $openlab_guid;
 	// For now, set its access to public (we'll add an access dropdown shortly)
-			$openlabtopic->access_id = $access;
+			$openlabtopic->access_id = ACCESS_PUBLIC;;
 	// Set its title and description appropriately
 			$openlabtopic->title = $title;
 	// Before we can set metadata, we need to save the topic
@@ -55,7 +55,7 @@
 				$openlabtopic->tags = $tagarray;
 			}
 	// add metadata
-	        $openlabtopic->status = $status; // the current status i.e sticky, closed, resolved, open
+	        $openlabtopic->status = "open"; // the current status i.e sticky, closed, resolved, open
 	           
     // now add the topic message as an annotation
         	$openlabtopic->annotate('openlab_topic_post',$message,$access, $user);   

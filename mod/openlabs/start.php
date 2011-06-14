@@ -174,9 +174,7 @@ function openlabs_fields_setup() {
     $profile_defaults = array(
         'name' => 'text',
         'description' => 'longtext',
-        'briefdescription' => 'text',
-        'interests' => 'tags',
-        'website' => 'url',
+        'interests' => 'tags'
     );
 
     $CONFIG->openlab = trigger_plugin_hook('profile:fields', 'openlab', NULL, $profile_defaults);
