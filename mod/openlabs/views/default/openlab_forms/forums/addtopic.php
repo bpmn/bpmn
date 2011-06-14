@@ -69,23 +69,6 @@
 			</label>
 		</p>
 		
-		<!-- set the topic status -->
-		<p>
-		    <label><?php echo elgg_echo("openlabs:topicstatus"); ?><br />
-		    <select name="status">
-		        <option value="open" <?php if($status == "") echo "SELECTED";?>><?php echo elgg_echo('openlabs:topicopen'); ?></option>
-		        <option value="closed" <?php if($status == "closed") echo "SELECTED";?>><?php echo elgg_echo('openlabs:topicclosed'); ?></option>
-		    </select>
-		    </label>
-		</p>
-		
-		<!-- access -->
-		<p>
-			<label>
-				<?php echo elgg_echo('access'); ?><br />
-				<?php echo elgg_view('input/access', array('internalname' => 'access_id','value' => $access_id)); ?>
-			</label>
-		</p>
 		
 		<!-- required hidden info and submit button -->
 		<p>

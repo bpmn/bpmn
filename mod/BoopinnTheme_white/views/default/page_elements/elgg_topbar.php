@@ -21,15 +21,12 @@
 $contents = "";
 
 // is there a page owner?
-$owner = page_owner_entity();
+$owner = get_loggedin_user() ; 
 if ($owner instanceof elggentity) {
-	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
+	if ($owner instanceof elgguser ) {
 		$info = $owner->name;
 	}
-	$display = " user:" . $info;
-
-
-
+	$display =  $info;
 	$contents = $display;
 }
 
