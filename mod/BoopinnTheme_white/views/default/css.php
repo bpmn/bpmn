@@ -333,7 +333,7 @@ blockquote p {
 	padding:0 0 5px 0;
 	font-size:1.25em;
 	line-height:1.2em;
-	color:#fefefe;
+	color:#006699;
 }
 
 /* canvas layout: 2 column right sidebar */
@@ -497,12 +497,14 @@ margin:0;
 
 /* ***************************************
 HORIZONTAL ELGG TOPBAR
+    background: -moz-linear-gradient(center top , #F9F9F9 0pt, #E8E8E8 100%) repeat scroll 0 0 transparent;
+
 *************************************** */
 #elgg_topbar {
 	position: static;
 top:50px;
 
-    background: -moz-linear-gradient(center top , #F9F9F9 0pt, #E8E8E8 100%) repeat scroll 0 0 transparent;
+	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/background30.png) repeat-x;
  
 
 	color:#eeeeee;
@@ -536,6 +538,7 @@ top:50px;
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: 0.90em;
+	color: #fefefe;
 
 }
 
@@ -589,7 +592,7 @@ border-right: 1px solid #f0f0f0;
 #elgg_topbar_container_left .toolbarlinks3 {
 	margin:0px 0px 0px 0px;
 	float:left;
-        color:#0066dd;
+        color:#006699;
 	padding:4px 0px 0px 5px;
 }
 
@@ -2431,7 +2434,7 @@ a.toggle_customise_edit_panel:hover {
 #content_area_user_title h2 {
 	margin:0 0 0 4px;
 	padding:5px;
-	color:#fefefe;
+	color:#006699;
 	font-size:1.35em;
 	line-height:1.2em;
 }
