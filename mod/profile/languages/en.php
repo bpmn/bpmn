@@ -89,6 +89,13 @@
 	 * Submit suggestion
 	 */
                 'suggest'=>"Suggest",
+            
+            /**
+             * STD adds
+             */
+            'profile:hasbeenrated' => "That user has been rated %s time(s)" , 
+            'profile:neverbeenrated' => "That user has never been rated" , 
+            
 	);
 
 	add_translation("en",$english);

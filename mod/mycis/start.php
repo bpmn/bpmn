@@ -62,21 +62,23 @@ function getJsonStringCis($userid) {
 }
 
 function getJsonStringCisObject($cis) {
+    global $CONFIG;
     $toReturn = "";
     $listofCis = $cis->getSubNodes();
 
-    $toReturnTplte = "{id: '%s',name: '%s', data: {relation: '%s'}, children:[%s]}";
+    $toReturnTplte = "{id: '%s',name: %s, data: {relation: %s}, children:[%s]}";
     $groups = CisNode::getGroups($cis->getUser()) ; 
-    $link = "http://localhost/boopinn/pg/profile/".$cis->getUser()->name ; 
-    $relation = '<a href ="'.$link.'">'.$cis->getUser()->name.'</a>'; 
+    $htmlname = htmlentities($cis->getUser()->name); 
+    $link = $CONFIG->wwwroot."pg/profile/".rawurlencode($cis->getUser()->username) ; 
+    $relation = '<a href ="'.$link.'">'.$htmlname.'</a>'; 
     $relation = '<p>'.$relation.' is member of:</p><ul>' ; 
+   
     
     foreach ($groups as $group)
     {   
-        
         if ($group->owner_guid == $cis->getUser()->guid )
         {
-            $ascreator = "as creator" ; 
+            $ascreator = elgg_echo("mycis:ascreator") ; 
         }
         else
         {
@@ -84,19 +86,26 @@ function getJsonStringCisObject($cis) {
         }
         if ($group->subtype == "5")
         {
-            $link = "http://localhost/boopinn/pg/teams/".$group->guid.'/'.$group->name."/" ; 
-            $link = '<a href="'.$link.'">'.$group->name.'</a>' ; 
+            $htmlname = htmlentities($group->name); 
+            $link = $CONFIG->wwwroot."pg/teams/".$group->guid.'/'.rawurlencode($group->name)."/" ; 
+            $link = '<a href="'.$link.'">'.$htmlname.'</a>' ; 
             $relation .= "<li>team ".$link." ".$ascreator."</li>" ; 
         }
         else
         {
-            $link = "http://localhost/boopinn/pg/openlabs/".$group->guid."//" ; 
-            $link = '<a href="'.$link.'">'.$group->name.'</a>' ; 
+            
+            $htmlname = htmlentities($group->name); 
+            $link = $CONFIG->wwwroot."pg/openlabs/".$group->guid."/" ; 
+            $link = '<a href="'.$link.'">'.$htmlname.'</a>' ; 
             $relation .= "<li>openlab ".$link." ".$ascreator."</li>" ;
         }
     }
     $relation .= '</ul>' ; 
-    return sprintf($toReturnTplte, rand(0, 100000), $cis->getUser()->name, $relation , getJsonStringListOfCis($listofCis));
+    return sprintf($toReturnTplte, 
+                    rand(0, 100000), 
+                    json_encode($cis->getUser()->name), 
+                    json_encode($relation) , 
+                    getJsonStringListOfCis($listofCis));
 }
 
 function getJsonStringListOfCis($lstcis) {

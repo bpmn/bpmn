@@ -17,7 +17,7 @@
 	    $title = strip_tags(get_input('topictitle'));
 		$message = get_input('topicmessage');
 		$tags = get_input('topictags');
-		$access = get_input('access_id');
+		$access = ACCESS_PUBLIC;
 		$openlab_guid = (int) get_input('openlab_guid');
 		$user = $_SESSION['user']->getGUID(); // you need to be logged in to comment on a openlab forum
 		$status = get_input('status'); // sticky, resolved, closed

@@ -49,6 +49,7 @@
 		register_action("teams/killinvitation",false,$CONFIG->pluginspath . "teams/actions/teamskillinvitation.php");
 		register_action("teams/addtogroup",false, $CONFIG->pluginspath . "teams/actions/addtogroup.php");
 		register_action("teams/invite",false, $CONFIG->pluginspath . "teams/actions/invite.php");
+                register_action("teams/removemember", false, $CONFIG->pluginspath . "teams/actions/removemember.php");
 
 		// Use group widgets
 		use_widgets('teams');
@@ -231,6 +232,13 @@
 							add_submenu_item(elgg_echo('teams:joinrequest'), $url, '1teamsactions');
 						}
 					}
+                                           // If user is owner of the group 
+                                        $user_guid  = get_loggedin_userid() ; 
+                                        $owner_guid = $page_owner->getOwner() ; 
+                                        if ($user_guid == $owner_guid)
+                                        {
+                                           add_submenu_item(elgg_echo('teams:removemember'), $CONFIG->wwwroot . "pg/teams/removemember/{$page_owner->getGUID()}", '1teamslinks');
+                                        }
 				}
 
 				if($page_owner->forum_enable != "no"){
@@ -305,6 +313,10 @@
 				set_input('group_guid', $page[1]);
 				include($CONFIG->pluginspath . "teams/invite.php");
 				break;
+                        case "removemember":
+                            set_input('group_guid', $page[1]);
+                            include($CONFIG->pluginspath . "teams/removemember.php");
+                            break;
 			case "member" :
 				// User is a member of
 				set_input('username',$page[1]);
