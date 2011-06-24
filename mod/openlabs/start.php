@@ -242,6 +242,7 @@ function openlabs_submenus() {
             add_submenu_item(elgg_echo('openlabs:owned'), $CONFIG->wwwroot . "pg/openlabs/owned/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:yours'), $CONFIG->wwwroot . "pg/openlabs/member/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:invitations'), $CONFIG->wwwroot . "pg/openlabs/invitations/" . $_SESSION['user']->username, '1openlabslinks');
+            add_submenu_item(elgg_echo('openlabs:membershipreq_list'), $CONFIG->wwwroot . "pg/openlabs/membershipreq_list/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:suggestions'), $CONFIG->wwwroot . "pg/openlabs/suggestions/" . $_SESSION['user']->username, '1openlabslinks');
            }
         add_submenu_item(elgg_echo('openlabs:all'), $CONFIG->wwwroot . "pg/openlabs/all/", '1openlabslinks');
@@ -281,6 +282,10 @@ function openlabs_page_handler($page) {
             break;
         case 'suggestions':
             include($CONFIG->pluginspath . "openlabs/suggestions.php");
+            break;
+        case 'membershipreq_list':
+            set_input('username', $page[1]);
+            include($CONFIG->pluginspath . "openlabs/membershipreq_list.php");
             break;
         case "world":
         case "all":

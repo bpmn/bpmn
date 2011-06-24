@@ -15,11 +15,13 @@
 			'teams:owned' => "Teams you own",
 			'teams:yours' => "Your teams",
 			'teams:user' => "%s's teams",
-			'teams:all' => "All site teams",
+			'teams:all' => "All",
 			'teams:new' => "Create a new team",
 			'teams:edit' => "Edit team",
 			'teams:delete' => 'Delete team',
 			'teams:membershiprequests' => 'Manage join requests',
+                        'teams:membershipreq_list'=>'team join requests',
+
 			'teams:invitations' => 'Team invitations',
 
 			'teams:icon' => 'Team icon (leave blank to leave unchanged)',
@@ -68,10 +70,10 @@
 
 			
 
-			'teams:count' => "teams created",
+			'teams:count' => "teams listed",
 			'teams:open' => "open team",
 			'teams:closed' => "closed team",
-			'teams:member' => "member of",
+			'teams:member' => "members",
 			'teams:searchtag' => "Search for teams by tag",
 
 

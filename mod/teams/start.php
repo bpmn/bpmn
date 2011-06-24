@@ -17,12 +17,12 @@
 		// Set up the menu for logged in users
 		if (isloggedin())
 		{
-			add_menu(elgg_echo('teams'), $CONFIG->wwwroot . "pg/teams/owned/".$_SESSION['user']->username);
+			add_menu(elgg_echo('teams'), $CONFIG->wwwroot . "pg/teams/all/".$_SESSION['user']->username);
 			//add_menu(elgg_echo('teams:alldiscussion'),$CONFIG->wwwroot."mod/teams/discussions.php");
 		}
 		else
 		{
-			add_menu(elgg_echo('teams'), $CONFIG->wwwroot . "pg/teams/owned/".$_SESSION['user']->username);
+			add_menu(elgg_echo('teams'), $CONFIG->wwwroot . "pg/teams/all/".$_SESSION['user']->username);
 		}
 
 		// register for search
@@ -243,10 +243,11 @@
 			if (get_context() == 'teams' && !($page_owner instanceof ElggGroup)) {
 				if (isloggedin()) {
 					add_submenu_item(elgg_echo('teams:new'), $CONFIG->wwwroot."pg/teams/new/", '1teamslinks');
-					add_submenu_item(elgg_echo('teams:yours'), $CONFIG->wwwroot . "pg/teams/owned/" . $_SESSION['user']->username, '1teamslinks');
+					add_submenu_item(elgg_echo('teams:yours'), $CONFIG->wwwroot . "pg/teams/all/" . $_SESSION['user']->username, '1teamslinks');
 					//add_submenu_item(elgg_echo('teams:yours'), $CONFIG->wwwroot . "pg/teams/member/" . $_SESSION['user']->username, '1teamslinks');
 					add_submenu_item(elgg_echo('teams:invitations'), $CONFIG->wwwroot . "pg/teams/invitations/" . $_SESSION['user']->username, '1teamslinks');
-				}
+                                        add_submenu_item(elgg_echo('teams:membershipreq_list'),$CONFIG->wwwroot . "pg/teams/membershipreq_list/". $_SESSION['user']->username, '1teamslinks');
+                                }
 				//add_submenu_item(elgg_echo('teams:all'), $CONFIG->wwwroot . "pg/teams/all/", '1teamslinks');
 			}
 
@@ -285,11 +286,11 @@
 			case 'invitations':
 				include($CONFIG->pluginspath . "teams/invitations.php");
 				break;
-			case "world":
-			//case "all":
-			//	include($CONFIG->pluginspath . "teams/all.php");
-			//	break;
-			case "owned" :
+                        case 'membershipreq_list':
+                                set_input('username', $page[1]);
+				include($CONFIG->pluginspath . "teams/membershipreq_list.php");
+				break;
+			case "all" :
 				// Owned by a user
 				set_input('username', $page[1]);
 				include($CONFIG->pluginspath . "teams/index.php");

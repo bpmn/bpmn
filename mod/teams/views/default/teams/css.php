@@ -180,15 +180,15 @@
 	-webkit-border-radius: 8px; 
 	-moz-border-radius: 8px;
 }
-/* group pages widget */
-#group_pages_widget {
+/* team pages widget */
+#team_pages_widget {
 	margin:0 0 20px 0;
 	padding: 0 0 5px 0;
 	background:white;
 	-webkit-border-radius: 8px; 
 	-moz-border-radius: 8px;
 }
-#group_pages_widget .search_listing {
+#team_pages_widget .search_listing {
 	border: 2px solid #cccccc;
 }
 #right_column .filerepo_widget_singleitem {
@@ -282,7 +282,7 @@ span.timestamp {
 .teams .search_listing:hover {
 	background:#dedede;
 }
-.teams .group_count {
+.teams .team_count {
 	font-weight: bold;
 	color: #666666;
 	margin:0 0 5px 4px;

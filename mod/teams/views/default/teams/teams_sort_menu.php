@@ -11,16 +11,17 @@
 	 $filter = $vars['filter'];
 	 
 	 //url
-	 $url = $vars['url'] . "pg/teams/owned/". $_SESSION['user']->username;
+	 $url = $vars['url'] . "pg/teams/all/". $_SESSION['user']->username;
 
 ?>
 <div id="elgg_horizontal_tabbed_nav">
-<ul>
+<ul>    
+        <li <?php if($filter == "all") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=all"><?php echo elgg_echo('teams:all'); ?></a></li>
 	<li <?php if($filter == "owned") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=owned"><?php echo elgg_echo('teams:owner'); ?></a></li>
-	<li <?php if($filter == "member") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=member"><?php echo elgg_echo('teams:member'); ?></a></li>
+	
 </ul>
 </div>
-<div class="group_count">
+<div class="team_count">
 	<?php
 		echo $num_teams . " " . elgg_echo("teams:count");
 	?>

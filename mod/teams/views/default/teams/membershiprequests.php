@@ -26,6 +26,7 @@
 				)));
 			$url = elgg_add_action_tokens_to_url("{$vars['url']}action/teams/addtogroup?user_guid={$request->guid}&group_guid={$vars['entity']->guid}");
 			?>
+                        |
 			<a href="<?php echo $url; ?>" class="archive_report_button"><?php echo elgg_echo('accept'); ?></a>
 			<br /><br />
 		</div>

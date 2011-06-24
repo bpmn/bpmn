@@ -25,8 +25,10 @@
 	// offset is grabbed in the list_entities_from_relationship() function
 	$objects = list_entities_from_relationship('member',page_owner(),false,'group','openlab',0, $limit,false, false);
 	set_context('openlabs');
-	
-	$area2 .= $objects;
+
+
+
+	$area2 .= elgg_view('openlabs/contentwrapper', array('body' => $objects));
 	$body = elgg_view_layout('two_column_left_sidebar',$area1, $area2);
 	
 	// Finally draw the page

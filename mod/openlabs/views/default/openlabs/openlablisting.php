@@ -21,6 +21,14 @@
 	} else {
 		$mem = elgg_echo("openlabs:closed");
 	}
+        // afficher le status de la relation avec l'openlab
+        $member_type="";
+        if (isloggedin()){
+            if ($vars['entity']->owner_guid == get_loggedin_user()->guid)
+                $member_type="owner";
+            else
+            $member_type="member";
+            }
 
 	//for admins display the feature or unfeature option
 	if($vars['entity']->featured_openlab == "yes"){
@@ -36,7 +44,7 @@
 	if(isadminloggedin())
 		$info .= "<p><a href=\"{$url}\">{$wording}</a></p>";
 	$info .= "</div>";
-	$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\">" . $vars['entity']->name . "</a></b></p>";
+	$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\">" . $vars['entity']->name . "</a>         ".$member_type."</b></p>";
 	$info .= "<p class=\"owner_timestamp\">" . $vars['entity']->briefdescription . "</p>";
 
 	// num users, last activity, owner etc

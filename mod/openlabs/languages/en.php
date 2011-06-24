@@ -22,8 +22,9 @@
 			'openlabs:edit' => "Edit open lab",
 			'openlabs:delete' => 'Delete open lab',
 			'openlabs:membershiprequests' => 'Manage join requests',
-
+                        'openlabs:membershipreq_list'=>'open lab join requests',
 			'openlabs:invitations' => 'open lab invitations',
+                        'openlabs:suggestions' => 'open lab suggestions',
 
 			'openlabs:icon' => 'open lab icon (leave blank to leave unchanged)',
 			'openlabs:name' => 'open lab name',
