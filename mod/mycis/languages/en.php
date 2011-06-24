@@ -7,7 +7,8 @@ $english = array(
 	'mycis:graphic'	=> 'Draw my creative space',
         'mycis:cislist' => "My Creative space" , 
         'mycis:memberlist' => "My creative space members",
-        'mycis:membersof' => "Members of %s creative space"
+        'mycis:membersof' => "Members of %s creative space",
+        'mycis:ascreator' => "as creator"
 );
 
 add_translation("en", $english);

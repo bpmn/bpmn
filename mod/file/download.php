@@ -31,9 +31,13 @@
 			header("Content-Disposition: attachment; filename=\"$filename\"");
 
 		$contents = $file->grabFile();
+                echo $contents; 
+                /*
 		$splitString = str_split($contents, 8192);
 		foreach($splitString as $chunk)
-			echo $chunk;
+                {
+			echo $chunk; 
+                } */ 
 		exit;
 	} else {
 		register_error(elgg_echo("file:downloadfailed"));

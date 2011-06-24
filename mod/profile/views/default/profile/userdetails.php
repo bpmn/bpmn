@@ -82,7 +82,14 @@ echo "</div>";
                 $annotations = $vars['entity']->getAnnotations('rating', 100000000, 0, desc);
                 // $annotationsCount = count($annotations) ; 
                 $annotationsCount = $annotations[0]->value ; 
-                echo "<p> That user has been rated ".$annotationsCount." time(s)</p>" ; 
+                if ($annotationsCount == 0)
+                {
+                    echo elgg_echo('profile:neverbeenrated') ; 
+                }
+                else
+                {
+                    echo sprintf( elgg_echo('profile:hasbeenrated') , $annotationsCount) ; 
+                }
 
                 //insert a view that can be extended
                 echo elgg_view("profile/status", array("entity" => $vars['entity']));

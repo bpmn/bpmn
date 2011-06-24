@@ -48,6 +48,7 @@ function openlabs_init() {
     register_action("openlabs/killinvitation", false, $CONFIG->pluginspath . "openlabs/actions/openlabskillinvitation.php");
     register_action("openlabs/addtoopenlab", false, $CONFIG->pluginspath . "openlabs/actions/addtoopenlab.php");
     register_action("openlabs/invite", false, $CONFIG->pluginspath . "openlabs/actions/invite.php");
+    register_action("openlabs/removemember", false, $CONFIG->pluginspath . "openlabs/actions/removemember.php");
 
     // Use openlab widgets
     use_widgets('openlabs');
@@ -174,9 +175,7 @@ function openlabs_fields_setup() {
     $profile_defaults = array(
         'name' => 'text',
         'description' => 'longtext',
-        'briefdescription' => 'text',
-        'interests' => 'tags',
-        'website' => 'url',
+        'interests' => 'tags'
     );
 
     $CONFIG->openlab = trigger_plugin_hook('profile:fields', 'openlab', NULL, $profile_defaults);
@@ -202,6 +201,8 @@ function openlabs_submenus() {
 
     // Get the page owner entity
     $page_owner = page_owner_entity();
+    // debug only 
+    $context = get_context();     
 
     // Submenu items for all openlab pages
     if ($page_owner instanceof ElggGroup && get_context() == 'openlabs') {
@@ -226,6 +227,13 @@ function openlabs_submenus() {
                     add_submenu_item(elgg_echo('openlabs:joinrequest'), $url, '1openlabsactions');
                 }
             }
+            // If user is owner of the group 
+            $user_guid  = get_loggedin_userid() ; 
+            $owner_guid = $page_owner->getOwner() ; 
+            if ($user_guid == $owner_guid)
+            {
+               add_submenu_item(elgg_echo('openlabs:removemember'), $CONFIG->wwwroot . "pg/openlabs/removemember/{$page_owner->getGUID()}", '1openlabslinks');
+            }
         }
 
         if ($page_owner->forum_enable != "no") {
@@ -245,6 +253,7 @@ function openlabs_submenus() {
             add_submenu_item(elgg_echo('openlabs:membershipreq_list'), $CONFIG->wwwroot . "pg/openlabs/membershipreq_list/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:suggestions'), $CONFIG->wwwroot . "pg/openlabs/suggestions/" . $_SESSION['user']->username, '1openlabslinks');
            }
+
         add_submenu_item(elgg_echo('openlabs:all'), $CONFIG->wwwroot . "pg/openlabs/all/", '1openlabslinks');
     }
 }
@@ -306,6 +315,10 @@ function openlabs_page_handler($page) {
         case "invite":
             set_input('openlab_guid', $page[1]);
             include($CONFIG->pluginspath . "openlabs/invite.php");
+            break;
+        case "removemember":
+            set_input('openlab_guid', $page[1]);
+            include($CONFIG->pluginspath . "openlabs/removemember.php");
             break;
         case "member" :
             // User is a member of

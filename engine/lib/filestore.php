@@ -255,6 +255,7 @@ class ElggDiskFilestore extends ElggFilestore {
 	}
 
 	public function grabFile(ElggFile $file) {
+                $filename = $file->getFilenameOnFilestore() ; 
 		return file_get_contents($file->getFilenameOnFilestore());
 	}
 

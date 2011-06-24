@@ -216,6 +216,10 @@ or click below to view the team's join requests:
 
 			'teams:invitekilled' => 'The invite has been deleted.',
 			'teams:joinrequestkilled' => 'The join request has been deleted.',
+                        'teams:removemember' => "Remove members" , 
+                        'teams:cantremoveowner' => "Can't remove owner !" , 
+                        'teams:remove' => "Remove" , 
+			'teams:removeuser' => "%s have been removed from team %s",
 	);
 
 	add_translation("en",$english);

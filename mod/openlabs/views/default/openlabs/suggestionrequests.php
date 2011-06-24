@@ -36,7 +36,7 @@
 
 	} else {
 
-		echo "<p>" . elgg_echo('openlabs:invitations:none') . "</p>";
+		echo "<p>" . elgg_echo('openlabs:suggestions:none') . "</p>";
 
 	}
 

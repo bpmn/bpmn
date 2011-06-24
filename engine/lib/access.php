@@ -374,7 +374,7 @@ function get_write_access_array($user_id = 0, $site_id = 0, $flush = false) {
 									ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"),
 									ACCESS_PUBLIC => elgg_echo("PUBLIC"));
 		if ($collections = get_data($query)) {
-			foreach($collections as $collection) {
+			foreach($collections as $collection){
 				$tmp_access_array[$collection->id] = $collection->name;
 			}
 		}

@@ -50,12 +50,6 @@
 		}
 ?>
        
-	<p>
-		<label>
-			<?php echo elgg_echo('openlabs:membership'); ?><br />
-			<?php echo elgg_view('input/access', array('internalname' => 'membership','value' => $membership, 'options' => array( ACCESS_PRIVATE => elgg_echo('openlabs:access:private')))); ?>
-		</label>
-	</p>
 	<?php
 
 	if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes')
@@ -92,40 +86,6 @@
 <?php 	
 	}
 	
-	?>
-	
-    <?php
-		if (isset($vars['config']->group_tool_options)) {
-			foreach($vars['config']->group_tool_options as $openlab_option) {
-				$openlab_option_toggle_name = $openlab_option->name."_enable";
-				if ($openlab_option->default_on) {
-					$openlab_option_default_value = 'yes';
-				} else {
-					$openlab_option_default_value = 'no';
-				}
-?>	
-    <p>
-			<label>
-				<?php echo $openlab_option->label; ?><br />
-				<?php
-
-/* STD Desactiovation des choix 	
- * 				echo elgg_view("input/radio",array(
-									"internalname" => $openlab_option_toggle_name,
-									"value" => $vars['entity']->$openlab_option_toggle_name ? $vars['entity']->$openlab_option_toggle_name : $openlab_option_default_value,
-									'options' => array(
-														elgg_echo('openlabs:yes') => 'yes',
-														elgg_echo('openlabs:no') => 'no',
-													   ),
-													));
- * */
- 
-				?>
-			</label>
-	</p>
-	<?php
-		}
-	}
 	?>
 	<p>
 		<?php

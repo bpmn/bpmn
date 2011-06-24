@@ -16,52 +16,12 @@
 <div id="elgg_topbar">
 
 <div id="elgg_topbar_container_left">
-<div class="toolbarlinks3">
-<?php
-$contents = "";
-
-// is there a page owner?
-$owner = page_owner_entity();
-if ($owner instanceof elggentity) {
-	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
-		$info = $owner->name;
-	}
-	$display = " user:" . $info;
-
-
-
-	$contents = $display;
-}
-
-echo $contents;
-?>
-
-</div>
-
-<div class="toolbarlinks4">
-<?php
-$contents = "";
-
-// is there a page owner?
-$owner = page_owner_entity();
-if ($owner instanceof elggentity) {
-	$icon = elgg_view("profile/icon",array('entity' => $owner, 'size' => 'tiny'));
-	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
-		$info = '<a href="' . $owner->geturl() . '">' . $owner->name . '</a>';
-	}
-	$display = "<div id=\"owner_block_icon\">" . $icon . "</div>";
-
-	$contents .= $display;
-}
-
-echo $contents;
-?>
-
-</div>
-
 
 	<div class="toolbarlinks">
-		<a href="<?php echo $vars['url']; ?>pg/dashboard/" class="pagelinks"><?php echo elgg_echo('dashboard'); ?></a>
+<small>
+		<a href="<?php echo $vars['url']; ?>pg/dashboard/" class="pagelinks_dashboard"><?php echo elgg_echo('dashboard'); ?></a>
+
+
 	</div>
 		<?php
 
@@ -76,7 +36,7 @@ echo $contents;
 		?>
 
 		<a href="<?php echo $vars['url']; ?>pg/settings/" class="usersettings"><?php echo elgg_echo('settings'); ?></a>
-
+</small>
 			</div>
 
 
@@ -84,6 +44,8 @@ echo $contents;
 
 
 <div class="toolbarlinks2">
+<small>
+
 <?php	
 			// The administration link is for admin or site admin users only
 			if ($vars['user']->isAdmin()) {
@@ -101,7 +63,7 @@ echo $contents;
 
 
 
-
+</small>
 
 </div>
 
