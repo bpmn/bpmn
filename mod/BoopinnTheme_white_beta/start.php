@@ -11,7 +11,7 @@
 
 
 
-function BoopinnTheme_white_init()	{
+function BoopinnTheme_white_beta_init()	{
     // Extend system CSS with our own styles
     //extend_view('css','pluginname/css');
     // Replace the default index page
@@ -19,12 +19,12 @@ function BoopinnTheme_white_init()	{
 }
 
 function new_index() {
-    if (!include_once(dirname(dirname(__FILE__)) . "/BoopinnTheme_white/index.php"))
+    if (!include_once(dirname(dirname(__FILE__)) . "/BoopinnTheme_white_beta/index.php"))
         return false;
  
     return true;
 }
-register_elgg_event_handler('init','system','BoopinnTheme_white_init');
+register_elgg_event_handler('init','system','BoopinnTheme_white_beta_init');
 
 ?>
 

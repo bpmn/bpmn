@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <!--<META http-equiv="refresh" content="0; URL=http://www.boopinn.com">
 -->
-<LINK REL=StyleSheet HREF="http://localhost/boopinn/mod/BoopinnTheme_white/index_css.php" TYPE="text/css" MEDIA=screen>
+<LINK REL=StyleSheet HREF="http://localhost/boopinn/mod/BoopinnTheme_white_beta/index_css.php" TYPE="text/css" MEDIA=screen>
 
 
 

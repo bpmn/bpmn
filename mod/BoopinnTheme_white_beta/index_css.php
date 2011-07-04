@@ -96,7 +96,7 @@ body {
 	padding:0;
 	background:#fefefe;
 
-        background: url(http://localhost/boopinn/mod/BoopinnTheme_white/_graphics/Principal_header3.png) no-repeat; 
+        background: url(http://localhost/boopinn/mod/BoopinnTheme_white_beta/_graphics/Principal_header3.png) no-repeat; 
 	background-position:top center; 
         color: black;
    box-shadow: 1px 1px 7px #D0D0D0;
@@ -280,7 +280,7 @@ blockquote p {
 
 
 /*********************************************************************/
-/*    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent; */
+/*    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/box_bg.png) repeat scroll 0 0 transparent; */
 /*********************************************************************/
 
 #layout_canvas {
@@ -319,7 +319,7 @@ blockquote p {
 	min-height:360px;
 	float:left;
 	background:#fefefe;
-	/*background:#fefefe url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;*/
+	/*background:#fefefe url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/box_bg.png) repeat scroll 0 0 transparent;*/
 
 
 
@@ -348,7 +348,7 @@ blockquote p {
 	padding:0 0 5px 0;
 	width:718px;
 	background: #fefefe;
-	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;
+	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/box_bg.png) repeat scroll 0 0 transparent;
 
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -364,7 +364,7 @@ blockquote p {
 #two_column_left_sidebar_boxes .sidebarBox {
 	margin:0px 0 22px 0;
 	background: #BBDFF0;
-	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;
+	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/box_bg.png) repeat scroll 0 0 transparent;
 
 	padding:4px 10px 10px 10px;
 	-webkit-border-radius: 4px;
@@ -384,7 +384,7 @@ blockquote p {
 	min-height:360px;
 	float:left;
 	background: #fefefe;
-	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;
+	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/box_bg.png) repeat scroll 0 0 transparent;
 
 	padding:0px;
 	-webkit-border-radius: 4px;
@@ -559,7 +559,7 @@ margin:0;
 /* ***************************************
 HORIZONTAL ELGG TOPBAR
     background: -moz-linear-gradient(center top , #FFFFFF 0pt, #D0D0D0 100%) repeat scroll 0 0 transparent;
-	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/background29.png) repeat-x;
+	background:url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/background29.png) repeat-x;
 
 *************************************** */
 #elgg_topbar {
@@ -703,7 +703,7 @@ color:#130DBF;
 color:#130DBF;
 	margin:0 5px 5px 5px;
 	padding:4px 0px 0px 20px;
-        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
+        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/home.png) no-repeat center left;
 	display:block;
     height: 20px;
 
@@ -736,7 +736,7 @@ color:#130DBF;
 #elgg_topbar_container_left a.pagelinks_dashboard:hover {
 	background: #e0e0e0;
 	text-decoration: none;
-        background:#e0e0e0 url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
+        background:#e0e0e0 url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/home.png) no-repeat center left;
  
     -moz-box-shadow: 0px 2px 0px #006699;
     -webkit-box-shadow: 0px 2px 0px #006699;
@@ -829,7 +829,7 @@ color:#130DBF;
 #elgg_topbar_container_right a {
 	color:#006699;
 	margin:0 5px 0 0;
-        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/logout16.png) no-repeat top right;
+        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/logout16.png) no-repeat top right;
 	padding:0 21px 0 0;
 	display:block;
 	height:20px;
@@ -839,7 +839,7 @@ color:#130DBF;
 	width: 120px;
 }
 #elgg_topbar_container_right a:hover {
-        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/logout_red16.png) no-repeat top right;
+        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white_beta/_graphics/logout_red16.png) no-repeat top right;
 
 }
 #elgg_topbar_panel {
