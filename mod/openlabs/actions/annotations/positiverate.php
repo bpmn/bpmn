@@ -20,7 +20,6 @@ $openlabAnnotation = get_annotation($guid);
 
 $openlab = $openlabAnnotation->getEntity();
 
-if ( $openlab->canEdit()) {
 
     // Get container (user or group)
     $annotationAuthor = $openlabAnnotation->getOwnerEntity();
@@ -28,7 +27,6 @@ if ( $openlab->canEdit()) {
     $annotationRating = $annotationAuthor->getAnnotations('rating', 1, 0, desc);
 
     $rating = $annotationRating[0]->value;
-
 
     if ($rating) {
         $annotationAuthor->annotate('rating', $rating + 1);
@@ -40,7 +38,6 @@ if ( $openlab->canEdit()) {
 
     // Forward to the main openlab page
     $url = forward($_SERVER['HTTP_REFERER']);
-    ;
+
     forward(url);
-}
 ?>
