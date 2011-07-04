@@ -287,7 +287,6 @@ blockquote p {
 	-moz-border-radius: 4px;
     /* fallback (Opera) */
     background: #fefefe;
-    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;
 
     box-shadow: 1px 1px 7px #D0D0D0;
 
