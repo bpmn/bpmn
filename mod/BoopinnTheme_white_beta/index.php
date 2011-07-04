@@ -59,8 +59,8 @@ echo elgg_view('input/form', array('body' => $form_body, 'action' => "". $vars['
 
 <?php
 
-system_message(elgg_echo('loginok'));
-			register_error(elgg_echo('loginerror'));
+//system_message(elgg_echo('loginok'));
+//register_error(elgg_echo('loginerror'));
 
 ?>
 
