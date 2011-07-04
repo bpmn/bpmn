@@ -13,7 +13,7 @@
 	{
 
 		global $CONFIG;
-
+/*
 		// Set up the menu for logged in users
 		if (isloggedin())
 		{
@@ -24,7 +24,7 @@
 		{
 			add_menu(elgg_echo('groups'), $CONFIG->wwwroot . "pg/groups/all/");
 		}
-
+*/
 		// register for search
 		register_entity_type('group','');
 
