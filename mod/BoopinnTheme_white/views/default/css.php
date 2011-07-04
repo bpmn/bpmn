@@ -287,6 +287,7 @@ blockquote p {
 	-moz-border-radius: 4px;
     /* fallback (Opera) */
     background: #fefefe;
+    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;
 
     box-shadow: 1px 1px 7px #D0D0D0;
 
@@ -946,19 +947,18 @@ SYSTEM MESSSAGES
 -webkit-box-shadow: 5px 12px 58px #000000;
 box-shadow: 5px 12px 58px #081f00;
     background: -moz-linear-gradient(center top , #Fefefe 0pt, #ccffcc 100%) repeat scroll 0 0 transparent;
+	border:1px solid #00ddff;
 
 *************************************** */
 .messages {
-	background:#ccffcc;
-    background: #B1E33D;
+    background: white;
+	text-align: center;
 
-	border:2px solid #00ff00;
-
-	color:#ffffff;
+	color:#0066aa;
 	z-index: 8000;
 	margin:0;
 	position:fixed;
-	top:1px;
+	top:6px;
 	left:250px;
 	width:400px;
 	-webkit-border-radius: 4px;
@@ -969,11 +969,16 @@ box-shadow: 5px 12px 58px #081f00;
 	font-size: 90%;
         padding:4px 4px 4px 4px;
 	cursor: pointer;
+    box-shadow: 1px 1px 5px #00ddff;
+
+
 }
 .messages_error {
-	border:2px solid #D3322A;
-	background:#F7DAD8;
-	color:#ffffff;
+	background:white;
+	text-align: center;
+
+	color:#0066aa;
+
 	z-index: 8000;
 	margin:0;
 	position:fixed;
@@ -988,6 +993,7 @@ box-shadow: 5px 12px 58px #081f00;
 	font-size: 90%;
         padding:4px 4px 4px 4px;
 	cursor: pointer;
+    box-shadow: 1px 1px 5px #D3322A;
 
 }
 
