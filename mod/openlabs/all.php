@@ -39,7 +39,7 @@
 			$objects = elgg_list_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
 			break;
 			case "pop":
-			$objects = list_entities_by_relationship_count('member', true, "", "", 0, $limit, false);
+			$objects = list_entities_by_relationship_count('member', true, "group", "openlab", 0, $limit, false);
 			break;
 			case "active":
 			case 'default':

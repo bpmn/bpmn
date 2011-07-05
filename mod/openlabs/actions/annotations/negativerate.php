@@ -20,8 +20,6 @@ $openlabAnnotation = get_annotation($guid);
 
 $openlab = $openlabAnnotation->getEntity();
 
-if ($openlab->canEdit()) {
-
     // Get container (user or group)
     $annotationAuthor = $openlabAnnotation->getOwnerEntity();
 
@@ -43,7 +41,6 @@ if ($openlab->canEdit()) {
 
     // Forward to the main openlab page
     $url = forward($_SERVER['HTTP_REFERER']);
-    ;
+ 
     forward(url);
-}
 ?>

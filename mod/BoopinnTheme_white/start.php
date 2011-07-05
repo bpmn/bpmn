@@ -1,8 +1,8 @@
 
 <?php
 
-/*** Boopinn Theme for Elgg
-* (c) Fabien RETY (rety.fabien@gmail.com)
+/*** Boopinn Theme
+* (c) Philippe Bressy (pbressy@gmail.com)
 *
 * START PAGE
 */
@@ -12,10 +12,17 @@
 
 
 function BoopinnTheme_white_init()	{
-
 }
 
 register_elgg_event_handler('init','system','BoopinnTheme_white_init');
 
 ?>
+
+
+
+
+
+
+
+
 
