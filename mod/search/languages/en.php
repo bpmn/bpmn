@@ -18,6 +18,7 @@ $english = array(
 	'search:unavailable_entity' => 'Unavailable Entity',
 
         'item:group:teams'=> 'Teams',
+        'item:group:openlab'=> 'Open Labs',
 );
 
 add_translation('en', $english);

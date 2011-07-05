@@ -51,16 +51,26 @@ function search_objects_hook($hook, $type, $value, $params) {
 	);
 }
 
+function search_openlabs_hook($hook, $type, $value, $params) {
+    return search_groups_hook($hook, $type, "openlab" ,  $value, $params) ; 
+}
+
+function search_teams_hook($hook, $type,$value, $params) {
+    
+    return search_groups_hook($hook, $type, "teams" , $value, $params) ; 
+}
+
 /**
  * Return default results for searches on groups.
  *
  * @param unknown_type $hook
  * @param unknown_type $type
+ * @param subtype $type
  * @param unknown_type $value
  * @param unknown_type $params
  * @return unknown_type
  */
-function search_groups_hook($hook, $type, $value, $params) {
+function search_groups_hook($hook, $type, $subtype , $value, $params) {
 	global $CONFIG;
 
 	$query = sanitise_string($params['query']);
@@ -77,7 +87,7 @@ function search_groups_hook($hook, $type, $value, $params) {
 	$params['wheres'] = array($where);
 
 	// override subtype -- All groups should be returned regardless of subtype.
-	$params['subtype'] = ELGG_ENTITIES_ANY_VALUE;
+	$params['subtype'] = $subtype ; 
 
 	$params['count'] = TRUE;
 	$count = elgg_get_entities($params);
