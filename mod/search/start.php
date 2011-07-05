@@ -21,8 +21,10 @@ function search_init() {
 	register_plugin_hook('search', 'object', 'search_objects_hook');
 	register_plugin_hook('search', 'user', 'search_users_hook');
 
-	// @todo pull this out into groups
-	register_plugin_hook('search', 'group', 'search_groups_hook');
+	
+	register_plugin_hook('search', 'group:openlab', 'search_openlabs_hook');
+	register_plugin_hook('search', 'group:teams', 'search_teams_hook');
+        
 
 	// tags and comments are a bit different.
 	// register a search types and a hooks for them.
