@@ -265,9 +265,15 @@ $token = generate_action_token($ts);
 		<?php
 		if (get_loggedin_userid() == page_owner()) {
 		?>
-		<!-- customise page button -->
-		<a href="javascript:void(0);" class="toggle_customise_edit_panel"><?php echo(elgg_echo('dashboard:configure')); ?></a>
-		<!-- <div style="clear:both;"></div> -->
+
+                           <!--boopinn modif Fatxi -->
+
+                <!-- customise page button -->
+		<!--boopinn modif Fatxi >>>> -->
+                <!--a href="javascript:void(0);" class="toggle_customise_edit_panel"><?//php echo(elgg_echo('dashboard:configure')); ?></a-->
+		<!--boopinn modif Fatxi <<<< -->
+
+                <!-- <div style="clear:both;"></div> -->
 		<?php
 		}
 		?>

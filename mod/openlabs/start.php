@@ -744,7 +744,7 @@ function openlab_view($view, $vars = array(), $bypass = false, $debug = false, $
  */
 function openlabs_get_invited_openlabs($user_guid, $return_guids = FALSE) {
     $ia = elgg_set_ignore_access(TRUE);
-    $invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE, 'limit' => 9999));
+    $invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999));
     elgg_set_ignore_access($ia);
 
     if ($return_guids) {
