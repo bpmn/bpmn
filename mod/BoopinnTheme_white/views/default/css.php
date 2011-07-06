@@ -151,7 +151,7 @@ h2 { font-size: 1.2em; }
 h3 { font-size: 1.1em; }
 h4 { font-size: 1.0em; }
 h5 { font-size: 0.9em; }
-h6 { font-size: 0.8em; }
+h6 { font-size: 0.7em; }
 
 dt {
 	margin: 0;
@@ -677,7 +677,7 @@ border-right: 1px solid #f0f0f0;
 }
 #elgg_topbar_container_left a.pagelinks {
 
-color:#130DBF;
+color:#006699;
 	margin:0 5px 5px 5px;
 	display:block;
 	padding:4px;
@@ -696,7 +696,7 @@ color:#130DBF;
 
 #elgg_topbar_container_left a.pagelinks_dashboard {
 
-color:#130DBF;
+color:#006699;
 	margin:0 5px 5px 5px;
 	padding:4px 0px 0px 20px;
         background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
@@ -1225,12 +1225,61 @@ input[type="submit"] {
 /* ***************************************
 	LOGIN / REGISTER
 *************************************** */
+
+
+#custom_index {
+	margin:10px;
+}
+#index_left {
+    width:250px;
+    float:left;
+    margin:0 0 30px 0;
+    padding:0 0 20px 0px;
+}
+#index_right {
+    width:680px;
+    height:320px;
+    position: absolute;
+    top: 76px;
+    left: 300px;
+}
+#index_welcome {
+	padding:5px 10px 5px 10px;
+	margin:0 0 20px 0;
+	border:1px solid silver;
+	background: white;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px; 
+}
+
+
+.index_box {
+	margin:0 0 20px 0;
+	background: #dedede;
+	padding:0 0 5px 0;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+
+.index_box .search_listing {
+
+}
+.index_box .index_members {
+	float:left;
+	margin:2pt 5px 3px 0pt;
+}
+#persistent_login {
+	float:right;
+	display:block;
+	margin-top:-34px;
+}
+
+
+
 #login-box {
 	margin:0 0 10px 0;
 	padding:0 0 10px 0;
-	background: #BBDFF0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
+	background: white;
 	width:240px;
 	text-align:left;
 }
@@ -1244,8 +1293,8 @@ input[type="submit"] {
 }
 #login-box h2 {
 	color:#fefefe;
-	font-size:1.35em;
-	line-height:1.2em;
+	font-size:1.0em;
+	line-height:1.0em;
 	margin:0 0 0 4px;
 	padding:5px 5px 0 5px;
 }
@@ -1254,7 +1303,7 @@ input[type="submit"] {
 }
 #login-box label,
 #register-box label {
-	font-size: 1.2em;
+	font-size: 1.0em;
 	color:gray;
 }
 #login-box p.loginbox {
@@ -1276,8 +1325,8 @@ input[type="submit"] {
 #add-box h2,
 #forgotten_box h2 {
 	color:#fefefe;
-	font-size:1.35em;
-	line-height:1.2em;
+	font-size:1.0em;
+	line-height:1.0em;
 	margin:0pt 0pt 5px;
 }
 #register-box {
@@ -2892,3 +2941,21 @@ div.ajax_loader {
 .draggable {
 	cursor: move;
 }
+
+
+
+img.floatLeft { 
+    float: left; 
+    margin: 4px; 
+}
+img.floatRight { 
+    float: right; 
+    margin: 4px; 
+}
+img.floatRightClear { 
+    float: right; 
+    clear: right; 
+    margin: 4px; 
+}
+
+
