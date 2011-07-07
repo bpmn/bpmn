@@ -1239,9 +1239,9 @@ input[type="submit"] {
 #index_right {
     width:680px;
     height:320px;
-    position: absolute;
-    top: 76px;
-    left: 300px;
+    float: left;
+	border:1px solid silver;
+
 }
 #index_welcome {
 	padding:5px 10px 5px 10px;
