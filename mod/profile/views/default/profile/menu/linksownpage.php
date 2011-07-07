@@ -20,10 +20,4 @@
 		}
 	
 	?>
-	<p class="user_menu_friends">
-		<a href="<?php echo $vars['url']; ?>pg/friends/<?php echo $vars['entity']->username; ?>/"><?php echo elgg_echo("friends"); ?></a>	
-	</p>
-	<p class="user_menu_friends_of">
-		<a href="<?php echo $vars['url']; ?>pg/friendsof/<?php echo $vars['entity']->username; ?>/"><?php echo elgg_echo("friends:of"); ?></a>	
-	</p>
 	
