@@ -48,6 +48,14 @@
             //echo elgg_view("index/righthandside");
 ?>
 
+
+
+	<div class="coda-slider preload" id="coda-slider-1">
+		<div class="panel">
+			<div class="panel-wrapper">
+				<h2 class="title">Welcome</h2>
+				<p>
+
 <style type="text/css">
 p.textboopinn { color: #0066aa }
 </style>
@@ -66,6 +74,44 @@ p.textboopinn { color: #0066aa }
 <p>View you CIS (Creative and Innovation Score)</p>
 </h6>		 
 </p>
+
+</p>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel-wrapper">
+				<h2 class="title">Panel 2</h2>
+				<p>Proin nec turpis eget dolor dictum lacinia. Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel-wrapper">
+				<h2 class="title">Panel 3</h2>
+				<p>Cras luctus fringilla odio vel hendrerit. Cras pulvinar auctor sollicitudin. Sed lacus quam, sodales sit amet feugiat sit amet, viverra nec augue. Sed enim ipsum, malesuada quis blandit vel, posuere eget erat. Sed a arcu justo. Integer ultricies, nunc at lobortis facilisis, ligula lacus vestibulum quam, id tincidunt sapien arcu in velit. Vestibulum consequat augue et turpis condimentum mollis sed vitae metus. Morbi leo libero, tincidunt lobortis fermentum eget, rhoncus vel sem. Morbi varius viverra velit vel tempus. Morbi enim turpis, facilisis vel volutpat at, condimentum quis erat. Morbi auctor rutrum libero sed placerat. Etiam ipsum velit, eleifend in vehicula eu, tristique a ipsum. Donec vitae quam vel diam iaculis bibendum eget ut diam. Fusce quis interdum diam. Ut urna justo, dapibus a tempus sit amet, bibendum at lectus. Sed venenatis molestie commodo.</p>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel-wrapper">
+				<h2 class="title">Panel 4</h2>
+				<p>Nulla ultricies ornare erat, a rutrum lacus varius nec. Pellentesque vehicula lobortis dignissim. Ut scelerisque auctor eros sed porttitor. Nullam pulvinar ultrices malesuada. Quisque lobortis bibendum nisi et condimentum. Mauris quis erat vel dui lobortis dignissim.</p>
+			</div>
+		</div>
+	</div><!-- .coda-slider -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

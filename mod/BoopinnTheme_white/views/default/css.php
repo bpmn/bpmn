@@ -1238,9 +1238,9 @@ input[type="submit"] {
 }
 #index_right {
     width:680px;
-    height:320px;
+    height:420px;
     float: left;
-	border:1px solid silver;
+<!--	border:1px solid silver;-->
 
 }
 #index_welcome {
@@ -2959,3 +2959,42 @@ img.floatRightClear {
 }
 
 
+	.coda-slider-wrapper { padding: 20px 0 }
+	.coda-slider { background: #ffffff}
+	
+	<!-- Use this to keep the slider content contained in a box even when JavaScript is disabled -->
+	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px }
+	
+	<!--/* Change the width of the entire slider (without dynamic arrows) */-->
+	.coda-slider, .coda-slider .panel { width: 600px } 
+	
+	<!--/* Change margin and width of the slider (with dynamic arrows) */-->
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 400px }
+	.coda-slider-wrapper.arrows .coda-slider { margin: 0 10px }
+	
+	<!--/* Arrow styling */-->
+	.coda-nav-left a, .coda-nav-right a { background: #d0d0d0; color: #0066aa; padding: 5px; width: 10px }
+	
+	<!--/* Tab nav */-->
+	.coda-nav ul li a.current { background: #0066aa; color: #ffffff }
+	
+	<!--/* Panel padding */-->
+	.coda-slider .panel-wrapper { padding: 20px }
+	
+	<!--/* Preloader */-->
+	.coda-slider p.loading { padding: 20px; text-align: center }
+
+<!--/* Don't change anything below here unless you know what you're doing */-->
+
+	<!--/* Tabbed nav */-->
+	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
+	.coda-nav ul li { display: inline }
+	.coda-nav ul li a { background: #f0f0f0; color: #000; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
+	
+	<!--/* Miscellaneous */-->
+	.coda-slider-wrapper { clear: both; overflow: auto }
+	.coda-slider { float: left; overflow: hidden; position: relative }
+	.coda-slider .panel { display: block; float: left }
+	.coda-slider .panel-container { position: relative }
+	.coda-nav-left, .coda-nav-right { float: left }
+	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }

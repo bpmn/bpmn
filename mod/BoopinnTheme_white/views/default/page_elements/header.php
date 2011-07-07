@@ -100,6 +100,29 @@ $release = get_version(true);
                             echo $initJs  ; 
 ?>
 	</script>
+
+
+<title>Coda-Slider 2.0</title>
+	<meta http-equiv="Content-Language" content="en-us" />
+	
+	<meta name="author" content="Niall Doherty" />
+	
+	<!-- Begin Stylesheets -->
+	<!-- End Stylesheets -->
+	
+	<!-- Begin JavaScript -->
+			    <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/javascripts/jquery-1.3.2.min.js";?>"></script>
+<script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.easing.1.3.js";?>"></script>
+<script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.coda-slider-2.0.js";?>"></script>
+			    
+		 <script type="text/javascript">
+			$().ready(function() {
+				$('#coda-slider-1').codaSlider();
+			});
+		 </script>
+	<!-- End JavaScript -->
+
+
 </head>
 
 <body>
