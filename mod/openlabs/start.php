@@ -79,7 +79,7 @@ function openlabs_init() {
     add_group_tool_option('forum', elgg_echo('openlabs:enableforum'), true);
 
     // Now override icons
-    register_plugin_hook('entity:icon:url', 'openlab', 'openlabs_openlabicon_hook');
+    register_plugin_hook('entity:icon:url', 'group', 'openlabs_openlabicon_hook');
 }
 
 /**
