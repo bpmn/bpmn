@@ -45,7 +45,7 @@
 															'value' => $value,
 															)); ?>
 		</label>
-			<?php echo elgg_view('input/access',array('internalname' => 'accesslevel['.$shortname.']', 'value' => $access_id)); ?>
+			<?php //echo elgg_view('input/access',array('internalname' => 'accesslevel['.$shortname.']', 'value' => $access_id)); ?> 
 	</p>
 
 <?php

@@ -31,7 +31,7 @@ if (!array_key_exists('value', $vars) || $vars['value'] == ACCESS_DEFAULT) {
 
 if ((!isset($vars['options'])) || (!is_array($vars['options']))) {
 	$vars['options'] = array();
-	$vars['options'] = get_write_access_array();
+	$vars['options'] = get_write_access_array((int)page_owner());
 }
 
 if (is_array($vars['options']) && sizeof($vars['options']) > 0) {

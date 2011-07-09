@@ -21,8 +21,10 @@
 		$view_all = true;
 		
 		$groupaccess = group_gatekeeper(false);
-		if (!$groupaccess)
-			$view_all = false;
+
+                // Fatxi modif >>>>>>
+                //if (!$groupaccess)
+		//	$view_all = false;
 		
 		
 		$area2 = elgg_view_title($title);

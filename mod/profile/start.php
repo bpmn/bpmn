@@ -94,9 +94,9 @@
 				'location' => 'tags',
 				'interests' => 'tags',
 				'skills' => 'tags',
-				'contactemail' => 'email',
-				'phone' => 'text',
-				'mobile' => 'text',
+				//'contactemail' => 'email',
+				//'phone' => 'text',
+				//'mobile' => 'text',
 				'website' => 'url',
 			);
 

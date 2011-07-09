@@ -430,17 +430,23 @@ function openlab_group_url($entity) {
  * openlabs created so create an access list for it
  */
 function openlabs_create_event_listener($event, $object_type, $object) {
-    $ac_name = elgg_echo('openlabs:openlab') . ": " . $object->name;
-    $openlab_id = create_access_collection($ac_name, $object->guid);
+
+    if("openlab"==get_subtype_from_id($object->subtype)){
+        $ac_name = elgg_echo('openlabs:openlab') . ": " . $object->name;
+        $openlab_id = create_access_collection($ac_name, $object->guid);
     if ($openlab_id) {
         $object->openlab_acl = $openlab_id;
     } else {
         // delete openlab if access creation fails
         return false;
     }
-
+    }
     return true;
 }
+
+
+
+
 
 /**
  * Hook to listen to read access control requests and return all the openlabs you are a member of.
@@ -786,16 +792,16 @@ function openlabs_get_suggested_openlabs($user_guid, $return_guids = FALSE) {
 register_extender_url_handler('openlab_topicpost_url', 'annotation', 'openlab_topic_post');
 
 // Register a handler for create openlabs
-register_elgg_event_handler('create', 'openlab', 'openlabs_create_event_listener');
+register_elgg_event_handler('create', 'group', 'openlabs_create_event_listener');
 
 // Register a handler for delete openlabs
-register_elgg_event_handler('delete', 'openlab', 'openlabs_delete_event_listener');
+register_elgg_event_handler('delete', 'group', 'openlabs_delete_event_listener');
 
 // Make sure the openlabs initialisation function is called on initialisation
 register_elgg_event_handler('init', 'system', 'openlabs_init');
 register_elgg_event_handler('init', 'system', 'openlabs_fields_setup', 10000); // Ensure this runs after other plugins
-register_elgg_event_handler('join', 'openlab', 'openlabs_user_join_event_listener');
-register_elgg_event_handler('leave', 'openlab', 'openlabs_user_leave_event_listener');
+register_elgg_event_handler('join', 'group', 'openlabs_user_join_event_listener');
+register_elgg_event_handler('leave', 'group', 'openlabs_user_leave_event_listener');
 register_elgg_event_handler('pagesetup', 'system', 'openlabs_submenus');
 register_elgg_event_handler('annotate', 'all', 'openlab_object_notifications');
 

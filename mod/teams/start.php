@@ -417,16 +417,19 @@
 	 * Groups created so create an access list for it
 	 */
 	function teams_create_event_listener($event, $object_type, $object)
-	{
-		$ac_name = elgg_echo('teams:group') . ": " . $object->name;
+	{  
+
+         if("teams"==get_subtype_from_id($object->subtype)){
+                $ac_name = elgg_echo('teams:group') . ": " . $object->name;
 		$group_id = create_access_collection($ac_name, $object->guid);
+                
 		if ($group_id) {
 			$object->group_acl = $group_id;
 		} else {
 			// delete group if access creation fails
 			return false;
 		}
-
+         }
 		return true;
 	}
 
