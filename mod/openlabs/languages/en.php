@@ -17,7 +17,7 @@
 			'openlabs:yours' => "Your Open Labs",
 			'openlabs:user' => "%s's Open Labs",
 			'openlabs:all' => "All site Open Labs",
-			'openlabs:new' => "Create a new Open Lab",
+			'openlabs:new' => "Create an Open Lab",
 			'openlabs:edit' => "Edit Open Lab",
 			'openlabs:delete' => 'Delete Open Lab',
 			'openlabs:membershiprequests' => 'Manage join requests',
