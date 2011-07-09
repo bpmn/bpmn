@@ -151,7 +151,7 @@ h2 { font-size: 1.2em; }
 h3 { font-size: 1.1em; }
 h4 { font-size: 1.0em; }
 h5 { font-size: 0.9em; }
-h6 { font-size: 0.8em; }
+h6 { font-size: 0.7em; }
 
 dt {
 	margin: 0;
@@ -233,6 +233,8 @@ blockquote p {
 	text-align:right;
 	margin:10px 0 4px 0;
 	padding-bottom:4px;
+    border: none 1px #f0f0f0;
+
 }
 
 
@@ -245,22 +247,21 @@ blockquote p {
 
 
 #user_topbar {
+    display: block;
     background: white;
 	position: relative;
+	height: 21px;
 	margin:10px 4px 4px 0;
-	padding-bottom:4px;
+	padding:3px 0px 4px 0px;
 
 	float:right;
 	text-align:left;
 	font-size: 90%;
 
 	color:#000000;
-    border:none 1px #f0f0f0;
+    border: none 1px #f0f0f0;
 
 }
-
-
-
 
 
 
@@ -677,7 +678,7 @@ border-right: 1px solid #f0f0f0;
 }
 #elgg_topbar_container_left a.pagelinks {
 
-color:#130DBF;
+color:#006699;
 	margin:0 5px 5px 5px;
 	display:block;
 	padding:4px;
@@ -696,7 +697,7 @@ color:#130DBF;
 
 #elgg_topbar_container_left a.pagelinks_dashboard {
 
-color:#130DBF;
+color:#006699;
 	margin:0 5px 5px 5px;
 	padding:4px 0px 0px 20px;
         background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
@@ -718,8 +719,9 @@ color:#130DBF;
 
 
 #elgg_topbar_container_left a.pagelinks:hover {
-	background: #e0e0e0;
+	background: #0066aa;
 	text-decoration: none;
+	color: #ffffff;
  
     -moz-box-shadow: 0px 2px 0px #006699;
     -webkit-box-shadow: 0px 2px 0px #006699;
@@ -730,9 +732,11 @@ color:#130DBF;
  
 
 #elgg_topbar_container_left a.pagelinks_dashboard:hover {
-	background: #e0e0e0;
+	background: #0066aa;
 	text-decoration: none;
-        background:#e0e0e0 url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
+	color: #ffffff;
+
+        background:#0066aa url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
  
     -moz-box-shadow: 0px 2px 0px #006699;
     -webkit-box-shadow: 0px 2px 0px #006699;
@@ -742,25 +746,25 @@ color:#130DBF;
 
 
 #elgg_topbar_container_left a.privatemessages {
-	background:transparent url(<?php echo $vars['url']; ?>_graphics/toolbar_messages_icon.gif) no-repeat left 2px;
-	padding:0 0 4px 16px;
-	margin:0 15px 0 5px;
+	height: 21px;
+	display: block;
+	padding:0 0 0 18px;
+	margin:4px 15px 0 5px;
+	background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/email16.png) no-repeat;
 	cursor:pointer;
 }
 #elgg_topbar_container_left a.privatemessages:hover {
 	text-decoration: none;
-	background:transparent url(<?php echo $vars['url']; ?>_graphics/toolbar_messages_icon.gif) no-repeat left -36px;
+	background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/email16h.png) no-repeat;
 }
 #elgg_topbar_container_left a.privatemessages_new {
-	background:transparent url(<?php echo $vars['url']; ?>_graphics/toolbar_messages_icon.gif) no-repeat left -17px;
+	height: 21px;
+	display: block;
 	padding:0 0 0 18px;
-	margin:0 15px 0 5px;
+	margin:4px 15px 0 5px;	
+	background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/email_red.png) no-repeat;
 	color:white;
 }
-/* IE6 */
-* html #elgg_topbar_container_left a.privatemessages_new { background-position: left -18px; }
-/* IE7 */
-*+html #elgg_topbar_container_left a.privatemessages_new { background-position: left -18px; }
 
 #elgg_topbar_container_left a.privatemessages_new:hover {
 	text-decoration: none;
@@ -1225,12 +1229,61 @@ input[type="submit"] {
 /* ***************************************
 	LOGIN / REGISTER
 *************************************** */
+
+
+#custom_index {
+	margin:10px;
+}
+#index_left {
+    width:250px;
+    float:left;
+    margin:0 0 30px 0;
+    padding:0 0 20px 0px;
+}
+#index_right {
+    width:680px;
+    height:420px;
+    float: left;
+<!--	border:1px solid silver;-->
+
+}
+#index_welcome {
+	padding:5px 10px 5px 10px;
+	margin:0 0 20px 0;
+	border:1px solid silver;
+	background: white;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px; 
+}
+
+
+.index_box {
+	margin:0 0 20px 0;
+	background: #dedede;
+	padding:0 0 5px 0;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+
+.index_box .search_listing {
+
+}
+.index_box .index_members {
+	float:left;
+	margin:2pt 5px 3px 0pt;
+}
+#persistent_login {
+	float:right;
+	display:block;
+	margin-top:-34px;
+}
+
+
+
 #login-box {
 	margin:0 0 10px 0;
 	padding:0 0 10px 0;
-	background: #BBDFF0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
+	background: white;
 	width:240px;
 	text-align:left;
 }
@@ -1244,8 +1297,8 @@ input[type="submit"] {
 }
 #login-box h2 {
 	color:#fefefe;
-	font-size:1.35em;
-	line-height:1.2em;
+	font-size:1.0em;
+	line-height:1.0em;
 	margin:0 0 0 4px;
 	padding:5px 5px 0 5px;
 }
@@ -1254,7 +1307,7 @@ input[type="submit"] {
 }
 #login-box label,
 #register-box label {
-	font-size: 1.2em;
+	font-size: 1.0em;
 	color:gray;
 }
 #login-box p.loginbox {
@@ -1276,8 +1329,8 @@ input[type="submit"] {
 #add-box h2,
 #forgotten_box h2 {
 	color:#fefefe;
-	font-size:1.35em;
-	line-height:1.2em;
+	font-size:1.0em;
+	line-height:1.0em;
 	margin:0pt 0pt 5px;
 }
 #register-box {
@@ -2892,3 +2945,84 @@ div.ajax_loader {
 .draggable {
 	cursor: move;
 }
+
+
+
+img.floatLeft { 
+    float: left; 
+    margin: 4px; 
+}
+img.floatRight { 
+    float: right; 
+    margin: 4px; 
+}
+img.floatRightClear { 
+    float: right; 
+    clear: right; 
+    margin: 4px; 
+}
+
+
+	.coda-slider-wrapper { padding: 20px 0 }
+	.coda-slider { background: #ffffff}
+	
+	<!-- Use this to keep the slider content contained in a box even when JavaScript is disabled -->
+	.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px }
+	
+	<!--/* Change the width of the entire slider (without dynamic arrows) */-->
+	.coda-slider, .coda-slider .panel { width: 600px } 
+	
+	<!--/* Change margin and width of the slider (with dynamic arrows) */-->
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 400px }
+	.coda-slider-wrapper.arrows .coda-slider { margin: 0 10px }
+	
+	<!--/* Arrow styling */-->
+	.coda-nav-left a { 
+
+       		background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/left.png) no-repeat;
+		color: #0066aa; padding: 5px; width: 16px; height: 16px }
+
+	.coda-nav-right a { 
+    		background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat;
+		color: #0066aa; padding: 5px; width: 16px; height: 16px }
+	
+	<!--/* Tab nav */-->
+	.coda-nav ul li a.current {
+
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright:4px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+font-weight: bold;
+
+				background: #0066aa; color: #ffffff }
+	
+	<!--/* Panel padding */-->
+	.coda-slider .panel-wrapper { padding: 20px }
+	
+	<!--/* Preloader */-->
+	.coda-slider p.loading { padding: 20px; text-align: center }
+
+<!--/* Don't change anything below here unless you know what you're doing */-->
+
+	<!--/* Tabbed nav */-->
+	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
+	.coda-nav ul li { display: inline }
+	.coda-nav ul li a {
+font-weight: bold;
+font-size: small;
+
+    background: -moz-linear-gradient(center top , #FFFFFF 0pt, #D0D0D0 100%) repeat scroll 0 0 transparent;
+
+
+    color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
+	
+	<!--/* Miscellaneous */-->
+	.coda-slider-wrapper { clear: both; overflow: auto }
+	.coda-slider { float: left; overflow: hidden; position: relative }
+	.coda-slider .panel { display: block; float: left }
+	.coda-slider .panel-container { position: relative }
+	.coda-nav-left, .coda-nav-right { float: left }
+	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }

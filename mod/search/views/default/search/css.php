@@ -51,7 +51,7 @@ margin: 6px;
 	font-size:12px;
 	font-weight:bold;
 	margin:0pt;
-	padding:0px;
+	padding:2px;
 	width:180px;
 	height:12px;
 }

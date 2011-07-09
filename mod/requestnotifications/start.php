@@ -33,8 +33,23 @@
 		function requestnotifications_page_handler($page)
 		{
 			global $CONFIG;
+                        
+                         switch ($page[0]) {
+                             case   'team' : {
+                                 page_draw(elgg_echo('requestnotifications:title'), 
+                                         elgg_view_layout('two_column_left_sidebar','',
+                                                 elgg_view('requestnotifications/detailedteam')));	
+                                 break ; 
+                             }
+                              case 'openlab' : {
+                                  page_draw(elgg_echo('requestnotifications:title'), 
+                                          elgg_view_layout('two_column_left_sidebar','',
+                                                  elgg_view('requestnotifications/detailedopenlab')));	
+                                  break ; 
+                             }
+                         } ; 
 			
-			include($CONFIG->pluginspath . "requestnotifications/index.php");
+			// include($CONFIG->pluginspath . "requestnotifications/index.php");
 		}
 
 		global $CONFIG;

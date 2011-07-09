@@ -11,21 +11,24 @@
 
 <div id="page_container">
 <div id="page_wrapper">
-
 <div id="layout_header">
 <div id="wrapper_header">
-
 	<!-- display the page title -->
 <div id="join"><a href="<?php echo $vars['url']; ?>"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/boopinn_final-flare_small4.jpg" alt="Join"></img></a>
+
+
+<?php
+	if (isloggedin()) {
+?>
+
+
 
 
 <div id="header_topbar_container_search">
 <?php echo elgg_view('page_elements/searchbox'); ?>
 </div><!-- search-->
 
-<?php
-	if (isloggedin()) {
-?>
+
 <div id="user_topbar">
 <?php
 $contents = "";
@@ -41,8 +44,11 @@ if ($owner instanceof elggentity) {
 }
 
 // is there a page owner?
-$owner = page_owner_entity();
+$owner = get_loggedin_user();
+/*
+ * */
 if ($owner instanceof elggentity) {
+
 	$icon = elgg_view("profile/icon",array('entity' => $owner, 'size' => 'tiny'));
 	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
 		$info = '<a href="' . $owner->geturl() . '">' . $owner->name . '</a>';
@@ -50,7 +56,7 @@ if ($owner instanceof elggentity) {
 	$display = "<div id=\"owner_block_icon\">" . $icon . "</div>";
 
 	$contents .= $display;
-}
+} 
 
 
 

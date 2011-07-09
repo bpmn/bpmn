@@ -13,12 +13,16 @@
 			
 			$ts = time();
 			$token = generate_action_token($ts);
+/* 
+ * STD Bug 46
 					
 			if ($vars['entity']->isFriend()) {
 				echo "<p class=\"user_menu_removefriend\"><a href=\"{$vars['url']}action/friends/remove?friend={$vars['entity']->getGUID()}&__elgg_token=$token&__elgg_ts=$ts\">" . elgg_echo("friend:remove") . "</a></p>";
 			} else {
 				echo "<p class=\"user_menu_addfriend\"><a href=\"{$vars['url']}action/friends/add?friend={$vars['entity']->getGUID()}&__elgg_token=$token&__elgg_ts=$ts\">" . elgg_echo("friend:add") . "</a></p>";
 			}
+ * 
+ */
 		}
 	}
 

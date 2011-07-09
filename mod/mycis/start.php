@@ -84,7 +84,8 @@ function getJsonStringCisObject($cis) {
         {
             $ascreator = "" ;
         }
-        if ($group->subtype == "5")
+        $subtypeName = $group->getSubtype() ; 
+        if ($subtypeName == "teams")
         {
             $htmlname = htmlentities($group->name); 
             $link = $CONFIG->wwwroot."pg/teams/".$group->guid.'/'.rawurlencode($group->name)."/" ; 

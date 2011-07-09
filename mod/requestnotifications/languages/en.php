@@ -14,6 +14,10 @@
 		
 		'requestnotifications:grouprequests:title' => "Group membership requests",
 		'requestnotifications:grouprequests:count' => "%s membership requests",
+		'requestnotifications:openlabrequests:count' => "%s Open Lab membership requests",
+		'requestnotifications:teamrequests:count' => "%s Team membership requests",
+		'requestnotifications:openlabrequests:title' => "Open Lab membership requests",
+		'requestnotifications:teamrequests:title' => "Team membership requests",
 		
 		'requestnotifications:groupinvite:title' => 'Group invitations',
 		'requestnotifications:groupinvite:count' => '%s group invitations',
