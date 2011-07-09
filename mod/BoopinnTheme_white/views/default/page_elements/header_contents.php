@@ -44,24 +44,21 @@ if ($owner instanceof elggentity) {
 }
 
 // is there a page owner?
+// stephane stuff
 $owner = page_owner_entity();
 if ($owner instanceof elggentity) {
 	$icon = elgg_view("profile/icon",array('entity' => $owner, 'size' => 'tiny'));
 	if ($owner instanceof elgguser || $owner instanceof elgggroup) {
 		$info = '<a href="' . $owner->geturl() . '">' . $owner->name . '</a>';
 	}
-	$display = "<div id=\"owner_block_icon\">" . $icon . "</div>";
 
-	$contents .= $display;
+} else {
+	//if nothing returned, put logged-in icon
+	$owner = get_loggedin_user() ; 
+	$icon = elgg_view("profile/icon",array('entity' => $owner, 'size' => 'tiny'));
 }
-
-
-
-
-
-
-
-
+	$display = "<div id=\"owner_block_icon\">" . $icon . "</div>";
+	$contents .= $display;
 
 echo $contents;
 ?>
