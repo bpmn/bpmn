@@ -27,15 +27,31 @@
 		<?php }
 		
 			//get group membership requests
-			$owned_groups = get_entities('group', '', $user->guid, "");
+			$owned_groups = get_entities('group', 'teams', $user->guid, "");
 			if ($owned_groups) {
 				$num_gr = 0;
 				foreach($owned_groups as $key => $group)
 					$num_gr += get_entities_from_relationship('membership_request',$group->guid,true,'','',0,'',9999,0,true);
 				if ($num_gr && $num_gr > 0) {
 					$count += $num_gr; ?>
-					<p><a href="<?php echo $vars['url']; ?>pg/requestnotifications/" class='grouprequestscount'>
-						<?php echo sprintf(elgg_echo('requestnotifications:grouprequests:count'), $num_gr); ?>
+					<p><a href="<?php echo $vars['url']; ?>pg/requestnotifications/team" class='grouprequestscount'>
+						<?php echo sprintf(elgg_echo('requestnotifications:teamrequests:count'), $num_gr); ?>
+					</a></p>
+					<?php
+				}
+			}
+                        
+                        
+                        //get group membership requests
+			$owned_groups = get_entities('group', 'openlab', $user->guid, "");
+			if ($owned_groups) {
+				$num_gr = 0;
+				foreach($owned_groups as $key => $group)
+					$num_gr += get_entities_from_relationship('membership_request',$group->guid,true,'','',0,'',9999,0,true);
+				if ($num_gr && $num_gr > 0) {
+					$count += $num_gr; ?>
+					<p><a href="<?php echo $vars['url']; ?>pg/requestnotifications/openlab/" class='grouprequestscount'>
+						<?php echo sprintf(elgg_echo('requestnotifications:openlabrequests:count'), $num_gr); ?>
 					</a></p>
 					<?php
 				}
