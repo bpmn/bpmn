@@ -233,6 +233,8 @@ blockquote p {
 	text-align:right;
 	margin:10px 0 4px 0;
 	padding-bottom:4px;
+    border: none 1px #f0f0f0;
+
 }
 
 
@@ -245,22 +247,21 @@ blockquote p {
 
 
 #user_topbar {
+    display: block;
     background: white;
 	position: relative;
+	height: 21px;
 	margin:10px 4px 4px 0;
-	padding-bottom:4px;
+	padding:3px 0px 4px 0px;
 
 	float:right;
 	text-align:left;
 	font-size: 90%;
 
 	color:#000000;
-    border:none 1px #f0f0f0;
+    border: none 1px #f0f0f0;
 
 }
-
-
-
 
 
 
@@ -718,8 +719,9 @@ color:#006699;
 
 
 #elgg_topbar_container_left a.pagelinks:hover {
-	background: #e0e0e0;
+	background: #0066aa;
 	text-decoration: none;
+	color: #ffffff;
  
     -moz-box-shadow: 0px 2px 0px #006699;
     -webkit-box-shadow: 0px 2px 0px #006699;
@@ -730,9 +732,11 @@ color:#006699;
  
 
 #elgg_topbar_container_left a.pagelinks_dashboard:hover {
-	background: #e0e0e0;
+	background: #0066aa;
 	text-decoration: none;
-        background:#e0e0e0 url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
+	color: #ffffff;
+
+        background:#0066aa url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
  
     -moz-box-shadow: 0px 2px 0px #006699;
     -webkit-box-shadow: 0px 2px 0px #006699;
@@ -742,25 +746,25 @@ color:#006699;
 
 
 #elgg_topbar_container_left a.privatemessages {
-	background:transparent url(<?php echo $vars['url']; ?>_graphics/toolbar_messages_icon.gif) no-repeat left 2px;
-	padding:0 0 4px 16px;
-	margin:0 15px 0 5px;
+	height: 21px;
+	display: block;
+	padding:0 0 0 18px;
+	margin:4px 15px 0 5px;
+	background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/email16.png) no-repeat;
 	cursor:pointer;
 }
 #elgg_topbar_container_left a.privatemessages:hover {
 	text-decoration: none;
-	background:transparent url(<?php echo $vars['url']; ?>_graphics/toolbar_messages_icon.gif) no-repeat left -36px;
+	background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/email16h.png) no-repeat;
 }
 #elgg_topbar_container_left a.privatemessages_new {
-	background:transparent url(<?php echo $vars['url']; ?>_graphics/toolbar_messages_icon.gif) no-repeat left -17px;
+	height: 21px;
+	display: block;
 	padding:0 0 0 18px;
-	margin:0 15px 0 5px;
+	margin:4px 15px 0 5px;	
+	background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/email_red.png) no-repeat;
 	color:white;
 }
-/* IE6 */
-* html #elgg_topbar_container_left a.privatemessages_new { background-position: left -18px; }
-/* IE7 */
-*+html #elgg_topbar_container_left a.privatemessages_new { background-position: left -18px; }
 
 #elgg_topbar_container_left a.privatemessages_new:hover {
 	text-decoration: none;
@@ -2973,10 +2977,27 @@ img.floatRightClear {
 	.coda-slider-wrapper.arrows .coda-slider { margin: 0 10px }
 	
 	<!--/* Arrow styling */-->
-	.coda-nav-left a, .coda-nav-right a { background: #d0d0d0; color: #0066aa; padding: 5px; width: 10px }
+	.coda-nav-left a { 
+
+       		background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/left.png) no-repeat;
+		color: #0066aa; padding: 5px; width: 16px; height: 16px }
+
+	.coda-nav-right a { 
+    		background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat;
+		color: #0066aa; padding: 5px; width: 16px; height: 16px }
 	
 	<!--/* Tab nav */-->
-	.coda-nav ul li a.current { background: #0066aa; color: #ffffff }
+	.coda-nav ul li a.current {
+
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright:4px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+font-weight: bold;
+
+				background: #0066aa; color: #ffffff }
 	
 	<!--/* Panel padding */-->
 	.coda-slider .panel-wrapper { padding: 20px }
@@ -2989,7 +3010,14 @@ img.floatRightClear {
 	<!--/* Tabbed nav */-->
 	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
 	.coda-nav ul li { display: inline }
-	.coda-nav ul li a { background: #f0f0f0; color: #000; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
+	.coda-nav ul li a {
+font-weight: bold;
+font-size: small;
+
+    background: -moz-linear-gradient(center top , #FFFFFF 0pt, #D0D0D0 100%) repeat scroll 0 0 transparent;
+
+
+    color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
 	
 	<!--/* Miscellaneous */-->
 	.coda-slider-wrapper { clear: both; overflow: auto }

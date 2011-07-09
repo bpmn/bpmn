@@ -29,12 +29,14 @@
 
 		?>
 
-		<div class="toolbarlinks2">
+		<div class="toolbarlinks">
 		<?php
 		//allow people to extend this top menu
 		echo elgg_view('elgg_topbar/extend', $vars);
 		?>
+			</div>
 
+		<div class="toolbarlinks2">
 		<a href="<?php echo $vars['url']; ?>pg/settings/" class="usersettings"><?php echo elgg_echo('settings'); ?></a>
 </small>
 			</div>
