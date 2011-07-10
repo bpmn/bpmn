@@ -60,18 +60,23 @@ margin: 6px;
 	-moz-border-radius: 4px;
 	color:#333333;
 	background: #cccccc;
+
+        background: url(<?php echo $vars['url']; ?>/mod/search/_graphics/search.png) no-repeat;
+
 	border:none;
 	font-size:12px;
 	font-weight:bold;
 	margin:0px;
 	padding:2px;
-	width:auto;
+	width:20px;
 	height:18px;
 	cursor:pointer;
 }
 #searchform input.search_submit_button:hover {
 	color:#ffffff;
 	background: #4690d6;
+        background: url(<?php echo $vars['url']; ?>/mod/search/_graphics/searchh.png) no-repeat;
+
 }
 
 

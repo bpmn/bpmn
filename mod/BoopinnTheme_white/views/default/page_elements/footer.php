@@ -19,45 +19,42 @@
 <center>
 
 <h6><p>
-<span style="color:black">Boopinn Copyrights 2011</p>
-
-		In clicking register or using Boopinn, you confirm that you read, understood, and accepted the general conditions on the usage and confidentiality politic of Boopinn.
+<span style="color:black">Boopinn Copyrights &copy; 2011 - All rights reserved</p></span>
+By clicking register or using Boopinn, you confirm that you read, understood, and accepted the general conditions on the usage and confidentiality policies of Boopinn.
 	
 </h6>
 </center>
-
-<center>
-<table width="600" height="79" border="0" cellpadding="0" cellspacing="0">
-
-
-
-<tr>
-		<td align="center">
-		<h6>
-		<a href="http://blog.boopinn.com" target="_blank">Visit our blog !</a>
-		</h6>
-		</td>
-
-		<td align="center">
-
-		<h6>
-		<a href="http://blog.boopinn.com" target="_blank">legal stuff</a>
-		</h6>
-		</td>
-
-	</tr>
-<tr>
-</center>
-
-</tr>
-
- </table>
-<center>
-
-	
-</center> 
-
 </div><!-- /#layout_footer -->
+
+<div class="footer_box">
+<div class="footer_box_links">
+	<ul>
+		<li>Communication</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Visit our blog">Visit our Blog</a><br>
+		</li>
+	</ul>
+	<ul>
+		<li>legal stuff</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Terms of usage">Terms of usage</a><br>
+		</li>
+	</ul>
+	<ul>
+		<li>Contact us</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Contact us">Contact us</a><br>
+		</li>
+	</ul>
+
+</div>
+</div>
+
+<div class="footer_box_recommend">
+<div class="f-left">(Best viewed with Firefox, Chrome, or Internet Explorer 9+)</div>
+<div class="f-right">Boopinn is proudly powered by Open Source Softwares</div>
+</div>
+
 
 
 <div class="clearfloat"></div>
