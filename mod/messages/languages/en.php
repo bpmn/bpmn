@@ -37,6 +37,7 @@
 			'messages:error' => 'There was a problem saving your message. Please try again.',
 	
 			'item:object:messages' => 'Messages',
+                                                'message:selectuser' => '-- Select someone in your CIS--', 
 	
 		/**
 		 * Status messages

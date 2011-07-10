@@ -13,7 +13,6 @@ function mycis_init() {
 
     add_widget_type('mycis', 'CIS', 'My CIS');
 
-
     register_page_handler('cis', 'mycis_page_handler');
 
     add_menu(elgg_echo('mycis:pagetitle'), $CONFIG->wwwroot . 'pg/cis/index/');

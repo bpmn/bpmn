@@ -2,7 +2,7 @@
 
 /**
  * return a list of users belonging to user cis 
- * @param type $user 
+ * @param type $user object 
  */
 function get_users_in_cis($user) {
     
@@ -77,7 +77,7 @@ function compute_closest_space($user) {
    
     // find the openlabs I'm member of 
     $openlabs = elgg_get_entities_from_relationship(array('relationship' => 'member',
-        'relationship_guid' => get_loggedin_userid(),
+        'relationship_guid' =>  $user->guid,
         'inverse_relationship' => FALSE,
         'types' => 'group',
         'subtypes' => 'openlab',

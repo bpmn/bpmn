@@ -1,1 +1,3 @@
-The base code for auto refresh and riverdashbaord w/ wire were not originally written by me [Untamed]. This mod was put together and made to work flawlessly and easily by me [Untamed]. The settings were configured from scratch by me [Untamed].
+The base code for auto refresh and riverdashbaord w/ wire were not originally written by me [Untamed]. 
+This mod was put together and made to work flawlessly and easily by me [Untamed]. 
+The settings were configured from scratch by me [Untamed].
