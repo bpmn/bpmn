@@ -27,17 +27,36 @@ By clicking register or using Boopinn, you confirm that you read, understood, an
 </div><!-- /#layout_footer -->
 
 <div class="footer_box">
+<div class="f-left"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/ico.png"></img></div>
+
 <div class="footer_box_links">
+	<ul>
+		<li>Boopinn</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Boopinn explained">Boopinn explained</a><br>
+		</li>
+	</ul>
+
 	<ul>
 		<li>Communication</li>
 		<li>
 		<a target="" href="http://blog.boopinn.com" title="Visit our blog">Visit our Blog</a><br>
 		</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Partners">Partners</a><br>
+		</li>
 	</ul>
+
 	<ul>
 		<li>legal stuff</li>
 		<li>
-		<a target="" href="http://blog.boopinn.com" title="Terms of usage">Terms of usage</a><br>
+		<a target="" href="http://blog.boopinn.com" title="Terms of Use">Terms of Use</a><br>
+		</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Intellectual Property">Intellectual Property</a><br>
+		</li>
+		<li>
+		<a target="" href="http://blog.boopinn.com" title="Privacy Policies">Privacy Policies</a><br>
 		</li>
 	</ul>
 	<ul>
