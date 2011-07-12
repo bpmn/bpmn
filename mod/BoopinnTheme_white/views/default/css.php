@@ -517,7 +517,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f
 	height:40px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	margin:0 0 20px 0;
+	margin:0 0 5px 0;
 }
 #layout_footer table {
 margin:0 0 0 20px;
@@ -969,6 +969,7 @@ box-shadow: 5px 12px 58px #081f00;
 	top:6px;
 	left:250px;
 	width:400px;
+        border: 1px solid #00ddff;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius:4px;
@@ -1141,10 +1142,10 @@ background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#D
 label {
 	font-weight: bold;
 	color:#333333;
-	font-size: 120%;
+	font-size: 100%;
 }
 input {
-	font: 120% Arial, Helvetica, sans-serif;
+	font: 100% Arial, Helvetica, sans-serif;
 	padding: 5px;
 	border: 1px solid #cccccc;
 	color:#666666;
@@ -1327,7 +1328,7 @@ input[type="submit"] {
 	padding:5px 5px 0 5px;
 }
 #login-box .login-textarea {
-	width:178px;
+	width:189px;
 }
 #login-box label,
 #register-box label {
@@ -1368,6 +1369,31 @@ input[type="submit"] {
 	border-radius:4px;
 
 }
+.register-box-left {
+	position: relative;
+	text-align:left;
+	width:500px;
+	padding:10px;
+	background: #fefefe;
+	margin:0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius:4px;
+	float:right;
+}
+.register-box-left-footer {
+	position: relative;
+	text-align:left;
+	width:500px;
+	padding:10px;
+	background: #fefefe;
+	margin:0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius:4px;
+	float:right;
+}
+
 #persistent_login label {
 	font-size:1.0em;
 	font-weight: normal;
@@ -3098,6 +3124,8 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }
 
 .footer_box {
+    border-top: 1px solid #D3D3D3;
+
     margin-top: 6px;
     padding-bottom: 25px;
     padding-top: 10px;
@@ -3105,6 +3133,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 
 
 .footer_box_links {
+
     color: #000000;
     float: right;
     font-size: 11px;
@@ -3115,7 +3144,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 
 .footer_box_links ul {
     float: left;
-    margin: 0 6px 0 25px;
+    margin: 0 0px 0 25px;
 }
 
 .footer_box_recommend {
@@ -3134,7 +3163,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     float: right;
 }
 
-
+.f-center {
     float: center;
     font-size: 8px;
     width: auto;
