@@ -7,8 +7,21 @@
 	 */
 	 
 	 //need to be logged in to send a message
-	 if (isloggedin()) {
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/mycis/actions/cis.php");
+
+        if (isloggedin()) {
+             
+            $myCis = get_users_in_cis(get_loggedin_user());
+            $inmycis=false;
+            foreach($myCis as $listcis){
+                if ($listcis->guid==page_owner()){
+                    $inmycis=true;
+                    break;
+                }
+            }
+
+            if($inmycis) {
 ?>
 
 	<p class="user_menu_messages">
@@ -16,7 +29,14 @@
 	</p>
 	
 <?php
-
-	}
+            }
+            else {
+?>
+        <p class="user_menu_messages">
+            <?php echo elgg_echo("messages:notincis"); ?>
+	</p>
+<?php
+            }
+}
 
 ?>

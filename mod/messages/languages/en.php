@@ -38,7 +38,7 @@
 	
 			'item:object:messages' => 'Messages',
                                                 'message:selectuser' => '-- Select someone in your CIS--', 
-	
+                        'messages:notincis'=> 'This user is not in your CIS',
 		/**
 		 * Status messages
 		 */
