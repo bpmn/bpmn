@@ -17,16 +17,9 @@
 			$count = 0;
 			gatekeeper();
 			
-			//get friend requests
-			$num_fr = get_entities_from_relationship('friendrequest', $user->guid, true, "user", "", 0, "", 0, 0, true);
-			if(isset($num_fr) && $num_fr > 0){
-				$count += $num_fr; ?>
-				<p><a href="<?php echo $vars['url']; ?>pg/friend_request" class='friendrequestscount'>
-					<?php echo sprintf(elgg_echo('requestnotifications:friendrequests:count'), $num_fr); ?>
-				</a></p>
-		<?php }
 		
-			//get group membership requests
+	
+			//get teams membership requests
 			$owned_groups = get_entities('group', 'teams', $user->guid, "");
 			if ($owned_groups) {
 				$num_gr = 0;
@@ -34,7 +27,7 @@
 					$num_gr += get_entities_from_relationship('membership_request',$group->guid,true,'','',0,'',9999,0,true);
 				if ($num_gr && $num_gr > 0) {
 					$count += $num_gr; ?>
-					<p><a href="<?php echo $vars['url']; ?>pg/requestnotifications/team" class='grouprequestscount'>
+					<p><a href=<?php echo $vars['url']."pg/teams/membershipreq_list/". $user->username ;?> class='grouprequestscount'>
 						<?php echo sprintf(elgg_echo('requestnotifications:teamrequests:count'), $num_gr); ?>
 					</a></p>
 					<?php
@@ -42,7 +35,7 @@
 			}
                         
                         
-                        //get group membership requests
+                        //get openlab membership requests
 			$owned_groups = get_entities('group', 'openlab', $user->guid, "");
 			if ($owned_groups) {
 				$num_gr = 0;
@@ -50,30 +43,41 @@
 					$num_gr += get_entities_from_relationship('membership_request',$group->guid,true,'','',0,'',9999,0,true);
 				if ($num_gr && $num_gr > 0) {
 					$count += $num_gr; ?>
-					<p><a href="<?php echo $vars['url']; ?>pg/requestnotifications/openlab/" class='grouprequestscount'>
+					<p><a href=<?php echo $vars['url']."pg/openlabs/membershipreq_list/". $user->username ;?> class='grouprequestscount'>
 						<?php echo sprintf(elgg_echo('requestnotifications:openlabrequests:count'), $num_gr); ?>
 					</a></p>
 					<?php
 				}
 			}
 			
-			//get group invitations
-			$num_invitations = get_entities_from_relationship('invited',$user->guid,true,'','',0,'',9999,0,true);
-			if(isset($num_invitations) and $num_invitations > 0) {
-				$count += $num_invitations; ?>
-						<p><a href="<?php echo $vars['url']; ?>pg/requestnotifications/" class='groupinvitationscount'>
-							<?php echo sprintf(elgg_echo('requestnotifications:groupinvite:count'), $num_invitations); ?>
+			//get teams invitations
+			$num_teams_invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user->guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'teams', 'limit' => 9999,'count'=>true));
+			if(isset($num_teams_invitations) and $num_teams_invitations > 0) {
+				$count += $num_teams_invitations; ?>
+                                                <p><a href=<?php echo $vars['url']."pg/teams/invitations/". $user->username ;?> class='groupinvitationscount'>
+							<?php echo sprintf(elgg_echo('requestnotifications:teaminvite:count'), $num_teams_invitations); ?>
 						</a></p>
 			<?php }
-			
-			//get shared bookmarks
-			$num_shared_bookmarks = get_entities_from_relationship('share',$user->guid,true,'','',0,'',9999,0,true);
-			if (isset($num_shared_bookmarks) and $num_shared_bookmarks > 0) {
-				$count += $num_shared_bookmarks; ?>
-						<p><a href="<?php echo $vars['url']; ?>pg/bookmarks/<?php echo $user->username; ?>/inbox" class='sharedbookmarkscount'>
-							<?php echo sprintf(elgg_echo('requestnotifications:sharedbookmarks:count'), $num_shared_bookmarks); ?>
+
+
+                        //get openlabs invitations
+			$num_openlabs_invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user->guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999,'count'=>true));
+			if(isset($num_openlabs_invitations) and $num_openlabs_invitations > 0) {
+				$count += $num_openlabs_invitations; ?>
+	                                  <p><a href=<?php echo $vars['url']."pg/openlabs/invitations/". $user->username ;?> class='groupinvitationscount'>
+							<?php echo sprintf(elgg_echo('requestnotifications:openlabinvite:count'), $num_openlabs_invitations); ?>
 						</a></p>
 			<?php }
+
+                       //get openlabs suggestions
+			$num_openlabs_suggestions = elgg_get_entities_from_relationship(array('relationship' => 'suggested', 'relationship_guid' => $user->guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999,'count'=>true));
+			if(isset($num_openlabs_suggestions) and $num_openlabs_suggestions > 0) {
+				$count += $num_openlabs_suggestions; ?>
+	                                  <p><a href=<?php echo $vars['url']."pg/openlabs/suggestions/". $user->username ;?> class='groupinvitationscount'>
+							<?php echo sprintf(elgg_echo('requestnotifications:openlabsuggestion:count'), $num_openlabs_suggestions); ?>
+						</a></p>
+			<?php }
+
 			
 			
 			// We trigger a plugin hook so other plugins can add stuff here

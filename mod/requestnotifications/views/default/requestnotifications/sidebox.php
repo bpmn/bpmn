@@ -10,10 +10,10 @@
 	 */
 ?>
 
-<div class="sidebarBox">
-	<a href="<?php echo $vars['url'];?>pg/requestnotifications/" class="requestnotifications_viewall">
-		<?php echo elgg_echo('requestnotifications:viewall');?>
-	</a>
+<!--div class="sidebarBox"-->
+	<!--a href="<?//php echo $vars['url'];?>pg/requestnotifications/" class="requestnotifications_viewall">
+		<?//php echo elgg_echo('requestnotifications:viewall');?>
+	</a-->
 	<h3><?php echo elgg_echo('requestnotifications:requests');?></h3>
 	<?php echo elgg_view('requestnotifications/shortlist', $vars); ?>
-</div>
+<!--/div-->

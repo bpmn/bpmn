@@ -22,9 +22,10 @@ function requestnotifications_init() {
         add_widget_title_link('requestnotifications', '[BASEURL]pg/requestnotifications/');
     // Register a page handler, so we can have nice URLs for the notifications main page
     register_page_handler('requestnotifications', 'requestnotifications_page_handler');
-    if (isloggedin()) {
-        add_menu(elgg_echo('activity'), $CONFIG->wwwroot . "pg/activity/");
-    }
+   
+    //if (isloggedin()) {
+    //    add_menu(elgg_echo('activity'), $CONFIG->wwwroot . "pg/activity/");
+    //}
 }
 
 /**

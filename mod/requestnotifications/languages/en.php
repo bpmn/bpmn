@@ -21,6 +21,9 @@
 		
 		'requestnotifications:groupinvite:title' => 'Group invitations',
 		'requestnotifications:groupinvite:count' => '%s group invitations',
+                'requestnotifications:teaminvite:count' => '%s Teams invitations',
+                'requestnotifications:openlabinvite:count' => '%s OpenLabs invitations',
+                'requestnotifications:openlabsuggestion:count' => '%s OpenLabs suggestions',
 		'requestnotifications:invitationdeclined' => 'The group invitation has been declined.',
 		
 		'requestnotifications:sharedbookmarks:title' => 'Shared bookmarks',
