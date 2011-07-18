@@ -14,7 +14,7 @@
 <div id="layout_header">
 <div id="wrapper_header">
 	<!-- display the page title -->
-<div id="join"><a href="<?php echo $vars['url']; ?>"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/boopinn_final-flare_small4.jpg" alt="Join"></img></a>
+<div id="join"><a href="<?php echo $vars['url']; ?>"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/boopinn_final-flare-beta.jpg" alt="Join"></img></a>
 
 
 <?php
