@@ -1,11 +1,12 @@
 <?php
 
+
+require_once(dirname(dirname(dirname(__FILE__))) . "/lib/boopinncomment.php" );
 /**
  * Elgg openlabs: add post to a topic 
  *
  * @package Elggopenlabs from ElggGroups
  */
-
 // Make sure we're logged in and have a CSRF token
 gatekeeper();
 
@@ -17,8 +18,8 @@ $post = get_input('topic_post');
 
 // make sure we have text in the post
 if (!$post) {
-	register_error(elgg_echo("openlabpost:nopost"));
-	forward($_SERVER['HTTP_REFERER']);
+    register_error(elgg_echo("openlabpost:nopost"));
+    forward($_SERVER['HTTP_REFERER']);
 }
 
 
@@ -40,8 +41,10 @@ if (!$topic || $topic->getSubtype() != "openlabforumtopic") {
 
 
 // add the post to the forum topic
-$post_id = $topic->annotate('openlab_topic_post', $post, $topic->access_id, $user->guid);
-if ($post_id == false) {
+
+$post = BoopinnComment::create(get_loggedin_userid()  , $topic_guid,  $post);
+$result = $post->save();
+if ($result == false) {
 	system_message(elgg_echo("openlabspost:failure"));
 	forward($_SERVER['HTTP_REFERER']);
 }

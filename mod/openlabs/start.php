@@ -22,7 +22,14 @@ function openlabs_init() {
     }
 
     // register for search
-    register_entity_type('group','openlab');
+    register_entity_type('group', 'openlab');
+    // register boopin comment 
+    register_entity_type('object', 'boopinncomment');
+
+    // Tell Elgg that group subtype "boopinncomment" should be loaded using the Committee class
+    // If you ever change the name of the class, use update_subtype() to change it
+    add_subtype('object', 'boopinncomment', 'BoopinnComment');
+
 
     // Register a page handler, so we can have nice URLs
     register_page_handler('openlabs', 'openlabs_page_handler');
