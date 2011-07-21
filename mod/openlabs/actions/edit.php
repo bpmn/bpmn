@@ -109,7 +109,9 @@ $openlab->save();
 // openlab creator needs to be member of new openlab
 if ($new_openlab_flag) {
 	$openlab->join($user);
-	add_to_river('river/openlab/create', 'create', $user->guid, $openlab->guid);
+	add_to_river('openlab_river/openlab/create', 'create', $user->guid, $openlab->guid);
+}else{
+    add_to_river('openlab_river/openlab/update', 'update', $user->guid, $openlab->guid);
 }
 
 

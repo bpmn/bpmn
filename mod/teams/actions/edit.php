@@ -109,7 +109,9 @@ $group->save();
 // group creator needs to be member of new group
 if ($new_group_flag) {
 	$group->join($user);
-	add_to_river('river/group/create', 'create', $user->guid, $group->guid);
+	add_to_river('teams_river/teams/create', 'create', $user->guid, $group->guid);
+}else{
+    add_to_river('teams_river/teams/update', 'update', $user->guid, $group->guid);
 }
 
 

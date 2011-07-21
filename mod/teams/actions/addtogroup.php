@@ -46,8 +46,11 @@
 
 							//add_entity_relationship($user->guid, 'member', $group->guid);
 							$group->join($user);
+                                                        
+                                                        // add to river
+                                                        add_to_river('teams_river/relationship/member/create','join',$user->guid,$group->guid);
 
-							// send welcome email
+                                                        // send welcome email
 							notify_user($user->getGUID(), $group->owner_guid,
 								sprintf(elgg_echo('teams:welcome:subject'), $group->name),
 								sprintf(elgg_echo('teams:welcome:body'), $user->name, $group->name, $group->getURL()),

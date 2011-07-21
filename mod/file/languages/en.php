@@ -77,7 +77,7 @@
 			'file:river:created' => "%s uploaded",
 			'file:river:item' => "a file",
 			'file:river:annotate' => "a comment on this file",
-
+                        'file:river:togroup' => "to",
 			'item:object:file' => 'Files',
 			
 	    /**

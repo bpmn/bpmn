@@ -26,7 +26,9 @@
 
 	if (($user instanceof ElggUser) && ($openlab instanceof ElggGroup))
 	{
-		if ($openlab->isPublicMembership())
+		//if (    (check_entity_relationship($openlab->guid, 'invited', $user->guid)) ||
+                  //      $openlab->isPublicMembership())
+                if ($openlab->isPublicMembership())
 		{
 			if ($openlab->join($user))
 			{
@@ -38,7 +40,7 @@
 				remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
 
 				// add to river
-				add_to_river('river/relationship/member/create','join',$user->guid,$openlab->guid);
+				add_to_river('openlab_river/relationship/member/create','join',$user->guid,$openlab->guid);
 
 				forward($openlab->getURL());
 				exit;

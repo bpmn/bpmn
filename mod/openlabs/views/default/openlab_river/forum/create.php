@@ -16,10 +16,11 @@
 	$url = $object->getURL();
 	$url_user = "<a href=\"{$performed_by->getURL()}\">{$performed_by->name}</a>";
 	$string = sprintf(elgg_echo("openlabforum:river:posted"),$url_user) . " ";
-	$string .= elgg_echo("openlabforum:river:annotate:create") . " | <a href=\"" . $url . "\">" . $object->title . "</a>";
+	//$string .= elgg_echo("openlabforum:river:annotate:create") . " | <a href=\"" . $url . "\">" . $object->title . "</a>";
+        $string .= elgg_echo("openlabforum:river:annotate:create") . " | <a href=\"" . $url . "\">" . $object->name . "</a>";
 	if ($comment) {
 		$string .= "<div class=\"river_content_display\">";
-		$string .= elgg_get_excerpt($comment, 200);
+		$string .= elgg_get_excerpt($comment, 100);
 		$string .= "</div>";
 	}
 

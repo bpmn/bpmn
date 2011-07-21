@@ -43,6 +43,9 @@ if (($openlab) && ($user) && (!$openlab->isMember($user)))
 			remove_entity_relationship($openlab->guid, 'invited', $user->guid);
 			remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
 
+                        //add to river
+                        add_to_river('openlab_river/relationship/member/create','join',$user->guid,$openlab->guid);
+
 			// openlab joined
 			system_message(elgg_echo('openlabs:joined'));
 			elgg_set_ignore_access($ia);

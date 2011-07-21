@@ -9,7 +9,7 @@
 	$string = sprintf(elgg_echo("file:river:created"),$url) . " " . elgg_echo("file:river:item");
 	$string .= " <a href=\"" . $object->getURL() . "\">" . $object->title . "</a>";
 	if ($container && $container instanceof ElggGroup) {
-		$string .= ' ' . elgg_echo('groups:river:togroup') . " <a href=\"" . $container->getURL() ."\">". $container->name . "</a>";
+		$string .= ' ' . elgg_echo('file:river:togroup') . " <a href=\"" . $container->getURL() ."\">". $container->name . "</a>";
 	}
 
 	echo $string;

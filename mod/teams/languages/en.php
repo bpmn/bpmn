@@ -184,8 +184,10 @@ or click below to view the team's join requests:
 			*/
 
 			'teams:river:member' => '%s is now a member of',
+                        'teams:river:leave' => '%s has left the team',
 			'teams:river:create' => '%s has created the team',
-		
+                        'teams:river:update' => '%s has updated the team',
+
 			'teams:river:togroup' => 'to the team',
 
 			'teams:nowidgets' => 'No widgets have been defined for this team.',

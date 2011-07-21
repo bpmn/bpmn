@@ -151,7 +151,8 @@
 	if ($new_file) {
 		if ($guid) {
 			system_message(elgg_echo("file:saved"));
-			add_to_river('river/object/file/create', 'create', get_loggedin_userid(), $file->guid);
+                        add_to_river('river/object/file/create', 'addfile', get_loggedin_userid(), $file->guid);
+                        
 		} else {
 			// failed to save file object - nothing we can do about this
 			register_error(elgg_echo("file:uploadfailed"));

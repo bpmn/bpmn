@@ -47,7 +47,10 @@
 							//add_entity_relationship($user->guid, 'member', $openlab->guid);
 							$openlab->join($user);
 
-							// send welcome email
+                                                        //add to river
+                                                        add_to_river('openlab_river/relationship/member/create','join',$user->guid,$openlab->guid);
+
+                                                        // send welcome email
 							notify_user($user->getGUID(), $openlab->owner_guid,
 								sprintf(elgg_echo('openlabs:welcome:subject'), $openlab->name),
 								sprintf(elgg_echo('openlabs:welcome:body'), $user->name, $openlab->name, $openlab->getURL()),
