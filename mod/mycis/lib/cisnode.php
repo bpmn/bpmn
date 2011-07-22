@@ -1,7 +1,5 @@
 <?php
 
-include("cislink.php");
-
 class CisNode {
 
     // a set of cosNode for teams relationship 

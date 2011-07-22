@@ -8,12 +8,13 @@
 	 * @uses $vars['entity'] The posted comment to view
 	 */
 	 
-	
+	      
 ?>
-
-	<div class="topic_post"><!-- start the topic_post -->
-	
-	    <table width="100%">
+ <!-- start the topic_post -->
+	<div class="topic_post">
+     
+            
+            <table width="100%">
             <tr>
                 <td>
                 	<a name="<?php echo $vars['entity']->id; ?>"></a>
@@ -56,13 +57,13 @@
                 </td>
             </tr>
         </table>
-		<?php
+		
 
     <table width="100%">
         <tr>
             <td>
                 <a name="<?php echo $vars['entity']->id; ?>"></a>
-                <?php
+                 <?php
                 $boopinnComment = $vars['entity'];
                 $authorId = $boopinnComment->getAuthorId();
                 $post_owner = get_user($authorId);
