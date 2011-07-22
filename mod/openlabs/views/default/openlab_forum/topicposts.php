@@ -37,24 +37,7 @@
                         echo "<small>" . elgg_view_friendly_time($vars['entity']->time_created) . "</small></p>";
                     ?>
                 </td>
-                <td width="70%">       
-                    <?php
-                        //display the actual message posted
-                       echo parse_urls(elgg_view("output/longtext",array("value" => $vars['entity']->value)));
-
-                         echo elgg_view("openlab_output/iconurl",array(
-                                'href' => $vars['url'] . "action/openlabs/rate_plus?annotation_id=" . $vars['entity']->id,
-                                'src'  => $vars['url']."mod/openlabs/graphics/thumb-up-icon.png"	,
-                                'alt'   => "Good comment !!!" ,
-                                "is_action" => true ));
-
-                        echo elgg_view("openlab_output/iconurl",array(
-                                'href' => $vars['url'] . "action/openlabs/rate_less?annotation_id=" . $vars['entity']->id,
-                                'src'  => $vars['url']."mod/openlabs/graphics/thumb-down-icon.png",
-                                'alt'   => "Bad comment !!!" ,
-                               "is_action" => true ));
-                    ?>
-                </td>
+          
             </tr>
         </table>
 		

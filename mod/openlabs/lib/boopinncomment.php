@@ -65,7 +65,7 @@ class BoopinnComment extends ElggObject {
     public function getRating() {
 
         // read annotation rating 
-        $annotationRating = $this->getAnnotations('rating', 1, 0, desc);
+        $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
 
         // read value 
         $rating = $annotationRating[0]->value;

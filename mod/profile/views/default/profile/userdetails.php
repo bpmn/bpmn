@@ -79,7 +79,7 @@ echo "</div>";
 
                 // display the users name
                 echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
-                $annotations = $vars['entity']->getAnnotations('rating', 100000000, 0, desc);
+                $annotations = $vars['entity']->getAnnotations('userrating', 100000000, 0, desc);
                 // $annotationsCount = count($annotations) ; 
                 $annotationsCount = $annotations[0]->value ; 
                 if ($annotationsCount == 0)
