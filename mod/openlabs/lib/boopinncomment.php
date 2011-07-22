@@ -82,12 +82,12 @@ class BoopinnComment extends ElggObject {
     /**
      * return comments ordered by their rating 
      */
-    public static function getRatedComments($minValue) {
+    public static function getRatedComments($minvalue) {
         
         // find comments having annotations 
         $comments = elgg_get_entities_from_annotations(array('types' => 'object',
                                                                                            'subtypes' => BoopinnComment::getSubTypeName(),
-                                                                                           'annotation_names'=> 'rating')); 
+                                                                                           'annotation_names'=> 'commentrating' )) ; 
         
         $maxComments = array() ; 
         

@@ -30,7 +30,9 @@ echo elgg_view('navigation/pagination', array(
     <!-- grab the topic title -->
     <div id="content_area_openlab_title"><h2><?php echo $vars['entity']->title; ?></h2></div>
     <?php
+    
     $comments = BoopinnComment::getCommentsByTopic($vars['entity']->guid ) ; 
+    
     foreach ($comments as $post) {
 
         echo elgg_view("openlab_forum/topicposts", array('entity' => $post));

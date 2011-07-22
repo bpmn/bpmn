@@ -10,7 +10,6 @@
  * @package Elggopenlab
  */
 
-
 require_once(dirname(dirname(dirname(__FILE__))) . "/lib/boopinncomment.php" );
 
 // Make sure we're logged in (send us to the front page if not)
@@ -41,7 +40,7 @@ if ($rating) {
     }
 } else {
     // if not found create new one 
-    $comment->annotate('commentrating', 1);
+    $comment->annotate('commentrating', 0);
 }
 
 // annotate user 

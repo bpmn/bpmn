@@ -76,7 +76,7 @@
             <td width="70%">       
                 <?php
                 //display the actual message posted
-                $post = $boopinnComment->getComment(). " (". $boopinnComment->getRating(). ")" ; 
+                $post = $boopinnComment->getComment() ; // . " (". $boopinnComment->getRating(). ")" ; 
                 echo parse_urls(elgg_view("output/longtext", array("value" => $post )));
 
                 echo elgg_view("openlab_output/iconurl", array(
