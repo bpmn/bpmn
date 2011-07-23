@@ -3,6 +3,11 @@
 // include the Elgg engine
 include_once dirname(dirname(dirname(dirname(__FILE__)))) . "/engine/start.php"; 
 
+
+// for test only 
+$groups = compute_groups_in_cis(get_loggedin_user()) ;
+
+
 // maybe logged in users only?
 //gatekeeper();
 
