@@ -21,8 +21,10 @@
 		$view_all = true;
 		
 		$openlabaccess = group_gatekeeper(false);
-		if (!$openlabaccess)
-			$view_all = false;
+
+                //modif Fatxi description openlab are public
+                //if (!$openlabaccess)
+		//	$view_all = false;
 		
 		
 		$area2 = elgg_view_title($title);
