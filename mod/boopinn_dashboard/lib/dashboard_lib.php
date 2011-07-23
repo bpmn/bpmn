@@ -3,18 +3,31 @@
  * Dashboard function Library
  * 
  */
+require_once(dirname(dirname(dirname(__FILE__))) . "/mycis/actions/cis.php");
 
-function new_dash_event($event_type,$owner_guid){
-    
-    		$entity = new ElggObject;
-		$entity->subtype = $event_type;
-		$entity->owner_guid = $owner_guid;
-		$entity->container_guid = $owner_guid;
-		$entity->description = $owner_guid->briefdescription;
 
-    return $entity->save();
-}
+function view_my_cis_river($owner){
+    $title= "<h3>".sprintf(elgg_echo('dashboard:title:cisactivity'))."</h3>";
+    $entities = compute_groups_in_cis($owner);
 
+    foreach($entities as $entity){
+       if(!$entity->isMember($owner))
+            $guid_list[]=$entity->guid;
+    }
+
+ 
+    if (is_array($guid_list)){
+        $content= elgg_view_river_items($subject_guid = 0, $object_guid = $guid_list, $subject_relationship = '', $type = '',
+                                     $subtype = '', $action_type = 'create', $limit = 10, $offset = 0, $posted_min = 0, $posted_max = 0) ;
+    }
+        else {
+
+        $content= elgg_echo('dashboard:noactivity');
+                        }
+
+
+    return $title.$content;
+ }
 function view_my_group_river($owner_guid,$type,$subtype){
     $title= "<h3>".sprintf(elgg_echo('dashboard:title:activity'),$subtype)."</h3>";
     $entities = elgg_get_entities_from_relationship(array('relationship' => 'member', 'relationship_guid' => (int)$owner_guid, 'inverse_relationship' => FALSE,'type'=>$type,'subtype'=>$subtype, 'limit' => 9999));
@@ -34,7 +47,7 @@ function view_my_group_river($owner_guid,$type,$subtype){
     $guid_list= array_merge($guid_list, $files_guid);
     if (is_array($guid_list)){
         $content= elgg_view_river_items($subject_guid = 0, $object_guid = $guid_list, $subject_relationship = '', $type = '',
-                                     $subtype = '', $action_type = '', $limit = 20, $offset = 0, $posted_min = 0, $posted_max = 0) ;
+                                     $subtype = '', $action_type = '', $limit = 10, $offset = 0, $posted_min = 0, $posted_max = 0) ;
     }
         else {
      

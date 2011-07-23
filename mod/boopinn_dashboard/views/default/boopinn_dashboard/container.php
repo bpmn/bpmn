@@ -33,6 +33,9 @@
                     <div class="dash_box">
                         <?php echo $vars['openlabs_activity']; ?>
 			</div>
+                    <div class="dash_box">
+                        <?php echo $vars['cis_activity']; ?>
+			</div>
                 </div>
 	</div>
 
