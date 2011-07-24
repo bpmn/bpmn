@@ -3170,6 +3170,216 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     margin:0;
 }
 
+  a.bulle {
+     position:relative;
+     color:#396a86; 
+     text-decoration:none; 
+     font-family:arial, verdana, sans-serif; 
+     text-align:center; 
+     font-size:11px;
+   }
+   
+   a.bulle:hover {
+      background: none; 
+      z-index: 50; 
+   }
+   
+   a.bulle span { 
+     display: none;
+   }
+   
+   a.bulle:hover span {
+      display: block; 
+      position: absolute;
+      top: -10px; 
+      left: 40px;
+      font-family:arial, verdana, sans-serif; 
+      text-align:justify; 
+      font-size:12px;
+      font-weight:normal;
+      width:400px;
+      background: white;
+      padding: 5px;
+      border: 1px solid #62c0f4;
+      border-left: 10px solid #62c0f4;
+   }
+
+#browser-detection {
+	background: #FFFFE5;
+	color: #333333;
+	position: fixed;
+	_position: absolute;
+	padding: 10px 15px;
+	font-size: 13px;
+	font-family: "Trebuchet MS", "Segoe UI", Arial, Tahoma, sans-serif;
+	border-radius: 5px;
+	border: 1px solid #D6D6C1;
+	-moz-border-radius: 5px;
+	width: 700px;
+}
+#browser-detection P {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	line-height: 135%;
+	width: auto;
+	float: none;
+	border: none;
+	text-align: left;
+}
+#browser-detection P.bd-title {
+    padding-top: 0px;
+    font-size: 25px;
+    line-height: 100%;
+}
+#browser-detection P.bd-notice {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+#browser-detection SPAN.bd-highlight { color: #B50E0E; }
+#browser-detection A#browser-detection-close {
+	width: 15px;
+	height: 15px;
+	outline: none;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	text-indent: -500em;
+	line-height: 100%;
+	background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/close.gif) no-repeat center center;
+}
+#browser-detection A#browser-detection-close:HOVER { background-color: #F5F5DC; }
+#browser-detection UL.bd-browsers-list, #browser-detection UL.bd-browsers-list LI,
+#browser-detection UL.bd-skip-buttons, #browser-detection UL.bd-skip-buttons LI {
+	padding: 0;
+	margin: 0;
+	float: left;
+	list-style: none;
+}
+#browser-detection UL.bd-browsers-list { 
+	clear: both;
+	margin-top: 3px;
+	padding: 7px 0;
+	border-top: 1px solid #F5F5DC;
+	border-bottom: 1px solid #F5F5DC;
+	width: 100%;
+}
+#browser-detection UL.bd-browsers-list LI { text-align: left; }
+#browser-detection UL.bd-browsers-list LI A {
+	width: 60px;
+	height: 55px;
+	display: block;
+	color: #666666;
+	padding: 10px 10px 0 65px;
+	text-decoration: none;
+}
+#browser-detection UL.bd-browsers-list LI A:HOVER {	text-decoration: underline; }
+#browser-detection UL.bd-browsers-list LI.firefox A { background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/firefox.gif) no-repeat left top; }
+#browser-detection UL.bd-browsers-list LI.chrome A { background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/chrome.gif) no-repeat left top; }
+#browser-detection UL.bd-browsers-list LI.safari A { background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/safari.gif) no-repeat left top; }
+#browser-detection UL.bd-browsers-list LI.opera A { background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/opera.gif) no-repeat left top; }
+#browser-detection UL.bd-browsers-list LI.msie A { background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/msie.gif) no-repeat left top; }
+#browser-detection UL.bd-skip-buttons {	margin-top: 10px; }
+#browser-detection UL.bd-skip-buttons LI {
+	display: inline;
+	margin-right: 10px;	
+}
+#browser-detection UL.bd-skip-buttons LI BUTTON { font-size: 13px; }
+#browser-detection DIV.bd-poweredby {
+	font-size: 9px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	font-style: italic;
+}
+#browser-detection DIV.bd-poweredby, #browser-detection DIV.bd-poweredby A { color: #AAAAAA; }
+#browser-detection DIV.bd-poweredby A { text-decoration: underline; }
+#browser-detection DIV.bd-poweredby A:HOVER { text-decoration: none; }
+
+.welcomemessage {
+	background:white;
+}
+
+#dashboard_container {
+	margin:1px 1px 1px 1px;
+	padding:0px;
+	min-height: 400px;
+	border: none 1px #D0D0D0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+    /* fallback (Opera) */
+    background: #ffffff;
+
+}
 
 
+.dash_left {
+    min-height: 396px;
+    width: 220px;
+	border: none 1px #D0D0D0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+    float: left;
+}
+.dash_right {
+    min-height: 396px;
+    padding: 0px 0px 0px 7px;
+    width: 713px;
+	border-left: solid 1px #D0D0D0;
+    float: right;
+}
 
+.dash_right_left {
+    position: relative;
+    margin: 0px 0 0 0;
+    min-height: 100px;
+    width: 440px;
+	border: none 1px #D0D0D0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+    float: left;
+
+}
+
+.dash_right_footer {
+    position: relative;
+    margin: 5px 0 0 0;
+    min-height: 200px;
+    width: 720px;
+	border-top: solid 1px #D0D0D0;
+    float: left;
+
+}
+
+.dash_right_right {
+    position: relative;
+    margin: 0px 0 0 0;
+    min-height: 125px;
+    width: 250px;
+	border: solid 1px #D0D0D0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+    float: right;
+
+}
+
+
+.dash_box {
+    position: relative;
+    margin: 5px 0 0 0;
+    min-height: 100px;
+    min-width: 100px;
+    background: #ffffff;
+    color: #0066aa;
+	border: none 1px #D0D0D0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+
+.dashf-left {
+    float: left;
+}
+.dashf-right {
+    float: right;
+}

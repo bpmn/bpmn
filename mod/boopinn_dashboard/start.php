@@ -12,7 +12,7 @@ function boopinn_dashboard_init() {
 	// Page handler
 	register_page_handler('activity', 'boopinn_dashboard_page_handler');
 
-	elgg_extend_view('css', 'boopinn_dashboard/css');
+	elgg_extend_view('css', 'BoopinnTheme_white/css');
 
 }
 

@@ -6,8 +6,9 @@
  * @subpackage Core
  */
 
+
 $form_body = "<p>" . elgg_echo('user:password:text') . "</p>";
-$form_body .= "<p><label>". elgg_echo('username') . " "
+$form_body .= "<p><label>". elgg_echo('email') . " "
 	. elgg_view('input/text', array('internalname' => 'username')) . "</label></p>";
 $form_body .= elgg_view('input/captcha');
 $form_body .= "<p>" . elgg_view('input/submit', array('value' => elgg_echo('request'))) . "</p>";
@@ -16,8 +17,10 @@ $form_body .= "<p>" . elgg_view('input/submit', array('value' => elgg_echo('requ
 <div class="contentWrapper">
 <?php
 echo elgg_view('input/form', array(
-	'action' => "{$vars['url']}action/user/requestnewpassword",
+	'action' => "{$vars['url']}action/loginbyemailonly/requestnewpassword",
 	'body' => $form_body)
 );
 ?>
 </div>
+
+

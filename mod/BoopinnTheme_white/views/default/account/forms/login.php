@@ -34,3 +34,4 @@ if ((isset($CONFIG->https_login)) && ($CONFIG->https_login)) {
 <script type="text/javascript">
 	$(document).ready(function() { $('input[name=username]').focus(); });
 </script>
+

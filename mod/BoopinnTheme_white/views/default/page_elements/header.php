@@ -61,7 +61,12 @@ $release = get_version(true);
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-ui-1.7.2.custom.min.js"></script>
 	<script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery.form.js"></script>
-	<script type="text/javascript" src="<?php echo $vars['url']; ?>_css/js.php?lastcache=<?php echo $vars['config']->lastcache; ?>&amp;js=initialise_elgg&amp;viewtype=<?php echo $vars['view']; ?>"></script>
+<script type="text/javascript" src="<?php echo $vars['url']; ?>_css/js.php?lastcache=<?php echo $vars['config']->lastcache; ?>&amp;js=initialise_elgg&amp;viewtype=<?php echo $vars['view']; ?>"></script>
+
+<script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/browser-detection.js";?>"></script>
+
+
+
 <?php
         $context = get_context()  ; 
         
@@ -111,7 +116,7 @@ $release = get_version(true);
 	<!-- End Stylesheets -->
 	
 	<!-- Begin JavaScript -->
-			    <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/javascripts/jquery-1.3.2.min.js";?>"></script>
+			    <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery-1.3.2.min.js";?>"></script>
 <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.easing.1.3.js";?>"></script>
 <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.coda-slider-2.0.js";?>"></script>
 			    

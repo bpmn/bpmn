@@ -6,6 +6,13 @@
  * @subpackage Core
  */
 
+
+
+
+
+
+
+
 $username = get_input('u');
 $email = get_input('e');
 $name = get_input('n');
@@ -20,7 +27,7 @@ if ($loggedin_user && $loggedin_user->isAdmin() && isset($vars['show_admin'])) {
 $form_body = "<p><label>" . elgg_echo('name') . "<br />" . elgg_view('input/text' , array('internalname' => 'name', 'class' => "general-textarea", 'value' => $name)) . "</label><br />";
 
 $form_body .= "<label>" . elgg_echo('email') . "<br />" . elgg_view('input/text' , array('internalname' => 'email', 'class' => "general-textarea", 'value' => $email)) . "</label><br />";
-$form_body .= "<label>" . elgg_echo('username') . "<br />" . elgg_view('input/text' , array('internalname' => 'username', 'class' => "general-textarea", 'value' => $username)) . "</label><br />";
+//$form_body .= "<label>" . elgg_echo('username') . "<br />" . elgg_view('input/text' , array('internalname' => 'username', 'class' => "general-textarea", 'value' => $username)) . "</label><br />";
 $form_body .= "<label>" . elgg_echo('password') . "<br />" . elgg_view('input/password' , array('internalname' => 'password', 'class' => "general-textarea")) . "</label><br />";
 $form_body .= "<label>" . elgg_echo('passwordagain') . "<br />" . elgg_view('input/password' , array('internalname' => 'password2', 'class' => "general-textarea")) . "</label><br />";
 
@@ -39,6 +46,10 @@ $form_body .= elgg_view('input/hidden', array('internalname' => 'invitecode', 'v
 $form_body .= elgg_view('input/hidden', array('internalname' => 'action', 'value' => 'register'));
 $form_body .= elgg_view('input/submit', array('internalname' => 'submit', 'value' => elgg_echo('register'))) . "</p>";
 ?>
+
+
+
+
 <div class="register-box-left">
 <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/network.png" alt="Network"class="floatRight"></img><br>
 </div>
@@ -48,9 +59,18 @@ By clicking register or using Boopinn, you confirm that you read, understood,<br
 and accepted the general conditions on the usage and confidentiality policies of Boopinn. 
 </h6>
 
+
+
 </div>	
 <div id="register-box">
 <h2><?php echo elgg_echo('register'); ?></h2>
-<?php echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'body' => $form_body)) ?>
+
+</div>
+
+
+<?php 
+
+echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'body' => $form_body)) ?>
+
 </div>
 
