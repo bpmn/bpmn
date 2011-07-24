@@ -122,8 +122,17 @@ $release = get_version(true);
 			    
 		 <script type="text/javascript">
 			$().ready(function() {
-				$('#coda-slider-1').codaSlider();
+				$('#coda-slider-1').codaSlider({
+					autoSlide:true,
+						autoSlideInterval:4500,
+						autoSlideStopWhenClicked:true
+				}
+				);
 			});
+
+
+  
+			    
 		 </script>
 	<!-- End JavaScript -->
 
