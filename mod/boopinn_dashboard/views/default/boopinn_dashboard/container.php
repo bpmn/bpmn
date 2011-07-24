@@ -37,7 +37,7 @@
 		<div class="dash_right_right">dash_right_right<br>
 		</div>
 		<div class="dash_right_footer">
-                    <div class="dash_box"
+                    <div class="dash_box">
                         <?php echo $vars['teams_activity']; ?>
 			</div>
                     <div class="dash_box">
