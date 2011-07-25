@@ -147,7 +147,7 @@
 			'teams:alreadymember' => 'You are already a member of this team!',
 			'teams:userinvited' => 'User has been invited.',
 			'teams:usernotinvited' => 'User could not be invited.',
-                        'teams:useralreadyinvited' => '%s has already been invited to the team %s',
+                        'teams:useralreadyinvited' => '%s has already been invited to the team %s or is already a member',
 			'teams:useralreadymember' => '%s is already a member of the team %s',
 			'teams:updated' => "Last comment",
 
