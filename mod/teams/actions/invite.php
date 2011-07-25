@@ -29,7 +29,7 @@ if (sizeof($user_guid))
 
 			if (($group instanceof ElggGroup) && ($group->canEdit()))
 			{
-				if (!check_entity_relationship($group->guid, 'invited', $user->guid))
+				if (!check_entity_relationship($group->guid, 'invited', $user->guid) && !$group->isMember($user))
 				{
 					//if ($user->isFriend())
 					//{
@@ -52,7 +52,7 @@ if (sizeof($user_guid))
 					//	register_error(elgg_echo("teams:usernotinvited"));
 				}
 				else
-					register_error(elgg_echo("teams:useralreadyinvited"));
+					register_error(sprintf(elgg_echo("teams:useralreadyinvited"),$user->username,$group->name));
 			}
 			else
 				register_error(elgg_echo("teams:notowner"));

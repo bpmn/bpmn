@@ -29,7 +29,7 @@ if (sizeof($user_guid))
 
 			if (($openlab instanceof ElggGroup) && ($openlab->canEdit()))
 			{
-				if (!check_entity_relationship($openlab->guid, 'invited', $user->guid))
+				if (!check_entity_relationship($openlab->guid, 'invited', $user->guid) && !$openlab->isMember($user))
 				{
 						// Create relationship
 						add_entity_relationship($openlab->guid, 'invited', $user->guid);
@@ -45,7 +45,7 @@ if (sizeof($user_guid))
 							register_error(elgg_echo("openlabs:usernotinvited"));
 				}
 				else
-					register_error(elgg_echo("openlabs:useralreadyinvited"));
+					register_error(sprintf(elgg_echo("openlabs:useralreadyinvited"),$user->username,$openlab->name));
 			}
 			else
 				register_error(elgg_echo("openlabs:notowner"));

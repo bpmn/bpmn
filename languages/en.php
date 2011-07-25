@@ -381,7 +381,9 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
  */
 
 	'account' => "Account",
-	'settings' => "Settings",
+        //Fatxi modif >>>>>>
+        'settings' => "My Account",
+	//'settings' => "Settings",
 	'tools' => "Tools",
 	'tools:yours' => "Your tools",
 
