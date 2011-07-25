@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Elgg openlabs plugin
  *
@@ -51,7 +52,7 @@ function openlabs_init() {
     register_action("openlabs/leave", false, $CONFIG->pluginspath . "openlabs/actions/leave.php");
     register_action("openlabs/joinrequest", false, $CONFIG->pluginspath . "openlabs/actions/joinrequest.php");
     register_action("openlabs/killrequest", false, $CONFIG->pluginspath . "openlabs/actions/openlabskillrequest.php");
-    register_action("openlabs/killsuggestion",false,$CONFIG->pluginspath . "openlabs/actions/openlabskillsuggestion.php");
+    register_action("openlabs/killsuggestion", false, $CONFIG->pluginspath . "openlabs/actions/openlabskillsuggestion.php");
     register_action("openlabs/killinvitation", false, $CONFIG->pluginspath . "openlabs/actions/openlabskillinvitation.php");
     register_action("openlabs/addtoopenlab", false, $CONFIG->pluginspath . "openlabs/actions/addtoopenlab.php");
     register_action("openlabs/invite", false, $CONFIG->pluginspath . "openlabs/actions/invite.php");
@@ -209,7 +210,7 @@ function openlabs_submenus() {
     // Get the page owner entity
     $page_owner = page_owner_entity();
     // debug only 
-    $context = get_context();     
+    $context = get_context();
 
     // Submenu items for all openlab pages
     if ($page_owner instanceof ElggGroup && get_context() == 'openlabs') {
@@ -235,19 +236,16 @@ function openlabs_submenus() {
                 }
             }
             // If user is owner of the group 
-            $user_guid  = get_loggedin_userid() ; 
-            $owner_guid = $page_owner->getOwner() ; 
-            if ($user_guid == $owner_guid)
-            {
-               add_submenu_item(elgg_echo('openlabs:removemember'), $CONFIG->wwwroot . "pg/openlabs/removemember/{$page_owner->getGUID()}", '1openlabslinks');
+            $user_guid = get_loggedin_userid();
+            $owner_guid = $page_owner->getOwner();
+            if ($user_guid == $owner_guid) {
+                add_submenu_item(elgg_echo('openlabs:removemember'), $CONFIG->wwwroot . "pg/openlabs/removemember/{$page_owner->getGUID()}", '1openlabslinks');
             }
         }
 
         if ($page_owner->forum_enable != "no") {
             add_submenu_item(elgg_echo('openlabs:forum'), $CONFIG->wwwroot . "pg/openlabs/forum/{$page_owner->getGUID()}/", '1openlabslinks');
         }
-
-        
     }
 
     // Add submenu options
@@ -259,7 +257,7 @@ function openlabs_submenus() {
             add_submenu_item(elgg_echo('openlabs:invitations'), $CONFIG->wwwroot . "pg/openlabs/invitations/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:membershipreq_list'), $CONFIG->wwwroot . "pg/openlabs/membershipreq_list/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:suggestions'), $CONFIG->wwwroot . "pg/openlabs/suggestions/" . $_SESSION['user']->username, '1openlabslinks');
-           }
+        }
 
         add_submenu_item(elgg_echo('openlabs:all'), $CONFIG->wwwroot . "pg/openlabs/all/", '1openlabslinks');
     }
@@ -438,22 +436,18 @@ function openlab_group_url($entity) {
  */
 function openlabs_create_event_listener($event, $object_type, $object) {
 
-    if("openlab"==get_subtype_from_id($object->subtype)){
+    if ("openlab" == get_subtype_from_id($object->subtype)) {
         $ac_name = elgg_echo('openlabs:openlab') . ": " . $object->name;
         $openlab_id = create_access_collection($ac_name, $object->guid);
-    if ($openlab_id) {
-        $object->openlab_acl = $openlab_id;
-    } else {
-        // delete openlab if access creation fails
-        return false;
-    }
+        if ($openlab_id) {
+            $object->openlab_acl = $openlab_id;
+        } else {
+            // delete openlab if access creation fails
+            return false;
+        }
     }
     return true;
 }
-
-
-
-
 
 /**
  * Hook to listen to read access control requests and return all the openlabs you are a member of.
@@ -757,7 +751,7 @@ function openlab_view($view, $vars = array(), $bypass = false, $debug = false, $
  */
 function openlabs_get_invited_openlabs($user_guid, $return_guids = FALSE) {
     $ia = elgg_set_ignore_access(TRUE);
-    $invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999));
+    $invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE, 'type' => 'group', 'subtype' => 'openlab', 'limit' => 9999));
     elgg_set_ignore_access($ia);
 
     if ($return_guids) {
@@ -779,23 +773,54 @@ function openlabs_get_invited_openlabs($user_guid, $return_guids = FALSE) {
  *
  * @param $user_guid
  * @return unknown_type
-*/
+ */
 function openlabs_get_suggested_openlabs($user_guid, $return_guids = FALSE) {
     $ia = elgg_set_ignore_access(TRUE);
-    $suggestions = elgg_get_entities_from_relationship(array('relationship' => 'suggested', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999));
+    $suggestions = elgg_get_entities_from_relationship(array('relationship' => 'suggested', 'relationship_guid' => $user_guid, 'inverse_relationship' => TRUE, 'type' => 'group', 'subtype' => 'openlab', 'limit' => 9999));
     elgg_set_ignore_access($ia);
 
     if ($return_guids) {
-	$guids = array();
+        $guids = array();
         foreach ($suggestions as $suggestion) {
             $guids[] = $suggestion->getGUID();
-	}
+        }
 
-	return $guids;
+        return $guids;
     }
 
     return $suggestions;
 }
+
+/**
+ * Override the canEdit function to return true for messages within a particular context.
+ *
+ */
+function topic_can_edit($hook_name, $entity_type, $return_value, $parameters) {
+  
+    $entity = $parameters['user'] ; 
+    $container = $parameters['container'] ; 
+    
+    if ($entity->guid == $container->guid )
+    {
+        return true;  
+    
+    }
+    
+    if ( ($entity  instanceof ElggUser) && ($container  instanceof ElggObject) )
+    {
+        $group = $container->getContainerEntity() ; 
+        if ($group->isMember($entity->guid))
+        {
+            return true;     
+        }
+    }
+
+    return $false;
+}
+
+register_plugin_hook('container_permissions_check', 'object', 'topic_can_edit');
+
+
 register_extender_url_handler('openlab_topicpost_url', 'annotation', 'openlab_topic_post');
 
 // Register a handler for create openlabs

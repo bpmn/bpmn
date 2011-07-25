@@ -30,11 +30,19 @@ class BoopinnComment extends ElggObject {
      */
     public static function getCommentsByTopic($topicGuid, $count = FALSE) {
 
+        
+        $ignoreacess = elgg_get_ignore_access()  ; 
+        
+        // discussion is public 
+        elgg_set_ignore_access(True) ; 
+        
         $comments = elgg_get_entities(array('types' => 'object',
             'subtypes' => BoopinnComment::getSubTypeName(),
             'container_guids' => $topicGuid,
             'limit' => ELGG_ENTITIES_ANY_VALUE,
-            'count' => $count));
+            'count' => $count)); 
+        
+        elgg_set_ignore_access($ignoreaccess) ; 
 
         return $comments;
     }
