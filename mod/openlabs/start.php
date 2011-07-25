@@ -792,7 +792,8 @@ function openlabs_get_suggested_openlabs($user_guid, $return_guids = FALSE) {
 }
 
 /**
- * Override the canEdit function to return true for messages within a particular context.
+ * that function is called by elggObject::save to state if entity can be saved 
+ * within the given container. 
  *
  */
 function topic_can_edit($hook_name, $entity_type, $return_value, $parameters) {
