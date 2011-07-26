@@ -79,9 +79,9 @@ $release = get_version(true);
 		echo elgg_view('metatags',$vars);
 	?>
 	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-		});
+	 jQuery(document).ready(function($) {});
 	</script>
 </head>
 
 <body>
+    <h1>Hello from default</h1>
