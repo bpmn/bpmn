@@ -48,15 +48,15 @@ By clicking register or using Boopinn, you confirm that you read, understood, an
 	</ul>
 
 	<ul>
-		<li>legal stuff</li>
+		<li>Legal stuff</li>
 		<li>
-		<a target="" href="http://blog.boopinn.com" title="Terms of Use">Terms of Use</a><br>
+		<a target="_blank" href="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/terms_and_conditions.html" title="Terms of Use">Terms of Use</a><br>
 		</li>
 		<li>
-		<a target="" href="http://blog.boopinn.com" title="Intellectual Property">Intellectual Property</a><br>
+		<a target="_blank" href="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/terms_and_conditions.html" title="Intellectual Property">Intellectual Property</a><br>
 		</li>
 		<li>
-		<a target="" href="http://blog.boopinn.com" title="Privacy Policies">Privacy Policies</a><br>
+		<a target="_blank" href="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/terms_and_conditions.html" title="Privacy Policies">Privacy Policies</a><br>
 		</li>
 	</ul>
 	<ul>
