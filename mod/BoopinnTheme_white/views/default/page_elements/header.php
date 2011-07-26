@@ -61,6 +61,8 @@ $release = get_version(true);
         <script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-ui-1.7.2.custom.min.js"></script>
         <script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery.form.js"></script>
         <script type="text/javascript" src="<?php echo $vars['url']; ?>_css/js.php?lastcache=<?php echo $vars['config']->lastcache; ?>&amp;js=initialise_elgg&amp;viewtype=<?php echo $vars['view']; ?>"></script>
+        <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.coda-slider-2.0.js";?>"></script>
+
         <?php
         $context = get_context();
 
@@ -87,7 +89,14 @@ echo elgg_view('metatags', $vars);
         <script type="text/javascript">
         <?php
         if (isset($context) && $context != "cis") {
-            $initJs = "jQuery(document).ready(function($) {});";
+            $initJs = "jQuery(document).ready(function($) {
+
+                  $('#coda-slider-1').codaSlider({
+                         autoSlide:true,
+                         autoSlideInterval:4500,
+                         autoSlideStopWhenClicked:true
+                });
+            });";
         } else {
             $initJs = "jQuery(document).ready(function($) { init() ; });";
         }
