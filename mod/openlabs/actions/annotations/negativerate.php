@@ -9,7 +9,6 @@
  *
  * @package Elggopenlab
  */
-
 require_once(dirname(dirname(dirname(__FILE__))) . "/lib/boopinncomment.php" );
 
 // Make sure we're logged in (send us to the front page if not)
@@ -24,47 +23,51 @@ $guid = (int) get_input('annotation_id');
 $comment = get_entity($guid);
 
 
+// annotate user 
+$authorId = $comment->getAuthorId();
+
+$author = get_entity($authorId);
+
+if ($authorId == get_loggedin_userid()) {
+    system_message(elgg_echo('openlab:usercanrateitscomment'));
+} else {
+
 // read annotation rating 
-$annotationRating = $comment->getAnnotations('commentrating', 1, 0, desc);
+    $annotationRating = $comment->getAnnotations('commentrating', 1, 0, desc);
 
 // read value 
-$rating = $annotationRating[0]->value;
+    $rating = $annotationRating[0]->value;
 
-if ($rating) {
+    if ($rating) {
 
-    if ($rating > 0) {
-        // if found clear all annotations
-        $comment->clearAnnotations('commentrating');
-        // create new 
-        $comment->annotate('commentrating', $rating - 1);
-    }
-} else {
-    // if not found create new one 
-    $comment->annotate('commentrating', 0);
-}
-
-// annotate user 
-
-$authorId = $comment->getAuthorId() ; 
-
-$author  = get_entity($authorId) ; 
-
-$annotationRating = $author->getAnnotations('userrating', 1, 0, desc);
-
-$rating = $annotationRating[0]->value;
-
-if ($rating) {
-    if ($rating > 0) {
-        // if found clear all annotations
-        $comment->clearAnnotations('userrating');
-        $author->annotate('userrating', $rating - 1);
+        if ($rating > 0) {
+            // if found clear all annotations
+            $comment->clearAnnotations('commentrating');
+            // create new 
+            $comment->annotate('commentrating', $rating - 1);
+        }
     } else {
-        $author->annotate('userrating', 0);
+        // if not found create new one 
+        $comment->annotate('commentrating', 0);
     }
-} 
-// Success message
-system_message(elgg_echo("openlab:rateannotation"));
 
+
+    $annotationRating = $author->getAnnotations('userrating', 1, 0, desc);
+
+    $rating = $annotationRating[0]->value;
+
+    if ($rating) {
+        if ($rating > 0) {
+            // if found clear all annotations
+            $comment->clearAnnotations('userrating');
+            $author->annotate('userrating', $rating - 1);
+        } else {
+            $author->annotate('userrating', 0);
+        }
+    }
+// Success message
+    system_message(elgg_echo("openlab:rateannotation"));
+}
 // Forward to the main openlab page
 $url = forward($_SERVER['HTTP_REFERER']);
 
