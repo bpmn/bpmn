@@ -3387,3 +3387,30 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 .dashf-right {
     float: right;
 }
+
+.buttonclass {
+  font-weight: bold;
+	display: block;
+	border: none 1px #D0D0D0;
+    width: 120px;
+    height: 22px;
+	float: left;
+    	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/plus.png) no-repeat right;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+    box-shadow: 1px 1px 7px #D0D0D0;
+    -webkit-transition: background-color 0.2s linear;  
+    -moz-transition: background-color 0.5s linear;  
+    -o-transition: background-color 0.5s linear;
+}
+
+.buttonclass:hover {
+	color: #00f2f2;
+    	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat right;
+}
+
+span {
+float: left;
+}
+

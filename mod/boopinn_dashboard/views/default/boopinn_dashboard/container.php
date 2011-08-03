@@ -8,8 +8,8 @@
                     	<div class="dash_box">
 			  
 			    <h6>Get exposure of your work within the Boopinn network, attracting experts and enthusiasts to your open labs</h6>
- <button type="button" style="width:110px" onclick=<?php echo("self.location.href='".$CONFIG->wwwroot."pg/teams/new/'")?> >
-			    <h6>Create a team</h6>
+ <button class="buttonclass" onclick=<?php echo("self.location.href='".$CONFIG->wwwroot."pg/teams/new/'")?> >
+			    <span><h6>Create a team</h6></span>
 
 			   </button>
 
@@ -25,8 +25,8 @@
                             
 
 			    <h6>To collaborate on an idea you'd like to develop, on problems you would like to solve, find creative and innovative solutions</h6>
-<button type="button" style="width:110px" onclick=<?php echo("self.location.href='".$CONFIG->wwwroot."pg/openlabs/new/'")?> >
-			    <h6>Create an open lab</h6>
+<button class="buttonclass" onclick=<?php echo("self.location.href='".$CONFIG->wwwroot."pg/openlabs/new/'")?> >
+			    <span><h6>Create an open lab</h6></span>
 			    </button>
 			</div>
 			</div>
