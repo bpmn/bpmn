@@ -15,7 +15,7 @@
 
     function BoopinnTheme_white_init()	{
         // Extend system CSS with our own styles
-			elgg_extend_view('css','css');
+			elgg_extend_view('css','BoopinnTheme_white/css');
 // Replace the default index page
 			register_plugin_hook('index','system','custom_index');
 

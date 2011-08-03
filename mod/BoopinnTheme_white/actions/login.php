@@ -1,16 +1,6 @@
 <?php
 
 	/**
-	 * Login by Email Only
-	 * 
-	 * @author Lenny Urbanowski
-	 * @link http://community.elgg.org/pg/profile/itsLenny
-	 * @copyright (c) Lenny Urbanowski 2010
-	 * @license GNU General Public License (GPL) version 2
-	 *
-	 *
-	 * Based on: Login by Email
-	 * 
 	 * @author Pedro Prez
 	 * @link http://community.elgg.org/pg/profile/pedroprez
 	 * @copyright (c) Keetup 2009
@@ -26,8 +16,14 @@
         
     // If all is present and correct, try to log in  
     	$result = false;          
-        if (!empty($username) && !empty($password)) {
-			$user = authenticate_by_email($username,$password);	
+	if (!empty($username) && !empty($password)) {
+
+			if(is_email_address($username)) {
+				$user = authenticate_by_email($username,$password);	
+			}
+			else {
+				$user = authenticate($username,$password);
+        		}
 			if($user)
 				$result = login($user, $persistent);
         }
