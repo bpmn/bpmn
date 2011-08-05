@@ -16,47 +16,52 @@ gatekeeper();
 // Get input data
 $guid = (int) get_input('annotation_id');
 
-
 // read entity 
 $comment = get_entity($guid);
 
+$authorId = $comment->getAuthorId();
+
+$author = get_entity($authorId);
+
+if ($authorId == get_loggedin_userid()) {
+    system_message(elgg_echo('openlab:usercanrateitscomment'));
+} else {
+
 // read annotation rating 
-$annotationRating = $comment->getAnnotations('commentrating', 1, 0, desc);
+    $annotationRating = $comment->getAnnotations('commentrating', 1, 0, desc);
 
 // read value 
-$rating = $annotationRating[0]->value;
+    $rating = $annotationRating[0]->value;
 
-if ($rating) {
-    // if found clear all annotations
-    $comment->clearAnnotations('commentrating');
-    // create new 
-    $comment->annotate('commentrating', $rating + 1);
-} else {
-    // if not found create new one 
-    $comment->annotate('commentrating', 1);
-}
+    if ($rating) {
+        // if found clear all annotations
+        $comment->clearAnnotations('commentrating');
+        // create new 
+        $comment->annotate('commentrating', $rating + 1);
+    } else {
+        // if not found create new one 
+        $comment->annotate('commentrating', 1);
+    }
 
-$authorId = $comment->getAuthorId() ; 
 
-$author  = get_entity($authorId) ; 
+    $annotationRating = $author->getAnnotations('userrating', 1, 0, desc);
 
-$annotationRating = $author->getAnnotations('userrating', 1, 0, desc);
+    $rating = $annotationRating[0]->value;
 
-$rating = $annotationRating[0]->value;
-
-if ($rating) {
-    // if found clear all annotations
-    $comment->clearAnnotations('userrating');
-    $author->annotate('userrating', $rating + 1);
-} else {
-    $author->annotate('userrating', 1);
-}
+    if ($rating) {
+        // if found clear all annotations
+        $comment->clearAnnotations('userrating');
+        $author->annotate('userrating', $rating + 1);
+    } else {
+        $author->annotate('userrating', 1);
+    }
 // Success message
-system_message(elgg_echo("openlab:rateannotation"));
+    system_message(elgg_echo("openlab:rateannotation"));
+
+}
 
 // Forward to the main openlab page
-$url = forward($_SERVER['HTTP_REFERER']);
+    $url = forward($_SERVER['HTTP_REFERER']);
 
-forward(url);
-
+    forward(url);
 ?>

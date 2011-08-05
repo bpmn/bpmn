@@ -30,7 +30,7 @@ $CONFIG->dbuser = 'root';
 $CONFIG->dbpass = '';
 
 // Database name
-$CONFIG->dbname = 'boopinn.data';
+$CONFIG->dbname = 'boopinn_data';
 
 // Database server
 // (For most configurations, you can leave this as 'localhost')

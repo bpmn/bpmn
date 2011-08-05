@@ -20,9 +20,6 @@ if (!$topic)
 $openlab = get_entity($topic->container_guid);
 set_page_owner($openlab->guid);
 
-group_gatekeeper();
-
-
 // Display them
 $area2 = elgg_view("openlab_forum/viewposts", array('entity' => $topic));
 $body = elgg_view_layout("two_column_left_sidebar", '', $area2);

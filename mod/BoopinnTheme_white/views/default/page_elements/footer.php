@@ -50,19 +50,19 @@ By clicking register or using Boopinn, you confirm that you read, understood, an
 	<ul>
 		<li>Legal stuff</li>
 		<li>
-		<a target="_blank" href="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/terms_and_conditions.html" title="Terms of Use">Terms of Use</a><br>
+		<a target="_blank" href="<?php echo $vars['url']; ?>terms_and_conditions.html" title="Terms of Use">Terms of Use</a><br>
 		</li>
 		<li>
-		<a target="_blank" href="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/terms_and_conditions.html" title="Intellectual Property">Intellectual Property</a><br>
+		<a target="_blank" href="<?php echo $vars['url']; ?>terms_and_conditions.html" title="Intellectual Property">Intellectual Property</a><br>
 		</li>
 		<li>
-		<a target="_blank" href="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/terms_and_conditions.html" title="Privacy Policies">Privacy Policies</a><br>
+		<a target="_blank" href="<?php echo $vars['url']; ?>terms_and_conditions.html" title="Privacy Policies">Privacy Policies</a><br>
 		</li>
 	</ul>
 	<ul>
 		<li>Contact us</li>
 		<li>
-		<a target="" href="http://blog.boopinn.com" title="Contact us">Contact us</a><br>
+		<a target="" href="mailto:contact @ boopinn.com" title="Contact us (remove spaces)">Contact us (remove spaces)</a><br>
 		</li>
 	</ul>
 
