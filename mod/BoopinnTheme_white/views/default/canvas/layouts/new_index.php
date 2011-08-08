@@ -49,23 +49,22 @@
                             <p class="textboopinn">potential in a open and borderless network!</p>
                         </h2>
                         <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/network.png" alt="Network"class="floatRight">	
-                        <p>
-                        <h6>
-                            <p>Register, and create</p>
-                            <p>  your "team" : to showcase your company or your project </p>
-                            <p>  your "open lab" : to collaborate on ideas you would like to develop creative</p>
-                            <p>                    and innovate solutions</p>
-                            <p>View you CIS (Creative and Innovation Score)</p>
-                        </h6>                  
-                    </p>
+
                         </p> 
                     </div>
                 </div>
                 <div class="panel">
                     <div class="panel-wrapper">
-                        <h2 class="title">Panel 2</h2>
-
-                      
+                        <h2 class="title">Register</h2>
+                        <p>
+                            <h6>
+                                <p>Register, and create</p>
+                                <p>  your "team" : to showcase your company or your project </p>
+                                <p>  your "open lab" : to collaborate on ideas you would like to develop creative</p>
+                                <p>                    and innovate solutions</p>
+                                <p>View you CIS (Creative and Innovation Score)</p>
+                            </h6>                  
+                        </p>
                     </div>
                 </div>
             </div><!-- .coda-slider -->
