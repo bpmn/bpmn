@@ -27,7 +27,7 @@
 		?>
 
 	</div><!-- end of teams_icon_wrapper -->
-	<div id="group_stats"><!-- start of group_stats -->
+	<div id="teams_stats"><!-- start of group_stats -->
 		<?php
 
 			echo "<p><b>" . elgg_echo("teams:owner") . ": </b><a href=\"" . get_user($vars['entity']->owner_guid)->getURL() . "\">" . get_user($vars['entity']->owner_guid)->name . "</a></p>";

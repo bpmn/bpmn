@@ -18,6 +18,7 @@ function bookmarks_init() {
 
 		// add "bookmark this" to owner block
 		elgg_extend_view('owner_block/extend', 'bookmarks/owner_block');
+              
 	}
 
 	// Register a page handler, so we can have nice URLs

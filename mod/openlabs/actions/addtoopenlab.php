@@ -33,8 +33,8 @@
 
 					// If the openlab is open or the user has requested membership
 					if (
-						(check_entity_relationship($user->guid, 'membership_request', $openlab->guid)) ||
-						($openlab->isPublicMembership())
+						(check_entity_relationship($user->guid, 'membership_request', $openlab->guid))||
+                                                ($openlab->isPublicMembership())
 						)
 					{
 
@@ -43,7 +43,7 @@
 							// Remove relationships
 							remove_entity_relationship($openlab->guid, 'invited', $user->guid);
 							remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
-
+                                                        remove_entity_relationship($user->guid, 'follow', $group->guid);
 							//add_entity_relationship($user->guid, 'member', $openlab->guid);
 							$openlab->join($user);
 
@@ -59,36 +59,17 @@
 							system_message(elgg_echo('openlabs:addedtoopenlab'));
 						}
 						else
-							register_error(elgg_echo("openlabs:cantjoin"));
-					}
-					else
-					{
-						if ($user->isFriend())
-						{
+							register_error(elgg_echo("openlabs:alreadymember"));
+					} else
+                                            register_error(elgg_echo("openlabs:cantjoin"));
 
-							// Create relationship
-							add_entity_relationship($openlab->guid, 'invited', $user->guid);
 
-							// Send email
-							$url = "{$CONFIG->url}pg/openlabs/invited?user_guid={$user->guid}&openlab_guid={$openlab->guid}";
-							if (notify_user($user->getGUID(), $openlab->owner_guid,
-									sprintf(elgg_echo('openlabs:invite:subject'), $user->name, $openlab->name),
-									sprintf(elgg_echo('openlabs:invite:body'), $user->name, $logged_in_user->name, $openlab->name, $url),
-									NULL))
-								system_message(elgg_echo("openlabs:userinvited"));
-							else
-								register_error(elgg_echo("openlabs:usernotinvited"));
-
-						}
-						else
-							register_error(elgg_echo("openlabs:usernotinvited"));
-					}
-				}
-				else
-					register_error(elgg_echo("openlabs:notowner"));
+                                } else
+                                    register_error(elgg_echo("openlabs:notowner"));
 			}
-		}
-	}
+                     }
+
+        }
 
 	forward($_SERVER['HTTP_REFERER']);
 

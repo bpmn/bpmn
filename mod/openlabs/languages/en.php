@@ -182,7 +182,7 @@ or click below to view the openlab's join requests:
     'openlabs:river:member' => '%s is now contributing to',
     'openlabs:river:leave' => '%s has left the openlab',
     'openlabs:river:create' => '%s has created the openlab',
-    'openlabforum:river:updated' => '%s has updated',
+    'openlabs:river:update' => '%s has updated',
     'openlabforum:river:update' => 'this discussion topic',
     'openlabforum:river:created' => '%s has created',
     'openlabforum:river:create' => 'a new discussion topic titled',

@@ -1,21 +1,21 @@
 <?php
 
 	/**
-	 * Elgg Groups css
+	 * Elgg teams css
 	 * 
 	 * @package teams
 	 */
 
 ?>
 
-#content_area_group_title h2 {
+#content_area_teams_title h2 {
 	color:#0054A7;
 	font-size:1.35em;
 	line-height:1.2em;
 	margin:0 0 0 8px;
 	padding:5px;
 }
-#topic_posts #content_area_group_title h2 {
+#topic_posts #content_area_teams_title h2 {
 	margin:0 0 0 0;
 }
 
@@ -53,7 +53,7 @@
 	text-align: right;
 	padding-right:10px;
 }
-#group_stats {
+#teams_stats {
 	width:190px;
 	background: #e9e9e9;
 	padding:5px;
@@ -61,10 +61,10 @@
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px;
 }
-#group_stats p {
+#teams_stats p {
 	margin:0;
 }
-#group_members {
+#teams_members {
 	margin:10px;
 	-webkit-border-radius: 8px; 
 	-moz-border-radius: 8px;
@@ -91,7 +91,7 @@
 	margin:0 5px 0 0;
 }
 
-#group_members h2,
+#teams_members h2,
 #right_column h2,
 #left_column h2,
 #fullcolumn h2 {
@@ -165,14 +165,14 @@
     border:none;
 }
 
-/* group latest discussions widget */
+/* teams latest discussions widget */
 #latest_discussion_widget {
 	margin:0 0 20px 0;
 	background:white;
 	-webkit-border-radius: 8px; 
 	-moz-border-radius: 8px;
 }
-/* group files widget */
+/* teams files widget */
 #filerepo_widget_layout {
 	margin:0 0 20px 0;
 	padding: 0 0 5px 0;
@@ -290,10 +290,10 @@ span.timestamp {
 .teams .search_listing_info {
 	color:#666666;
 }
-.groupdetails {
+.teamsdetails {
 	float:right;
 }
-.groupdetails p {
+.teamsdetails p {
 	margin:0;
 	padding:0;
 	line-height: 1.1em;
@@ -311,17 +311,17 @@ span.timestamp {
 }
 
 /* teams membership widget */
-.groupmembershipwidget .contentWrapper {
+.teamsmembershipwidget .contentWrapper {
 	margin:0 10px 5px 10px;
 }
-.groupmembershipwidget .contentWrapper .groupicon {
+.teamsmembershipwidget .contentWrapper .teamsicon {
 	float:left;
 	margin:0 10px 0 0;
 }
-.groupmembershipwidget .search_listing_info p {
+.teamsmembershipwidget .search_listing_info p {
 	color: #666666;
 }
-.groupmembershipwidget .search_listing_info span {
+.teamsmembershipwidget .search_listing_info span {
 	font-weight: bold;
 }
 
@@ -329,7 +329,7 @@ span.timestamp {
 .featuredteams .contentWrapper {
 	margin:0 0 10px 0;
 }
-.featuredteams .contentWrapper .groupicon {
+.featuredteams .contentWrapper .teamsicon {
 	float:left;
 	margin:0 10px 0 0;
 }
@@ -376,8 +376,8 @@ span.timestamp {
 /* IE7 */
 *:first-child+html .delete_discussion a { font-size: 1px; }
 
-/* delete group button */
-#delete_group_option input[type="submit"] {
+/* delete teams button */
+#delete_teams_option input[type="submit"] {
 	background:#dedede;
 	border-color:#dedede;
 	color:#333333; 
@@ -385,7 +385,7 @@ span.timestamp {
 	float:right;
 	clear:both;
 }
-#delete_group_option input[type="submit"]:hover {
+#delete_teams_option input[type="submit"]:hover {
 	background:red;
 	border-color:red;
 	color:white;
@@ -400,7 +400,7 @@ span.timestamp {
 	text-align: center;
 }
 
-.group_widget {
+.teams_widget {
 	margin:0 0 20px 0;
 	padding: 0 0 5px 0;
 	background:white;
@@ -408,6 +408,6 @@ span.timestamp {
 	-moz-border-radius: 8px;
 }
 
-.group_widget .search_listing {
+.teams_widget .search_listing {
 border:2px solid #CCCCCC;
 }

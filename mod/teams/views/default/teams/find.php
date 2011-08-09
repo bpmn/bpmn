@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * A simple group search by tag view
+	 * A simple teams search by tag view
 	 **/
 
 $tag_string = elgg_echo('teams:search:tags');

@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * Elgg teams plugin full profile view (for a closed group you haven't joined).
+	 * Elgg teams plugin full profile view (for a closed teams you haven't joined).
 	 * 
-	 * @package ElggGroups
+	 * @package Elggteamss
 	 */
 
 ?>

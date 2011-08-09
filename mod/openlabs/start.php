@@ -215,6 +215,7 @@ function openlabs_submenus() {
     // Submenu items for all openlab pages
     if ($page_owner instanceof ElggGroup && get_context() == 'openlabs') {
         if (isloggedin()) {
+           elgg_extend_view('owner_block/extend', 'follow/owner_block');
             if ($page_owner->canEdit()) {
                 add_submenu_item(elgg_echo('openlabs:edit'), $CONFIG->wwwroot . "pg/openlabs/edit/" . $page_owner->getGUID(), '1openlabsactions');
                 add_submenu_item(elgg_echo('openlabs:invite'), $CONFIG->wwwroot . "pg/openlabs/invite/{$page_owner->getGUID()}", '1openlabsactions');

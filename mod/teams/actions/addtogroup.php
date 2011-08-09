@@ -43,7 +43,7 @@
 							// Remove relationships
 							remove_entity_relationship($group->guid, 'invited', $user->guid);
 							remove_entity_relationship($user->guid, 'membership_request', $group->guid);
-
+                                                        remove_entity_relationship($user->guid, 'follow', $group->guid);
 							//add_entity_relationship($user->guid, 'member', $group->guid);
 							$group->join($user);
                                                         
@@ -61,30 +61,9 @@
 						else
 							register_error(elgg_echo("teams:cantjoin"));
 					}
-					else
-					{
-						if ($user->isFriend())
-						{
-
-							// Create relationship
-							add_entity_relationship($group->guid, 'invited', $user->guid);
-
-							// Send email
-							$url = "{$CONFIG->url}pg/teams/invited?user_guid={$user->guid}&group_guid={$group->guid}";
-							if (notify_user($user->getGUID(), $group->owner_guid,
-									sprintf(elgg_echo('teams:invite:subject'), $user->name, $group->name),
-									sprintf(elgg_echo('teams:invite:body'), $user->name, $logged_in_user->name, $group->name, $url),
-									NULL))
-								system_message(elgg_echo("teams:userinvited"));
-							else
-								register_error(elgg_echo("teams:usernotinvited"));
-
-						}
-						else
-							register_error(elgg_echo("teams:usernotinvited"));
-					}
-				}
-				else
+					
+						
+				} else
 					register_error(elgg_echo("teams:notowner"));
 			}
 		}

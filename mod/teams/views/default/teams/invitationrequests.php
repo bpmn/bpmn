@@ -25,6 +25,7 @@
 					'text' => elgg_echo('delete'),
 				)));
 			$url = elgg_add_action_tokens_to_url("{$vars['url']}action/teams/join?user_guid={$user->guid}&group_guid={$group->guid}");
+                       
 			?>
 			<a href="<?php echo $url; ?>" class="archive_report_button"><?php echo elgg_echo('accept'); ?></a>
 			<br /><br />

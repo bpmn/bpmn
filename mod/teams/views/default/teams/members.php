@@ -8,7 +8,7 @@
 	 
 ?>
 
-<div id="group_members">
+<div id="teams_members">
 <h2><?php echo elgg_echo("teams:members"); ?></h2>
 
 <?php

@@ -23,7 +23,7 @@ $teams = elgg_get_entities_from_relationship($options);
 
 if ($teams) {
 
-	echo "<div class=\"groupmembershipwidget\">";
+	echo "<div class=\"teamsmembershipwidget\">";
 
 	foreach ($teams as $group) {
 		$icon = elgg_view(

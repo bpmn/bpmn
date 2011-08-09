@@ -28,7 +28,7 @@
 	{
 		//if (    (check_entity_relationship($openlab->guid, 'invited', $user->guid)) ||
                   //      $openlab->isPublicMembership())
-                if ($openlab->isPublicMembership())
+                if ($openlab->isPublicMembership() || check_entity_relationship($openlab->guid,'invited',$user->guid ))
 		{
 			if ($openlab->join($user))
 			{

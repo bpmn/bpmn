@@ -1,8 +1,8 @@
 <?php
  
-    // Latest forum discussion for the group home page
+    // Latest forum discussion for the teams home page
 
-    //check to make sure this group forum has been activated
+    //check to make sure this teams forum has been activated
     if($vars['entity']->forum_enable != 'no'){
 
 ?>

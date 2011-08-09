@@ -40,7 +40,7 @@
 					$content .= "</tr>\n";
 					$content .= "<tr>\n";
 					$content .= "<td>";
-					$content .= sprintf(elgg_echo('requestnotifications:grouprequests:count'), $count);
+					$content .= sprintf(elgg_echo('requestnotifications:teamrequests:count'), $count);
 					$content .= "</td>\n";
 					$content .= "</tr>\n";
 					$content .= "</table>\n";

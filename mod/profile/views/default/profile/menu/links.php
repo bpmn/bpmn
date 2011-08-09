@@ -9,6 +9,7 @@
 	 */
 
 ?>
+	
 
 	<p class="user_menu_profile">
 		<a href="<?php echo $vars['url']?>pg/profile/<?php echo $vars['entity']->username; ?>/invite/"><?php echo sprintf(elgg_echo("profile:invite"),$vars['entity']->username); ?></a>

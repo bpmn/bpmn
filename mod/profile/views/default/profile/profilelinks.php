@@ -21,16 +21,17 @@
 	// Allow menus if not banned or admin logged in
 	if ((!$banned) || (isadminloggedin()))
 	{
-	    //check to see if the user is looking at their own profile
+	    
+            //check to see if the user is looking at their own profile
 	    if ($_SESSION['user']->guid == page_owner()){
-	
+            
 	        echo "<div id=\"profile_menu_wrapper\">"; //start the wrapper div
 		    //echo elgg_view("profile/menu/actions",$vars);//grab action links such as make friend
 		    //echo elgg_view("profile/menu/linksownpage",$vars); // an different view for user's own profile
 		    echo "</div>"; //close wrapper div 
 		    
 	    } else {
-	        
+	        echo elgg_view('follow/owner_block');
 	        echo "<div id=\"profile_menu_wrapper\">"; //start the wrapper div
 	        //echo elgg_view("profile/menu/actions",$vars); //grab action links such as make friend
 		    echo elgg_view("profile/menu/links",$vars); //passive links to items such as user blog etc

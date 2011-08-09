@@ -212,6 +212,7 @@
 		// Submenu items for all group pages
 			if ($page_owner instanceof ElggGroup && get_context() == 'teams') {
 				if (isloggedin()) {
+                                    elgg_extend_view('owner_block/extend', 'follow/owner_block');
 					if ($page_owner->canEdit()) {
 						add_submenu_item(elgg_echo('teams:edit'),$CONFIG->wwwroot . "pg/teams/edit/" . $page_owner->getGUID(), '1teamsactions');
 						add_submenu_item(elgg_echo('teams:invite'),$CONFIG->wwwroot . "pg/teams/invite/{$page_owner->getGUID()}", '1teamsactions');
@@ -393,7 +394,7 @@
 	}
 
 	/**
-	 * Populates the ->getUrl() method for group objects
+	 * Populates the ->getUrl() method for team objects
 	 *
 	 * @param ElggEntity $entity File entity
 	 * @return string File URL
@@ -490,7 +491,7 @@
 	}
 
 	/**
-	 * Groups deleted, so remove access lists.
+	 * Teams deleted, so remove access lists.
 	 */
 	function teams_delete_event_listener($event, $object_type, $object)
 	{
@@ -500,7 +501,7 @@
 	}
 
 	/**
-	 * Listens to a group join event and adds a user to the group's access control
+	 * Listens to a team join event and adds a user to the group's access control
 	 *
 	 */
 	function teams_user_join_event_listener($event, $object_type, $object) {

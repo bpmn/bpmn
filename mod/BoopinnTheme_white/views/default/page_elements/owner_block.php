@@ -31,7 +31,7 @@ if ($owner instanceof ElggEntity) {
 // Are there feeds to display?
 global $autofeed;
 
-if (isset($autofeed) && $autofeed == true) {
+/*if (isset($autofeed) && $autofeed == true) {
 	$url = $url2 = full_url();
 	if (substr_count($url,'?')) {
 		$url .= "&view=rss";
@@ -44,7 +44,7 @@ if (isset($autofeed) && $autofeed == true) {
 <div id="owner_block_rss_feed"><a href="{$url}" rel="nofollow">{$label}</a></div>
 
 END;
-}
+}*/
 
 $contents .= elgg_view('owner_block/extend');
 

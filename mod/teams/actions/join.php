@@ -26,7 +26,7 @@
 
 	if (($user instanceof ElggUser) && ($group instanceof ElggGroup))
 	{
-		if ($group->isPublicMembership())
+		if ($group->isPublicMembership()|| check_entity_relationship($group->guid,'invited',$user->guid ))
 		{
 			if ($group->join($user))
 			{

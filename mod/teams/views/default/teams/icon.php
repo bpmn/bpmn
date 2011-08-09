@@ -1,9 +1,9 @@
 <?php
 
 	/**
-	 * Elgg group icon
+	 * Elgg teams icon
 	 * 
-	 * @package ElggGroups
+	 * @package Elggteamss
 	 * 
 	 * @uses $vars['entity'] The user entity. If none specified, the current user is assumed.
 	 * @uses $vars['size'] The size - small, medium or large. If none specified, medium is assumed. 
@@ -33,7 +33,7 @@
 	
 ?>
 
-<div class="groupicon">
+<div class="teamsicon">
 <a href="<?php echo $vars['entity']->getURL(); ?>" class="icon" ><img src="<?php echo $vars['entity']->getIcon($vars['size']); ?>" border="0" <?php echo $align; ?> title="<?php echo $name; ?>" <?php echo $vars['js']; ?> /></a>
 </div>
 

@@ -11,7 +11,7 @@
 			'bookmarks:read' => "%s's bookmarked items",
 			'bookmarks:friends' => "Friends' bookmarks",
 			'bookmarks:everyone' => "All site bookmarks",
-			'bookmarks:this' => "Bookmark this",
+			'bookmarks:this' => "Bookmark this toto",
 			'bookmarks:this:group' => "Bookmark in %s",
 			'bookmarks:bookmarklet' => "Get bookmarklet",
 			'bookmarks:bookmarklet:group' => "Get group bookmarklet",
