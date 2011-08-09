@@ -58,11 +58,12 @@ $release = get_version(true);
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $vars['url'] . "mod/BoopinnTheme_white/_graphics/favicon.ico"; ?>" />
 
         <script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.easing.1.3.js";?>"></script>
         <script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery-ui-1.7.2.custom.min.js"></script>
         <script type="text/javascript" src="<?php echo $vars['url']; ?>vendors/jquery/jquery.form.js"></script>
         <script type="text/javascript" src="<?php echo $vars['url']; ?>_css/js.php?lastcache=<?php echo $vars['config']->lastcache; ?>&amp;js=initialise_elgg&amp;viewtype=<?php echo $vars['view']; ?>"></script>
         <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/javascripts/jquery.coda-slider-2.0.js";?>"></script>
-
+        <script type="text/javascript" src="<?php echo $vars['url']."mod/BoopinnTheme_white/scripts/stylesheets/coda-slider-2.0.css";?>"></script>
         <?php
         $context = get_context();
 
@@ -96,6 +97,9 @@ echo elgg_view('metatags', $vars);
                          autoSlideInterval:4500,
                          autoSlideStopWhenClicked:true
                 });
+                
+                 // set focus in user name field 
+                $('input[name=username]').focus(); 
             });";
         } else {
             $initJs = "jQuery(document).ready(function($) { init() ; });";
@@ -107,6 +111,8 @@ echo elgg_view('metatags', $vars);
 
 <script type="text/javascript">
 
+function launch_ga() 
+{
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-19883710-1']);
   _gaq.push(['_setDomainName', 'boopinn.com']);
@@ -118,6 +124,8 @@ echo elgg_view('metatags', $vars);
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  
+} 
 
 </script>
 
