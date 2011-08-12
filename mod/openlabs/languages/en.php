@@ -220,7 +220,9 @@ or click below to view the openlab's join requests:
     // rate
     'openlab:rateannotation' => 'The author of the comment has been sucessfully rated ',
     // can't rate my comment 
-    'openlab:usercanrateitscomment' => "Users can't rate their own comments"  
+    'openlab:usercanrateitscomment' => "Users can't rate their own comments"  , 
+    'openlab:commentnumberrating' => "That post has been ranked %d time(s)" ,
+    'openlab:usercanratetwice'  =>"You can't rate twice the same comment !!!"
 );
 
 add_translation("en", $english);

@@ -35,6 +35,8 @@
                         
                         //display the date of the comment
                         echo "<small>" . elgg_view_friendly_time($vars['entity']->time_created) . "</small></p>";
+                        $nbRating = $vars['entity']->getRating() ; 
+                        echo "<small>". sprintf(elgg_echo("openlab:commentnumberrating"),$nbRating) ."</small>" ; 
                     ?>
                 </td>
           
@@ -79,17 +81,25 @@
                 $post = $boopinnComment->getComment() ; // . " (". $boopinnComment->getRating(). ")" ; 
                 echo parse_urls(elgg_view("output/longtext", array("value" => $post )));
 
-                echo elgg_view("openlab_output/iconurl", array(
-                'href' => $vars['url'] . "action/openlabs/rate_plus?annotation_id=" . $boopinnComment->guid,
-                'src' => $vars['url'] . "mod/openlabs/graphics/thumb-up-icon.png",
-                'alt' => "Good comment !!!",
-                "is_action" => true));
+                $openlab = get_entity($openlabGuid) ; 
+                if ($openlab->isMember(get_loggedin_userid()) )
+                {
+                
+                    echo elgg_view("openlab_output/iconurl", array(
+                    'href' => $vars['url'] . "action/openlabs/rate_plus?annotation_id=" . $boopinnComment->guid,
+                    'src' => $vars['url'] . "mod/openlabs/graphics/thumb-up-icon.png",
+                    'alt' => "Good comment !!!",
+                    "is_action" => true));
 
-                echo elgg_view("openlab_output/iconurl", array(
-                'href' => $vars['url'] . "action/openlabs/rate_less?annotation_id=" . $boopinnComment->guid,
-                'src' => $vars['url'] . "mod/openlabs/graphics/thumb-down-icon.png",
-                'alt' => "Bad comment !!!",
-                "is_action" => true));
+                    if ($boopinnComment->getRating() > 0)
+                    {
+                        echo elgg_view("openlab_output/iconurl", array(
+                        'href' => $vars['url'] . "action/openlabs/rate_less?annotation_id=" . $boopinnComment->guid,
+                        'src' => $vars['url'] . "mod/openlabs/graphics/thumb-down-icon.png",
+                        'alt' => "Bad comment !!!",
+                        "is_action" => true));
+                    }
+                }
                 ?>
             </td>
         </tr>

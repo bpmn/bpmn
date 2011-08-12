@@ -9,7 +9,6 @@
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . "/lib/boopinncomment.php" );
 
 ?>
-
 <div id="topic_posts"><!-- open the topic_posts div -->
 <div id="pages_breadcrumbs"><b><a href="<?php echo $vars['url']; ?>pg/openlabs/forum/<?php echo $vars['entity']->container_guid; ?>/"><?php echo elgg_echo("openlabs:forum"); ?></a></b> > <?php echo $vars['entity']->title; ?></div>
   
