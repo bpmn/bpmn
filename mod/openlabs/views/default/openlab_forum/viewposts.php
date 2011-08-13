@@ -14,7 +14,7 @@ $openlab = page_owner_entity() ;
 <div id="topic_posts"><!-- open the topic_posts div -->
 <div id="pages_breadcrumbs">
     <b>
-        <a href="<?php echo $vars['url']; ?>pg/openlabs/edit/<?php echo $vars['entity']->container_guid; ?>/"><?php echo $openlab->name; ?></a>
+        <a href="<?php echo $vars['url']; ?>pg/openlabs/all/"><?php echo $openlab->name; ?></a>
     </b> > <?php echo elgg_echo("openlabs:forum");  ?>
 </div>
   
