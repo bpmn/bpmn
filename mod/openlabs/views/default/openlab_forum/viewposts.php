@@ -8,9 +8,15 @@
 
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . "/lib/boopinncomment.php" );
 
+$openlab = page_owner_entity() ; 
+ 
 ?>
 <div id="topic_posts"><!-- open the topic_posts div -->
-<div id="pages_breadcrumbs"><b><a href="<?php echo $vars['url']; ?>pg/openlabs/forum/<?php echo $vars['entity']->container_guid; ?>/"><?php echo elgg_echo("openlabs:forum"); ?></a></b> > <?php echo $vars['entity']->title; ?></div>
+<div id="pages_breadcrumbs">
+    <b>
+        <a href="<?php echo $vars['url']; ?>pg/openlabs/edit/<?php echo $vars['entity']->container_guid; ?>/"><?php echo $openlab->name; ?></a>
+    </b> > <?php echo elgg_echo("openlabs:forum");  ?>
+</div>
   
 <?php
 //display follow up comments
@@ -27,7 +33,7 @@ echo elgg_view('navigation/pagination', array(
 ));
 ?>
     <!-- grab the topic title -->
-    <div id="content_area_openlab_title"><h2><?php echo $vars['entity']->title; ?></h2></div>
+    <div id="content_area_openlab_title"><h2><?php echo $openlab->name; ?></h2></div>
     <?php
     
     $comments = BoopinnComment::getCommentsByTopic($vars['entity']->guid ) ; 

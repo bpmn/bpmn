@@ -34,10 +34,10 @@ if (get_context() == "search") {
 	$icon = elgg_view("profile/icon",array('entity' => $openlab, 'size' => 'small'));
 	//get the openlab and topic title
 	if ($openlab instanceof ElggGroup) {
-		$info .= "<p>" . elgg_echo('openlab') . ": <a href=\"{$openlab->getURL()}\">".htmlentities($openlab->name, ENT_QUOTES, 'UTF-8') ."</a></p>";
+		$info .= "<p>" . elgg_echo('openlab') . ": ".htmlentities($openlab->name, ENT_QUOTES, 'UTF-8') ."</p>";
 	}
 
-	$info .= "<p>" . elgg_echo('openlabs:topic') . ": <a href=\"{$vars['entity']->getURL()}\">{$title}</a></p>";
+	$info .= "<p>" . " <a href=\"{$vars['entity']->getURL()}\">".elgg_echo( 'openlabs:viewdiscussion')."</a></p>";
 
 } else {
 

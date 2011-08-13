@@ -223,7 +223,9 @@ or click below to view the openlab's join requests:
     'openlab:usercanrateitscomment' => "Users can't rate their own comments"  , 
     'openlab:commentnumberrating' => "That post has been ranked %d time(s)" ,
     'openlab:usercanratetwice'  =>"You can't rate twice the same comment !!!",
-    'item:object:boopinncomment' => "Posts" 
+    'item:object:boopinncomment' => "Posts" , 
+    'openlabs:viewdiscussion' => "View discussion" , 
+    
 );
 
 add_translation("en", $english);
