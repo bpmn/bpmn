@@ -69,33 +69,32 @@ class BoopinnComment extends ElggObject {
     public static function getSubTypeName() {
         return 'boopinncomment';
     }
-    
-    public static function getEntity($guid)
-    {
-        
+
+    public static function getEntity($guid) {
+
         $ignoreacess = elgg_get_ignore_access();
-        
+
         // discussion is public 
         elgg_set_ignore_access(True);
-        
-        $entity = get_entity($guid) ;         
-        
+
+        $entity = get_entity($guid);
+
         elgg_set_ignore_access($ignoreacess);
-        
-        return $entity ; 
-        
+
+        return $entity;
     }
 
     public function getRating() {
-   
+
         $ignoreacess = elgg_get_ignore_access();
-        
+
         // discussion is public 
         elgg_set_ignore_access(True);
         // read annotation rating 
         $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
 
-           $ignoreacess = elgg_get_ignore_access($ignoreacess);
+
+        $ignoreacess = elgg_get_ignore_access($ignoreacess);
         // read value 
         $rating = $annotationRating[0]->value;
 
@@ -108,52 +107,101 @@ class BoopinnComment extends ElggObject {
         return $rating;
     }
 
-    /**
-     * Get the annotations for an entity.
-     *
-     * @param string $name
-     * @param int $limit
-     * @param int $offset
-     * @param string $order
-     * 
-    function getAnnotations($name, $limit = 50, $offset = 0, $order="asc") {
-        if ((int) ($this->guid) > 0) {
-            return get_annotations_without_access_control($this->getGUID(), "", "", $name, "", 0, $limit, $offset, $order);
+    public function positiveRate($userId) {
+
+        $ignoreacess = elgg_get_ignore_access();
+
+        // discussion is public 
+        elgg_set_ignore_access(True);        
+        
+        $hasVotedRelationship = check_entity_relationship($this->getGUID(), "hasvoted", $userId);
+
+        if ($hasVotedRelationship) {
+            return -1;
         } else {
-            return $this->temp_annotations[$name];
+            // read annotation rating 
+            $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
+
+            // read value 
+            $rating = $annotationRating[0]->value;
+
+            if ($rating) {
+                // if found clear all annotations
+                $this->clearAnnotations('commentrating');
+                // create new 
+                $this->annotate('commentrating', $rating + 1);
+                // create relationships 
+                add_entity_relationship($this->getGUID(), "hasvoted", $userId);
+                add_entity_relationship($this->getGUID(), "usercomment", $this->getAuthorId());
+            } 
+            else
+            {
+                 // create new 
+                $this->annotate('commentrating',  1);
+                // create relationships
+                add_entity_relationship($this->getGUID(), "hasvoted", $userId);
+                add_entity_relationship($this->getGUID(), "usercomment", $this->getAuthorId());
+            }
+
         }
-    } */
+         elgg_set_ignore_access($ignoreacess);  
+    }
+
+    public function negativeRate($userId) {
+
+        
+        $ignoreacess = elgg_get_ignore_access();
+
+        // discussion is public 
+        elgg_set_ignore_access(True);   
+        
+        // read annotation rating 
+        $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
+
+        // read value 
+        $rating = $annotationRating[0]->value;
+
+        if ($rating) {
+
+            if ($rating > 0) {
+                // if found clear all annotations
+                $this->clearAnnotations('commentrating');
+                // create new 
+                $this->annotate('commentrating', $rating - 1);
+
+                if (($rating - 1) == 0) {
+                    // remove association between comment and user 
+                    remove_entity_relationship($this->getGUID(), "hasvoted", $userId);
+                }
+            }
+        }
+        
+        elgg_set_ignore_access($ignoreacess);  
+    }
 
     /**
      * return comments ordered by their rating 
      */
-    public static function getRatedComments($minvalue) {
+    public static function getRatedCommentsInTopic($topicGuid) {
 
-          
+
         $ignoreacess = elgg_get_ignore_access();
-        
+
         // discussion is public 
         elgg_set_ignore_access(True);
-        
+
         // find comments having annotations 
         $comments = elgg_get_entities_from_annotations(array('types' => 'object',
             'subtypes' => BoopinnComment::getSubTypeName(),
+            'container_guids' => $topicGuid,
             'annotation_names' => 'commentrating'));
 
-        $maxComments = array();
-
-        foreach ($comments as $comment) {
-            if ($comment->getRating() >= $minValue) {
-                array_push($maxComments, $comment);
-            }
-        }
-
-        uksort($maxComments, "compareCommentByRating");
+        usort($comments, "compareCommentByRating");
 
         // discussion is public 
         elgg_set_ignore_access($ignoreacess);
-        
-        return $maxComments;
+
+        return $comments;
     }
 
 }
@@ -164,11 +212,12 @@ function compareCommentByRating($comment1, $comment2) {
 
 
     if ($rating1 > $rating2) {
-        return 1;
-    } else if ($rating1 < $rating2) {
         return -1;
+    } else if ($rating1 < $rating2) {
+        return 1;
     } else {
         return 0;
     }
 }
+
 ?>

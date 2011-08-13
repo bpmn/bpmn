@@ -27,53 +27,19 @@ if ($authorId == get_loggedin_userid()) {
     system_message(elgg_echo('openlab:usercanrateitscomment'));
 } else {
 
-    $hasVotedRelationship = check_entity_relationship($guid, "hasvoted" , $authorId) ; 
+    $result = $comment->positiveRate(get_loggedin_userid());
 
-    if ($hasVotedRelationship)
-    {
-         // can't rate twice 
-         system_message(elgg_echo('openlab:usercanratetwice'));
-    }
-    else
-    {
-        // read annotation rating 
-        $annotationRating = $comment->getAnnotations('commentrating', 1, 0, desc);
-
-         // read value 
-        $rating = $annotationRating[0]->value;
-
-        if ($rating) {
-            // if found clear all annotations
-            $comment->clearAnnotations('commentrating');
-            // create new 
-            $comment->annotate('commentrating', $rating + 1);
-        } else {
-            // if not found create new one 
-            $comment->annotate('commentrating', 1);
-        }
-
-
-        $annotationRating = $author->getAnnotations('userrating', 1, 0, desc);
-
-        $rating = $annotationRating[0]->value;
-
-        if ($rating) {
-            // if found clear all annotations
-            $comment->clearAnnotations('userrating');
-            $author->annotate('userrating', $rating + 1);
-        } else {
-            $author->annotate('userrating', 1);
-        }
-        // create relationship 
-        add_entity_relationship($guid, "hasvoted", $authorId) ; 
-    // Success message
+    if ($result == -1) {
+        // can't rate twice 
+        system_message(elgg_echo('openlab:usercanratetwice'));
+    } else {
+        // Success message
         system_message(elgg_echo("openlab:rateannotation"));
     }
-
 }
 
 // Forward to the main openlab page
-    $url = forward($_SERVER['HTTP_REFERER']);
+$url = forward($_SERVER['HTTP_REFERER']);
 
-    forward(url);
+forward(url);
 ?>

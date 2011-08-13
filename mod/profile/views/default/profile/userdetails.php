@@ -8,6 +8,8 @@
 * @uses $vars['entity'] The user entity
 */
 
+require_once( dirname(dirname(dirname(dirname(dirname(__FILE__))))). "/openlabs/lib/openlab_lib.php" );
+
 if ($vars['full'] == true) {
 	$iconsize = "medium";
 } else {
@@ -79,16 +81,14 @@ echo "</div>";
 
                 // display the users name
                 echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
-                $annotations = $vars['entity']->getAnnotations('userrating', 100000000, 0, desc);
-                // $annotationsCount = count($annotations) ; 
-                $annotationsCount = $annotations[0]->value ; 
-                if ($annotationsCount == 0)
+                $rating = get_user_ranking($vars['entity']->getGUID() ) ; 
+                if ($rating == 0)
                 {
                     echo elgg_echo('profile:neverbeenrated') ; 
                 }
                 else
                 {
-                    echo sprintf( elgg_echo('profile:hasbeenrated') , $annotationsCount) ; 
+                    echo sprintf( elgg_echo('profile:hasbeenrated') , $rating) ; 
                 }
 
                 //insert a view that can be extended

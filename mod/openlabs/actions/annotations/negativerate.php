@@ -31,47 +31,8 @@ if ($authorId == get_loggedin_userid()) {
     system_message(elgg_echo('openlab:usercanrateitscomment'));
 } else {
 
-        // read annotation rating 
-        $annotationRating = $comment->getAnnotations('commentrating', 1, 0, desc);
-
-        // read value 
-        $rating = $annotationRating[0]->value;
-
-        if ($rating) {
-
-            if ($rating > 0) {
-                // if found clear all annotations
-                $comment->clearAnnotations('commentrating');
-                // create new 
-                $comment->annotate('commentrating', $rating - 1);
-                
-                if (($rating -1) == 0)
-                {
-                    // remove association between comment and user 
-                    remove_entity_relationship($guid, "hasvoted",$authorId ) ; 
-                }
-
-          }
-        } else {
-            // if not found create new one 
-            $comment->annotate('commentrating', 0);
-        }
-
-
-        $annotationRating = $author->getAnnotations('userrating', 1, 0, desc);
-
-        $rating = $annotationRating[0]->value;
-
-        if ($rating) {
-            if ($rating > 0) {
-                // if found clear all annotations
-                $comment->clearAnnotations('userrating');
-                $author->annotate('userrating', $rating - 1);
-            } else {
-                $author->annotate('userrating', 0);
-            }
-        }
-// Success message
+        $comment->negativeRate(get_loggedin_userid()) ; 
+        // Success message
         system_message(elgg_echo("openlab:rateannotation"));
 }
 // Forward to the main openlab page
