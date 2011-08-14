@@ -1,5 +1,7 @@
 <?php
 
+require_once( dirname(__FILE__) . "/openlab_lib.php" );
+
 /**
  *  Boopin comment (STD on 14/07/2011) 
  */
@@ -112,13 +114,14 @@ class BoopinnComment extends ElggObject {
         $ignoreacess = elgg_get_ignore_access();
 
         // discussion is public 
-        elgg_set_ignore_access(True);        
-        
-        $hasVotedRelationship = check_entity_relationship($this->getGUID(), "hasvoted", $userId);
+        elgg_set_ignore_access(True);
+
+        $hasVotedRelationship = check_entity_relationship($this->getGUID(), "hasvotedpos", $userId);
 
         if ($hasVotedRelationship) {
             return -1;
         } else {
+
             // read annotation rating 
             $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
 
@@ -131,52 +134,81 @@ class BoopinnComment extends ElggObject {
                 // create new 
                 $this->annotate('commentrating', $rating + 1);
                 // create relationships 
-                add_entity_relationship($this->getGUID(), "hasvoted", $userId);
+                add_entity_relationship($this->getGUID(), "hasvotedpos", $userId);
                 add_entity_relationship($this->getGUID(), "usercomment", $this->getAuthorId());
-            } 
-            else
-            {
-                 // create new 
-                $this->annotate('commentrating',  1);
+            } else {
+                // create new 
+                $this->annotate('commentrating', 1);
                 // create relationships
-                add_entity_relationship($this->getGUID(), "hasvoted", $userId);
+                add_entity_relationship($this->getGUID(), "hasvotedpos", $userId);
                 add_entity_relationship($this->getGUID(), "usercomment", $this->getAuthorId());
             }
 
+            $this->computeMembersScore();
         }
-         elgg_set_ignore_access($ignoreacess);  
+        elgg_set_ignore_access($ignoreacess);
+        // $this->computeMembersScore() ;
+    }
+
+    /**
+     * compute score of all members of  the openlab. 
+     */
+    public function computeMembersScore() {
+        $openlabId = $this->findGroupId();
+        $openlab = get_entity($openlabId);
+        $members = $openlab->getMembers();
+
+        foreach ($members as $member) {
+            $score = get_user_ranking($member->getGUID());
+
+            $member->clearAnnotations('userscore');
+
+            $member->annotate('userscore', $score);
+        }
     }
 
     public function negativeRate($userId) {
 
-        
+
         $ignoreacess = elgg_get_ignore_access();
 
         // discussion is public 
-        elgg_set_ignore_access(True);   
-        
-        // read annotation rating 
-        $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
+        elgg_set_ignore_access(True);
 
-        // read value 
-        $rating = $annotationRating[0]->value;
 
-        if ($rating) {
+        $hasVotedRelationship = check_entity_relationship($this->getGUID(), "hasvotedneg", $userId);
 
-            if ($rating > 0) {
-                // if found clear all annotations
-                $this->clearAnnotations('commentrating');
-                // create new 
-                $this->annotate('commentrating', $rating - 1);
+        if ($hasVotedRelationship) {
+            return -1;
+        } else {
 
-                if (($rating - 1) == 0) {
-                    // remove association between comment and user 
-                    remove_entity_relationship($this->getGUID(), "hasvoted", $userId);
+            // read annotation rating 
+            $annotationRating = $this->getAnnotations('commentrating', 1, 0, desc);
+
+            // read value 
+            $rating = $annotationRating[0]->value;
+
+            if ($rating) {
+
+                if ($rating > 0) {
+                    // if found clear all annotations
+                    $this->clearAnnotations('commentrating');
+                    // create new 
+                    $this->annotate('commentrating', $rating - 1);
+                    
+                    add_entity_relationship($this->getGUID(), "hasvotedneg", $userId);
+
+                    if (($rating - 1) == 0) {
+                        // remove association between comment and user 
+                        remove_entity_relationship($this->getGUID(), "hasvotedneg", $userId);
+                        remove_entity_relationship($this->getGUID(), "hasvotedpos", $userId);
+                    }
+
+                    $this->computeMembersScore();
                 }
             }
         }
-        
-        elgg_set_ignore_access($ignoreacess);  
+        elgg_set_ignore_access($ignoreacess);
     }
 
     /**

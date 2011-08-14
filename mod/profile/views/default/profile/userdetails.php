@@ -81,7 +81,8 @@ echo "</div>";
 
                 // display the users name
                 echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
-                $rating = get_user_ranking($vars['entity']->getGUID() ) ; 
+                $ratings = $vars['entity']->getAnnotations('userscore' ,1,0 ) ; 
+                $rating = $ratings[0]->value ; 
                 if ($rating == 0)
                 {
                     echo elgg_echo('profile:neverbeenrated') ; 

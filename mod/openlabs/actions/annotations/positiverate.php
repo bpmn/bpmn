@@ -24,14 +24,14 @@ $authorId = $comment->getAuthorId();
 $author = get_entity($authorId);
 
 if ($authorId == get_loggedin_userid()) {
-    system_message(elgg_echo('openlab:usercanrateitscomment'));
+    register_error(elgg_echo('openlab:usercanrateitscomment'));
 } else {
 
     $result = $comment->positiveRate(get_loggedin_userid());
 
     if ($result == -1) {
         // can't rate twice 
-        system_message(elgg_echo('openlab:usercanratetwice'));
+        register_error(elgg_echo('openlab:usercanratetwice'));
     } else {
         // Success message
         system_message(elgg_echo("openlab:rateannotation"));

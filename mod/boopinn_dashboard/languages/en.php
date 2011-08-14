@@ -15,7 +15,8 @@
             		'dashboard:noactivity' => "No activity",
 			'dashboard:title:activity' => "My %s activity",
                         'dashboard:title:cisactivity'=>"New Teams and OpenLab in my Cis",
-                        'dashboard:title:followactivity'=>"Following activity"
+                        'dashboard:title:followactivity'=>"Following activity" , 
+                        'dashboard:topthreeuserss' => 'Top three users '  
         );
     add_translation("en",$english);
 ?>

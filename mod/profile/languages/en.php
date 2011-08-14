@@ -93,7 +93,7 @@
             /**
              * STD adds
              */
-            'profile:hasbeenrated' => "That user has been rated %s time(s)" , 
+            'profile:hasbeenrated' => "The score of this user is %s." , 
             'profile:neverbeenrated' => "That user has never been rated" , 
             
 	);

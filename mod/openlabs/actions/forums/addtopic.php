@@ -43,8 +43,6 @@ if (empty($title) || empty($message)) {
     $openlabtopic->container_guid = $openlab_guid;
     // For now, set its access to public (we'll add an access dropdown shortly)
     $openlabtopic->access_id = ACCESS_PUBLIC;
-    ;
-    // Set its title and description appropriately
     $openlabtopic->title = $title;
     // Before we can set metadata, we need to save the topic
     if (!$openlabtopic->save()) {

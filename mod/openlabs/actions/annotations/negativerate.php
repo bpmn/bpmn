@@ -28,12 +28,20 @@ $authorId = $comment->getAuthorId();
 $author = get_entity($authorId);
 
 if ($authorId == get_loggedin_userid()) {
-    system_message(elgg_echo('openlab:usercanrateitscomment'));
+    register_error(elgg_echo('openlab:usercanrateitscomment'));
 } else {
 
-        $comment->negativeRate(get_loggedin_userid()) ; 
-        // Success message
-        system_message(elgg_echo("openlab:rateannotation"));
+        $result = $comment->negativeRate(get_loggedin_userid()) ; 
+        
+        if ($result != -1)
+        {
+            system_message(elgg_echo("openlab:rateannotation"));
+        }
+        else 
+        {
+            // Success message
+            register_error(elgg_echo('openlab:usercanratetwice'));
+        }
 }
 // Forward to the main openlab page
 $url = forward($_SERVER['HTTP_REFERER']);

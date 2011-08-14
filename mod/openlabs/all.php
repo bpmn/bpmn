@@ -43,8 +43,8 @@
 			break;
 			case "active":
 			case 'default':
-			$objects = list_entities_from_annotations("object", "openlabforumtopic", "openlab_topic_post", "", 40, 0, 0, false, true);
-			break;
+			$objects = elgg_list_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
+                                                break;
 		}
 	}
 	
