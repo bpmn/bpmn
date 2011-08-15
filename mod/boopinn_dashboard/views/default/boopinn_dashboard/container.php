@@ -35,20 +35,20 @@
 		</div>
 
 		<div class="dash_right_right">
-                                            <?php echo $vars['users_activity']; ?>
+                       <h6><?php echo $vars['users_activity']; ?></h6>
 		</div>
 		<div class="dash_right_footer">
-                    <div class="dash_box">
-                        <?php echo $vars['teams_activity']; ?>
+                    <div class="dash_box_top_bar">
+                        <h6><?php echo $vars['teams_activity']; ?></h6>
 			</div>
-                    <div class="dash_box">
-                        <?php echo $vars['openlabs_activity']; ?>
+                    <div class="dash_box_top_bar">
+                        <h6><?php echo $vars['openlabs_activity']; ?></h6>
 			</div>
-                    <div class="dash_box">
-                        <?php echo $vars['cis_activity']; ?>
+                    <div class="dash_box_top_bar">
+                        <h6><?php echo $vars['cis_activity']; ?></h6>
 			</div>
-                    <div class="dash_box">
-                        <?php echo $vars['follow_activity']; ?>
+                    <div class="dash_box_top_bar">
+                        <h6><?php echo $vars['follow_activity']; ?></h6>
 			</div>
                 </div>
 	</div>

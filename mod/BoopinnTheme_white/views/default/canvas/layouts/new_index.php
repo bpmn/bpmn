@@ -39,6 +39,7 @@
                     <div class="panel-wrapper">
                         <h2 class="title">Welcome</h2>
                            <p>
+                        <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/network.png" alt="Network"class="floatRight">	
 
                         <style type="text/css">
                             p.textboopinn { color: #0066aa }
@@ -47,26 +48,83 @@
                         <h2>
                             <p class="textboopinn">Join Boopinn today, and grow your creativity and innovation</p>
                             <p class="textboopinn">potential in a open and borderless network!</p>
-                        </h2>
-                        <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/network.png" alt="Network"class="floatRight">	
+			</h2>
 
-                        </p> 
-                    </div>
-                </div>
-                <div class="panel">
-                    <div class="panel-wrapper">
-                        <h2 class="title">Register</h2>
-                        <p>
                             <h6>
                                 <p>Register, and create</p>
                                 <p>  your "team" : to showcase your company or your project </p>
                                 <p>  your "open lab" : to collaborate on ideas you would like to develop creative</p>
                                 <p>                    and innovate solutions</p>
                                 <p>View you CIS (Creative and Innovation Score)</p>
-                            </h6>                  
-                        </p>
+			    </h6>  
+
+
+                        </p> 
                     </div>
                 </div>
+
+
+                 <div class="panel">
+                    <div class="panel-wrapper">
+                        <h2 class="title">Blog</h2>
+                           <p>
+
+                        <style type="text/css">
+                            p.textboopinn { color: #0066aa }
+                        </style>
+
+                        <h2>
+                            <p class="textboopinn">Visit our Blog !</p>
+                        </h2>
+                        <a href="http://blog.boopinn.com"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/blog2.PNG" alt="Network"class="floatRight"></img></a>
+
+                        </p> 
+                    </div>
+                </div>
+
+               <div class="panel">
+                    <div class="panel-wrapper">
+                        <h2 class="title">Teams</h2>
+                           <p>
+
+                        <style type="text/css">
+                            p.textboopinn { color: #0066aa }
+                        </style>
+
+                        <h2>
+                            <p class="textboopinn">Teams explained</p>
+			</h2>
+
+                            <h6>
+  
+			    </h6>  
+
+                        </p> 
+                    </div>
+                </div>
+
+              <div class="panel">
+                    <div class="panel-wrapper">
+                        <h2 class="title">Open labs</h2>
+                           <p>
+
+                        <style type="text/css">
+                            p.textboopinn { color: #0066aa }
+                        </style>
+
+                        <h2>
+                            <p class="textboopinn">Open labs explained</p>
+			</h2>
+
+                            <h6>
+  
+			    </h6>  
+
+                        </p> 
+                    </div>
+                </div>
+
+
             </div><!-- .coda-slider -->
         </div><!-- .coda-slider-wrapper -->
 

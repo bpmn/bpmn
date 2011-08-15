@@ -3071,7 +3071,7 @@ img.floatRightClear {
 	.coda-slider, .coda-slider .panel { width: 600px } 
 	
 	<!--/* Change margin and width of the slider (with dynamic arrows) */-->
-	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 400px }
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 600px }
 	.coda-slider-wrapper.arrows .coda-slider { margin: 0 10px }
 	
 	<!--/* Arrow styling */-->
@@ -3350,7 +3350,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     margin: 5px 0 0 0;
     min-height: 200px;
     width: 720px;
-	border-top: solid 1px #D0D0D0;
+	border-top: none 1px #D0D0D0;
     float: left;
 
 }
@@ -3360,11 +3360,11 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     margin: 0px 0 0 0;
     min-height: 125px;
     width: 250px;
-	border: solid 1px #D0D0D0;
+	border: none 1px #D0D0D0;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
     float: right;
-
+    text-align:right;
 }
 
 
@@ -3378,6 +3378,16 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 	border: none 1px #D0D0D0;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
+}
+
+.dash_box_top_bar {
+    position: relative;
+    margin: 5px 0 0 0;
+    min-height: 100px;
+    min-width: 100px;
+    background: #ffffff;
+    color: #0066aa;
+	border-top: solid 1px #0066aa;
 }
 
 
@@ -3417,5 +3427,7 @@ float: left;
 
 
 #userranktitle :  {
-    background:  #00f2f2;
+   font-weight: bold;
+   display: block
+   background:  #00f2f2;
 }
