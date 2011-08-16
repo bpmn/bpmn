@@ -145,8 +145,9 @@
 	padding:10px;
     margin:0 0 5px 0;
     background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;  
+    border-bottom: solid  1px #f0f0f0;
+    
+
 }
 .topic_post .post_icon {
     float:left;
@@ -189,7 +190,9 @@
 	-moz-border-radius: 8px;
 }
 #openlab_pages_widget .search_listing {
-	border: 2px solid #cccccc;
+	border: 1px solid #cccccc;
+    box-shadow: 1px 1px 7px #D0D0D0;
+
 }
 #right_column .filerepo_widget_singleitem {
 	background: #dedede !important;
@@ -276,7 +279,7 @@ span.timestamp {
 }
 /* new openlabs page */
 .openlabs .search_listing {
-	border:2px solid #cccccc;
+	border:1px solid #cccccc;
 	margin:0 0 5px 0;
 }
 .openlabs .search_listing:hover {

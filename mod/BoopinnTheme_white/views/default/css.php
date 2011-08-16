@@ -1591,7 +1591,6 @@ p.user_menu_friends_of {
 *************************************** */
 #river,
 .river_item_list {
-	border-top:1px solid #dddddd;
 
 	overflow:hidden;
 }
@@ -1602,12 +1601,13 @@ p.user_menu_friends_of {
 	min-height:17px;
 }
 .river_item {
-	border-bottom:1px solid #dddddd;
 	padding:2px 0 2px 0;
 }
 .river_item_time {
 	font-size:90%;
 	color:#666666;
+	padding:0 10px;
+
 }
 .river_item .river_item_useravatar {
 	float:left;
@@ -2915,7 +2915,7 @@ div.ajax_loader {
 #elgg_horizontal_tabbed_nav {
 	margin:0 0 5px 0;
 	padding: 0;
-	border-bottom: 2px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 	display:table;
 	width:100%;
 }
@@ -2926,7 +2926,7 @@ div.ajax_loader {
 }
 #elgg_horizontal_tabbed_nav li {
 	float: left;
-	border: 2px solid #cccccc;
+	border: 1px solid #cccccc;
 	border-bottom-width: 0;
 	background: #eeeeee;
 	margin: 0 0 0 10px;
@@ -3424,7 +3424,38 @@ span {
 float: left;
 }
 
+.river_group_teams_create{
+    display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+    border-bottom: solid  1px #f0f0f0;
+}
 
+
+.river_group_openlab_join{
+    display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+    border-bottom: solid  1px #f0f0f0;
+}
+
+.river_group_openlab_addpost{
+    display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+    border-bottom: solid  1px #f0f0f0;
+}
+
+.river_group_openlab_create{
+    display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+    border-bottom: solid  1px #f0f0f0;
+}
 
 #userranktitle :  {
    font-weight: bold;
