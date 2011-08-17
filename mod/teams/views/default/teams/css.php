@@ -12,7 +12,7 @@
 	color:#0054A7;
 	font-size:1.35em;
 	line-height:1.2em;
-	margin:0 0 0 8px;
+	margin:0 0 0 4px;
 	padding:5px;
 }
 #topic_posts #content_area_teams_title h2 {
@@ -31,13 +31,13 @@
 
 #teams_info_column_left .odd {
 	background:#E9E9E9;
-	-webkit-border-radius: 5px; 
-	-moz-border-radius: 5px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 }
 #teams_info_column_left .even {
 	background:#E9E9E9;
-	-webkit-border-radius: 5px; 
-	-moz-border-radius: 5px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 }
 #teams_info_column_left p {
 	margin:0 0 7px 0;
@@ -58,16 +58,16 @@
 	background: #e9e9e9;
 	padding:5px;
 	margin:10px 0 20px 0;
-	-webkit-border-radius: 5px; 
-	-moz-border-radius: 5px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 }
 #teams_stats p {
 	margin:0;
 }
 #teams_members {
 	margin:10px;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 	background: white;
 }
 
@@ -124,8 +124,8 @@
     padding:10px;
     margin:0 10px 0 10px;
     background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;    
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;    
 }
 /* topics individual view page */
 #topic_posts {
@@ -138,19 +138,19 @@
     padding:10px;
     margin:30px 0 0 0;
     background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px; 
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
 }
 .topic_post {
 	padding:10px;
     margin:0 0 5px 0;
     background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;  
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;  
 }
 .topic_post .post_icon {
     float:left;
-    margin:0 8px 4px 0;
+    margin:0 4px 4px 0;
 }
 .topic_post h2 {
     margin-bottom:20px;
@@ -169,27 +169,27 @@
 #latest_discussion_widget {
 	margin:0 0 20px 0;
 	background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 }
 /* teams files widget */
 #filerepo_widget_layout {
 	margin:0 0 20px 0;
 	padding: 0 0 5px 0;
 	background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 }
 /* team pages widget */
 #team_pages_widget {
 	margin:0 0 20px 0;
 	padding: 0 0 5px 0;
 	background:white;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 }
 #team_pages_widget .search_listing {
-	border: 2px solid #cccccc;
+	border: 1px solid #cccccc;
 }
 #right_column .filerepo_widget_singleitem {
 	background: #dedede !important;
@@ -227,8 +227,8 @@
     color:#666666;
 }
 .add_topic {
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 	background:white;
 	margin:5px 10px;
 	padding:10px 10px 10px 6px;
@@ -240,8 +240,8 @@ a.add_topic_button {
 	color: white;
 	background:#4690d6;
 	border:none;
-	-webkit-border-radius: 5px; 
-	-moz-border-radius: 5px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
 	width: auto;
 	height: auto;
 	padding: 3px 6px 3px 6px;
@@ -276,7 +276,7 @@ span.timestamp {
 }
 /* new teams page */
 .teams .search_listing {
-	border:2px solid #cccccc;
+	border:1px solid #cccccc;
 	margin:0 0 5px 0;
 }
 .teams .search_listing:hover {
@@ -303,8 +303,8 @@ span.timestamp {
 	margin:0 10px 20px 10px;
 	padding: 3px 5px 5px 5px;
 	background:#bbdaf7;
-	-webkit-border-radius: 8px; 
-	-moz-border-radius: 8px;	
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;	
 }
 #teams_closed_membership p {
 	margin:0;
@@ -404,10 +404,10 @@ span.timestamp {
 	margin:0 0 20px 0;
 	padding: 0 0 5px 0;
 	background:white;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 }
 
 .teams_widget .search_listing {
-border:2px solid #CCCCCC;
+border:1px solid #CCCCCC;
 }

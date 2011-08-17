@@ -6,7 +6,6 @@
 
 		<div class="dashf-left">
                     	<div class="dash_box">
-			  
 			    <h6><?php echo elgg_echo('dashboard:createteam:text')?></h6>
  <button class="buttonclass" onclick=<?php echo("self.location.href='".$CONFIG->wwwroot."pg/teams/new/'")?> >
 			    <span><h6><?php echo elgg_echo('dashboard:createteam:button') ?></h6></span>
@@ -35,19 +34,21 @@
 		</div>
 
 		<div class="dash_right_right">
+<img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/product-design.png"></img>
                        <h6><?php echo $vars['users_activity']; ?></h6>
 		</div>
 		<div class="dash_right_footer">
                     <div class="dash_box_top_bar">
-                        <h6><?php echo $vars['teams_activity']; ?></h6>
+			<h6><?php echo $vars['teams_activity']; ?></h6>
+
 			</div>
                     <div class="dash_box_top_bar">
                         <h6><?php echo $vars['openlabs_activity']; ?></h6>
 			</div>
-                    <div class="dash_box_top_bar">
+                    <div class="dash_box_top_bar_cis">
                         <h6><?php echo $vars['cis_activity']; ?></h6>
 			</div>
-                    <div class="dash_box_top_bar">
+                    <div class="dash_box_top_bar_follow">
                         <h6><?php echo $vars['follow_activity']; ?></h6>
 			</div>
                 </div>
@@ -58,9 +59,9 @@
 
         	<?php
         		if (isloggedin()){
-	        		echo "<h4>" . elgg_echo("welcome") . " ";
+	        		echo "<h4_center>" . elgg_echo("welcome") . " ";
         			echo $vars['user']->name;
-        			echo "</h4>";
+        			echo "</h4_center>";
     			}
         	?>
         <!--</div>-->
@@ -68,7 +69,7 @@
     
 		<div class="dashf-left">
                     
-			<div class="dash_box">
+			<div class="dash_box_transparent">
                             <?php echo $vars['request']; ?><!--br-->
 			</div>
 		
