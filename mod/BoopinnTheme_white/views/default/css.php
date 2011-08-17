@@ -1621,9 +1621,7 @@ p.user_menu_friends_of {
 *:first-child+html .river_item p {
 	min-height:17px;
 }
-.river_user_update {
-	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
-}
+
 .river_object_user_profileupdate {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
 }
@@ -1642,9 +1640,7 @@ p.user_menu_friends_of {
 .river_object_status_create {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_status.gif) no-repeat left -1px;
 }
-.river_object_file_addfile {
-	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
-}
+
 .river_object_file_update {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
 }
@@ -1718,33 +1714,99 @@ p.user_menu_friends_of {
 .river_object_page_comment {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
 }
+
+.river_user_update {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
+}
+
+
+.river_object_file_addfile {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
+}
+
+
 .river_group_teams_create {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
 }
 .river_group_teams_join {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
-}
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
+
+ }
 
 .river_group_teams_update {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
+
 }
+
 .river_group_teams_addpost {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
 }
 .river_group_openlab_create {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
 }
 .river_group_openlab_join {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
+
 }
 
 .river_group_openlab_update {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
 }
 
 .river_group_openlab_addpost {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+        display: block;
+	text-align:left;
+	font-size: 0.7em;
+	color:#000000;
+        border-bottom: solid  1px #f0f0f0;
 }
+
 
 
 
@@ -3444,42 +3506,10 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat right;
 }
 
-span {
+/*span {
 float: left;
-}
+}*/
 
-.river_group_teams_create{
-    display: block;
-	text-align:left;
-	font-size: 0.7em;
-	color:#000000;
-    border-bottom: solid  1px #f0f0f0;
-}
-
-
-.river_group_openlab_join{
-    display: block;
-	text-align:left;
-	font-size: 0.7em;
-	color:#000000;
-    border-bottom: solid  1px #f0f0f0;
-}
-
-.river_group_openlab_addpost{
-    display: block;
-	text-align:left;
-	font-size: 0.7em;
-	color:#000000;
-    border-bottom: solid  1px #f0f0f0;
-}
-
-.river_group_openlab_create{
-    display: block;
-	text-align:left;
-	font-size: 0.7em;
-	color:#000000;
-    border-bottom: solid  1px #f0f0f0;
-}
 
 #userranktitle :  {
    font-weight: bold;
