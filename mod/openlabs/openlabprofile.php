@@ -26,9 +26,9 @@
                 //if (!$openlabaccess)
 		//	$view_all = false;
 		
-		
+	
 		$area2 = elgg_view_title($title);
-		$area2 .= elgg_view('openlab/openlab', array('entity' => $openlab, 'user' => $_SESSION['user'], 'full' => true));
+                                $area2 .= elgg_view('group/openlab', array('entity' => $openlab, 'user' => $_SESSION['user'], 'full' => true));
 		
 		if ($view_all) {
 			//openlab profile 'items' - these are not real widgets, just contents to display

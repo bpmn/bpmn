@@ -22,7 +22,7 @@ if ($vars['entity']->forum_enable != 'no') {
             
             echo "<div class=\"forum_latest\">";
             echo "<div class=\"topic_owner_icon\">" . elgg_view('profile/icon', array('entity' => $f->getOwnerEntity(), 'size' => 'tiny', 'override' => true)) . "</div>";
-            echo "<div class=\"topic_title\"><p><a href=\"{$f->getURL()}\">" . $f->title . "</a></p> <p class=\"topic_replies\"><small>" . elgg_echo('openlabs:posts') . ": " . $count_annotations . "</small></p></div>";
+            echo "<div class=\"topic_title\"><p><a href=\"{$f->getURL()}\">" . elgg_echo('openlabs:viewdiscussion' ) . "</a></p> <p class=\"topic_replies\"><small>" . elgg_echo('openlabs:posts') . ": " . $count_annotations . "</small></p></div>";
 
             echo "</div>";
         }
