@@ -26,8 +26,8 @@
         if (isloggedin()){
             if ($vars['entity']->owner_guid == get_loggedin_user()->guid)
                 $member_type="owner";
-            else
-            $member_type="member";
+            elseif ($vars['entity']->isMember(get_loggedin_user()))
+                $member_type="member";
             }
 
 	//for admins display the feature or unfeature option

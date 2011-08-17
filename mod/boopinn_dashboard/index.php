@@ -15,10 +15,11 @@ $title = 'Boopinn Dashboard';
 //$content = elgg_view('page_elements/contentwrapper', array('body' => $nav . $river));
 // display page
 //set a view to display the requests notifications
+$my_openlab_activity = view_my_group_river(get_loggedin_user()->guid, 'group', 'openlab');
 $my_follow_activity = view_my_follow_river(get_loggedin_user()->guid);
 $my_cis_activity = view_my_cis_river(get_loggedin_user());
 $my_team_activity = view_my_group_river(get_loggedin_user()->guid, 'group', 'teams');
-$my_openlab_activity = view_my_group_river(get_loggedin_user()->guid, 'group', 'openlab');
+
 $user_activity = view_users_activity();
 $notif_request = elgg_view("requestnotifications/sidebox");
 $body = elgg_view('boopinn_dashboard/container', array('request' => $notif_request, 

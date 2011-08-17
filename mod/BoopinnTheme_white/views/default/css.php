@@ -1642,7 +1642,7 @@ p.user_menu_friends_of {
 .river_object_status_create {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_status.gif) no-repeat left -1px;
 }
-.river_object_file_create {
+.river_object_file_addfile {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
 }
 .river_object_file_update {
@@ -1687,12 +1687,7 @@ p.user_menu_friends_of {
 .river_object_thewire_create {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_thewire.gif) no-repeat left -1px;
 }
-.river_group_create {
-	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
-}
-.river_group_join {
-	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
-}
+
 .river_object_groupforumtopic_annotate {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
 }
@@ -1723,6 +1718,35 @@ p.user_menu_friends_of {
 .river_object_page_comment {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
 }
+.river_group_teams_create {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_group_teams_join {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+
+.river_group_teams_update {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_group_teams_addpost {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_group_openlab_create {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_group_openlab_join {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+
+.river_group_openlab_update {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+
+.river_group_openlab_addpost {
+	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+
+
 
 /* ***************************************
 	ENTITY LISTINGS

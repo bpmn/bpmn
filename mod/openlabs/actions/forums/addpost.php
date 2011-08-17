@@ -52,7 +52,7 @@ if ($result == false) {
 // add to river
 //add_to_river('river/forum/create', 'create', $user->guid, $topic_guid, "", 0, $post_id);
 // add a post to an openlab
-add_to_river('openlab_river/forum/create', 'addpost', $user->guid, $openlab_guid, "", 0, $post_id);
+add_to_river('openlab_river/forum/create', 'addpost', $user->guid, $openlab_guid, "", 0, 0);
 
 system_message(elgg_echo("openlabspost:success"));
 

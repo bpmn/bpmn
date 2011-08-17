@@ -9,7 +9,7 @@
 	$forumtopic = $object->guid;
 	$openlab_guid = $object->container_guid;
 	//grab the annotation, if one exists
-	if($vars['item']->annotation_id != 0) {
+	if(($vars['item']->annotation_id) != 0) {
 		$comment = get_annotation($vars['item']->annotation_id)->value;
 	}
 	$comment = strip_tags($comment);//this is so we don't get large images etc in the activity river

@@ -22,10 +22,12 @@ if($avatar_icon == "icon"){
 					<div class="river_<?php echo $vars['item']->type; ?>_<?php if($vars['item']->subtype) echo $vars['item']->subtype . "_"; ?><?php echo $vars['item']->action_type; ?>">
 					<p>
 						<?php
-								echo $vars['body'];
+                                                            echo $vars['body'];
 						?>
-						<span class="river_item_time">
-							(<?php
+                   
+                                                <span class="river_item_time">
+						
+                                                	(<?php
 								echo elgg_view_friendly_time($vars['item']->posted);
 							?>)
 						</span>
