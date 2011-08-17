@@ -2876,7 +2876,7 @@ h3.settings {
 .admin_users_online .search_listing {
 	margin:0 0 5px 0;
 	padding:5px;
-	border:2px solid #cccccc;
+	border:1px solid #cccccc;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius:4px;
