@@ -146,10 +146,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	line-height: normal;
 }
-h1 { font-size: 1.4em; }
-h2 { font-size: 1.2em; }
-h3 { font-size: 1.1em; }
+h1 { font-size: 1.3em; }
+h2 { font-size: 1.1em; }
+h3 { font-size: 1.0em; }
 h4 { font-size: 1.0em; }
+
+h4_white { font-size: 1.0em; color:#ffffff; font-weight:bold; text-align: left; float: left;}
+h4_center { font-size: 1.0em; color:#000000; font-weight:bold; text-align: right; float: right;}
+
+
 h5 { font-size: 0.9em; }
 h6 { font-size: 0.7em; }
 
@@ -1604,8 +1609,10 @@ p.user_menu_friends_of {
 	padding:2px 0 2px 0;
 }
 .river_item_time {
+	font-weight: bold;
+
 	font-size:90%;
-	color:#666666;
+	color:#910000;
 	padding:0 10px;
 
 }
@@ -3324,6 +3331,8 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
     float: left;
+    background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/Principal_header_rot.png) no-repeat;
+
 }
 .dash_right {
     min-height: 396px;
@@ -3380,12 +3389,49 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 	-moz-border-radius: 4px;
 }
 
+.dash_box_transparent {
+    position: relative;
+    margin: 5px 0 0 0;
+    min-height: 100px;
+    min-width: 100px;
+    color: #ffffff;
+	border: none 1px #D0D0D0;
+}
+
+
 .dash_box_top_bar {
     position: relative;
     margin: 5px 0 0 0;
     min-height: 100px;
     min-width: 100px;
     background: #ffffff;
+    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/collaboration16.png) no-repeat top right;
+
+    color: #0066aa;
+	border-top: solid 1px #0066aa;
+}
+
+
+.dash_box_top_bar_cis {
+    position: relative;
+    margin: 5px 0 0 0;
+    min-height: 100px;
+    min-width: 100px;
+    background: #ffffff;
+    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/sitemap.png) no-repeat top right;
+
+    color: #0066aa;
+	border-top: solid 1px #0066aa;
+}
+
+.dash_box_top_bar_follow {
+    position: relative;
+    margin: 5px 0 0 0;
+    min-height: 100px;
+    min-width: 100px;
+    background: #ffffff;
+    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/flag.png) no-repeat top right;
+
     color: #0066aa;
 	border-top: solid 1px #0066aa;
 }
@@ -3393,6 +3439,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 
 .dashf-left {
     float: left;
+
 }
 .dashf-right {
     float: right;
