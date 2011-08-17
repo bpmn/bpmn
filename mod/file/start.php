@@ -98,13 +98,13 @@ function file_submenus() {
     // STD add file menus 
     if ($page_owner instanceof ElggGroup && get_context() == "openlabs") {
         if ($page_owner->file_enable != "no") {
-            add_submenu_item(sprintf(elgg_echo("file:openlabs"), $page_owner->name), $CONFIG->wwwroot . "pg/file/owner/" . $page_owner->username);
+            add_submenu_item(sprintf(elgg_echo("file:openlabs"), $page_owner->name), $CONFIG->wwwroot . "pg/openlabfile/owner/" . $page_owner->username);
         }
     }
 
     // General submenu options
 
-    if (get_context() == "file") {
+    if ((get_context() == "file")  || (get_context() == 'openlab' ) || (get_context() =='teams' ) ) {
         /**
          * STD no more menus Your files + Your friends files 
         

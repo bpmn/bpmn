@@ -107,13 +107,14 @@
 		}
 
 ?>
+<!--
 <p>
 	<label>
 		<?php echo elgg_echo('access'); ?><br />
 		<?php echo elgg_view('input/access', array('internalname' => 'access_id','value' => $access_id)); ?>
 	</label>
 </p>
-	
+-->	
 <p>
 <?php
 

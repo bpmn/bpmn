@@ -142,12 +142,10 @@
 	-moz-border-radius: 8px; 
 }
 .topic_post {
-	padding:10px;
+    padding:10px;
     margin:0 0 5px 0;
-    background:white;
+    background:#D1DEE6;
     border-bottom: solid  1px #f0f0f0;
-    
-
 }
 .topic_post .post_icon {
     float:left;
@@ -163,7 +161,7 @@
 	padding-left:10px;
 }
 .topic_post table, .topic_post td {
-    border:none;
+    border:4px;
 }
 
 /* openlab latest discussions widget */

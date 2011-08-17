@@ -126,6 +126,11 @@ function delete_double_items($arr) {
 
 function view_users_activity()
 {
+    
+     $ignoreacess = elgg_get_ignore_access();
+    // discussion is public 
+    elgg_set_ignore_access(True);
+    
     $users = elgg_get_entities_from_annotations(array('types' => 'user', 
                                                                       'annotation_names' => 'userscore', 
                                                                       'order_by_annotation' => array( 'direction' => DESC) , 
@@ -163,6 +168,8 @@ function view_users_activity()
         }
     }
     
+    // discussion is public 
+    elgg_set_ignore_access($ignoreacess);
     return $content ; 
     
 }

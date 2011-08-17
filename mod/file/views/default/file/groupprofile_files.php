@@ -24,12 +24,24 @@ if ($vars['entity']->file_enable != 'no') {
 <?php
 	$context = get_context();
 	set_context('search');
+        
+                if ($context == 'openlabs')
+                {
+                    $ignoreacess = elgg_get_ignore_access();
+
+                    elgg_set_ignore_access(True);
+                }
+        
 	$content = elgg_list_entities(array('types' => 'object',
-										'subtypes' => 'file',
-										'container_guid' => $vars['entity']->guid,
-										'limit' => 5,
-										'full_view' => FALSE,
-										'pagination' => FALSE));
+                                                                                                'subtypes' => 'file',
+                                                                                                'container_guid' => $vars['entity']->guid,
+                                                                                                'limit' => 5,
+                                                                                                'pagination' => FALSE));
+                if ($context == 'openlabs')
+                {                                                              
+                    elgg_set_ignore_access($ignoreacess);
+                }
+                                                                             
 	set_context($context);
 
     if ($content) {

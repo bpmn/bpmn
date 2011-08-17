@@ -24,8 +24,22 @@ if ($context) {
 	set_context($context);
 }
 
+// STD Modif 
+$entity = get_entity($guid) ; 
+
+if (!$entity)
+{
+    
+        $ignoreacess = elgg_get_ignore_access();
+        // discussion is public 
+        elgg_set_ignore_access(True);
+        $entity = get_entity($guid) ; 
+        elgg_set_ignore_access($ignoreacess) ; 
+}
+
+// END STD modif 
 // Get the entity, if possible
-if ($entity = get_entity($guid)) {
+if ($entity) {
 	if ($entity->container_guid) {
 		set_page_owner($entity->container_guid);
 	} else {

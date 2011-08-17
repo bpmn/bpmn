@@ -12,7 +12,16 @@
 	// Get variables
 	$title = get_input("title");
 	$desc = get_input("description");
-	$access_id = (int) get_input("access_id");
+        
+        // STD ==================
+                if (get_context() == 'openlab') 
+                {
+                    $access_id = ACCESS_PUBLIC ; 
+                }
+                else
+                {
+                    $access_id = (int) get_input("access_id");
+                }
 	$container_guid = (int) get_input('container_guid', 0);
 	if ($container_guid == 0) {
 		$container_guid = get_loggedin_userid();

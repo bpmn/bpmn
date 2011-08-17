@@ -35,6 +35,9 @@ function openlabs_init() {
     // Register a page handler, so we can have nice URLs
     register_page_handler('openlabs', 'openlabs_page_handler');
     register_page_handler('forum', 'openlab_forum_page_handler');
+    
+       // Register a page handler, so we can have nice URLs
+    register_page_handler('openlabfile', 'openlabfile_page_handler');
 
     // Register a URL handler for openlabs and forum topics
     register_entity_url_handler('openlabs_url', 'openlab', 'all');
@@ -352,6 +355,64 @@ function openlabs_page_handler($page) {
             include($CONFIG->pluginspath . "openlabs/openlabprofile.php");
             break;
     }
+}
+
+
+/**
+ * File page handler
+ *
+ * @param array $page Array of page elements, forwarded by the page handling mechanism
+ */
+function openlabfile_page_handler($page) {
+
+    global $CONFIG;
+
+    // group usernames
+    if (substr_count($page[0], 'group:')) {
+        preg_match('/group\:([0-9]+)/i', $page[0], $matches);
+        $guid = $matches[1];
+        if ($entity = get_entity($guid)) {
+            file_url_forwarder($page);
+        }
+    }
+
+    // user usernames
+    $user = get_user_by_username($page[0]);
+    if ($user) {
+        file_url_forwarder($page);
+    }
+
+    set_context('openlab') ; 
+    
+    switch ($page[0]) {
+        case "read":
+            set_input('guid', $page[1]);
+            require(dirname(dirname(dirname(__FILE__))) . "/entities/index.php");
+            break;
+        case "owner":
+            set_input('username', $page[1]);
+            require($CONFIG->pluginspath . "file/index.php");
+            break;
+        case "friends":
+            set_input('username', $page[1]);
+            require($CONFIG->pluginspath . "file/friends.php");
+            break;
+        case "all":
+            require($CONFIG->pluginspath . "file/world.php");
+            break;
+        case "new":
+            set_input('username', $page[1]);
+            require($CONFIG->pluginspath . "file/upload.php");
+            break;
+        case "edit":
+            set_input('file_guid', $page[1]);
+            require($CONFIG->pluginspath . "file/edit.php");
+            break;
+        default:
+            return false;
+    }
+
+    return true;
 }
 
 /**
