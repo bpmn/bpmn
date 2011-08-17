@@ -3553,9 +3553,9 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat right;
 }
 
-/*span {
+span {
 float: left;
-}*/
+}
 
 
 #userranktitle :  {
