@@ -95,6 +95,7 @@ body {
 	margin:0 auto;
 	padding:0;
 	background:#fefefe;
+font-size: 0.9em;
 }
 
 a {
@@ -105,6 +106,7 @@ a {
     -webkit-transition: background-color 0.2s linear;  
     -moz-transition: background-color 0.2s linear;  
     -o-transition: background-color 0.2s linear
+font-size: 0.9em;
 
 
 }
@@ -117,6 +119,8 @@ a:hover {
 }
 p {
 	margin: 0px 0px 4px 0;
+font-size: 0.9em;
+
 }
 img {
 	border: none;
@@ -156,7 +160,7 @@ h4_center { font-size: 1.0em; color:#000000; font-weight:bold; text-align: right
 
 
 h5 { font-size: 0.9em; }
-h6 { font-size: 0.7em; }
+h6 { font-size: 0.8em; }
 
 dt {
 	margin: 0;
@@ -1726,7 +1730,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -1736,7 +1740,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -1746,7 +1750,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -1764,7 +1768,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 
@@ -1774,7 +1778,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -1782,7 +1786,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -1790,7 +1794,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 
@@ -1800,7 +1804,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -1809,7 +1813,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 }
@@ -3400,7 +3404,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 #dashboard_container {
 	margin:1px 1px 1px 1px;
 	padding:0px;
-	min-height: 400px;
+	min-height: 600px;
 	border: none 1px #D0D0D0;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -3411,13 +3415,13 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 
 
 .dash_left {
-    min-height: 396px;
+    min-height: 600px;
     width: 220px;
 	border: none 1px #D0D0D0;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
     float: left;
-    background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/Principal_header_rot.png) no-repeat;
+    background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/Principal_header2_rot.png) no-repeat;
 
 }
 .dash_right {
@@ -3535,7 +3539,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
   font-weight: bold;
 	display: block;
 	border: none 1px #D0D0D0;
-    width: 120px;
+    width: 135px;
     height: 22px;
 	float: left;
     	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/plus.png) no-repeat right;

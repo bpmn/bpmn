@@ -35,21 +35,21 @@
 
 		<div class="dash_right_right">
 <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/product-design.png"></img>
-                       <h6><?php echo $vars['users_activity']; ?></h6>
+                       <?php echo $vars['users_activity']; ?>
 		</div>
 		<div class="dash_right_footer">
                     <div class="dash_box_top_bar">
-			<h6><?php echo $vars['teams_activity']; ?></h6>
+			<?php echo $vars['teams_activity']; ?>
 
 			</div>
                     <div class="dash_box_top_bar">
-                        <h6><?php echo $vars['openlabs_activity']; ?></h6>
+                        <?php echo $vars['openlabs_activity']; ?>
 			</div>
                     <div class="dash_box_top_bar_cis">
-                        <h6><?php echo $vars['cis_activity']; ?></h6>
+                        <?php echo $vars['cis_activity']; ?>
 			</div>
                     <div class="dash_box_top_bar_follow">
-                        <h6><?php echo $vars['follow_activity']; ?></h6>
+                        <?php echo $vars['follow_activity']; ?>
 			</div>
                 </div>
 	</div>

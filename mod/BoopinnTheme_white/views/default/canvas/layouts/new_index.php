@@ -50,13 +50,11 @@
                             <p class="textboopinn">potential in a open and borderless network!</p>
 			</h2>
 
-                            <h6>
                                 <p>Register, and create</p>
                                 <p>  your "team" : to showcase your company or your project </p>
                                 <p>  your "open lab" : to collaborate on ideas you would like to develop creative</p>
                                 <p>                    and innovate solutions</p>
                                 <p>View you CIS (Creative and Innovation Score)</p>
-			    </h6>  
 
 
                         </p> 

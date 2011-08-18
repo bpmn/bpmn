@@ -18,12 +18,13 @@
 <div id="layout_footer">
 <center>
 
-<h6><p>
+<h6>
 Boopinn Copyrights &copy; 2011 - All rights reserved
 <br>
 By using Boopinn, you confirm that you read, understood, and accepted the general conditions on the usage and confidentiality policies of Boopinn.
 	
 </h6>
+
 </center>
 </div><!-- /#layout_footer -->
 
