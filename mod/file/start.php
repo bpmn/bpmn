@@ -104,7 +104,8 @@ function file_submenus() {
 
     // General submenu options
 
-    if ((get_context() == "file")  || (get_context() == 'openlab' ) || (get_context() =='teams' ) ) {
+    //if ((get_context() == "file")  || (get_context() == 'openlab' ) || (get_context() =='teams' ) ) {
+    if ((get_context() == "file")  || (get_context() == 'openlab' ) ) {
         /**
          * STD no more menus Your files + Your friends files 
         

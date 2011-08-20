@@ -17,7 +17,8 @@ if ($context == 'openlab') {
     gatekeeper();
 } else {
     // access check for closed groups
-    group_gatekeeper();
+   // group_gatekeeper();
+    gatekeeper();
 }
 
 //set the title

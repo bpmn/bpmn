@@ -83,7 +83,7 @@ if (get_plugin_setting('hidden_teams', 'teams') == 'yes') {
 
 	$group->access_id = $visibility;
 } else {
-	$group->access_id = ACCESS_PUBLIC;
+	$group->access_id = ACCESS_LOGGED_IN;
 }
 
 // Set group tool options
