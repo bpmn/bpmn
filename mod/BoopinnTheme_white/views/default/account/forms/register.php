@@ -51,7 +51,7 @@ $form_body .= elgg_view('input/submit', array('internalname' => 'submit', 'value
 
 
 <div class="register-box-left">
-<img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/network.png" alt="Network"class="floatRight"></img><br>
+<img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/Boopinn_platform3.png" alt="Network"class="floatRight"></img><br>
 </div>
 <div class="register-box-left-footer">
 <h6>

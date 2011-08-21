@@ -130,6 +130,10 @@
 /* topics individual view page */
 #topic_posts {
 	margin:0 10px 5px 10px;
+	border: solid 1px #D0D0D0;
+    /* fallback (Opera) */
+    background: #fefefe;
+    box-shadow: 1px 1px 7px #D0D0D0;
 }
 #topic_posts #pages_breadcrumbs {
 	margin:2px 0 0 0px;
@@ -146,6 +150,10 @@
     margin:0 0 5px 0;
     background:#D1DEE6;
     border-bottom: solid  1px #f0f0f0;
+    /* fallback (Opera) */
+    background: #fefefe;
+    box-shadow: 1px 1px 7px #D0D0D0;
+
 }
 .topic_post .post_icon {
     float:left;
@@ -155,6 +163,8 @@
     margin-bottom:20px;
 }
 .topic_post p.topic-post-menu {
+    border-top: solid  1px #f0f0f0;
+        font-size: 0.7em;
 	margin:0;
 }
 .topic_post p.topic-post-menu a.collapsibleboxlink {
@@ -274,6 +284,8 @@ span.timestamp {
 }
 .latest_discussion_info .timestamp {
 	font-size: 0.85em;
+	color:#0066aa;
+
 }
 /* new openlabs page */
 .openlabs .search_listing {

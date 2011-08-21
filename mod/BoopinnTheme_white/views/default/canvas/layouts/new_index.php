@@ -39,7 +39,7 @@
                     <div class="panel-wrapper">
                         <h2 class="title">Welcome</h2>
                            <p>
-                        <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/network.png" alt="Network"class="floatRight">	
+                        <img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/Boopinn_platform4.png" alt="Network"class="floatRight">	
 
                         <style type="text/css">
                             p.textboopinn { color: #0066aa }
@@ -93,9 +93,17 @@
                             <p class="textboopinn">Teams explained</p>
 			</h2>
 
-                            <h6>
+                            <p>
+The Team module allows innovation to converge. 
+The Teams feature represents an organized team project, which can benefit from solutions 
+derived from the chaotic exchange in our OpenLabs. 
+A Team is a closed module where Boopinn users (teams members) who
+work together on the same project have the opportunity to showcase and advertise the
+fruit of their labor. Team members can upload files in the team library for a more detailed
+project explanation and/or advertisement. A team can represent any group of people working
+together: university students, company labs, start up projects and much more.
   
-			    </h6>  
+			    </p>
 
                         </p> 
                     </div>
@@ -114,9 +122,21 @@
                             <p class="textboopinn">Open labs explained</p>
 			</h2>
 
-                            <h6>
+<p>The OpenLab is the element placing chaos in the innovative process by pushing our
+users to debate, challenge ideas, agree, disagree, and finally collaborate to become more
+creative. Openlabs allow you to post a problem seeking a solution or subject matter to be
+debated upon through an open exchange module similar to internet forums. 
+An efficient discussion tool used by members to exchange ideas and solutions related to the openlab topic.
+Our Openlab library allows members to upload files, providing a convenient way to post
+thorough solutions and articles corresponding to the OpenLab subject. 
+By using an invitation joinrequest process, you are in control of your openlab members and decide which users will
+be allowed to participate. In each openlab, every members contribution can be assessed by
+other members using a vote ranking system. A leaderboard displays the strongest contributors
+to the Boopinn platform.
+
+(You can start already joining the Boopinn Platform Open lab, to bring feedback to Boopinn)</p>
   
-			    </h6>  
+			     
 
                         </p> 
                     </div>
