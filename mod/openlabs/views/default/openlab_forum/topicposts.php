@@ -24,19 +24,21 @@
 	                        
 	                        //display the user icon
 	                        echo "<div class=\"post_icon\">" . elgg_view("profile/icon",array('entity' => $post_owner, 'size' => 'small')) . "</div>";
-	                        
 	                        //display the user name
 	                        echo "<p><b>" . $post_owner->name . "</b><br />";
+                                        //display the date of the comment
+                                        echo "<small>" . elgg_view_friendly_time($vars['entity']->time_created) . "</small></p>";
+
 	                        
                         } else {
-                        	echo "<div class=\"post_icon\"><img src=\"" . elgg_view('icon/user/default/small') . "\" /></div>";
+                        	echo "<div class=\"post_icon\"><img src=\"" . elgg_view('icon/user/default/small') . "\" /></div>";          //display the user name
+	                echo "<p><b>" . $post_owner->name . "</b><br />";
+                                //display the date of the comment
+                                echo "<small>" . elgg_view_friendly_time($vars['entity']->time_created) . "</small></p>";
                         	echo "<p><b>" . elgg_echo('profile:deleteduser') . "</b><br />";
                         }
                         
-                        //display the date of the comment
-                        echo "<small>" . elgg_view_friendly_time($vars['entity']->time_created) . "</small></p>";
-                        $nbRating = $vars['entity']->getRating() ; 
-                        echo "<small>". sprintf(elgg_echo("openlab:commentnumberrating"),$nbRating) ."</small>" ; 
+                      
                     ?>
                 </td>
           
@@ -71,37 +73,54 @@
                 echo "<p><b>" . elgg_echo('profile:deleteduser') . "</b><br />";
                 }
 
-//display the date of the comment
-                echo "<small>" . elgg_view_friendly_time($vars['entity']->time_created) . "</small></p>";
+
                 ?>
             </td>
-            <td width="70%">       
+        </tr>
+        <tr>
+            <td>       
                 <?php
                 //display the actual message posted
-                $post = $boopinnComment->getComment() ; // . " (". $boopinnComment->getRating(). ")" ; 
+                $post = $boopinnComment->getComment() ;  
                 echo parse_urls(elgg_view("output/longtext", array("value" => $post )));
 
-                $openlab = get_entity($openlabGuid) ; 
-                if ($openlab->isMember(get_loggedin_userid()) )
-                {
-                
-                    echo elgg_view("openlab_output/iconurl", array(
-                    'href' => $vars['url'] . "action/openlabs/rate_plus?annotation_id=" . $boopinnComment->guid,
-                    'src' => $vars['url'] . "mod/openlabs/graphics/thumb-up-icon.png",
-                    'alt' => "Good comment !!!",
-                    "is_action" => true));
-
-                    if ($boopinnComment->getRating() > 0)
-                    {
-                        echo elgg_view("openlab_output/iconurl", array(
-                        'href' => $vars['url'] . "action/openlabs/rate_less?annotation_id=" . $boopinnComment->guid,
-                        'src' => $vars['url'] . "mod/openlabs/graphics/thumb-down-icon.png",
-                        'alt' => "Bad comment !!!",
-                        "is_action" => true));
-                    }
-                }
                 ?>
             </td>
+           
+        </tr>
+        <tr>
+            <td>
+                       <?php
+                       
+                        $openlab = get_entity($openlabGuid) ; 
+                        if ($openlab->isMember(get_loggedin_userid()) )
+                        {
+
+                            echo elgg_view("openlab_output/iconurl", array(
+                            'href' => $vars['url'] . "action/openlabs/rate_plus?annotation_id=" . $boopinnComment->guid,
+                            'src' => $vars['url'] . "mod/openlabs/graphics/thumb-up-icon.png",
+                            'alt' => "Good comment !!!",
+                            "is_action" => true));
+
+                            if ($boopinnComment->getRating() > 0)
+                            {
+                                echo elgg_view("openlab_output/iconurl", array(
+                                'href' => $vars['url'] . "action/openlabs/rate_less?annotation_id=" . $boopinnComment->guid,
+                                'src' => $vars['url'] . "mod/openlabs/graphics/thumb-down-icon.png",
+                                'alt' => "Bad comment !!!",
+                                "is_action" => true));
+                            }
+                        }
+                       
+                       ?>
+            </td>
+              <td> 
+                <?php
+                        $nbRating = $vars['entity']->getRating() ; 
+                        echo '<div class = "commentnumberrating">'. sprintf(elgg_echo("openlab:commentnumberrating"),$nbRating) ."</div>" ; 
+                     ?>
+             </td>
+            
         </tr>
     </table>
     <?php
