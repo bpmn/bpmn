@@ -95,20 +95,25 @@
                         $openlab = get_entity($openlabGuid) ; 
                         if ($openlab->isMember(get_loggedin_userid()) )
                         {
-
+			    echo '<div class = "postrating">';	
                             echo elgg_view("openlab_output/iconurl", array(
                             'href' => $vars['url'] . "action/openlabs/rate_plus?annotation_id=" . $boopinnComment->guid,
                             'src' => $vars['url'] . "mod/openlabs/graphics/thumb-up-icon.png",
                             'alt' => "Good comment !!!",
-                            "is_action" => true));
+			    "is_action" => true));
+			    echo '</div>';
 
                             if ($boopinnComment->getRating() > 0)
-                            {
+			    {
+			    echo '<div class = "postrating">';	
+				    
                                 echo elgg_view("openlab_output/iconurl", array(
                                 'href' => $vars['url'] . "action/openlabs/rate_less?annotation_id=" . $boopinnComment->guid,
                                 'src' => $vars['url'] . "mod/openlabs/graphics/thumb-down-icon.png",
                                 'alt' => "Bad comment !!!",
-                                "is_action" => true));
+				"is_action" => true));
+			    echo '</div>';
+			    
                             }
                         }
                        

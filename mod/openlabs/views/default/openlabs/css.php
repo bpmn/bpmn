@@ -424,3 +424,19 @@ span.timestamp {
 .openlab_widget .search_listing {
 border:2px solid #CCCCCC;
 }
+
+.commentnumberrating {
+    border-top: solid  1px #f0f0f0;
+	color: #0066aa;
+	font-size: 0.7em;
+	height: 18px;
+	text-align: right;
+
+}
+
+.postrating {
+    border-top: solid  1px #f0f0f0;
+	width: auto;
+	height: 18px;
+}
+

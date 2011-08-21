@@ -49,13 +49,13 @@
                             <p class="textboopinn">Join Boopinn today, and grow your creativity and innovation</p>
                             <p class="textboopinn">potential in a open and borderless network!</p>
 			</h2>
-
-                                <p>Register, and create</p>
-                                <p>  your "team" : to showcase your company or your project </p>
-                                <p>  your "open lab" : to collaborate on ideas you would like to develop creative</p>
-                                <p>                    and innovate solutions</p>
-                                <p>View you CIS (Creative and Innovation Score)</p>
-
+				<h6>
+                                Register, and create<br><br>
+                                - your "team" : to showcase your company or your project<br>
+                                - your "open lab" : to collaborate on ideas you would like to develop creative<br>
+                                                    and innovate solutions<br>
+				- View you CIS (Creative and Innovation Score)<br>
+				</h6>
 
                         </p> 
                     </div>
@@ -73,7 +73,12 @@
 
                         <h2>
                             <p class="textboopinn">Visit our Blog !</p>
-                        </h2>
+			</h2>
+			<h5>
+			Our blog is the first window of communication with Boopinn, with
+			posts centered on the innovation topic, amongst others, such as 
+			how to develop your creativity. Come and have a look often!
+				</h5>
                         <a href="http://blog.boopinn.com"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/blog2.PNG" alt="Network"class="floatRight"></img></a>
 
                         </p> 
@@ -93,17 +98,25 @@
                             <p class="textboopinn">Teams explained</p>
 			</h2>
 
-                            <p>
-The Team module allows innovation to converge. 
-The Teams feature represents an organized team project, which can benefit from solutions 
-derived from the chaotic exchange in our OpenLabs. 
-A Team is a closed module where Boopinn users (teams members) who
-work together on the same project have the opportunity to showcase and advertise the
-fruit of their labor. Team members can upload files in the team library for a more detailed
-project explanation and/or advertisement. A team can represent any group of people working
-together: university students, company labs, start up projects and much more.
+                            <h6>
+The Team module allows innovation to converge.<br> 
+The Teams feature represents an organized team project, which can benefit<br> 
+from solutions derived from the chaotic exchange in our OpenLabs.<br>
+<br>
+A closed module where Boopinn users (teams members) who<br>
+work together on the same project have the opportunity to showcase and <br>
+advertise the fruit of their labor. <br>
+<br>
+Team members can upload files in the team library for a more detailed<br>
+project explanation and/or advertisement. <br>
+<br>
+Finally, a team can represent any group of people working together: <br>
+	- university students, <br>
+	- company labs, <br>
+	- start up projects <br>
+	- and much more.<br>
   
-			    </p>
+			    </h6>
 
                         </p> 
                     </div>
@@ -122,23 +135,25 @@ together: university students, company labs, start up projects and much more.
                             <p class="textboopinn">Open labs explained</p>
 			</h2>
 
-<p>The OpenLab is the element placing chaos in the innovative process by pushing our
-users to debate, challenge ideas, agree, disagree, and finally collaborate to become more
-creative. Openlabs allow you to post a problem seeking a solution or subject matter to be
-debated upon through an open exchange module similar to internet forums. 
-An efficient discussion tool used by members to exchange ideas and solutions related to the openlab topic.
-Our Openlab library allows members to upload files, providing a convenient way to post
-thorough solutions and articles corresponding to the OpenLab subject. 
-By using an invitation joinrequest process, you are in control of your openlab members and decide which users will
-be allowed to participate. In each openlab, every members contribution can be assessed by
-other members using a vote ranking system. A leaderboard displays the strongest contributors
-to the Boopinn platform.
-
-(You can start already joining the Boopinn Platform Open lab, to bring feedback to Boopinn)</p>
-  
-			     
-
-                        </p> 
+<h6>The OpenLab is the element placing chaos in the innovative process by pushing our<br>
+users to debate, challenge ideas, agree, disagree, and finally collaborate to become <br>
+more creative. <br>
+<br>
+Openlabs allow you to post a problem seeking a solution or subject matter to be<br>
+debated upon through an open exchange module similar to internet forums. <br>
+An efficient discussion tool used by members to exchange ideas and solutions related <br>
+to the openlab topic.<br>
+<br>
+Our Openlab library allows members to upload files, providing a convenient way to post<br>
+thorough solutions and articles corresponding to the OpenLab subject. <br>
+By using an invitation joinrequest process, you are in control of your openlab members <br>
+and decide which users will be allowed to participate. In each openlab, every members <br>
+contribution can be assessed by other members using a vote ranking system. <br>
+<br>
+A leaderboard then displays the strongest contributors to the Boopinn platform.<br>
+<br>
+You can start already by joining the Boopinn Platform Open lab, to bring feedback on Boopinn!<br>
+</h6>
                     </div>
                 </div>
 
