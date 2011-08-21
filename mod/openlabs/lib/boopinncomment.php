@@ -22,6 +22,7 @@ class BoopinnComment extends ElggObject {
         $boopinComment->owner_guid = $authorGuid;
         $boopinComment->container_guid = $topicGuid;
         $boopinComment->post = $comment;
+        $boopinComment->access_id = ACCESS_LOGGED_IN;
         return $boopinComment;
     }
 

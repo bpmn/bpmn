@@ -11,7 +11,9 @@ function view_my_cis_river($owner) {
 
     foreach ($entities as $entity) {
         if (!$entity->isMember($owner))
+        {
             $guid_list[] = $entity->guid;
+        }
     }
 
 

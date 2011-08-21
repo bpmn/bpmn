@@ -101,6 +101,8 @@ function getJsonStringCisObject($cis) {
         }
     }
     $relation .= '</ul>' ; 
+   
+    
     return sprintf($toReturnTplte, 
                     rand(0, 100000), 
                     json_encode($cis->getUser()->name), 

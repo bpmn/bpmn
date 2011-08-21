@@ -41,7 +41,6 @@ function compute_cis($user) {
         }
     }
 
-
     return $rootNode;
 }
 
