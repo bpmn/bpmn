@@ -81,7 +81,12 @@ echo "</div>";
 
                 // display the users name
                 echo "<h2><a href=\"" . $vars['entity']->getUrl() . "\" $rel>" . $vars['entity']->name . "</a></h2>";
+                
+                $ignoreacess = elgg_get_ignore_access();
+                elgg_set_ignore_access(True);
                 $ratings = $vars['entity']->getAnnotations('userscore' ,1,0 ) ; 
+                elgg_set_ignore_access($ignoreacess);
+                
                 $rating = $ratings[0]->value ; 
                 if ($rating == 0)
                 {
