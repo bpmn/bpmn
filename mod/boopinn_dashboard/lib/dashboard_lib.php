@@ -139,7 +139,8 @@ function view_users_activity()
                                                                       'order_by_annotation' => array( 'direction' => DESC) , 
                                                                       'limit' => 10 ));
     $content = '' ; 
-    $tpl =  '<a href="http://localhost/bpmn/pg/profile/%s">%s</a>' ; 
+    $tpl =  '<a href="'.$CONFIG->wwwroot .'/bpmn/pg/profile/%s">%s</a>' ; 
+            
     $annotationstoUser = array() ; 
     foreach ($users as $user)
     {
