@@ -1758,7 +1758,7 @@ p.user_menu_friends_of {
 	background: url(<?php echo $vars['url']; ?>_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
         display: block;
 	text-align:left;
-	font-size: 0.7em;
+	font-size: 0.9em;
 	color:#000000;
         border-bottom: solid  1px #f0f0f0;
 
