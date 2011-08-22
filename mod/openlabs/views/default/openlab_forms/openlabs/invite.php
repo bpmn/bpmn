@@ -17,7 +17,7 @@
         
 	echo elgg_view('input/securitytoken');
 
-        $all_users = elgg_get_entities(array( type => 'user' ,  'limit' => 1000));
+        $all_users = elgg_get_entities(array( type => 'user' ,  'limit' => ELGG_ENTITIES_NO_VALUE));
 	if ($all_users) {
 		echo elgg_view('friends/picker',array('entities' => $all_users, 'internalname' => 'user_guid', 'highlight' => 'all'));
 	}

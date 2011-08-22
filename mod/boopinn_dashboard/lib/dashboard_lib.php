@@ -7,10 +7,11 @@ require_once(dirname(dirname(dirname(__FILE__))) . "/mycis/actions/cis.php");
 
 function view_my_cis_river($owner) {
     $title = "<h3>" . sprintf(elgg_echo('dashboard:title:cisactivity')) . "</h3>";
-    $entities = compute_groups_in_cis($owner);
+        
+    $entities = get_users_in_cis($owner) ; 
 
     foreach ($entities as $entity) {
-        if (!$entity->isMember($owner))
+        if ($entity->guid != $owner->guid)
         {
             $guid_list[] = $entity->guid;
         }
@@ -18,7 +19,7 @@ function view_my_cis_river($owner) {
 
 
     if (is_array($guid_list)) {
-        $content = elgg_view_river_items(0, $guid_list, '', '', '', 'create', 10, 0, 0, false);
+        $content = elgg_view_river_items($guid_list,0 , '', '', '', 'create', 10, 0, 0, false);
     } else {
 
         $content = elgg_echo('dashboard:noactivity');
