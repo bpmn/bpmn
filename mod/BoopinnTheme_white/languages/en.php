@@ -18,7 +18,8 @@
 	 */
 
 	$english = array(
-			'register:error:nameshort' => "The display name you entered is to short",
+			'register:error:nameshort' => "The display name you entered is too short",
+			'register:error:usershort' => "The user name you entered is too short",
 			'register:error:emailshort' => "The e-mail address you entered is invalid",
 			'register:error:passwordshort' => "The password you entered was too short",
 			'register:error:passwordmatch' => "The passwords you entered didn't match",

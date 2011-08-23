@@ -1267,6 +1267,7 @@ input[type="submit"] {
 
 #custom_index {
 	margin:10px;
+	min-heigth: 370px;
 }
 #index_left {
     width:250px;
@@ -3173,12 +3174,13 @@ img.floatRightClear {
 	
 	<!--/* Arrow styling */-->
 	.coda-nav-left a { 
+        background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
 
-       		background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/left.png) no-repeat;
+       		background: url(<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/left.png) no-repeat;
 		color: #0066aa; padding: 5px; width: 16px; height: 16px }
 
 	.coda-nav-right a { 
-    		background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat;
+    		background: url(<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/right.png) no-repeat;
 		color: #0066aa; padding: 5px; width: 16px; height: 16px }
 	
 	<!--/* Tab nav */-->
@@ -3197,7 +3199,7 @@ img.floatRightClear {
 	background: #0066aa; color: #ffffff }
 	
 	<!--/* Panel padding */-->
-	.coda-slider .panel-wrapper { padding: 20px }
+	.coda-slider .panel-wrapper { padding: 20px; }
 	
 	<!--/* Preloader */-->
 	.coda-slider p.loading { padding: 20px; text-align: center }
