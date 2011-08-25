@@ -1,14 +1,6 @@
 <?php
 
 	/**
-	 * Login by Email Only
-	 * 
-	 * @author Lenny Urbanowski
-	 * @link http://community.elgg.org/pg/profile/itsLenny
-	 * @copyright (c) Lenny Urbanowski 2010
-	 * @license GNU General Public License (GPL) version 2
-	 *
-	 *
 	 * Based on: Login by Email
 	 * 
 	 * @author Pedro Prez
@@ -31,6 +23,8 @@ $password = get_input('password');
 $password2 = get_input('password2');
 $email = get_input('email');
 $name = get_input('name');
+$username = get_input('username');
+
 $friend_guid = (int) get_input('friend_guid',0);
 $invitecode = get_input('invitecode');
 
@@ -45,6 +39,14 @@ if(strlen($name)<2){
 	forward($qs);
 	die();
 }
+
+
+if(strlen($username)<2){
+	register_error(elgg_echo('register:error:usershort'));
+	forward($qs);
+	die();
+}
+
 if(strlen($email)<3){
 	register_error(elgg_echo('register:error:emailshort'));
 	forward($qs);
@@ -68,13 +70,14 @@ if(get_user_by_email($email) != false){
 
 
 //generate username
-$username = $name;
-$username = strToLower(preg_replace("/[^a-zA-Z]/", "", $username));
-$uNum="";
-while(get_user_by_username($username.$uNum)!==false){
-	$uNum++;
-}
-$username.=$uNum;
+//$username = $name;
+//$username = strToLower(preg_replace("/[^a-zA-Z]/", "", $username));
+
+//$uNum="";
+//while(get_user_by_username($username.$uNum)!==false){
+//	$uNum++;
+//}
+//$username.=$uNum;
 
 $admin = get_input('admin');
 if (is_array($admin)) {
