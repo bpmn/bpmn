@@ -46,6 +46,7 @@ function loginbyemailonly_init()
 	global $CONFIG; 
 	
 	// Register actions
+        register_action("useradd", true, $CONFIG->pluginspath . "BoopinnTheme_white/actions/useradd.php");
 	register_action("register", true, $CONFIG->pluginspath . "BoopinnTheme_white/actions/register.php");		
 	register_action("login", true, $CONFIG->pluginspath . "BoopinnTheme_white/actions/login.php");
 	register_action("loginbyemailonly/requestnewpassword",true,$CONFIG->pluginspath . "BoopinnTheme_white/actions/requestnewpassword.php");

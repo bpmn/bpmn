@@ -113,7 +113,13 @@ if (!$CONFIG->disable_registration) {
 				$new_user->disable('new_user', false);
 			}
 
-			system_message(sprintf(elgg_echo("registerok"),$CONFIG->sitename));
+                        //boopinn modif Fatxi >>>
+                        add_widget($guid,"a_users_teams","profile",0,1);
+                        add_widget($guid,"a_users_openlabs","profile",0,2);
+                        //boopinn modif Fatxi <<<<
+
+
+                        system_message(sprintf(elgg_echo("registerok"),$CONFIG->sitename));
 
 			// Forward on success, assume everything else is an error...
 			forward();
