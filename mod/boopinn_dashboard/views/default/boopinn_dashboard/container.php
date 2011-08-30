@@ -67,13 +67,11 @@
         <!--</div>-->
 
     
-		<div class="dashf-left">
                     
-			<div class="dash_box_transparent">
+			<div class="dash_box_notification">
                             <?php echo $vars['request']; ?><!--br-->
 			</div>
 		
-		</div>
 	</div>
 
 
