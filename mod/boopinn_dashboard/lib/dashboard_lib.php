@@ -129,7 +129,7 @@ function delete_double_items($arr) {
 
 function view_users_activity()
 {
-    
+    global $CONFIG ;
      $ignoreacess = elgg_get_ignore_access();
     // discussion is public 
     elgg_set_ignore_access(True);
@@ -139,7 +139,7 @@ function view_users_activity()
                                                                       'order_by_annotation' => array( 'direction' => DESC) , 
                                                                       'limit' => 10 ));
     $content = '' ; 
-    $tpl =  '<a href="'.$CONFIG->wwwroot .'/bpmn/pg/profile/%s">%s</a>' ; 
+    $tpl =  '<a href="'.$CONFIG->wwwroot .'/pg/profile/%s">%s</a>' ; 
             
     $annotationstoUser = array() ; 
     foreach ($users as $user)
