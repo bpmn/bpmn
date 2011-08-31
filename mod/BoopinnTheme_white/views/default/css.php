@@ -3176,11 +3176,11 @@ img.floatRightClear {
 	.coda-nav-left a { 
         background:transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/home.png) no-repeat center left;
 
-       		background: url(<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/left.png) no-repeat;
+       		background: url(<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/left.PNG) no-repeat;
 		color: #0066aa; padding: 5px; width: 16px; height: 16px }
 
 	.coda-nav-right a { 
-    		background: url(<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/right.png) no-repeat;
+    		background: url(<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/right.PNG) no-repeat;
 		color: #0066aa; padding: 5px; width: 16px; height: 16px }
 	
 	<!--/* Tab nav */-->
@@ -3481,13 +3481,15 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 	-moz-border-radius: 4px;
 }
 
-.dash_box_transparent {
+.dash_box_notification {
+    float: right;
     position: relative;
-    margin: 5px 0 0 0;
+    margin: 250px 0 0 20px;
     min-height: 100px;
     min-width: 100px;
-    color: #ffffff;
-	border: none 1px #D0D0D0;
+    color: #0066aa;
+    text-align:right;
+	border-top: solid 1px #D0D0D0;
 }
 
 
@@ -3556,7 +3558,7 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 
 .buttonclass:hover {
 	color: #00f2f2;
-    	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.png) no-repeat right;
+    	background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/right.PNG) no-repeat right;
 }
 
 span {

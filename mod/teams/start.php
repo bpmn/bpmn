@@ -37,7 +37,7 @@
 		//register_entity_url_handler('teams_groupforumtopic_url','object','groupforumtopic');
 
 		// Register an icon handler for teams
-		/*register_page_handler('groupicon','teams_icon_handler');*/
+		register_page_handler('teamsicon','teams_icon_handler');
 
 		// Register some actions
 		register_action("teams/edit",false, $CONFIG->pluginspath . "teams/actions/edit.php");
@@ -561,7 +561,7 @@
 			$filehandler->setFilename("teams/" . $entity->guid . $size . ".jpg");
 
 			if ($filehandler->exists()) {
-				$url = $CONFIG->url . "pg/groupicon/{$entity->guid}/$size/$icontime.jpg";
+				$url = $CONFIG->url . "pg/teamsicon/{$entity->guid}/$size/$icontime.jpg";
 
 				return $url;
 			}

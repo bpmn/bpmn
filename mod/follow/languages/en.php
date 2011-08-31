@@ -15,7 +15,7 @@
                         'follow:alreadymember'=> "You are already a member of %s",
                         'follow:startfollow'=>"You are now following %s",
                         'follow:alreadyfollow'=>"You are already following %s",
-                        'follow:stop'=>"Stop follow",
+                        'follow:stop'=>"Stop following",
                         'follow:none'=>"You are not following any %s",
                         'follow:remove'=>"Do you want to stop following %s ?",
                         'follow:users'=>"Users Profiles",
