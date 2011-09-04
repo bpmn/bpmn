@@ -94,8 +94,9 @@ body {
 	text-align:left;
 	margin:0 auto;
 	padding:0;
-	background:#fefefe;
 font-size: 0.9em;
+background: #ffffff;
+
 }
 
 a {
@@ -214,6 +215,11 @@ blockquote p {
 #page_container {
 	margin:0;
 	padding:0;
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0066aa, endColorstr=#ffffff)";
+background: -webkit-gradient(linear, left top, left bottom, from(#0066aa), to(#ffffff));
+background: -moz-linear-gradient(center top , #0066aa 0pt, #ffffff 100%) repeat scroll 0 0 transparent;
+
+
 
 }
 #page_wrapper {
@@ -231,6 +237,14 @@ blockquote p {
 	height:55px;
 	background:#ffffff;
 	position:static;
+	border: solid 1px #D0D0D0;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+    /* fallback (Opera) */
+    background: #fefefe;
+    box-shadow: 1px 1px 7px #000000;
+	margin:0px 0 5px 0;
+
         
 }
 
@@ -276,7 +290,9 @@ blockquote p {
 
 #wrapper_header {
 	margin:0;
-	padding:0px 0px 0px 0px;
+	padding:0px 0px 5px 0px;
+
+
 }
 #wrapper_header h1 {
 	margin:0px 0 0 0;
@@ -293,13 +309,12 @@ blockquote p {
 	padding:10px;
 	min-height: 360px;
 	border: solid 1px #D0D0D0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
     /* fallback (Opera) */
     background: #fefefe;
-    background: url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;
 
-    box-shadow: 1px 1px 7px #D0D0D0;
+    box-shadow: 1px 1px 7px #000000;
 
 
 }
@@ -584,21 +599,21 @@ background: -moz-linear-gradient(center top , #FFFFFF 0pt, #D0D0D0 100%) repeat 
 	width:990px;
 	height:26px;
 	z-index: 9000; /* if you have multiple position:relative elements, then IE sets up separate Z layer contexts for each one, which ignore each other */
-    border:ridge 1px #f0f0f0;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright:4px;
-    -moz-border-radius-bottomleft:4px;
-    -moz-border-radius-bottomright:4px;
-    -webkit-border-top-left-radius:4px;
-    -webkit-border-top-right-radius:4px;
-    -webkit-border-bottom-left-radius:4px;
-    -webkit-border-bottom-right-radius:4px;
-    border-top-left-radius:4px;
-    border-top-right-radius:4px;
-    border-bottom-left-radius:4px;
-    border-bottom-right-radius:4px;
+    border:solid 1px #f0f0f0;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright:6px;
+    -moz-border-radius-bottomleft:6px;
+    -moz-border-radius-bottomright:6px;
+    -webkit-border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
 
-    margin-bottom: 6px; 
+    margin-bottom: 0px; 
 
 }
 
@@ -1190,7 +1205,7 @@ textarea:focus, input[type="text"]:focus {
 	font: 12px/100% Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	color: #ffffff;
-	background:#006699;
+	background:#ff9900;
 	border: 1px solid #006699;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -1202,8 +1217,10 @@ textarea:focus, input[type="text"]:focus {
 	margin:10px 0 10px 0;
 	cursor: pointer;
 }
+
+
+
 .submit_button:hover, input[type="submit"]:hover {
-	background: #006699;
 	border-color: #006699;
     box-shadow: 1px 1px 7px #D0D0D0;
 
@@ -1213,11 +1230,11 @@ input[type="submit"] {
 	font: 12px/100% Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	color: #ffffff;
-	background:#006699;
+	background:#ff9900;
 	border: 1px solid #006699;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius:4px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius:5px;
 
 	width: auto;
 	height: 25px;
