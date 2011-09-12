@@ -18,8 +18,24 @@ function view_my_cis_river($owner) {
     }
 
 
-    if (is_array($guid_list)) {
-        $content = elgg_view_river_items($guid_list,0 , '', '', '', 'create', 10, 0, 0, false);
+        if (is_array($guid_list)) {
+        $list_items = get_river_items($guid_list,0 , '', '', '', 'create', 10, 0, 0, false);
+        foreach($list_items as $item){
+            $group=get_entity((int)($item->object_guid));
+            if ($group instanceof ElggGroup){
+                    if(!$group->isMember($owner))
+                        $riveritems[]=$item;
+
+            }
+        }
+
+        $content = elgg_view('river/item/list', array(
+            'limit' => 10,
+            'offset' => 0,
+            'items' => $riveritems,
+            'pagination' => false
+                ));
+
     } else {
 
         $content = elgg_echo('dashboard:noactivity');
