@@ -25,7 +25,12 @@
         }
         ?>
         <!--</div>-->
+                        <h2>
+                            <p class="textboopinn">Visit our Blog !</p>
+			</h2>
+                        <a href="http://blog.boopinn.com"><img src="<?php echo $vars['url']; ?>mod/BoopinnTheme_white/_graphics/blog4.png" alt="Network"class="floatRight"></img></a>
 
+                        </p> 
 
     </div>
 

@@ -50,7 +50,7 @@ function loginbyemailonly_init()
 	register_action("register", true, $CONFIG->pluginspath . "BoopinnTheme_white/actions/register.php");		
 	register_action("login", true, $CONFIG->pluginspath . "BoopinnTheme_white/actions/login.php");
 	register_action("loginbyemailonly/requestnewpassword",true,$CONFIG->pluginspath . "BoopinnTheme_white/actions/requestnewpassword.php");
-	register_action("usersettings/save",false,$CONFIG->pluginspath . "BoopinnTheme_white/actions/usersettings/save.php");
+	//register_action("usersettings/save",false,$CONFIG->pluginspath . "BoopinnTheme_white/actions/usersettings/save.php");
 	
 	register_plugin_hook('usersettings:save:loginbyemailonly','user','users_settings_save_loginbyemailonly');
 	
