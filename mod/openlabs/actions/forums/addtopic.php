@@ -18,7 +18,7 @@ if (!$openlab_entity->isMember($vars['user']))
 $title = strip_tags(get_input('topictitle'));
 $message = get_input('topicmessage');
 $tags = get_input('topictags');
-$access = ACCESS_PUBLIC;
+$access = ACCESS_LOGGED_IN;
 $openlab_guid = (int) get_input('openlab_guid');
 $user = $_SESSION['user']->getGUID(); // you need to be logged in to comment on a openlab forum
 $status = get_input('status'); // sticky, resolved, closed
@@ -42,7 +42,7 @@ if (empty($title) || empty($message)) {
     // Set the openlab it belongs to
     $openlabtopic->container_guid = $openlab_guid;
     // For now, set its access to public (we'll add an access dropdown shortly)
-    $openlabtopic->access_id = ACCESS_PUBLIC;
+    $openlabtopic->access_id = ACCESS_LOGGED_IN;
     $openlabtopic->title = $title;
     // Before we can set metadata, we need to save the topic
     if (!$openlabtopic->save()) {

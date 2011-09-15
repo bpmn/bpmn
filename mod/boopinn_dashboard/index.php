@@ -21,13 +21,14 @@ $my_cis_activity = view_my_cis_river(get_loggedin_user());
 $my_team_activity = view_my_group_river(get_loggedin_user()->guid, 'group', 'teams');
 
 $user_activity = view_users_activity();
+$friend_invitation=elgg_view("friend_invitation/view");
 $notif_request = elgg_view("requestnotifications/sidebox");
 $body = elgg_view('boopinn_dashboard/container', array('request' => $notif_request, 
                                                                                    'teams_activity' => $my_team_activity, 
                                                                                    'openlabs_activity' => $my_openlab_activity,
                                                                                    'cis_activity' => $my_cis_activity, 
                                                                                     'follow_activity' => $my_follow_activity, 
-                                                                                    'users_activity' => $user_activity));
-
+                                                                                    'users_activity' => $user_activity,
+                                                                                    'friend_invit' => $friend_invitation));
 //page_draw($title, elgg_view_layout($area1, $body));
 page_draw($title, $body);

@@ -68,13 +68,13 @@ if (!$openlab->name) {
 }
 
 // openlab membership - should these be treated with same constants as access permissions?
-switch (get_input('membership')) {
-    case ACCESS_PUBLIC:
-        $openlab->membership = ACCESS_PUBLIC;
-        break;
-    default:
-        $openlab->membership = ACCESS_PRIVATE;
-}
+//switch (get_input('membership')) {
+//   case ACCESS_PUBLIC:
+//       $openlab->membership = ACCESS_PUBLIC;
+//       break;
+//    default:
+//        $openlab->membership = ACCESS_PRIVATE;
+//}
 
 // Set access - all openlabs are public from elgg's point of view, unless the override is in place
 if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes') {
@@ -82,7 +82,7 @@ if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes') {
 
     $openlab->access_id = $visibility;
 } else {
-    $openlab->access_id = ACCESS_PUBLIC;
+    $openlab->access_id = ACCESS_LOGGED_IN;
 }
 
 // Set openlab tool options
@@ -121,7 +121,7 @@ if ($new_openlab_flag) {
 // Set the openlab it belongs to
     $openlabtopic->container_guid = $openlab->guid;
 // For now, set its access to public (we'll add an access dropdown shortly)
-    $openlabtopic->access_id = ACCESS_PUBLIC;
+    $openlabtopic->access_id = ACCESS_LOGGED_IN;
 // Set its title and description appropriately
     $openlabtopic->title = $openlab->name;
 // Before we can set metadata, we need to save the topic

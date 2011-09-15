@@ -166,8 +166,8 @@
 					$message_sent->owner_guid = $from;
 					$message_sent->container_guid = $from;
 			// For now, set its access to public (we'll add an access dropdown shortly)
-					$message_to->access_id = ACCESS_PUBLIC;
-					$message_sent->access_id = ACCESS_PUBLIC;
+					$message_to->access_id = ACCESS_LOGGED_IN;
+					$message_sent->access_id = ACCESS_LOGGED_IN;
 			// Set its description appropriately
 					$message_to->title = $subject;
 					$message_to->description = $body;

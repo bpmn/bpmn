@@ -69,7 +69,9 @@
     
                     
 			<div class="dash_box_notification">
-                            <?php echo $vars['request']; ?><!--br-->
+                            <?php echo $vars['request']; 
+                                  echo "<br>";
+                                  echo $vars['friend_invit'];?><!--br-->
 			</div>
 		
 	</div>
