@@ -45,8 +45,8 @@ $language_array_en = array(
     'friend_invitation:macroses' => 'List of available macroses',
     
     
-    'friend_invitation:default_message' => '%MEMBER% inviting you to participate new social network at %SITE%',
-    'friend_invitation:default_subject' => '%MEMBER% inviting you',
+    'friend_invitation:default_message' => '%MEMBER% is inviting you to participate to a new innovation professional network at %SITE%',
+    'friend_invitation:default_subject' => '%MEMBER% is inviting you',
     'friend_invitation:error:unable_save_subject'   => 'Unable to save subject template',
     'friend_invitation:error:unable_save_message'   => 'Unable to save message template',
     'friend_invitation:templates_saved' => 'Friend invitation message templates saved',

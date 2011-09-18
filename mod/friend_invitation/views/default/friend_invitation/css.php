@@ -38,5 +38,5 @@ textarea#friend_invitation_message
 }
 
 #friend_invitation_input_wrapper label{
-    font-weight: normal;
+    font-weight: 0.9em;
 }

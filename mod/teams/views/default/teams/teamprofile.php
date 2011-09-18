@@ -32,10 +32,15 @@
 
 			echo "<p><b>" . elgg_echo("teams:owner") . ": </b><a href=\"" . get_user($vars['entity']->owner_guid)->getURL() . "\">" . get_user($vars['entity']->owner_guid)->name . "</a></p>";
 
-		?>
+?>
+
+
+
 		<p><?php echo elgg_echo('teams:members') . ": " . $vars['entity']->getMembers(0, 0, TRUE); ?></p>
 	</div><!-- end of group_stats -->
 </div><!-- end of teams_info_column_right -->
+
+
 
 <div id="teams_info_column_left"><!-- start of teams_info_column_left -->
 	<?php

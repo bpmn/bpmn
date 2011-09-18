@@ -30,12 +30,12 @@
 }
 
 #teams_info_column_left .odd {
-	background:#E9E9E9;
+	background:#ffffff;
 	-webkit-border-radius: 4px; 
 	-moz-border-radius: 4px;
 }
 #teams_info_column_left .even {
-	background:#E9E9E9;
+	background:#ffffff;
 	-webkit-border-radius: 4px; 
 	-moz-border-radius: 4px;
 }
@@ -55,7 +55,7 @@
 }
 #teams_stats {
 	width:190px;
-	background: #e9e9e9;
+	background: #ffffff;
 	padding:5px;
 	margin:10px 0 20px 0;
 	-webkit-border-radius: 4px; 
@@ -201,10 +201,11 @@
 }
 .forum_latest {
 	margin:0 10px 5px 10px;
-	background: #dedede;
+	background: #FFFFFF;
 	padding:5px;
    	-webkit-border-radius: 4px; 
 	-moz-border-radius: 4px;
+	font-size: 0.9em;
 }
 .forum_latest:hover {
 
