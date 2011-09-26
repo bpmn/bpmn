@@ -79,7 +79,8 @@ if (!$openlab->name) {
 // Set access - all openlabs are public from elgg's point of view, unless the override is in place
 if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes') {
     $visibility = (int) get_input('vis', '', false);
-
+            if($visibility==0 and $openlab->group_acl)
+                $visibility=$openlab->group_acl;
     $openlab->access_id = $visibility;
 } else {
     $openlab->access_id = ACCESS_LOGGED_IN;
@@ -105,8 +106,14 @@ $openlab->forum_enable = 'yes';
  */
 $openlab->save();
 
+
+
 // openlab creator needs to be member of new openlab
 if ($new_openlab_flag) {
+    if ($openlab->access_id==0){
+            $openlab->access_id=$openlab->group_acl;
+            $openlab->save();
+    }
     $openlab->join($user);
     add_to_river('openlab_river/openlab/create', 'create', $user->guid, $openlab->guid);
 
@@ -121,7 +128,7 @@ if ($new_openlab_flag) {
 // Set the openlab it belongs to
     $openlabtopic->container_guid = $openlab->guid;
 // For now, set its access to public (we'll add an access dropdown shortly)
-    $openlabtopic->access_id = ACCESS_LOGGED_IN;
+    $openlabtopic->access_id = $openlab->access_id;
 // Set its title and description appropriately
     $openlabtopic->title = $openlab->name;
 // Before we can set metadata, we need to save the topic
@@ -135,6 +142,12 @@ if ($new_openlab_flag) {
 
 } else {
     add_to_river('openlab_river/openlab/update', 'update', $user->guid, $openlab->guid);
+    $contained_entities=elgg_get_entities(array("container_guids"=>$openlab->guid));
+    foreach ($contained_entities as $entity){
+        $entity->access_id=$openlab->access_id;
+        $entity->save();
+
+    }
 }
 
 

@@ -73,7 +73,7 @@ $english = array(
     /*
      * Access
      */
-    'openlabs:access:private' => 'Closed - Users must be invited',
+    'openlabs:access:private' => 'Confidential',
     'openlabs:access:public' => 'Open - Any user may join',
     'openlabs:closedopenlab' => 'This Open Lab has a closed membership.',
     'openlabs:closedopenlab:request' => 'To ask to be added, click the "request membership" menu link.',

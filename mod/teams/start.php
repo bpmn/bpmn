@@ -62,7 +62,8 @@
 
 
 		//extend some views
-		//elgg_extend_view('profile/icon','teams/icon');
+		if (get_context() == 'teams')
+                    elgg_extend_view('profile/icon','teams/icon');
 		elgg_extend_view('css','teams/css');
 
 		// Access permissions
@@ -426,6 +427,7 @@
                 
 		if ($group_id) {
 			$object->group_acl = $group_id;
+          
 		} else {
 			// delete group if access creation fails
 			return false;
@@ -495,8 +497,10 @@
 	 */
 	function teams_delete_event_listener($event, $object_type, $object)
 	{
+           
+            if ("teams" == get_subtype_from_id($object->subtype)) {
 		delete_access_collection($object->group_acl);
-
+                }
 		return true;
 	}
 
@@ -504,14 +508,15 @@
 	 * Listens to a team join event and adds a user to the group's access control
 	 *
 	 */
-	function teams_user_join_event_listener($event, $object_type, $object) {
-
-		$group = $object['group'];
+function teams_user_join_event_listener($event, $object_type, $object)
+{
+        $group = $object['group'];
+        if ("teams" == get_subtype_from_id($object->subtype)) {
 		$user = $object['user'];
 		$acl = $group->group_acl;
 
 		add_user_to_access_collection($user->guid, $acl);
-
+            }
 		return true;
 	}
 
@@ -520,13 +525,15 @@
 	 *
 	 */
 	function teams_user_leave_event_listener($event, $object_type, $object) {
+            
+            $group = $object['group'];
 
-		$group = $object['group'];
+            if ("teams" == get_subtype_from_id($group->subtype)) {
 		$user = $object['user'];
 		$acl = $group->group_acl;
 
 		remove_user_from_access_collection($user->guid, $acl);
-
+            }
 		return true;
 	}
 

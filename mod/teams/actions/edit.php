@@ -80,6 +80,8 @@ if (!$group->name) {
 // Set access - all teams are public from elgg's point of view, unless the override is in place
 if (get_plugin_setting('hidden_teams', 'teams') == 'yes') {
 	$visibility = (int)get_input('vis','',false);
+            if($visibility==0 and $group->group_acl)
+                $visibility=$group->group_acl;
 
 	$group->access_id = $visibility;
 } else {
@@ -104,14 +106,27 @@ $group->forum_enable = get_input('forum_enable', 'no');
 //	}
 //}
 
+
 $group->save();
+
+
 
 // group creator needs to be member of new group
 if ($new_group_flag) {
+        if ($group->access_id==0){
+            $group->access_id=$group->group_acl;
+            $group->save();
+            }
 	$group->join($user);
 	add_to_river('teams_river/teams/create', 'create', $user->guid, $group->guid);
 }else{
     add_to_river('teams_river/teams/update', 'update', $user->guid, $group->guid);
+
+    $contained_entities=elgg_get_entities(array("container_guids"=>$group->guid));
+    foreach ($contained_entities as $entity){
+        $entity->access_id=$group->access_id;
+        $entity->save();
+    }
 }
 
 

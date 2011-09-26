@@ -369,34 +369,25 @@ function get_write_access_array($user_id = 0, $site_id = 0, $flush = false) {
 		$query .= " AND (ag.owner_guid = {$user_id})";
 		$query .= " AND ag.id >= 3";
 
-		// fatxi Modif <<<<<<<<<<<<<<
-                //$tmp_access_array = array(	ACCESS_PRIVATE => elgg_echo("PRIVATE"),
-									//ACCESS_FRIENDS => elgg_echo("access:friends:label"),
-									//ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"),
-									//ACCESS_PUBLIC => elgg_echo("PUBLIC"));
-
-
-                $tmp_access_array = array(ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"),
-									);
-                // fatxi Modif >>>>>>>>>>>>>>>
-
-                if ($collections = get_data($query)) {
-			foreach($collections as $collection){
+		$tmp_access_array = array(	ACCESS_PRIVATE => elgg_echo("PRIVATE"),
+									ACCESS_FRIENDS => elgg_echo("access:friends:label"),
+									ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"),
+									ACCESS_PUBLIC => elgg_echo("PUBLIC"));
+		if ($collections = get_data($query)) {
+			foreach($collections as $collection) {
 				$tmp_access_array[$collection->id] = $collection->name;
 			}
 		}
-        // fatxi Modif <<<<<<<<<<<<<<
-		//$access_array[$user_id] = $tmp_access_array;
-	} //else {
-		//$tmp_access_array = $access_array[$user_id];
-	//}
-        // fatxi Modif <<<<<<<<<<<<<<
-	//$tmp_access_array = trigger_plugin_hook('access:collections:write','user',array('user_id' => $user_id, 'site_id' => $site_id),$tmp_access_array);
-        // fatxi Modif >>>>>>>>>>>>>>>
+
+		$access_array[$user_id] = $tmp_access_array;
+	} else {
+		$tmp_access_array = $access_array[$user_id];
+	}
+
+	$tmp_access_array = trigger_plugin_hook('access:collections:write','user',array('user_id' => $user_id, 'site_id' => $site_id),$tmp_access_array);
 
 	return $tmp_access_array;
 }
-
 /**
  * Creates a new access control collection owned by the specified user.
  *

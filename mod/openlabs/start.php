@@ -72,9 +72,12 @@ function openlabs_init() {
 
 
     //extend some views
-    elgg_extend_view('profile/icon', 'openlabs/icon');
-    elgg_extend_view('css', 'openlabs/css');
+    if (get_context() == 'openlabs'){
+        elgg_extend_view('profile/icon', 'openlabs/icon');
+    }
 
+    elgg_extend_view('css', 'openlabs/css');
+    
     // Access permissions
     register_plugin_hook('access:collections:write', 'all', 'openlabs_write_acl_plugin_hook');
     //register_plugin_hook('access:collections:read', 'all', 'openlabs_read_acl_plugin_hook');
@@ -503,7 +506,9 @@ function openlabs_create_event_listener($event, $object_type, $object) {
         $ac_name = elgg_echo('openlabs:openlab') . ": " . $object->name;
         $openlab_id = create_access_collection($ac_name, $object->guid);
         if ($openlab_id) {
-            $object->openlab_acl = $openlab_id;
+            $object->group_acl = $openlab_id;
+                        if ($object->access_id==0)
+                                $object->access_id=$object->group_acl;
         } else {
             // delete openlab if access creation fails
             return false;
@@ -524,13 +529,13 @@ function openlabs_read_acl_plugin_hook($hook, $entity_type, $returnvalue, $param
         // So just see if they're a member of the ACL.
         //$membership = get_users_membership($user->guid);
 
-        $members = get_members_of_access_collection($openlab->openlab_acl);
+        $members = get_members_of_access_collection($openlab->group_acl);
         print_r($members);
         exit;
 
         if ($membership) {
             foreach ($membership as $openlab)
-                $returnvalue[$user->guid][$openlab->openlab_acl] = elgg_echo('openlabs:openlab') . ": " . $openlab->name;
+                $returnvalue[$user->guid][$openlab->group_acl] = elgg_echo('openlabs:openlab') . ": " . $openlab->name;
             return $returnvalue;
         }
     }
@@ -546,7 +551,7 @@ function openlabs_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $para
         $openlabs = elgg_get_entities_from_relationship(array('relationship' => 'member', 'relationship_guid' => $loggedin->getGUID(), 'inverse_relationship' => FALSE, 'limit' => 999));
         if (is_array($openlabs)) {
             foreach ($openlabs as $openlab) {
-                $returnvalue[$openlab->openlab_acl] = elgg_echo('openlabs:openlab') . ': ' . $openlab->name;
+                $returnvalue[$openlab->group_acl] = elgg_echo('openlabs:openlab') . ': ' . $openlab->name;
             }
         }
     }
@@ -558,7 +563,7 @@ function openlabs_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $para
 //		{
 //			if (can_write_to_container())
 //			{
-//				$returnvalue[$page_owner->openlab_acl] = elgg_echo('openlabs:openlab') . ": " . $page_owner->name;
+//				$returnvalue[$page_owner->group_acl] = elgg_echo('openlabs:openlab') . ": " . $page_owner->name;
 //			}
 //		}
 
@@ -569,8 +574,9 @@ function openlabs_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $para
  * openlabs deleted, so remove access lists.
  */
 function openlabs_delete_event_listener($event, $object_type, $object) {
-    delete_access_collection($object->openlab_acl);
-
+    if ("openlab" == get_subtype_from_id($object->subtype)) {
+    delete_access_collection($object->group_acl);
+    }
     return true;
 }
 
@@ -580,12 +586,14 @@ function openlabs_delete_event_listener($event, $object_type, $object) {
  */
 function openlabs_user_join_event_listener($event, $object_type, $object) {
 
-    $openlab = $object['openlab'];
-    $user = $object['user'];
-    $acl = $openlab->openlab_acl;
+  $openlab = $object['group'];
+  if ("openlab" == get_subtype_from_id($openlab->subtype)) {
+        
+        $user = $object['user'];
+        $acl = $openlab->group_acl;
 
-    add_user_to_access_collection($user->guid, $acl);
-
+        add_user_to_access_collection($user->guid, $acl);
+    }
     return true;
 }
 
@@ -594,13 +602,15 @@ function openlabs_user_join_event_listener($event, $object_type, $object) {
  *
  */
 function openlabs_user_leave_event_listener($event, $object_type, $object) {
+   
+   $openlab = $object['group'];
+   if ("openlab" == get_subtype_from_id($openlab->subtype)) {
+        
+        $user = $object['user'];
+        $acl = $openlab->group_acl;
 
-    $openlab = $object['openlab'];
-    $user = $object['user'];
-    $acl = $openlab->openlab_acl;
-
-    remove_user_from_access_collection($user->guid, $acl);
-
+        remove_user_from_access_collection($user->guid, $acl);
+    }
     return true;
 }
 
