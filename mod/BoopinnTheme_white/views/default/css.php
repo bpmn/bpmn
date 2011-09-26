@@ -340,11 +340,9 @@ background: -moz-linear-gradient(center top , #0066aa 0pt, #ffffff 100%) repeat 
 	min-height:360px;
 	float:left;
 	background:#fefefe;
-	/*background:#fefefe url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/box_bg.png) repeat scroll 0 0 transparent;*/
-
-
 
 	padding:0px;
+
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 }
@@ -1187,7 +1185,7 @@ input[type="checkbox"] {
 	border-style: none;
 }
 textarea {
-	font: 120% Arial, Helvetica, sans-serif;
+	font: 0.9em Arial, Helvetica, sans-serif;
 	border: solid 1px #cccccc;
 	padding: 5px;
 	color:#666666;
@@ -2825,6 +2823,16 @@ a.toggle_customise_edit_panel:hover {
 	font-size:1.35em;
 	line-height:1.2em;
 }
+
+#content_area_group_title {
+	background:#FF9900;
+	border-bottom:1px solid #cccccc;
+
+}
+
+
+
+
 /* reusable generic collapsible box */
 .collapsible_box {
 	background:#BBDFF0;
