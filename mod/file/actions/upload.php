@@ -13,7 +13,7 @@
 	$title = get_input("title");
 	$desc = get_input("description");
       
-        $access_id = ACCESS_LOGGED_IN;
+        //$access_id = ACCESS_LOGGED_IN;
         
         //$access_id = (int) get_input("access_id");
                 
@@ -23,7 +23,7 @@
 	}
 	$guid = (int) get_input('file_guid');
 	$tags = get_input("tags");
-	
+	$access_id =get_entity($container_guid)->access_id;
 	// check whether this is a new file or an edit
 	$new_file = true;
 	if ($guid > 0) {

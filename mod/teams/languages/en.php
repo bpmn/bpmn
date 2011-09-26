@@ -80,7 +80,7 @@
 			/*
 			 * Access
 			 */
-			'teams:access:private' => 'Closed - Users must be invited',
+			'teams:access:private' => 'Confidential',
 			'teams:access:public' => 'Open - Any user may join',
 			'teams:closedgroup' => 'This team has a closed membership.',
 			'teams:closedteam:request' => 'To ask to be added, click the "request membership" menu link.',

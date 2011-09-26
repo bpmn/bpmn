@@ -40,12 +40,13 @@
 
 						if (!$openlab->isMember($user))
 						{
+                                                        $openlab->join($user);
 							// Remove relationships
 							remove_entity_relationship($openlab->guid, 'invited', $user->guid);
 							remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
                                                         remove_entity_relationship($user->guid, 'follow', $group->guid);
 							//add_entity_relationship($user->guid, 'member', $openlab->guid);
-							$openlab->join($user);
+							
 
                                                         //add to river
                                                         add_to_river('openlab_river/relationship/member/create','join',$user->guid,$openlab->guid);

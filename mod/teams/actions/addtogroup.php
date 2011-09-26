@@ -40,12 +40,13 @@
 
 						if (!$group->isMember($user))
 						{
+                                                        $group->join($user);
 							// Remove relationships
 							remove_entity_relationship($group->guid, 'invited', $user->guid);
 							remove_entity_relationship($user->guid, 'membership_request', $group->guid);
                                                         remove_entity_relationship($user->guid, 'follow', $group->guid);
 							//add_entity_relationship($user->guid, 'member', $group->guid);
-							$group->join($user);
+							
                                                         
                                                         // add to river
                                                         add_to_river('teams_river/relationship/member/create','join',$user->guid,$group->guid);

@@ -12,6 +12,9 @@
 
 	<div class="requestnotifications_box">
 		<?php
+                  
+
+
 			$user = get_loggedin_user();
 			
 			$count = 0;
@@ -51,6 +54,10 @@
 			}
 			
 			//get teams invitations
+
+                        $ignoreacess = elgg_get_ignore_access();
+                        elgg_set_ignore_access(True);
+
 			$num_teams_invitations = elgg_get_entities_from_relationship(array('relationship' => 'invited', 'relationship_guid' => $user->guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'teams', 'limit' => 9999,'count'=>true));
 			if(isset($num_teams_invitations) and $num_teams_invitations > 0) {
 				$count += $num_teams_invitations; ?>
@@ -67,7 +74,10 @@
 	                                  <p><a href=<?php echo $vars['url']."pg/openlabs/invitations/". $user->username ;?> class='groupinvitationscount'>
 							<?php echo sprintf(elgg_echo('requestnotifications:openlabinvite:count'), $num_openlabs_invitations); ?>
 						</a></p>
-			<?php }
+			<?php
+                        
+                        elgg_set_ignore_access($ignoreaccess);
+                       }
 
                        //get openlabs suggestions
 			$num_openlabs_suggestions = elgg_get_entities_from_relationship(array('relationship' => 'suggested', 'relationship_guid' => $user->guid, 'inverse_relationship' => TRUE,'type'=>'group','subtype'=>'openlab', 'limit' => 9999,'count'=>true));
@@ -89,5 +99,10 @@
 			if ($hook_params[count] == 0) {				
 				echo elgg_echo('requestnotifications:norequests');
 			}
+
+                       
+                        
 		?>
+
+
 	</div>
