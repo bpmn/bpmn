@@ -12,9 +12,9 @@
 	
 
 	<p class="user_menu_profile">
-		<a href="<?php echo $vars['url']?>pg/profile/<?php echo $vars['entity']->username; ?>/invite/"><?php echo sprintf(elgg_echo("profile:invite"),$vars['entity']->username); ?></a>
+		<a href="<?php echo $vars['url']?>pg/profile/<?php echo $vars['entity']->username; ?>/invite/"><?php echo sprintf(elgg_echo("profile:invite"),$vars['entity']->name); ?></a>
 	</p>
 
 	<p class="user_menu_profile">
-		<a href="<?php echo $vars['url']?>pg/profile/<?php echo $vars['entity']->username; ?>/suggest/"><?php echo sprintf(elgg_echo("profile:suggest"),$vars['entity']->username); ?></a>
+		<a href="<?php echo $vars['url']?>pg/profile/<?php echo $vars['entity']->username; ?>/suggest/"><?php echo sprintf(elgg_echo("profile:suggest"),$vars['entity']->name); ?></a>
 	</p>

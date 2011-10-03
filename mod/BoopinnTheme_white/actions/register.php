@@ -99,6 +99,20 @@ if (!$CONFIG->disable_registration) {
 				$new_user->makeAdmin();
 			}
 
+
+                        //boopinn modif Fatxi >>>
+                      
+                        $ignoreacess = elgg_get_ignore_access();
+                        elgg_set_ignore_access(True);
+
+                        add_widget($guid,"a_users_teams","profile",0,1);
+                        add_widget($guid,"a_users_openlabs","profile",0,2);
+
+                        elgg_set_ignore_access($ignoreaccess);
+                       
+                        //boopinn modif Fatxi <<<<
+
+                       
 			// Send user validation request on register only
 			global $registering_admin;
 			if (!$registering_admin) {
@@ -113,11 +127,8 @@ if (!$CONFIG->disable_registration) {
 				$new_user->disable('new_user', false);
 			}
 
-                        //boopinn modif Fatxi >>>
-                        add_widget($guid,"a_users_teams","profile",0,1);
-                        add_widget($guid,"a_users_openlabs","profile",0,2);
-                        //boopinn modif Fatxi <<<<
-
+                  
+                       
 
                         system_message(sprintf(elgg_echo("registerok"),$CONFIG->sitename));
 

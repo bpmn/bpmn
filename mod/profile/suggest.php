@@ -15,7 +15,7 @@
 
 	if (($user))
 	{
-            $title = sprintf(elgg_echo("profile:suggest"),$username);
+            $title = sprintf(elgg_echo("profile:suggest"),$user->name);
             $area2 = elgg_view_title($title);
             $area2 .= elgg_view("forms/profile/suggest", array('entity' => $user));
   //          $area2 .= elgg_view("forms/profile/invite");

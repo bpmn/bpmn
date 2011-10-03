@@ -6,7 +6,7 @@
  * @subpackage Core
  */
 
-global $CONFIG;
+/*global $CONFIG;
 
 // Get variables
 $username = get_input('username');
@@ -72,4 +72,4 @@ if (!$CONFIG->disable_registration) {
 	register_error(elgg_echo('registerdisabled'));
 }
 
-forward(REFERER);
+forward(REFERER);*/

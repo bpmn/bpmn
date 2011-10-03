@@ -6,7 +6,7 @@
  * @subpackage Core
  */
 
-$username = get_input('u');
+/*$username = get_input('u');
 $email = get_input('e');
 $name = get_input('n');
 
@@ -38,9 +38,9 @@ $form_body .= elgg_view('input/hidden', array('internalname' => 'friend_guid', '
 $form_body .= elgg_view('input/hidden', array('internalname' => 'invitecode', 'value' => $vars['invitecode']));
 $form_body .= elgg_view('input/hidden', array('internalname' => 'action', 'value' => 'register'));
 $form_body .= elgg_view('input/submit', array('internalname' => 'submit', 'value' => elgg_echo('register'))) . "</p>";
-?>
+*/?>
 
-<div id="register-box">
-<h2><?php echo elgg_echo('register'); ?></h2>
-<?php echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'body' => $form_body)) ?>
-</div>
+<!--div id="register-box">
+<h2><?php //echo elgg_echo('register'); ?></h2>
+<?php //echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'body' => $form_body)) ?>
+</div-->

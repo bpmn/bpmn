@@ -51,7 +51,7 @@ $language_array_en = array(
     'friend_invitation:error:unable_save_message'   => 'Unable to save message template',
     'friend_invitation:templates_saved' => 'Friend invitation message templates saved',
     
-
+    'friend_invitation:invited'=> "Sent invitations"
 );
 
 // register constants for english version of elgg site

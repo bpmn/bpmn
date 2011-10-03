@@ -72,10 +72,10 @@ $(document).ready(function(){
     <input type="text" name="friend_invitation_to" id="friend_invitation_to" value="" class="friend_invitation_input_field" />
 
   <br />
-    <label><?php echo elgg_echo('friend_invitation:message');?></label>
+    <!--label><?php //echo elgg_echo('friend_invitation:message');?></label-->
 	<!-- input message -->
-    <textarea name="friend_invitation_message" id="friend_invitation_message" class="friend_invitation_input_field" <?php if (!$allow_change_message) { ?> disabled="disabled" <?php } ?>><?php echo $message; ?></textarea>
-
+    <!--textarea name="friend_invitation_message" id="friend_invitation_message" class="friend_invitation_input_field" <?php if (!$allow_change_message) { ?> disabled="disabled" <?php } ?>><?php echo $message; ?></textarea-->
+    
   <br />
     <!-- the person posting an item on the message board -->
     <input type="hidden" name="guid" value="<?php echo $_SESSION['guid']; ?>" class="guid"  />

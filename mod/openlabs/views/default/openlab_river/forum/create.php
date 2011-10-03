@@ -14,10 +14,12 @@
 	}
 	$comment = strip_tags($comment);//this is so we don't get large images etc in the activity river
 	$url = $object->getURL();
+        $string = elgg_view("profile/icon",array('entity' => $performed_by, 'size' => 'tiny', 'override' => 'true'));
 	$url_user = "<a href=\"{$performed_by->getURL()}\">{$performed_by->name}</a>";
-	$string = sprintf(elgg_echo("openlabforum:river:posted"),$url_user) . " ";
+	$string .= sprintf(elgg_echo("openlabforum:river:posted"),$url_user) . " ";
 	//$string .= elgg_echo("openlabforum:river:annotate:create") . " | <a href=\"" . $url . "\">" . $object->title . "</a>";
-        $string .= elgg_echo("openlabforum:river:annotate:create") . " | <a href=\"" . $url . "\">" . $object->name . "</a>";
+        $icon_openlab=elgg_view("teams/icon_river", array('entity' => $object, 'size' => 'tiny', 'override' => 'true'));
+        $string .= elgg_echo("openlabforum:river:annotate:create").":" .$icon_openlab ."<a href=\"" . $url . "\">" . $object->name . "</a>";
 	if ($comment) {
 		$string .= "<div class=\"river_content_display\">";
 		$string .= elgg_get_excerpt($comment, 100);

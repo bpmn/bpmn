@@ -32,7 +32,7 @@ input.friend_invitation_input_field
     width: 100%;
 }
 
-textarea#friend_invitation_message 
+textarea#friend_invitation_message
 {
     width: 100%;
 }
