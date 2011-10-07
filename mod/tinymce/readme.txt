@@ -1,16 +1,17 @@
 Notes:
 
-* A simple tinymce plugin
+* An extended tinymce plugin based on version 3.4.6 of the TinyMCE editor.
+
+
 
 Instructions:
 
-Drop into mod, enable in the admin planel and use.
+1. Disable the Elgg core tinymce plugin,
 
-License:
+2. Replace the tinymce folder in your mod directory with this tinymce folder,
 
-This plugin is licensed only under the GPL 2 because it bundles GPL 3 libraries.
-This plugin is not distributed with the MIT version of Elgg, and the MIT
-license does not apply to this plugin or any of its bundled software.
+3. Replace start.php of the htmlawed plugin with the start.php file in the htmlawed subfolder in this plugin. This version of htmlawed's start.php is a backport of Elgg 1.8 that works better for me - for example it also allowed different fonts to be used in postings.
 
-Bundled libraries retain their original licensing.
+4. Enable the tinymce plugin again,
 
+5. Execute the upgrade.php script, i.e. call http://<yoursite.domain>/upgrade.php in your browser.
