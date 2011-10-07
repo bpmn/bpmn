@@ -1752,12 +1752,16 @@ function users_init() {
 	// Load config
 	global $CONFIG;
 
+
+        // <<<<<<< Fatxi modif
 	// Set up menu for logged in users
 	//if (isloggedin()) {
 	//	$user = get_loggedin_user();
 	//	add_menu(elgg_echo('friends'), $CONFIG->wwwroot . "pg/friends/" . $user->username);
 	//}
+        // >>>>> Fatxi modif
 
+        
 	register_page_handler('friends', 'friends_page_handler');
 	register_page_handler('friendsof', 'friends_of_page_handler');
 	register_page_handler('collections', 'collections_page_handler');

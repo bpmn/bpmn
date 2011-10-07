@@ -122,6 +122,7 @@ $english = array(
 	'ConfigurationException:NoSiteID' => "No site ID has been specified.",
 	'SecurityException:APIAccessDenied' => "Sorry, API access has been disabled by the administrator.",
 	'SecurityException:NoAuthMethods' => "No authentication methods were found that could authenticate this API request.",
+	'SecurityException:UnexpectedOutputInGatekeeper' => 'Unexpected output in gatekeeper call. Halting execution for security. Search http://docs.elgg.org/ for more information.',
 	'InvalidParameterException:APIMethodOrFunctionNotSet' => "Method or function not set in call in expose_method()",
 	'InvalidParameterException:APIParametersArrayStructure' => "Parameters array structure is incorrect for call to expose method '%s'",
 	'InvalidParameterException:UnrecognisedHttpMethod' => "Unrecognised http method %s for api method '%s'",
@@ -241,9 +242,9 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
 	'widgets:rightcolumn' => "Right widgets",
 	'widgets:profilebox' => "Profile box",
 	'widgets:panel:save:success' => "Your widgets were successfully saved.",
-	'widgets:panel:save:failure' => "There was a problem saving your widgets. Please try again.",
+	'widgets:panel:save:failure' => "There was a problem saving your widgets. Make sure you are logged in and try again.",
 	'widgets:save:success' => "The widget was successfully saved.",
-	'widgets:save:failure' => "We could not save your widget. Please try again.",
+	'widgets:save:failure' => "We could not save your widget. Make sure you are logged in and try again.",
 	'widgets:handlernotfound' => 'This widget is either broken or has been disabled by the site administrator.',
 
 /**
@@ -300,6 +301,8 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
 	'friends:nocollectionname' => "You need to give your collection a name before it can be created.",
 	'friends:collections:members' => "Collection members",
 	'friends:collections:edit' => "Edit collection",
+	'friends:collections:edited' => "Saved collection",
+	'friends:collection:edit_failed' => 'Could not save collection.',
 
 	'friends:river:add' => "%s is now a friend with",
 
@@ -381,7 +384,7 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
  */
 
 	'account' => "Account",
-        //Fatxi modif >>>>>>
+	//Fatxi modif >>>>>>
         'settings' => "My Account",
 	//'settings' => "Settings",
 	'tools' => "Tools",

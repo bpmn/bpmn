@@ -7,7 +7,6 @@
  *
  * @package Elgg
  * @subpackage Core
- * Fabien was here
  */
 
 // Include elgg engine

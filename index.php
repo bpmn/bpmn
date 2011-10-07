@@ -12,7 +12,6 @@
 define('externalpage',true);
 require_once(dirname(__FILE__) . "/engine/start.php");
 
-
 if (!trigger_plugin_hook('index', 'system', null, FALSE)) {
 	/**
 	 * Check to see if user is logged in, if not display login form
@@ -22,9 +21,7 @@ if (!trigger_plugin_hook('index', 'system', null, FALSE)) {
 		forward('pg/dashboard/');
 	}
 
-        
 	//Load the front page
-        
 	$title = elgg_view_title(elgg_echo('content:latest'));
 	set_context('search');
 	$offset = (int)get_input('offset', 0);
