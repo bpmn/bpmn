@@ -72,7 +72,7 @@ By using Boopinn, you confirm that you read, understood, and accepted the genera
 </div>
 
 <div class="footer_box_recommend">
-<div class="f-left">(Best viewed with Firefox, Chrome, or Internet Explorer 9+)</div>
+<div class="f-left">(Best viewed with Firefox, Chrome, Internet Explorer 9+ or Safari)</div>
 <div class="f-right">Boopinn is proudly powered by Open Source Softwares</div>
 </div>
 

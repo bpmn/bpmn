@@ -215,10 +215,11 @@ blockquote p {
 #page_container {
 	margin:0;
 	padding:0;
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0066aa, endColorstr=#ffffff)";
+/*
+ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0066aa, endColorstr=#ffffff)";
 background: -webkit-gradient(linear, left top, left bottom, from(#0066aa), to(#ffffff));
 background: -moz-linear-gradient(center top , #0066aa 0pt, #ffffff 100%) repeat scroll 0 0 transparent;
-
+*/
 
 
 }
@@ -237,13 +238,12 @@ background: -moz-linear-gradient(center top , #0066aa 0pt, #ffffff 100%) repeat 
 	height:55px;
 	background:#ffffff;
 	position:static;
-	border: solid 1px #D0D0D0;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
+	border: none 1px #D0D0D0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
     /* fallback (Opera) */
     background: #fefefe;
-    box-shadow: 1px 1px 7px #000000;
-	margin:0px 0 5px 0;
+	margin:0px 0 0px 0;
 
         
 }
@@ -291,6 +291,7 @@ background: -moz-linear-gradient(center top , #0066aa 0pt, #ffffff 100%) repeat 
 #wrapper_header {
 	margin:0;
 	padding:0px 0px 5px 0px;
+	border-bottom: solid 1px #D0D0D0;
 
 
 }
@@ -306,15 +307,15 @@ background: -moz-linear-gradient(center top , #0066aa 0pt, #ffffff 100%) repeat 
 
 #layout_canvas {
 	margin:0 0 20px 0;
-	padding:10px;
+	padding:0px;
 	min-height: 360px;
-	border: solid 1px #D0D0D0;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
+	border: none 1px #D0D0D0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
     /* fallback (Opera) */
     background: #fefefe;
 
-    box-shadow: 1px 1px 7px #000000;
+    /*box-shadow: 1px 1px 7px #000000;*/
 
 
 }
@@ -537,8 +538,6 @@ background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f
 	margin-right:auto;
 
 	height:40px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
 	margin:0 0 5px 0;
 }
 #layout_footer table {
@@ -597,19 +596,8 @@ background: -moz-linear-gradient(center top , #FFFFFF 0pt, #D0D0D0 100%) repeat 
 	width:990px;
 	height:26px;
 	z-index: 9000; /* if you have multiple position:relative elements, then IE sets up separate Z layer contexts for each one, which ignore each other */
-    border:solid 1px #f0f0f0;
-    -moz-border-radius-topleft: 6px;
-    -moz-border-radius-topright:6px;
-    -moz-border-radius-bottomleft:6px;
-    -moz-border-radius-bottomright:6px;
-    -webkit-border-top-left-radius:6px;
-    -webkit-border-top-right-radius:6px;
-    -webkit-border-bottom-left-radius:6px;
-    -webkit-border-bottom-right-radius:6px;
-    border-top-left-radius:6px;
-    border-top-right-radius:6px;
-    border-bottom-left-radius:6px;
-    border-bottom-right-radius:6px;
+    border:none 1px #f0f0f0;
+
 
     margin-bottom: 0px; 
 
@@ -3429,12 +3417,12 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
 }
 
 #dashboard_container {
-	margin:1px 1px 1px 1px;
+	margin:0px;
 	padding:0px;
 	min-height: 600px;
 	border: none 1px #D0D0D0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: opx;
     /* fallback (Opera) */
     background: #ffffff;
 
@@ -3445,8 +3433,8 @@ color: #0066aa; display: block; float: left; margin-right: 1px; padding: 3px 6px
     min-height: 600px;
     width: 220px;
 	border: none 1px #D0D0D0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
     float: left;
     background: transparent url(<?php echo $vars['url']; ?>/mod/BoopinnTheme_white/_graphics/Principal_header2_rot.png) no-repeat;
 

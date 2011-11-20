@@ -93,7 +93,7 @@ echo elgg_view('metatags', $vars);
             $initJs = "jQuery(document).ready(function($) {
 
                   $('#coda-slider-1').codaSlider({
-                         autoSlide:true,
+                         autoSlide:false,
                          autoSlideInterval:4500,
                          autoSlideStopWhenClicked:true
                 });
