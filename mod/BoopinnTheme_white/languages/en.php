@@ -26,6 +26,9 @@
 			'register:error:emailtaken' => "There is already an account registered for that e-mail address (try logging in)",
 			'user:email:notfound' => 'Email %s not found.',
 			'username/email' => 'Username/Email',
+			'user:usernameemail' => "Username or Email",
+
+
 			'email:resetreq:body:wusername' => "Hi %s,
 			
 Somebody (from the IP address %s) has requested a new password for their account.
@@ -39,6 +42,12 @@ We remind you, that your username is: %s
 	'terms' => 'Terms',
 
 	'agreetoterms:required' => "You must agree to the terms to register",
+
+
+        'toolbar:logout' => "Logout",
+
+
+
 	);
 					
 	add_translation("en",$english);

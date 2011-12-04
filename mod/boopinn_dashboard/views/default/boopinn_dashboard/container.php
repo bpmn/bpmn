@@ -59,7 +59,7 @@
 
         	<?php
         		if (isloggedin()){
-	        		echo "<h4_center>" . elgg_echo("welcome") . " ";
+	        		echo "<h4_center>" . elgg_echo('dashboard:welcome') . " ";
         			echo $vars['user']->name;
         			echo "</h4_center>";
     			}
