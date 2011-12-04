@@ -3,7 +3,10 @@
 	
 	$allowed = language_selector_get_allowed_translations();
 	$current_lang_id = get_current_language();
-	
+
+
+	echo ('<div id="languagebar">');	
+		
 	if(count($allowed) > 1){
 		// show text or flags
 		$show_flags = false;
@@ -65,6 +68,6 @@
 <?php 	
 		}
 	}
-	
+	$result .= "</div>";
 	echo $result;
 	

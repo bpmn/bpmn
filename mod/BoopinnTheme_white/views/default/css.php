@@ -3578,6 +3578,16 @@ span {
 float: left;
 }
 
+#languagebar {
+width:50px;
+	z-index: 8000;
+	margin:0;
+	position:fixed;
+	top:35px;
+	right:30px;
+}
+
+
 
 #userranktitle :  {
    font-weight: bold;
