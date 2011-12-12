@@ -16,8 +16,7 @@
 ?>
 <div id="elgg_horizontal_tabbed_nav">
 <ul>    
-        <li <?php if($filter == "all") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=all"><?php echo elgg_echo('teams:all'); ?></a></li>
-	<li <?php if($filter == "owned") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=owned"><?php echo elgg_echo('teams:owner'); ?></a></li>
+        <li <?php if($filter == "newest") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=newest"><?php echo elgg_echo('teams:newest'); ?></a></li>
 	
 </ul>
 </div>

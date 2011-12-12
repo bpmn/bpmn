@@ -21,14 +21,14 @@
 		//get the action, is it to feature or unfeature
 		if($action == "feature"){
 		
-			$openlab->featured_openlab = "yes";
+			$openlab->featured_group = "yes";
 			system_message(elgg_echo('openlabs:featuredon'));
 			
 		}
 		
 		if($action == "unfeature"){
 			
-			$openlab->featured_openlab = "no";
+			$openlab->featured_group = "no";
 			system_message(elgg_echo('openlabs:unfeatured'));
 			
 		}

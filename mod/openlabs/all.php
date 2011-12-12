@@ -13,7 +13,7 @@
 	$filter = get_input("filter");
 	if (!$filter) {
 		// active discussions is the default
-		$filter = "active";
+		$filter = "newest";
 	}
 	
 	
@@ -35,16 +35,14 @@
 		$objects = elgg_list_entities_from_metadata($params);
 	} else {
 		switch($filter){
-			case "newest":
-			$objects = elgg_list_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
-			break;
+
 			case "pop":
 			$objects = list_entities_by_relationship_count('member', true, "group", "openlab", 0, $limit, false);
 			break;
-			case "active":
+			case "newest":
 			case 'default':
-			$objects = elgg_list_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
-                                                break;
+                        $objects = elgg_list_entities(array('types' => 'group', 'subtypes' => 'openlab' , 'owner_guid' => 0, 'limit' => $limit, 'offset' => $offset, 'full_view' => false));
+			break;
 		}
 	}
 	

@@ -260,7 +260,6 @@ function openlabs_submenus() {
     if (get_context() == 'openlabs' && !($page_owner instanceof ElggGroup)) {
         if (isloggedin()) {
             add_submenu_item(elgg_echo('openlabs:new'), $CONFIG->wwwroot . "pg/openlabs/new/", '1openlabslinks');
-            add_submenu_item(elgg_echo('openlabs:owned'), $CONFIG->wwwroot . "pg/openlabs/owned/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:yours'), $CONFIG->wwwroot . "pg/openlabs/member/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:invitations'), $CONFIG->wwwroot . "pg/openlabs/invitations/" . $_SESSION['user']->username, '1openlabslinks');
             add_submenu_item(elgg_echo('openlabs:membershipreq_list'), $CONFIG->wwwroot . "pg/openlabs/membershipreq_list/" . $_SESSION['user']->username, '1openlabslinks');
@@ -313,11 +312,7 @@ function openlabs_page_handler($page) {
         case "all":
             include($CONFIG->pluginspath . "openlabs/all.php");
             break;
-        case "owned" :
-            // Owned by a user
-            set_input('username', $page[1]);
-            include($CONFIG->pluginspath . "openlabs/index.php");
-            break;
+        
         case "new":
             include($CONFIG->pluginspath . "openlabs/new.php");
             break;

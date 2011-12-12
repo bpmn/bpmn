@@ -253,12 +253,11 @@
 			if (get_context() == 'teams' && !($page_owner instanceof ElggGroup)) {
 				if (isloggedin()) {
 					add_submenu_item(elgg_echo('teams:new'), $CONFIG->wwwroot."pg/teams/new/", '1teamslinks');
-					add_submenu_item(elgg_echo('teams:yours'), $CONFIG->wwwroot . "pg/teams/all/" . $_SESSION['user']->username, '1teamslinks');
-					//add_submenu_item(elgg_echo('teams:yours'), $CONFIG->wwwroot . "pg/teams/member/" . $_SESSION['user']->username, '1teamslinks');
+					add_submenu_item(elgg_echo('teams:yours'), $CONFIG->wwwroot . "pg/teams/member/" . $_SESSION['user']->username, '1teamslinks');
 					add_submenu_item(elgg_echo('teams:invitations'), $CONFIG->wwwroot . "pg/teams/invitations/" . $_SESSION['user']->username, '1teamslinks');
                                         add_submenu_item(elgg_echo('teams:membershipreq_list'),$CONFIG->wwwroot . "pg/teams/membershipreq_list/". $_SESSION['user']->username, '1teamslinks');
                                 }
-				//add_submenu_item(elgg_echo('teams:all'), $CONFIG->wwwroot . "pg/teams/all/", '1teamslinks');
+				add_submenu_item(elgg_echo('teams:all'), $CONFIG->wwwroot . "pg/teams/all/", '1teamslinks');
 			}
 
 	}
@@ -280,7 +279,12 @@
 		return false;
 	}
 
-	/**
+
+
+  
+
+
+        /**
 	 * Group page handler
 	 *
 	 * @param array $page Array of page elements, forwarded by the page handling mechanism
@@ -300,10 +304,11 @@
                                 set_input('username', $page[1]);
 				include($CONFIG->pluginspath . "teams/membershipreq_list.php");
 				break;
-			case "all" :
+			case "world":
+                        case "all" :
 				// Owned by a user
 				set_input('username', $page[1]);
-				include($CONFIG->pluginspath . "teams/index.php");
+				include($CONFIG->pluginspath . "teams/all.php");
 				break;
 			case "new":
 				include($CONFIG->pluginspath . "teams/new.php");

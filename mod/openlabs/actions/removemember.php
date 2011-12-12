@@ -35,7 +35,7 @@ if (sizeof($user_guid))
                     
                         if (($openlab instanceof ElggGroup) && ($owner_id == get_loggedin_userid()))
 			{
-				
+                        
                             $openlab->leave($user) ; 
                             
                             notify_user($user->getGUID(), 

@@ -15,12 +15,12 @@
 			'teams:owned' => "Teams you own",
 			'teams:yours' => "Your teams",
 			'teams:user' => "%s's teams",
-			'teams:all' => "All",
+			'teams:all' => "All site Teams",
 			'teams:new' => "Create a new team",
 			'teams:edit' => "Edit team",
 			'teams:delete' => 'Delete team',
 			'teams:membershiprequests' => 'Manage join requests',
-                        'teams:membershipreq_list'=>'team join requests',
+                        'teams:membershipreq_list'=>'Team join requests',
 
 			'teams:invitations' => 'Team invitations',
 
