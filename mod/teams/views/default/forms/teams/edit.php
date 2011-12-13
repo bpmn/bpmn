@@ -73,7 +73,7 @@
 			if (!$this_owner) {
 				$this_owner = get_loggedin_userid();
 			}
-			$access = array(ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"),ACCESS_PRIVATE => elgg_echo('teams:access:private') );
+			$access = array(ACCESS_PUBLIC => elgg_echo("PUBLIC"),ACCESS_PRIVATE => elgg_echo('teams:access:private') );
 			//$access = array(ACCESS_FRIENDS => elgg_echo("access:friends:label"), ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"), ACCESS_PUBLIC => elgg_echo("PUBLIC"));
 			//$collections = get_user_access_collections($vars['entity']->guid);
 			//if (is_array($collections)) {
@@ -81,7 +81,7 @@
 			//		$access[$c->id] = $c->name;
 			//}
 
-			$current_access = ( (($vars['entity']->access_id) AND ($vars['entity']->access_id != 1))  ? ACCESS_PRIVATE : ACCESS_LOGGED_IN);
+			$current_access = ( (($vars['entity']->access_id) AND ($vars['entity']->access_id != 1))  ? ACCESS_PRIVATE : ACCESS_PUBLIC);
 			echo elgg_view('input/access', array('internalname' => 'vis', 
 												'value' =>  $current_access,
 												'options' => $access));

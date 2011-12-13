@@ -83,7 +83,7 @@ if (get_plugin_setting('hidden_openlabs', 'openlabs') == 'yes') {
                 $visibility=$openlab->group_acl;
     $openlab->access_id = $visibility;
 } else {
-    $openlab->access_id = ACCESS_LOGGED_IN;
+    $openlab->access_id = ACCESS_PUBLIC;
 }
 
 // Set openlab tool options
