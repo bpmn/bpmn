@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+        <field key="author" value="slyhne" />
+        <field key="version" value="1.2" />
+        <field key="description" value="IP tracker plugin" />
+        <field key="website" value="http://zurf.dk/elgg/" />
+        <field key="copyright" value="(C) s.lyhne 2009-2011" />
+        <field key="licence" value="GNU Public License version 2" />
+        <field key="elgg_version" value="2010030101" />
+</plugin_manifest>
