@@ -82,8 +82,10 @@ function openlabs_init() {
     register_plugin_hook('access:collections:write', 'all', 'openlabs_write_acl_plugin_hook');
     //register_plugin_hook('access:collections:read', 'all', 'openlabs_read_acl_plugin_hook');
     // Notification hooks
-    if (is_callable('register_notification_object'))
-        register_notification_object('object', 'openlabforumtopic', elgg_echo('openlabforumtopic:new'));
+    if (is_callable('register_notification_object')){
+        register_notification_object('object', 'openlabforumtopic', elgg_echo('openlabforumtopic:new')); 
+        //register_notification_object('object', 'boopinncomment', elgg_echo('openlabforumtopic:new'));
+    }
     register_plugin_hook('object:notifications', 'object', 'openlab_object_notifications_intercept');
 
     // Listen to notification events and supply a more useful message
@@ -163,7 +165,7 @@ function openlabforumtopic_notify_message($hook, $entity_type, $returnvalue, $pa
         if (empty($msg))
             $msg = get_input('topic_post');
         if (!empty($msg))
-            $msg = $msg . "\n\n"; else
+            $msg = substr($msg,0,100) . "\n\n"; else
             $msg = '';
 
         $owner = get_entity($entity->container_guid);
@@ -904,7 +906,8 @@ register_elgg_event_handler('init', 'system', 'openlabs_fields_setup', 10000); /
 register_elgg_event_handler('join', 'group', 'openlabs_user_join_event_listener');
 register_elgg_event_handler('leave', 'group', 'openlabs_user_leave_event_listener');
 register_elgg_event_handler('pagesetup', 'system', 'openlabs_submenus');
-register_elgg_event_handler('annotate', 'all', 'openlab_object_notifications');
+register_elgg_event_handler('addpost', 'all', 'openlab_object_notifications');
+//register_elgg_event_handler('addpost','object','object_notifications');
 
 // Register actions
 global $CONFIG;

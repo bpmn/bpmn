@@ -38,18 +38,23 @@
                        <?php echo $vars['users_activity']; ?>
 		</div>
 		<div class="dash_right_footer">
-                    <div class="dash_box_top_bar">
-			<?php echo $vars['teams_activity']; ?>
-
-			</div>
+                    
                     <div class="dash_box_top_bar">
                         <?php echo $vars['openlabs_activity']; ?>
-			</div>
+                    </div>
+        
+              
                     <div class="dash_box_top_bar_cis">
                         <?php echo $vars['cis_activity']; ?>
 			</div>
+                        
                     <div class="dash_box_top_bar_follow">
                         <?php echo $vars['follow_activity']; ?>
+			</div>
+                    
+                                    
+                    <div class="dash_box_top_bar">
+			<?php echo $vars['teams_activity']; ?>
 			</div>
                 </div>
 	</div>

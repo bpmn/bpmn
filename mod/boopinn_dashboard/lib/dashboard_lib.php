@@ -23,7 +23,7 @@ function view_my_cis_river($owner) {
         foreach($list_items as $item){
             $group=get_entity((int)($item->object_guid));
             if ($group instanceof ElggGroup){
-                    if(!$group->isMember($owner))
+                    if(!$group->isMember($owner) and !check_entity_relationship($owner->guid,"follow",$item->object_guid))
                         $riveritems[]=$item;
 
             }

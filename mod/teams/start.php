@@ -649,7 +649,7 @@ function teams_user_join_event_listener($event, $object_type, $object)
 	register_elgg_event_handler('join','group','teams_user_join_event_listener');
 	register_elgg_event_handler('leave','group','teams_user_leave_event_listener');
 	register_elgg_event_handler('pagesetup','system','teams_submenus');
-	register_elgg_event_handler('annotate','all','team_object_notifications');
+	//register_elgg_event_handler('annotate','all','team_object_notifications');
 
 	// Register actions
 	global $CONFIG;

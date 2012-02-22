@@ -14,7 +14,7 @@
                         'dashboard:createteam:button' =>"Create a Team",
             		'dashboard:noactivity' => "No activity",
 			'dashboard:title:activity' => "My %s activity",
-                        'dashboard:title:cisactivity'=>"New Teams and OpenLab in my Cis",
+                        'dashboard:title:cisactivity'=>"New in your CIS: OpenLab and Teams you may be interested in",
                         'dashboard:title:followactivity'=>"Following activity" , 
 			'dashboard:topthreeuserss' => 'Top three users ',
                         'dashboard:welcome' => 'Welcome' 

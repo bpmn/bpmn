@@ -115,6 +115,7 @@ if ($new_openlab_flag) {
             $openlab->save();
     }
     $openlab->join($user);
+    add_entity_relationship($user->guid, 'notify'.'email', $openlab->guid);
     add_to_river('openlab_river/openlab/create', 'create', $user->guid, $openlab->guid);
 
 // STD automatically create topic 

@@ -6,7 +6,7 @@
  * @subpackage Core
  */
 
-/*admin_gatekeeper(); // Only admins can add a user
+admin_gatekeeper(); // Only admins can add a user
 
 // Get variables
 global $CONFIG;
@@ -51,4 +51,4 @@ try {
 	register_error($r->getMessage());
 }
 
-forward($_SERVER['HTTP_REFERER']);*/
+forward($_SERVER['HTTP_REFERER']);

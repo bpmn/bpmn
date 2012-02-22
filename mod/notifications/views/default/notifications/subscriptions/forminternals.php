@@ -1,8 +1,8 @@
 	<h3>
-		<?php echo elgg_echo('notifications:subscriptions:title'); ?>
+		<?php //echo elgg_echo('notifications:subscriptions:title'); ?>
 	</h3>
 	<p class="notification_methods_intro">
-		<?php echo elgg_echo('notifications:subscriptions:description'); ?>
+		<?php //echo elgg_echo('notifications:subscriptions:description'); ?>
 	</p>
 <?php
 

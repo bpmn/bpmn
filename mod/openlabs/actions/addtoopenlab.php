@@ -44,9 +44,10 @@
 							// Remove relationships
 							remove_entity_relationship($openlab->guid, 'invited', $user->guid);
 							remove_entity_relationship($user->guid, 'membership_request', $openlab->guid);
-                                                        remove_entity_relationship($user->guid, 'follow', $group->guid);
+                                                        remove_entity_relationship($user->guid, 'follow', $openlab->guid);
 							//add_entity_relationship($user->guid, 'member', $openlab->guid);
 							
+                                                        add_entity_relationship($user->guid, 'notify'.'email', $openlab->guid);
 
                                                         //add to river
                                                         add_to_river('openlab_river/relationship/member/create','join',$user->guid,$openlab->guid);

@@ -20,7 +20,7 @@ set_context('settings');
 // Get the form
 $people = array();
 
-$groupmemberships = elgg_get_entities_from_relationship(array('relationship' => 'member', 'relationship_guid' => get_loggedin_userid(), 'types' => 'group', 'limit' => 9999));
+$groupmemberships = elgg_get_entities_from_relationship(array('relationship' => 'member', 'relationship_guid' => get_loggedin_userid(), 'types' => 'group','subtypes'=>'openlab', 'limit' => 9999));
 
 $form_body = elgg_view('notifications/subscriptions/groupsform',array('groups' => $groupmemberships));
 $body = elgg_view('input/form',array(

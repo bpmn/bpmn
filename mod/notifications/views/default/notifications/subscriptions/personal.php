@@ -5,6 +5,9 @@ global $NOTIFICATION_HANDLERS;
 ?>
 <div class="notification_personal">
 <div class="notification_methods">
+                <?php
+			echo elgg_view('notifications/subscriptions/jsfuncs',$vars);
+		?>
 	<h3>
 		<?php echo elgg_echo('notifications:subscriptions:personal:title'); ?>
 	</h3>
@@ -63,4 +66,11 @@ echo $fields;
     <td>&nbsp;</td>
   </tr>
 </table>
+</div>
+
+
+<div class="clearfloat"></div>
+<div class="friendspicker_savebuttons">
+	<input type="submit" value="<?php echo elgg_echo('save'); ?>" />
+<br />
 </div>

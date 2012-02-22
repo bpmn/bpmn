@@ -12,7 +12,7 @@ $english = array(
 	'notifications:subscriptions:collections:edit' => 'To edit your friends collections, click here.',
 
 	'notifications:subscriptions:changesettings' => 'Notifications',
-	'notifications:subscriptions:changesettings:groups' => 'Group notifications',
+	'notifications:subscriptions:changesettings:groups' => 'OpenLabs notifications',
 	'notification:method:email' => 'Email',
 
 	'notifications:subscriptions:title' => 'Notifications per user',

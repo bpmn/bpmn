@@ -63,7 +63,7 @@ function notifications_plugin_pagesetup() {
 	global $CONFIG;
 	if (get_context() == 'settings') {
 		add_submenu_item(elgg_echo('notifications:subscriptions:changesettings'), $CONFIG->wwwroot . "pg/notifications/personal");
-		if (is_plugin_enabled('groups')) {
+		if (is_plugin_enabled('openlabs')) {
 			add_submenu_item(elgg_echo('notifications:subscriptions:changesettings:groups'), $CONFIG->wwwroot . "pg/notifications/group");
 		}
 	}

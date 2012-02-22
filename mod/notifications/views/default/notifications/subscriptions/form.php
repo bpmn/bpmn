@@ -19,9 +19,10 @@ echo elgg_view('subscriptions/form/additions', $vars);
 <?php
 
 echo elgg_view('input/form',array(
-						'body' => 	elgg_view('notifications/subscriptions/personal') .
-									elgg_view('notifications/subscriptions/collections') .
-									elgg_view('notifications/subscriptions/forminternals'),
+						'body' => 	elgg_view('notifications/subscriptions/personal'),
+                                                                         
+									//elgg_view('notifications/subscriptions/collections') .
+									//elgg_view('notifications/subscriptions/forminternals'),
 						'method' => 'post',
 						'action' => $vars['url'] . 'action/notificationsettings/save',
 				));
