@@ -100,7 +100,8 @@
 			//get the user and a link to their gallery
 			$user_gallery = $vars['url'] . "mod/file/search.php?md_type=simpletype&subtype=file&tag=image&owner_guid=" . $owner->guid . "&search_viewtype=gallery";
 		?>
-		<div class="filerepo_user_gallery_link"><a href="<?php echo $user_gallery; ?>"><?php echo sprintf(elgg_echo("file:user:gallery"),''); ?></a></div>
+                <!-- Fatxi1: suppression du Menu View gallery sous la vue du profile d'un Fichier-->
+		<!--<div class="filerepo_user_gallery_link"><a href="<?//php echo $user_gallery; ?>"><?php// echo sprintf(elgg_echo("file:user:gallery"),''); ?></a></div>-->
 		<div class="filerepo_title"><h2><a href="<?php echo $vars['url']; ?>mod/file/download.php?file_guid=<?php echo $file_guid; ?>"><?php echo $title; ?></a></h2></div>
 		<div class="filerepo_owner">
 				<?php
@@ -189,7 +190,7 @@
 
 	if ($vars['full']) {
 		
-		echo elgg_view_comments($file);
+	//	echo elgg_view_comments($file);
 		
 	}
 

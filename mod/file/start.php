@@ -91,7 +91,7 @@ function file_submenus() {
 
     if ($page_owner instanceof ElggGroup && get_context() == "teams") {
         if ($page_owner->file_enable != "no") {
-            add_submenu_item(sprintf(elgg_echo("file:team"), $page_owner->name), $CONFIG->wwwroot . "pg/file/owner/" . $page_owner->username);
+            add_submenu_item(sprintf(elgg_echo("file:team"), $page_owner->name), $CONFIG->wwwroot . "pg/teamsfile/owner/" . $page_owner->username);
         }
     }
 
@@ -105,7 +105,7 @@ function file_submenus() {
     // General submenu options
 
     //if ((get_context() == "file")  || (get_context() == 'openlab' ) || (get_context() =='teams' ) ) {
-    if ((get_context() == "file")  || (get_context() == 'openlab' ) ) {
+   if ((get_context() == "teams_file")  || (get_context() == 'openlabs_file' ) ) {
         /**
          * STD no more menus Your files + Your friends files 
         
@@ -118,7 +118,7 @@ function file_submenus() {
                 add_submenu_item(sprintf(elgg_echo('file:friends'), $page_owner->name), $CONFIG->wwwroot . "pg/file/friends/" . $page_owner->username);
         } */
        /* add_submenu_item(elgg_echo('file:all'), $CONFIG->wwwroot . "pg/file/all/"); */ 
-        if (can_write_to_container($_SESSION['guid'], page_owner()) && isloggedin())
+       if (can_write_to_container($_SESSION['guid'], page_owner()) && isloggedin())
             add_submenu_item(elgg_echo('file:upload'), $CONFIG->wwwroot . "pg/file/new/" . $page_owner->username);
     }
 }

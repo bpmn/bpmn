@@ -49,7 +49,8 @@ if (!$content) {
 $area2 .= $content;
 
 set_context('file');
-$area1 = get_filetype_cloud(page_owner());
+//Fatxi1: suppression du menu All et Pictures dans les Library
+//$area1 = get_filetype_cloud(page_owner());
 
 
 $body = elgg_view_layout('two_column_left_sidebar', $area1, $area2);

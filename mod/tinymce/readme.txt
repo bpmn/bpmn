@@ -1,6 +1,6 @@
 Notes:
 
-* An extended tinymce plugin based on version 3.4.6 of the TinyMCE editor.
+* An extended tinymce plugin based on version 3.4.8 of the TinyMCE editor.
 
 
 

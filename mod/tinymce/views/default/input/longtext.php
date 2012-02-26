@@ -30,7 +30,7 @@ tinyMCE.init({
 	editor_selector : "mceEditor",
 	theme : "advanced",
         content_css : "<?php echo $vars['url']; ?>mod/tinymce/views/default/tinymce/custom_content.css",
-        plugins : "style,table,advhr,advimage,emotions,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras",
+        plugins : "lists,style,table,advhr,advimage,emotions,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras",
         convert_urls : false,
         theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,fontselect,fontsizeselect",
         theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,bullist,numlist,table,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink",

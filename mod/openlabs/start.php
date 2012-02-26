@@ -165,7 +165,7 @@ function openlabforumtopic_notify_message($hook, $entity_type, $returnvalue, $pa
         if (empty($msg))
             $msg = get_input('topic_post');
         if (!empty($msg))
-            $msg = substr($msg,0,100) . "\n\n"; else
+            $msg = elgg_get_excerpt($msg) . "\n\n"; else
             $msg = '';
 
         $owner = get_entity($entity->container_guid);
@@ -382,7 +382,7 @@ function openlabfile_page_handler($page) {
         file_url_forwarder($page);
     }
 
-    set_context('openlab') ; 
+    set_context('openlabs_file') ; 
     
     switch ($page[0]) {
         case "read":
