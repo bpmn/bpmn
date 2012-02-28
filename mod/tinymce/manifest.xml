@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin_manifest>
         <field key="author" value="iionly, based on Curverider plugin" />
-        <field key="version" value="3.4.8" />
+        <field key="version" value="3.4.9 r11" />
         <field key="description" value="Extended TinyMCE plugin." />
         <field key="website" value="http://www.elgg.org/" />
         <field key="copyright" value="(C) Curverider 2008-2012" />

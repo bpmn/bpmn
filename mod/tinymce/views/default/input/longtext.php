@@ -29,6 +29,7 @@ tinyMCE.init({
 	mode : "specific_textareas",
 	editor_selector : "mceEditor",
 	theme : "advanced",
+	skin : "cirkuit",
         content_css : "<?php echo $vars['url']; ?>mod/tinymce/views/default/tinymce/custom_content.css",
         plugins : "lists,style,table,advhr,advimage,emotions,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras",
         convert_urls : false,
@@ -41,6 +42,9 @@ tinyMCE.init({
 	theme_advanced_statusbar_location : "bottom",
 	theme_advanced_resizing : true,
 	extended_valid_elements : "@[id|class|style|title|dir<ltr?rtl|lang|xml::lang|onclick|ondblclick|onmousedown|onmouseup|onmouseover|onmousemove|onmouseout|onkeypress|onkeydown|onkeyup],a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|style],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style],embed[src|type|wmode|width|height],object[classid|clsid|codebase|width|height],font[face|size|color|style],span[class|align|style],style[lang|media|title|type]"
+        
+        
+
 });
 function toggleEditor(id) {
 if (!tinyMCE.get(id))
